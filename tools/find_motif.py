@@ -14,7 +14,7 @@ The notation excerpt of a passage is copied from the score (see excerpt()).
 
 usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
-import argparse, copy, csv, json, math, pathlib, re, subprocess, tempfile
+import argparse, copy, csv, json, math, pathlib, re
 import xml.etree.ElementTree as ET
 from bisect import bisect_right
 from collections import defaultdict
@@ -478,21 +478,26 @@ def excerpt(chain, measures):
 
 
 def original_musicxml():
-    """Return a MusicXML score of the melody that the page only uses to play it.
+    """Return the MusicXML score of the melody, which the page engraves and plays like a passage of the score.
 
-    It has the pitches and durations of the melody and the ties that it marks. The score looks like nothing:
-    it uses LilyPond's default clef, key and 4/4, and splits a note that crosses a barline into tied notes.
-    The drawing of the original comes from original_svg().
+    The score has a treble clef, no key signature, and the time and the pickup that the definition gives. It has one
+    tie for each ~ of the melody. A note that crosses a barline becomes two tied notes. The eighth notes of one beat
+    are beamed.
     """
-    bar = 8  # eighth notes in 4/4
+    original = DEF["original"]
+    beats, unit = map(int, original["time"].split("/"))
+    bar = 8 * beats // unit  # eighth notes in a bar
+    group = 3 if unit == 8 and beats % 3 == 0 else 8 // unit  # eighth notes in a beat; a beam stops at the end of a beat
     kinds = {8: ("whole", 0), 6: ("half", 1), 4: ("half", 0), 3: ("quarter", 1), 2: ("quarter", 0), 1: ("eighth", 0)}
+    eighths = lambda den, dots: int(Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots))))
+    pickup = eighths(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
     tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", DEF["lilypond"])
-    notes, pos = [], 0
+    notes, pos = [], (bar - pickup) % bar  # pos counts eighth notes from the start of the first bar
     for i, (tie, name, octave, den, dots) in enumerate(tokens):
         pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),
-                 3 + octave.count("'") - octave.count(",") + DEF["original"]["octaves_up"])
+                 3 + octave.count("'") - octave.count(",") + original["octaves_up"])
         tied_on = i + 1 < len(tokens) and bool(tokens[i + 1][0])
-        remaining, pieces = int(Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots)))), []
+        remaining, pieces = eighths(den, dots), []
         while remaining:
             room = min(remaining, bar - pos % bar)  # up to the next barline
             while room:
@@ -500,56 +505,56 @@ def original_musicxml():
                 pieces.append((part, pos))
                 room, remaining, pos = room - part, remaining - part, pos + part
         for k, (part, at) in enumerate(pieces):
-            notes.append(dict(pitch=pitch, eighths=part, bar=at // bar, tie_stop=bool(tie) if k == 0 else True,
+            notes.append(dict(pitch=pitch, eighths=part, pos=at, measure=at // bar, tie_stop=bool(tie) if k == 0 else True,
                               tie_start=True if k < len(pieces) - 1 else tied_on))
-    measures = defaultdict(str)
+
+    run = []
+    def beam_run():
+        for j, n in enumerate(run if len(run) > 1 else []):
+            n["beam"] = "begin" if j == 0 else "end" if j == len(run) - 1 else "continue"
+        run.clear()
+    for n in notes:
+        if run and not (n["eighths"] == 1 and n["pos"] // group == run[-1]["pos"] // group):
+            beam_run()
+        if n["eighths"] == 1:
+            run.append(n)
+    beam_run()
+
+    measures, in_effect = defaultdict(str), {}  # in_effect: the accidental of a pitch in the bar, as the reader remembers it
     for n in notes:
         step, alter, octave = n["pitch"]
         kind, dots = kinds[n["eighths"]]
-        measures[n["bar"]] += (f"<note><pitch><step>{step}</step>{f'<alter>{alter}</alter>' if alter else ''}<octave>{octave}</octave></pitch>"
-                               f"<duration>{n['eighths']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
-                               + f"<voice>1</voice><type>{kind}</type>" + "<dot/>" * dots
-                               + ("<notations>" + '<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"] + "</notations>"
-                                  if n["tie_stop"] or n["tie_start"] else "") + "</note>")
-    attributes = "<attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes>"
-    body = "".join(f'<measure number="{b + 1}">{attributes if b == 0 else ""}{xml}</measure>' for b, xml in sorted(measures.items()))
+        if n["pos"] % bar == 0 or n["pos"] == bar - pickup:
+            in_effect = {}
+        accidental = ""
+        if not n["tie_stop"] and in_effect.get((step, octave), 0) != alter:  # a note tied from the last bar needs none
+            accidental = f"<accidental>{ {-1: 'flat', 1: 'sharp', 0: 'natural'}[alter] }</accidental>"
+            in_effect[(step, octave)] = alter
+        measures[n["measure"]] += (f"<note><pitch><step>{step}</step>{f'<alter>{alter}</alter>' if alter else ''}<octave>{octave}</octave></pitch>"
+                                   f"<duration>{n['eighths']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
+                                   + f"<voice>1</voice><type>{kind}</type>" + "<dot/>" * dots + accidental
+                                   + (f'<beam number="1">{n["beam"]}</beam>' if n.get("beam") else "")
+                                   + ("<notations>" + '<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"] + "</notations>"
+                                      if n["tie_stop"] or n["tie_start"] else "") + "</note>")
+    attributes = (f"<attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>{beats}</beats><beat-type>{unit}</beat-type></time>"
+                  "<clef><sign>G</sign><line>2</line></clef></attributes>")
+    first = 0 if pickup else 1  # the number of the first measure: 0 for a pickup bar
+    body = "".join(f'<measure number="{m + first}"{" implicit=" + chr(34) + "yes" + chr(34) if m == 0 and pickup else ""}>{attributes if m == 0 else ""}{xml}</measure>'
+                   for m, xml in sorted(measures.items()))
     return ('<?xml version="1.0" encoding="UTF-8"?><score-partwise version="3.0"><part-list><score-part id="P1"><part-name/></score-part></part-list>'
             f'<part id="P1">{body}</part></score-partwise>')
 
 
-def original_svg():
-    """Return the SVG that LilyPond draws for the melody exactly as written.
-
-    The LilyPond file holds the notes of the melody, its pickup (\\partial) and its time, which the definition gives
-    (the durations of the melody fill the bars only in that time). LilyPond uses its own clef and key.
-    \\transpose moves the notes up `octaves_up` octaves and leaves the text of the melody as it is.
-    It only adds what a tight, cropped drawing needs: no indent, no page number and no tagline.
-    LilyPond runs in the Docker image of the project notes. If it cannot run, this raises an error. The original
-    must never be drawn by anything else.
-    """
-    original = DEF["original"]
-    source = ('\\version "2.25.12"\n'
-              "\\paper { indent = 0\\mm print-page-number = ##f oddHeaderMarkup = ##f evenHeaderMarkup = ##f "
-              "oddFooterMarkup = ##f evenFooterMarkup = ##f tagline = ##f }\n"
-              "\\transpose c c" + "'" * original["octaves_up"] + f" {{ \\time {original['time']} \\partial {original['partial']} "
-              + DEF["lilypond"] + " }\n")
-    with tempfile.TemporaryDirectory() as tmp:
-        pathlib.Path(tmp, "original.ly").write_text(source, encoding="utf-8")
-        command = ["docker", "run", "--rm", "-v", f"{tmp}:/app", "-w", "/app", "jeandeaual/lilypond:latest",
-                   "lilypond", "-dbackend=svg", "-dcrop", "-dno-point-and-click", "original.ly"]
-        try:
-            done = subprocess.run(command, capture_output=True, text=True, timeout=600)
-        except (OSError, subprocess.TimeoutExpired) as error:
-            raise RuntimeError(f"LilyPond did not run ({error}). The command was: {' '.join(command)}") from error
-        drawing = pathlib.Path(tmp, "original.cropped.svg")
-        if done.returncode or not drawing.exists():
-            raise RuntimeError(f"LilyPond failed with exit code {done.returncode}: {done.stderr[-600:]}")
-        svg = drawing.read_text(encoding="utf-8")
-    svg = svg[svg.index("<svg"):].strip()  # drop any XML declaration before the root element
-    for forbidden in ("<script", "href", "url("):
-        if forbidden in svg:
-            raise RuntimeError(f"The drawing of LilyPond holds '{forbidden}', which the page must not load.")
-    return svg
+def original_occurrence(at):
+    """Return the occurrence that holds the original melody, at measure `at` of its section."""
+    up, words = DEF["original"]["octaves_up"], {1: "one", 2: "two", 3: "three"}
+    pickups = {"2": "one half note", "4": "one quarter note", "8": "one eighth note", "16": "one sixteenth note"}
+    return dict(
+        id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
+        note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
+             + f"engraved from your notes. The first note is a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
+             f"the bars are in {DEF['original']['time']}, and the clef and key are plain: a treble clef and no key signature. It is not a passage of the score.",
+        libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": at, "to": at + 1})
 
 
 def read_csv(path):
@@ -564,7 +569,7 @@ def main():
     ap.add_argument("--out", type=pathlib.Path, help="default: leitmotifs/motifs/<id>.json")
     ap.add_argument("--closest", type=int, default=2, help="partial matches of the whole phrase that make level 1, if none is complete")
     ap.add_argument("--refresh", action="store_true",
-                    help="only refresh the texts of the existing output file, which are the translations and the level descriptions, without the search (a few seconds)")
+                    help="only refresh the texts of the existing output file (the translations and the level descriptions) and the original melody, without the search (a few seconds)")
     args = ap.parse_args()
     use(load_definition(args.motif))
     args.out = args.out or ROOT / "leitmotifs" / "motifs" / f"{DEF['id']}.json"
@@ -581,6 +586,7 @@ def main():
                     else:
                         missing.add(line["text"])
         data["levels"] = levels()
+        data["occurrences"] = [original_occurrence(o["from"]) if o["id"] == "original" else o for o in data["occurrences"]]
         args.out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"texts refreshed in {args.out}")
         for text in sorted(missing):
@@ -676,14 +682,7 @@ def main():
     # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
     width = round(sum(s["to"] - s["from"] for s in sections) * 0.04)
     sections.insert(0, dict(id="original", opera="", act=ORIGINAL_ACT, label="Original", short="Orig", original=True, **{"from": 0, "to": width}))
-    up, words = DEF["original"]["octaves_up"], {1: "one", 2: "two", 3: "three"}
-    pickups = {"2": "one half note", "4": "one quarter note", "8": "one eighth note", "16": "one sixteenth note"}
-    occurrences.append(dict(
-        id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
-        note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
-             + f"drawn by LilyPond from your notes. The first note is a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
-             f"the bars are in {DEF['original']['time']}, and the clef and key are LilyPond's own. It is not a passage of the score.",
-        libretto=None, notation=dict(svg=original_svg(), musicxml=original_musicxml()), **{"from": width / 2, "to": width / 2 + 1}))
+    occurrences.append(original_occurrence(width / 2))
     order = {s["act"]: i for i, s in enumerate(sections)}
     occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
 

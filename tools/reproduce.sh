@@ -6,7 +6,7 @@
 #   2. find the passages of every leitmotif in leitmotifs/definitions, write leitmotifs/motifs/<id>.json
 #   3. write the test file leitmotifs/motifs/sample.json
 #
-# Needs python3, network access for step 1, and Docker for step 2 (LilyPond draws the original melody).
+# Needs python3, and network access for step 1.
 # The hand-written inputs are leitmotifs/definitions/*.json and leitmotifs/translations.json.
 #
 # usage: tools/reproduce.sh [DATA_DIR]      (the default is data)

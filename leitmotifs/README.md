@@ -29,8 +29,6 @@ The script runs these steps in order. You can run each step alone.
 | 2. Find the passages | `python3 -I tools/find_motif.py siegfried` | `motifs/siegfried.json` |
 | 3. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 
-Step 2 needs Docker, because LilyPond draws the original melody. It stops with an error if Docker or LilyPond does not run.
-
 The hand-written inputs are `definitions/*.json` and `translations.json`. Nothing else is typed in.
 
 ## Add a leitmotif
