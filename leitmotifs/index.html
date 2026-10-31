@@ -165,22 +165,48 @@ const el = (tag, cls, text) => {
   return e;
 };
 
-const motifId = new URLSearchParams(location.search).get('motif') || 'siegfried';
-const dataUrl = `motifs/${encodeURIComponent(motifId)}.json`;
+const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
+let motifId = idInUrl(), loadSeq = 0;
 let sections, occs, marks, levelInfo, levelCount, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
 const visible = i => !hidden.has(occs[i].level);
 
-fetch(dataUrl, { cache: 'no-cache' }) // the data changes when the finder runs, so ask the server each time
-  .then(r => r.ok ? r.json() : Promise.reject(new Error(`${dataUrl} returned ${r.status}.`)))
-  .then(init)
-  .catch(err => {
-    const s = $('status');
-    s.append(el('p', '', 'The motif data did not load.'), el('p', 'detail', err.message));
-    if (location.protocol === 'file:') {
-      s.append(el('p', 'detail', 'Browsers block a page opened from disk from reading its data. In this folder run "python3 -m http.server" and open http://localhost:8000/.'));
-    }
-  });
+// Show the motif `id`. The page, the notation engine and the sound stay; only the view is rebuilt.
+function load(id) {
+  const mine = ++loadSeq, url = `motifs/${encodeURIComponent(id)}.json`;
+  motifId = id;
+  markCurrent();
+  return fetch(url, { cache: 'no-cache' }) // the data changes when the finder runs, so ask the server each time
+    .then(r => r.ok ? r.json() : Promise.reject(new Error(`${url} returned ${r.status}.`)))
+    .then(data => { if (mine === loadSeq) { clear(); init(data); } }) // an answer for a motif that the viewer has left is dropped
+    .catch(err => {
+      if (mine !== loadSeq) return;
+      clear();
+      const s = $('status');
+      s.append(el('p', '', 'The motif data did not load.'), el('p', 'detail', err.message));
+      if (location.protocol === 'file:') {
+        s.append(el('p', 'detail', 'Browsers block a page opened from disk from reading its data. In this folder run "python3 -m http.server" and open http://localhost:8000/.'));
+      }
+    });
+}
+
+// Empty the view of the motif that was on the page.
+function clear() {
+  stopPlayback();
+  seq++; // an engraving that is still being made belongs to the old motif
+  tip(-1);
+  sections = []; occs = []; marks = [];
+  current = -1;
+  hidden.clear();
+  for (const id of ['status', 'levels', 'grid']) $(id).replaceChildren();
+  for (const id of ['levels', 'timeline', 'detail']) $(id).hidden = true;
+  $('grid').style.gridTemplateColumns = '';
+  scrollTo(0, 0);
+}
+
+const markCurrent = () => document.querySelectorAll('#motifs a').forEach(a => {
+  if (a.dataset.id === motifId) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+});
 
 fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; without it the page has no sidebar
   .then(r => r.ok ? r.json() : Promise.reject())
@@ -188,13 +214,28 @@ fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; wit
     for (const m of motifs) {
       const link = el('a', '', m.name), item = el('li');
       link.href = `?motif=${encodeURIComponent(m.id)}`;
-      if (m.id === motifId) link.setAttribute('aria-current', 'page');
+      link.dataset.id = m.id;
       item.append(link);
       $('motifs').querySelector('ul').append(item);
     }
     $('motifs').hidden = !motifs.length;
+    markCurrent();
   })
   .catch(() => {});
+
+// A plain click on a name switches in place. A click that opens a new tab or window keeps its normal job.
+$('motifs').addEventListener('click', e => {
+  const link = e.target.closest('a');
+  if (!link || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  if (link.dataset.id === motifId) return;
+  history.pushState(null, '', link.getAttribute('href'));
+  load(link.dataset.id);
+});
+addEventListener('popstate', () => { if (idInUrl() !== motifId) load(idInUrl()); }); // the back and forward buttons
+
+wire();
+load(motifId);
 
 function init(data) {
   if (data.format !== 1 || !data.sections?.length || !Array.isArray(data.occurrences)) {
@@ -304,7 +345,11 @@ function buildTimeline() {
     return m;
   });
   $('timeline').hidden = false;
+}
 
+// The listeners of the page. They are set once, because the view is rebuilt each time the motif changes.
+function wire() {
+  const grid = $('grid');
   // Marks can sit closer together than a pointer is wide, so pick the nearest one.
   const nearest = e => {
     if (!e.target.closest('.seg')) return -1;
