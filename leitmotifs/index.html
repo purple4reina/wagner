@@ -278,8 +278,9 @@ function loadEngine() {
     document.head.append(s);
   }).then(() => {
     const tk = new verovio.toolkit();
-    tk.setOptions({ breaks: 'none', adjustPageWidth: true, adjustPageHeight: true, svgViewBox: true,
-      scale: 55, header: 'none', footer: 'none', pageMarginLeft: 20, pageMarginRight: 20, pageMarginTop: 20, pageMarginBottom: 20 });
+    // A fixed page width makes Verovio break a long excerpt into lines that fit the panel.
+    tk.setOptions({ breaks: 'auto', pageWidth: 760, adjustPageHeight: true, svgViewBox: true,
+      scale: 60, header: 'none', footer: 'none', pageMarginLeft: 20, pageMarginRight: 20, pageMarginTop: 20, pageMarginBottom: 20 });
     return tk;
   });
   return engine;

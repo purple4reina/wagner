@@ -85,14 +85,13 @@ Sources:
 
 ### `notation`
 
-`musicxml` is a complete, standalone MusicXML file in `score-partwise` form. It contains:
+`musicxml` is a complete, standalone MusicXML file in `score-partwise` form. It shows the motif as the piano score shows it:
 
-- only the measures that the motif spans (about four or fewer), and
-- only the notes that belong to the motif. Other notes are removed or replaced with rests.
+- The notes are copies of the notes in `01_RawData/score_musicxml`. The clef, key signature, time signature, octave, rhythm, accidentals, stems, beams and ties are the ones of the score. A clef change inside the excerpt stays where the score has it.
+- The file contains only the measures that the motif spans. The page breaks a long excerpt into lines.
+- The file contains only the notes of the motif, in one staff. It leaves out the other notes and the rests. The builder removes a beam, slur or tuplet bracket when the cut leaves it without a start or an end.
 
-The first measure carries the clef, key signature and time signature. The excerpt may use one staff or two.
-
-The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an internet connection. Cut the excerpt from `01_RawData/score_musicxml`.
+The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an internet connection.
 
 ## Example
 
