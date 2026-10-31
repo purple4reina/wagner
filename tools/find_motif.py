@@ -17,8 +17,11 @@ from types import SimpleNamespace
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MOTIF_ID, MOTIF_NAME = "siegfried", "Siegfried"
 MOTIF_LY = "g,8 c4. ~c4 c8 es4. d4 c8 aes2. c4. bes,4 aes,8 es4. ~es4 es8 f4. ~f8 es8 f8 g2."
-CORE = (1, 13)  # the notes of MOTIF_LY that level 2 looks for: notes 2 to 13
+CORE_NOTES = (2, 13)  # the notes of MOTIF_LY that levels 2 and 3 look for, counted from 1
+ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not part of the score
 LEVELS = [
+    dict(level=0, label="Original", name="The melody as given",
+         description="The melody as you gave it. It is not a passage of the score."),
     dict(level=1, name="Closest to the original",
          description="The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."),
     dict(level=2, name="Same core pitches",
@@ -50,8 +53,26 @@ def parse_ly(src):
     return notes
 
 
-MOTIF = parse_ly(MOTIF_LY)
+def collapse(notes):
+    """Merge a run of notes that repeat one pitch into one note, and add the first and last index of its notes."""
+    out = []
+    for i, (pc, dur, midi) in enumerate(notes):
+        if out and out[-1][2] == midi:
+            out[-1] = (pc, out[-1][1] + dur, midi, out[-1][3], i)
+        else:
+            out.append((pc, dur, midi, i, i))
+    return out
+
+
+IDEAL = parse_ly(MOTIF_LY)
+MOTIF = collapse(IDEAL)  # what the search matches: a repeated note counts as one note
 N = len(MOTIF)
+CORE = tuple(next(i for i, m in enumerate(MOTIF) if m[3] <= n - 1 <= m[4]) + k for n, k in zip(CORE_NOTES, (0, 1)))
+
+
+def numbers(start, length):
+    """Return the numbers (counted from 1) of the first and last note of MOTIF_LY in MOTIF[start:start + length]."""
+    return MOTIF[start][3] + 1, MOTIF[start + length - 1][4] + 1
 
 
 def read_act(path):
@@ -114,41 +135,68 @@ def read_act(path):
             merged.append(g)
             if p.tie_start:
                 waiting.append(g)
+
     return merged, measures, offsets
 
 
 def index(merged):
-    """Return the notes by (line, start time) and by (line, end time)."""
+    """Return the notes by (line, start time) and by (line, end time).
+
+    A few notes of the score have no duration. They are left out, because a note without duration
+    would be its own next repeat.
+    """
     by, ends = defaultdict(list), defaultdict(list)
     for g in merged:
+        if g.dur <= 0:
+            continue
         by[(g.line, g.onset)].append(g)
         ends[(g.line, g.onset + g.dur)].append(g)
     return by, ends
 
 
-def shape_error(notes, start):
-    """Return how far the intervals of `notes` are from the intervals of MOTIF from MOTIF[start]."""
-    return sum(abs((b.midi - a.midi) - (MOTIF[start + i + 1][2] - MOTIF[start + i][2])) for i, (a, b) in enumerate(zip(notes, notes[1:])))
+def shape_error(groups, start):
+    """Return how far the intervals of the `groups` are from the intervals of MOTIF from MOTIF[start]."""
+    return sum(abs((b[0].midi - a[0].midi) - (MOTIF[start + i + 1][2] - MOTIF[start + i][2])) for i, (a, b) in enumerate(zip(groups, groups[1:])))
 
 
-def make_run(by, ends, notes, start):
-    """Return a passage: `notes` that match MOTIF from MOTIF[start], with the notes of the line before and after them."""
+def repeats(by, g):
+    """Yield [g], then [g, next repeat of its pitch], and so on. A repeat starts when the note before it ends."""
+    group = [g]
+    while True:
+        yield list(group)
+        again = [h for h in by.get((g.line, group[-1].onset + group[-1].dur), ()) if h.midi == g.midi]
+        if not again:
+            return
+        group.append(again[0])
+
+
+def total(group):
+    return sum(n.dur for n in group)
+
+
+def make_run(by, ends, groups, start):
+    """Return a passage: `groups` of notes that match MOTIF from MOTIF[start], with the groups of the line before and after."""
     def nearest(candidates, g):
         return min(candidates, key=lambda c: abs(c.midi - g.midi))
 
-    before, after, cur = [], [], notes[0]
+    # The notes around the passage are only context. Each one is a group of its own, so a held chord note
+    # of the same pitch cannot turn them into a long run.
+    before, after, cur = [], [], groups[0][0]
     for _ in range(start):
         if not ends.get((cur.line, cur.onset)):
             break
         cur = nearest(ends[(cur.line, cur.onset)], cur)
-        before.insert(0, cur)
-    cur = notes[-1]
-    for _ in range(min(8, max(3, N - start - len(notes)))):
+        before.insert(0, [cur])
+    cur = groups[-1][-1]
+    for _ in range(min(8, max(3, N - start - len(groups)))):
         if not by.get((cur.line, cur.onset + cur.dur)):
             break
         cur = nearest(by[(cur.line, cur.onset + cur.dur)], cur)
-        after.append(cur)
-    return SimpleNamespace(length=len(notes), start=start, run=notes, before=before, after=after, shown=before + notes + after)
+        after.append([cur])
+    notes = [n for g in groups for n in g]
+    flat = lambda gs: [n for g in gs for n in g]
+    return SimpleNamespace(length=len(groups), start=start, groups=groups, run=notes, before=before, after=after,
+                           shown=flat(before) + notes + flat(after))
 
 
 def apart(spans):
@@ -164,6 +212,8 @@ def find_runs(merged, min_len=6):
     """Return the longest partial matches of MOTIF, longest first, without two at the same time.
 
     A run is a stretch of one line that matches MOTIF[start:start + length] in pitch class and rhythm.
+    Notes that repeat one pitch in a row count as one note: a group of repeats matches a note of MOTIF if
+    the durations of the group add up to the duration of that note.
     If a chord doubles the line, the run whose intervals are closest to those of MOTIF_LY wins.
     """
     by, ends = index(merged)
@@ -171,10 +221,15 @@ def find_runs(merged, min_len=6):
     def extend(line, t, j):
         best = []
         for g in by.get((line, t), ()):
-            if g.midi % 12 == MOTIF[j][0] and g.dur == MOTIF[j][1]:
-                c = [g] + (extend(line, t + g.dur, j + 1) if j + 1 < N else [])
-                if not best or (len(c), -shape_error(c, j)) > (len(best), -shape_error(best, j)):
-                    best = c
+            if g.midi % 12 != MOTIF[j][0]:
+                continue
+            for group in repeats(by, g):
+                if total(group) > MOTIF[j][1]:
+                    break
+                if total(group) == MOTIF[j][1]:
+                    c = [group] + (extend(line, t + total(group), j + 1) if j + 1 < N else [])
+                    if not best or (len(c), -shape_error(c, j)) > (len(best), -shape_error(best, j)):
+                        best = c
         return best
 
     runs = []
@@ -184,7 +239,7 @@ def find_runs(merged, min_len=6):
             if len(c) >= min_len:
                 runs.append((len(c), j, c))
     runs.sort(key=lambda r: (-r[0], shape_error(r[2], r[1])))
-    spans = (((c[0].onset, c[-1].onset + c[-1].dur), (j, c)) for _, j, c in runs)
+    spans = (((c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur), (j, c)) for _, j, c in runs)
     return [make_run(by, ends, c, j) for _, (j, c) in apart(spans)]
 
 
@@ -192,6 +247,7 @@ def find_core(merged, transposed=False):
     """Return the passages in which the notes MOTIF[CORE] have the same pitch classes, with any rhythm.
 
     If `transposed` is true, the passages have the same intervals instead, so the key may differ.
+    Notes that repeat one pitch in a row count as one note.
     """
     by, ends = index(merged)
     lo, hi = CORE
@@ -200,18 +256,20 @@ def find_core(merged, transposed=False):
         for g in by.get((line, t), ()):
             pc, before = MOTIF[lo + i][0], MOTIF[lo + i - 1][0]
             if (not transposed and g.midi % 12 == pc) or (transposed and (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)):
-                if lo + i + 1 == hi:
-                    yield [g]
-                else:
-                    for rest in follow(line, t + g.dur, i + 1, g):
-                        yield [g] + rest
+                # Try every number of repeats, because a held chord note of the same pitch can run on after the melody.
+                for group in repeats(by, g):
+                    if lo + i + 1 == hi:
+                        yield [group]
+                    else:
+                        for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, g):
+                            yield [group] + rest
 
     hits = []
     for line, t in by:
         found = list(follow(line, t, 0, None))
         if found:
-            c = min(found, key=lambda c: shape_error(c, lo))
-            hits.append(((c[0].onset, c[-1].onset + c[-1].dur), c))
+            c = min(found, key=lambda c: (shape_error(c, lo), -len(c[0])))
+            hits.append(((c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur), c))
     return [make_run(by, ends, c, lo) for _, c in apart(sorted(hits, key=lambda h: h[0]))]
 
 
@@ -227,12 +285,12 @@ def describe(pc, dur):
 def difference(run):
     """Return the text that tells how a partial match differs from MOTIF_LY."""
     j, end = run.start, run.start + run.length
-    text = [f"Your notes {j + 1} to {end} (of {N}) match in pitch and rhythm."]
+    text = [f"Your notes {numbers(j, run.length)[0]} to {numbers(j, run.length)[1]} (of {len(IDEAL)}) match in pitch and rhythm."]
     if j > 0:
-        text.append(f"Before them, the score has {describe(run.before[-1].midi % 12, run.before[-1].dur)}; yours has {describe(*MOTIF[j - 1][:2])}."
+        text.append(f"Before them, the score has {describe(run.before[-1][0].midi % 12, total(run.before[-1]))}; yours has {describe(*MOTIF[j - 1][:2])}."
                     if run.before else "Before them, the line of the score starts.")
     if end < N:
-        text.append(f"After them, the score has {describe(run.after[0].midi % 12, run.after[0].dur)}; yours has {describe(*MOTIF[end][:2])}."
+        text.append(f"After them, the score has {describe(run.after[0][0].midi % 12, total(run.after[0]))}; yours has {describe(*MOTIF[end][:2])}."
                     if run.after else "After them, the line of the score ends.")
     return " ".join(text)
 
@@ -241,20 +299,22 @@ def rhythm_text(run):
     """Return the text that tells the rhythm of a core match next to the rhythm of MOTIF_LY."""
     def row(durations):
         return " ".join(str(eighths(d)) for d in durations)
-    return (f"In eighth notes, the score plays them as {row(g.dur for g in run.run)}; yours are "
+    return (f"In eighth notes, the score plays them as {row(total(g) for g in run.groups)}; yours are "
             f"{row(m[1] for m in MOTIF[run.start:run.start + run.length])}.")
 
 
 def rhythm_difference(run):
     """Return the text that tells how the rhythm of a same-pitch core match differs from MOTIF_LY."""
-    return f"Your notes {run.start + 1} to {run.start + run.length} (of {N}) have the same pitches here, but not the same rhythm. {rhythm_text(run)}"
+    first, last = numbers(run.start, run.length)
+    return f"Your notes {first} to {last} (of {len(IDEAL)}) have the same pitches here, but not the same rhythm. {rhythm_text(run)}"
 
 
 def key_difference(run, same_rhythm):
     """Return the text that tells how a transposed core match differs from MOTIF_LY."""
     mine, here = MOTIF[run.start][0], run.run[0].midi % 12
     up = (here - mine) % 12
-    return (f"Your notes {run.start + 1} to {run.start + run.length} (of {N}) have the same intervals here, in another key: "
+    first, last = numbers(run.start, run.length)
+    return (f"Your notes {first} to {last} (of {len(IDEAL)}) have the same intervals here, in another key: "
             f"your {PC_NAME[mine]} becomes {PC_NAME[here]}, which is {up} semitone{'' if up == 1 else 's'} up or {12 - up} down. "
             + ("The rhythm is the same." if same_rhythm else f"The rhythm differs. {rhythm_text(run)}"))
 
@@ -347,6 +407,50 @@ def excerpt(chain, measures):
     return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root, encoding="unicode")
 
 
+def original_musicxml():
+    """Return a MusicXML score of MOTIF_LY as written, with the clef, key and time that suit it.
+
+    MOTIF_LY has no clef, key or time, so this is a reading of it: bass clef, three flats (every flat of
+    the melody is in the key), 6/8, and a pickup of one eighth note. The bars of MOTIF_LY add up to that.
+    """
+    pickup, bar = 1, 6  # in eighth notes
+    names = {8: "eighth", 4: "quarter", 2: "half"}
+    notes, pos = [], 0
+    for tie, name, octave, den, dots in re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", MOTIF_LY):
+        eighths = Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots)))
+        if tie:
+            notes[-1]["tie_start"] = True
+        notes.append(dict(step=name[0].upper(), alter={"es": -1, "s": -1, "is": 1}.get(name[1:], 0), octave=3 + octave.count("'") - octave.count(","),
+                          eighths=int(eighths), type=names[int(den)], dots=len(dots), tie_stop=bool(tie), tie_start=False, pos=pos))
+        pos += int(eighths)
+    for beat in {(n["pos"] - pickup) // 3 for n in notes}:  # beam the eighth notes that share a beat
+        group = [n for n in notes if (n["pos"] - pickup) // 3 == beat and n["type"] == "eighth" and n["pos"] >= pickup]
+        for i, n in enumerate(group if len(group) > 1 else []):
+            n["beam"] = "begin" if i == 0 else "end" if i == len(group) - 1 else "continue"
+
+    measures = []
+    for n in notes:
+        k = 0 if n["pos"] < pickup else 1 + (n["pos"] - pickup) // bar
+        if k == len(measures):
+            measures.append([])
+        measures[k].append(n)
+    out = []
+    for k, ns in enumerate(measures):
+        body = "<attributes><divisions>2</divisions><key><fifths>-3</fifths></key><time><beats>6</beats><beat-type>8</beat-type></time><clef><sign>F</sign><line>4</line></clef></attributes>" if k == 0 else ""
+        for n in ns:
+            alter = f"<alter>{n['alter']}</alter>" if n["alter"] else ""
+            body += (f"<note><pitch><step>{n['step']}</step>{alter}<octave>{n['octave']}</octave></pitch><duration>{n['eighths']}</duration>"
+                     + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
+                     + f"<voice>1</voice><type>{n['type']}</type>" + "<dot/>" * n["dots"]
+                     + (f'<beam number="1">{n["beam"]}</beam>' if "beam" in n else "")
+                     + ("<notations>" + '<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"] + "</notations>" if n["tie_stop"] or n["tie_start"] else "")
+                     + "</note>")
+        implicit = ' implicit="yes"' if k == 0 else ""
+        out.append(f'<measure number="{k}"{implicit}>{body}</measure>')
+    return ('<?xml version="1.0" encoding="UTF-8"?><score-partwise version="3.0"><part-list><score-part id="P1"><part-name/></score-part></part-list>'
+            f'<part id="P1">{"".join(out)}</part></score-partwise>')
+
+
 def read_csv(path):
     with open(path, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f, delimiter=";"))
@@ -408,9 +512,10 @@ def main():
                 return act.measures[mi]["number"] + round(float((t - act.offsets[mi]) / act.measures[mi]["nominal"]), 3)
 
             a, b = locate(run.shown[0].onset), locate(run.shown[-1].onset + run.shown[-1].dur)
-            same_rhythm = all(g.dur == m[1] for g, m in zip(run.run, MOTIF[run.start:]))
+            same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:]))
             if level == 1:
-                label = "Exact match" if run.length == N else f"Closest match: {run.length} of {N} notes"
+                first, last = numbers(run.start, run.length)
+                label = "Exact match" if run.length == N else f"Closest match: {last - first + 1} of {len(IDEAL)} notes"
                 note = None if run.length == N else difference(run)
             elif level == 2:
                 label = "Same pitches and rhythm" if same_rhythm else "Same pitches, different rhythm"
@@ -426,13 +531,20 @@ def main():
                 notation=dict(musicxml=excerpt(run.shown, act.measures)), **{"from": a, "to": b}))
             untranslated |= {l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l}
             print(f"level {level}  {act.work:10s} measure {a:9.3f}  {label}")
+    # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
+    width = round(sum(s["to"] - s["from"] for s in sections) * 0.04)
+    sections.insert(0, dict(id="original", opera="", act=ORIGINAL_ACT, label="Original", short="Orig", original=True, **{"from": 0, "to": width}))
+    occurrences.append(dict(
+        id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
+        note="The melody as you gave it, written out from your LilyPond. It is not a passage of the score.",
+        libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": width / 2, "to": width / 2 + 1}))
     order = {s["act"]: i for i, s in enumerate(sections)}
     occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(dict(format=1, motif=dict(id=MOTIF_ID, name=MOTIF_NAME,
-                                            description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest."),
+                                            description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."),
                        levels=LEVELS, sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
     print(f"{len(occurrences)} occurrences written to {args.out}")
     for text in sorted(untranslated):
