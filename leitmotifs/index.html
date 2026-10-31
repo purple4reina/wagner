@@ -38,10 +38,13 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 .opera { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 3px solid var(--oc); font: italic 500 1.05rem/1.2 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .seg { position: relative; border-radius: 3px; background: color-mix(in srgb, var(--oc) 16%, var(--paper)); }
 /* --lv is the level of a mark: the farther from the original, the shorter and fainter it is */
-.seg i { position: absolute; top: calc(8px + (var(--lv, 1) - 1) * 7px); bottom: calc(8px + (var(--lv, 1) - 1) * 7px); width: 2px; margin-left: -1px; background: var(--motif); opacity: max(.4, calc(1 - (var(--lv, 1) - 1) * .22)); pointer-events: none; }
+.seg i { position: absolute; top: min(calc(8px + (var(--lv, 1) - 1) * 4px), 24px); bottom: min(calc(8px + (var(--lv, 1) - 1) * 4px), 24px); width: 2px; margin-left: -1px; background: var(--motif); opacity: max(.3, calc(1 - (var(--lv, 1) - 1) * .14)); pointer-events: none; }
 .seg i.sel { top: -6px; bottom: -6px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--sel); opacity: 1; box-shadow: 0 0 0 2px var(--paper); z-index: 1; }
-.swatch { display: block; width: 3px; height: max(8px, calc(22px - (var(--lv, 1) - 1) * 5px)); margin: 0 auto; border-radius: 1px; background: var(--motif); opacity: max(.4, calc(1 - (var(--lv, 1) - 1) * .22)); }
-.levels { display: grid; gap: 8px; max-width: 760px; margin-top: 28px; }
+.swatch { display: block; width: 3px; height: max(8px, calc(22px - (var(--lv, 1) - 1) * 3px)); margin: 0 auto; border-radius: 1px; background: var(--motif); opacity: max(.3, calc(1 - (var(--lv, 1) - 1) * .14)); }
+/* Two columns that fill one after the other: the levels run down the first column, then down the second.
+   Each row has one height, so every card is as tall as the tallest. The script sets --rows. */
+.levels { display: grid; grid-auto-flow: column; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(var(--rows, 4), 1fr); gap: 8px; margin-top: 28px; }
+@media (max-width: 760px) { .levels { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 1fr; } }
 .levelbtn { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; padding: 8px 14px; text-align: left; }
 .levelbtn[aria-pressed="false"] { opacity: .5; }
 .levelbtn small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.35; }
@@ -202,6 +205,7 @@ function buildLevels() {
     button.onclick = () => toggleLevel(n, button);
     $('levels').append(button);
   }
+  $('levels').style.setProperty('--rows', Math.ceil(levelCount / 2));
   $('levels').hidden = false;
 }
 
