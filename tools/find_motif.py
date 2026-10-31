@@ -70,10 +70,23 @@ PC_NAME = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭",
 TIE_GAP = Fraction(1, 32)  # Sibelius rounds the durations of tuplets, so tied notes may miss by a little
 
 
+def ly_notes(src):
+    """Return (tie, name, octave marks, denominator, dots) for each note of absolute LilyPond `src`. As in LilyPond,
+    a note without a duration takes the duration of the note before it."""
+    out, last = [], None
+    for tie, name, octave, den, dots in re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d*)(\.*)", src):
+        if den or last:
+            last = (den, dots) if den else last
+        else:
+            raise ValueError("The first note of the melody needs a duration.")
+        out.append((tie, name, octave, *last))
+    return out
+
+
 def parse_ly(src):
     """Return [(pitch class, duration in quarter notes, MIDI pitch)] for absolute LilyPond notes; ~ merges a tie."""
     notes = []
-    for tie, name, octave, den, dots in re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", src):
+    for tie, name, octave, den, dots in ly_notes(src):
         midi = 12 * (3 + octave.count("'") - octave.count(",") + 1) + STEP_PC[name[0].upper()] + {"es": -1, "s": -1, "is": 1}.get(name[1:], 0)
         dur = Fraction(4, int(den)) * (2 - Fraction(1, 2 ** len(dots)))
         if tie:
@@ -502,7 +515,7 @@ def original_musicxml():
     kinds = {16: ("whole", 0), 12: ("half", 1), 8: ("half", 0), 6: ("quarter", 1), 4: ("quarter", 0), 3: ("eighth", 1), 2: ("eighth", 0), 1: ("16th", 0)}
     sixteenths = lambda den, dots: int(Fraction(16, int(den)) * (2 - Fraction(1, 2 ** len(dots))))
     pickup = sixteenths(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
-    tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", DEF["lilypond"])
+    tokens = ly_notes(DEF["lilypond"])
     notes, pos = [], (bar - pickup) % bar  # pos counts sixteenth notes from the start of the first bar
     for i, (tie, name, octave, den, dots) in enumerate(tokens):
         pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),

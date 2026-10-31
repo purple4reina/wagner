@@ -34,7 +34,8 @@ The hand-written inputs are `definitions/*.json` and `translations.json`. Nothin
 
 ## Add a leitmotif
 
-1. Write `definitions/<id>.json`. It holds `id`, `name`, `lilypond` (the melody in absolute LilyPond notes),
+1. Write `definitions/<id>.json`. It holds `id`, `name`, `lilypond` (the melody in absolute LilyPond notes; as in
+   LilyPond, a note without a duration takes the duration of the note before it, but rests are not supported),
    `core_notes` (the first and the last note, counted from 1, that levels 2 and 3 look for) and `original`
    (`octaves_up`, `time` and `partial`: how the page draws the melody; leave out `partial` if there is no pickup; add
    `"clef": "bass"` and `key_signature`, the number of sharps or minus the number of flats, if it does not have a
