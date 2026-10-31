@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leitmotif timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<style>
+:root {
+  --paper: #f5f2f9; --surface: #fff; --ink: #241a36; --muted: #6a607c; --rule: #d8d0e3;
+  --motif: #5b21b6; --sel: #e08a00;
+  --o0: #3f7cac; --o1: #b4473a; --o2: #4f8a4b; --o3: #a9822b;
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans: 'Albert Sans', system-ui, -apple-system, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16101f; --surface: #1f1830; --ink: #ece6f6; --muted: #a398b8; --rule: #372d4a;
+    --motif: #c4b0ff; --sel: #ffb02e;
+    --o0: #6fa8d6; --o1: #e07a6c; --o2: #85bd80; --o3: #d6b45e;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.55 var(--sans); }
+main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px; }
+h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.015em; margin: clamp(28px, 6vw, 64px) 0 12px; }
+.lede { max-width: 62ch; margin: 0; color: var(--muted); }
+#status p { margin: 24px 0 0; max-width: 62ch; }
+#status .detail { color: var(--muted); }
+
+/* timeline: one grid keeps the opera names, the ribbon and the act labels aligned */
+.scroll { overflow-x: auto; margin-top: 36px; padding-bottom: 6px; }
+.grid { display: grid; grid-template-rows: auto 60px auto; column-gap: 3px; min-width: 760px; }
+.opera { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 3px solid var(--oc); font: italic 500 1.05rem/1.2 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seg { position: relative; border-radius: 3px; background: color-mix(in srgb, var(--oc) 16%, var(--paper)); }
+.seg i { position: absolute; top: 8px; bottom: 8px; width: 2px; margin-left: -1px; background: var(--motif); pointer-events: none; }
+.seg i.sel { top: -6px; bottom: -6px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--sel); box-shadow: 0 0 0 2px var(--paper); z-index: 1; }
+.act { margin-top: 9px; font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#tip { position: fixed; z-index: 5; transform: translate(-50%, calc(-100% - 10px)); padding: 5px 9px; border-radius: 4px; background: var(--ink); color: var(--paper); font-size: .8rem; line-height: 1.3; white-space: nowrap; pointer-events: none; }
+#tip small { display: block; opacity: .75; }
+
+/* the clicked appearance */
+#detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
+@media (max-width: 760px) { #detail { grid-template-columns: 1fr; } }
+.notation { display: flex; align-items: center; justify-content: center; min-height: 160px; padding: 20px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+.notation svg { max-width: 100%; height: auto; fill: currentColor; }
+.notation .definition-scale { color: inherit; } /* Verovio hard-codes color="black" here */
+.stepper { display: flex; align-items: center; gap: 16px; margin-top: 14px; color: var(--muted); font-size: .9rem; }
+.stepper span { flex: 1; text-align: center; }
+button { padding: 6px 14px; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--ink); font: inherit; cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--motif); color: var(--motif); }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible { outline: 2px solid var(--motif); outline-offset: 2px; }
+h2 { margin: 0; font: 500 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--serif); }
+.meta { margin: 4px 0 0; color: var(--muted); }
+#form { margin: 18px 0 0; color: var(--motif); font: italic 1.1rem/1.4 var(--serif); }
+#note { max-width: 56ch; margin: 12px 0 0; }
+#form:empty, #note:empty { display: none; }
+#libretto { max-width: 56ch; margin-top: 28px; }
+.who { font-weight: 600; font-size: .85rem; }
+.words { margin: 2px 0 14px; font: 1.2rem/1.5 var(--serif); white-space: pre-line; }
+.stage { margin: 0 0 14px; padding-left: 14px; border-left: 2px solid var(--rule); color: var(--muted); font: italic 1rem/1.5 var(--serif); white-space: pre-line; }
+.quiet { margin: 0; color: var(--muted); }
+footer { max-width: 70ch; margin-top: 56px; color: var(--muted); font-size: .8rem; }
+footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="title">Leitmotif timeline</h1>
+    <p id="lede" class="lede"></p>
+  </header>
+
+  <div id="status" role="status"></div>
+
+  <section class="scroll" id="timeline" aria-label="Every appearance of the motif, in story order" hidden>
+    <div class="grid" id="grid"></div>
+  </section>
+  <div id="tip" hidden></div>
+
+  <article id="detail" hidden>
+    <div>
+      <div class="notation" id="notation" aria-live="polite"></div>
+      <div class="stepper">
+        <button type="button" id="prev">Previous</button>
+        <span id="count"></span>
+        <button type="button" id="next">Next</button>
+      </div>
+    </div>
+    <div>
+      <h2 id="where"></h2>
+      <p class="meta" id="measures"></p>
+      <p id="form"></p>
+      <p id="note"></p>
+      <div id="libretto"></div>
+    </div>
+  </article>
+
+  <footer>
+    Measure positions, sung text, scene boundaries and the piano score come from the Wagner Ring Dataset
+    (Weiß et al., <i>TISMIR</i> 6(1), 2023, <a href="https://doi.org/10.5334/tismir.161">doi:10.5334/tismir.161</a>, CC BY 3.0).
+  </footer>
+</main>
+
+<script>
+const VEROVIO = 'https://cdn.jsdelivr.net/npm/verovio@4.3.1/dist/verovio-toolkit-wasm.js';
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text) e.textContent = text;
+  return e;
+};
+
+const motifId = new URLSearchParams(location.search).get('motif') || 'siegfried';
+const dataUrl = `motifs/${encodeURIComponent(motifId)}.json`;
+let sections, occs, marks, current = -1;
+
+fetch(dataUrl)
+  .then(r => r.ok ? r.json() : Promise.reject(new Error(`${dataUrl} returned ${r.status}.`)))
+  .then(init)
+  .catch(err => {
+    const s = $('status');
+    s.append(el('p', '', 'The motif data did not load.'), el('p', 'detail', err.message));
+    if (location.protocol === 'file:') {
+      s.append(el('p', 'detail', 'Browsers block a page opened from disk from reading its data. In this folder run "python3 -m http.server" and open http://localhost:8000/.'));
+    }
+  });
+
+function init(data) {
+  if (data.format !== 1 || !data.sections?.length || !Array.isArray(data.occurrences)) {
+    throw new Error('The data does not match format 1. See DATA-SPEC.md.');
+  }
+  sections = data.sections;
+  if (sections.some(s => !(s.to > s.from))) throw new Error('Every section needs "to" greater than "from".');
+
+  const placed = data.occurrences
+    .map(o => ({ ...o, s: sections.findIndex(s => s.act === o.act && o.from >= s.from && o.from < s.to) }))
+    .filter(o => o.s >= 0);
+  occs = placed.sort((a, b) => a.s - b.s || a.from - b.from);
+  const skipped = data.occurrences.length - occs.length;
+
+  const name = data.motif?.name || motifId;
+  document.title = `The ${name} motif`;
+  $('title').textContent = document.title;
+  $('lede').textContent = [
+    data.motif?.description,
+    `${occs.length} ${occs.length === 1 ? 'appearance' : 'appearances'} across the cycle.`,
+    skipped && `${skipped} more fall outside every section and are not shown.`,
+  ].filter(Boolean).join(' ');
+
+  buildTimeline();
+  if (!occs.length) return;
+  $('detail').hidden = false;
+  const k = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
+  select(k >= 0 ? k : 0);
+}
+
+function buildTimeline() {
+  const grid = $('grid');
+  grid.style.gridTemplateColumns = sections.map(s => `minmax(0, ${s.to - s.from}fr)`).join(' ');
+
+  const operas = [];
+  sections.forEach((s, i) => {
+    const last = operas[operas.length - 1];
+    if (last?.name === s.opera) last.n++;
+    else operas.push({ name: s.opera, col: i + 1, n: 1 });
+    s.color = `var(--o${(operas.length - 1) % 4})`;
+  });
+  for (const o of operas) {
+    const e = el('div', 'opera', o.name);
+    e.style.gridArea = `1 / ${o.col} / 2 / span ${o.n}`;
+    e.style.setProperty('--oc', sections[o.col - 1].color);
+    grid.append(e);
+  }
+  sections.forEach((s, i) => {
+    s.seg = el('div', 'seg');
+    s.seg.style.gridArea = `2 / ${i + 1}`;
+    s.seg.style.setProperty('--oc', s.color);
+    const label = el('div', 'act', s.short || s.label);
+    label.title = `${s.opera}, ${s.label}`;
+    label.style.gridArea = `3 / ${i + 1}`;
+    grid.append(s.seg, label);
+  });
+
+  marks = occs.map(o => {
+    const s = sections[o.s], m = el('i');
+    m.style.left = `${(o.from - s.from) / (s.to - s.from) * 100}%`;
+    s.seg.append(m);
+    return m;
+  });
+  $('timeline').hidden = false;
+
+  // Marks can sit closer together than a pointer is wide, so pick the nearest one.
+  const nearest = e => {
+    if (!e.target.closest('.seg')) return -1;
+    let best = -1, dist = 8;
+    marks.forEach((m, i) => {
+      const r = m.getBoundingClientRect(), d = Math.abs(e.clientX - (r.left + r.width / 2));
+      if (d <= dist) { dist = d; best = i; }
+    });
+    return best;
+  };
+  grid.addEventListener('pointermove', e => tip(nearest(e)));
+  grid.addEventListener('pointerleave', () => tip(-1));
+  grid.addEventListener('click', e => { const i = nearest(e); if (i >= 0) select(i); });
+  addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowLeft') select(current - 1);
+    if (e.key === 'ArrowRight') select(current + 1);
+  });
+  $('prev').onclick = () => select(current - 1);
+  $('next').onclick = () => select(current + 1);
+}
+
+const place = o => [sections[o.s].opera, sections[o.s].label].join(', ');
+
+function tip(i) {
+  $('tip').hidden = i < 0;
+  $('grid').style.cursor = i < 0 ? '' : 'pointer';
+  if (i < 0) return;
+  const o = occs[i], r = marks[i].getBoundingClientRect(), t = $('tip');
+  t.replaceChildren(`${place(o)}, measure ${Math.floor(o.from)}`);
+  if (o.label) t.append(el('small', '', o.label));
+  t.style.left = `${Math.min(Math.max(r.left + r.width / 2, 110), innerWidth - 110)}px`;
+  t.style.top = `${r.top}px`;
+}
+
+function select(i) {
+  if (i < 0 || i >= occs.length) return;
+  marks[current]?.classList.remove('sel');
+  current = i;
+  marks[i].classList.add('sel');
+  history.replaceState(null, '', `#${encodeURIComponent(occs[i].id)}`);
+  $('count').textContent = `${i + 1} of ${occs.length}`;
+  $('prev').disabled = i === 0;
+  $('next').disabled = i === occs.length - 1;
+  show(occs[i]);
+}
+
+function show(o) {
+  const s = sections[o.s], where = [s.opera, s.label];
+  if (o.scene > 0 && s.label !== `Scene ${o.scene}`) where.push(`Scene ${o.scene}`);
+  const a = Math.floor(o.from), b = Math.ceil(o.to) - 1;
+  $('where').textContent = where.join(', ');
+  $('measures').textContent = b > a ? `Measures ${a}–${b}` : `Measure ${a}`;
+  $('form').textContent = o.label || '';
+  $('note').textContent = o.note || '';
+
+  const lib = $('libretto'), lines = o.libretto || [];
+  lib.replaceChildren();
+  for (const l of lines) {
+    if (l.kind === 'sung') {
+      const d = el('div');
+      d.append(el('span', 'who', l.person), el('p', 'words', l.text));
+      lib.append(d);
+    } else {
+      lib.append(el('p', 'stage', l.text));
+    }
+  }
+  if (!lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
+
+  showNotation(o.notation?.musicxml);
+}
+
+let engine, seq = 0;
+function loadEngine() {
+  engine ??= new Promise((resolve, reject) => {
+    const s = el('script');
+    s.src = VEROVIO;
+    s.onerror = () => reject(new Error('The notation engine (Verovio) did not load. Check your connection.'));
+    s.onload = () => verovio.module.calledRun ? resolve() : (verovio.module.onRuntimeInitialized = resolve);
+    document.head.append(s);
+  }).then(() => {
+    const tk = new verovio.toolkit();
+    tk.setOptions({ breaks: 'none', adjustPageWidth: true, adjustPageHeight: true, svgViewBox: true,
+      scale: 55, header: 'none', footer: 'none', pageMarginLeft: 20, pageMarginRight: 20, pageMarginTop: 20, pageMarginBottom: 20 });
+    return tk;
+  });
+  return engine;
+}
+
+async function showNotation(xml) {
+  const box = $('notation'), mine = ++seq;
+  box.replaceChildren(el('p', 'quiet', xml ? 'Engraving…' : 'No notation for this appearance.'));
+  if (!xml) return;
+  try {
+    const tk = await loadEngine();
+    if (mine !== seq) return;
+    if (!tk.loadData(xml)) throw new Error('The notation for this appearance could not be read.');
+    box.innerHTML = tk.renderToSVG(1);
+  } catch (err) {
+    if (mine === seq) box.replaceChildren(el('p', 'quiet', err.message));
+  }
+}
+</script>
+</body>
+</html>
