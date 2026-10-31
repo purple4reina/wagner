@@ -4,7 +4,7 @@ file that leitmotifs/index.html reads (format: leitmotifs/DATA-SPEC.md).
 The melody comes from a definition file, leitmotifs/definitions/<id>.json, so that the same searches serve
 every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
 and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
-page draws the melody; clef and key_signature are optional, see original_musicxml()).
+page draws the melody; partial, clef and key_signature are optional, see original_musicxml()).
 
 Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
 passage are in one staff and voice, they follow each other with no gap, and tied notes are merged.
@@ -563,12 +563,12 @@ def original_occurrence(at):
     """Return the occurrence that holds the original melody, at measure `at` of its section."""
     up, words = DEF["original"]["octaves_up"], {1: "one", 2: "two", 3: "three"}
     pickups = {"2": "one half note", "4": "one quarter note", "8": "one eighth note", "16": "one sixteenth note"}
-    sig = DEF["original"].get("key_signature", 0)
+    sig, partial = DEF["original"].get("key_signature", 0), DEF["original"].get("partial")
     key = f"{words.get(abs(sig), abs(sig))} {'sharp' if sig > 0 else 'flat'}{'' if abs(sig) == 1 else 's'} in the key signature" if sig else "no key signature"
     return dict(
         id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
         note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
-             + f"engraved from your notes. It starts with a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
+             + f"engraved from your notes. {f'It starts with a pickup of {pickups.get(partial, partial)}' if partial else 'It has no pickup'}, "
              f"the bars are in {DEF['original']['time']}, and the score has a {DEF['original'].get('clef', 'treble')} clef and {key}. It is not a passage of the score.",
         libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": at, "to": at + 1})
 
