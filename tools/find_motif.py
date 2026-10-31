@@ -1,35 +1,62 @@
 """Find a melody in the piano score of the Wagner Ring Dataset and write the motif data
 file that leitmotifs/index.html reads (format: leitmotifs/DATA-SPEC.md).
 
-Each passage has a level that tells how close it is to the melody (see LEVELS). All notes of a
+The melody comes from a definition file, leitmotifs/definitions/<id>.json, so that the same searches serve
+every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
+and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
+page draws the melody).
+
+Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
 passage are in one staff and voice, they follow each other with no gap, and tied notes are merged.
+Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
+note of the same staff and voice, or they begin and end at the same moments.
 The notation excerpt of a passage is copied from the score (see excerpt()).
 
-usage: python3 -I tools/find_motif.py [--data DIR] [--out FILE] [--closest N]
+usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
 import argparse, copy, csv, json, math, pathlib, re, subprocess, tempfile
 import xml.etree.ElementTree as ET
 from bisect import bisect_right
 from collections import defaultdict
 from fractions import Fraction
+from itertools import islice
 from types import SimpleNamespace
 
+MAX_CHAINS = 64  # the most ways to match one start that find_core() compares
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-MOTIF_ID, MOTIF_NAME = "siegfried", "Siegfried"
-MOTIF_LY = "g,8 c4. ~c4 c8 es4. d4 c8 aes2. c4. bes,4 aes,8 es4. ~es4 es8 f4. ~f8 es8 f8 g2."
-CORE_NOTES = (2, 13)  # the notes of MOTIF_LY that levels 2 and 3 look for, counted from 1
+DEFINITIONS = ROOT / "leitmotifs" / "definitions"
 ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not part of the score
-ORIGINAL_OCTAVES_UP = 1  # the original is drawn and played this many octaves above MOTIF_LY; the search is not affected
-LEVELS = [
-    dict(level=0, label="Original", name="The melody as given",
-         description="The melody as you gave it. It is not a passage of the score."),
-    dict(level=1, name="Closest to the original",
-         description="The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."),
-    dict(level=2, name="Same core pitches",
-         description="Notes 2 to 13 of the phrase have the same pitches, in any octave, but the rhythm differs."),
-    dict(level=3, name="Other keys",
-         description="Notes 2 to 13 of the phrase have the same intervals, moved to another key, in any octave. The rhythm may differ."),
-]
+
+
+def openings():
+    """Return how many notes the levels after "Other keys" keep: the first notes of the core, longest first.
+    The count is in notes of MOTIF, which has repeated notes merged. A definition may set "openings"."""
+    return [k for k in DEF.get("openings", [8, 6]) if k < CORE[1] - CORE[0]]
+
+
+def levels():
+    """Return the description of each level, for the motif file."""
+    first, last = DEF["core_notes"]
+    chance = "Short cells also match by chance, so some of these passages are coincidences."
+    out = [
+        dict(level=0, label="Original", name="The melody as given",
+             description="The melody as you gave it. It is not a passage of the score."),
+        dict(level=1, name="Closest to the original",
+             description="The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."),
+        dict(level=2, name="Same core pitches",
+             description=f"Notes {first} to {last} of the phrase have the same pitches, in any octave, but the rhythm differs."),
+        dict(level=3, name="One note different",
+             description=f"Notes {first} to {last} of the phrase have the same pitches, in any octave, except one note. The rhythm may differ."),
+        dict(level=4, name="Other keys",
+             description=f"Notes {first} to {last} of the phrase have the same intervals, moved to another key, in any octave. The rhythm may differ."),
+    ]
+    for level, k in enumerate(openings(), start=5):
+        a, b = numbers(CORE[0], k)
+        out.append(dict(level=level, name=f"Opening, other keys" if level == 5 else "Shorter opening, other keys",
+                        description=f"Only the first notes, {a} to {b} of the phrase, have the same intervals, moved to another key. The rhythm may differ. {chance}"))
+    return out
+
+
 OPERAS = [
     ("Das Rheingold", ["WWV086A"]),
     ("Die Walküre", ["WWV086B-1", "WWV086B-2", "WWV086B-3"]),
@@ -65,14 +92,24 @@ def collapse(notes):
     return out
 
 
-IDEAL = parse_ly(MOTIF_LY)
-MOTIF = collapse(IDEAL)  # what the search matches: a repeated note counts as one note
-N = len(MOTIF)
-CORE = tuple(next(i for i, m in enumerate(MOTIF) if m[3] <= n - 1 <= m[4]) + k for n, k in zip(CORE_NOTES, (0, 1)))
+DEF = IDEAL = MOTIF = N = CORE = None  # set by use()
+
+
+def load_definition(motif_id):
+    return json.loads((DEFINITIONS / f"{motif_id}.json").read_text(encoding="utf-8"))
+
+
+def use(definition):
+    """Make `definition` the melody that every search in this module looks for."""
+    global DEF, IDEAL, MOTIF, N, CORE
+    DEF, IDEAL = definition, parse_ly(definition["lilypond"])
+    MOTIF = collapse(IDEAL)  # what the search matches: a repeated note counts as one note
+    N = len(MOTIF)
+    CORE = tuple(next(i for i, m in enumerate(MOTIF) if m[3] <= n - 1 <= m[4]) + k for n, k in zip(definition["core_notes"], (0, 1)))
 
 
 def numbers(start, length):
-    """Return the numbers (counted from 1) of the first and last note of MOTIF_LY in MOTIF[start:start + length]."""
+    """Return the numbers (counted from 1) of the first and last note of the melody in MOTIF[start:start + length]."""
     return MOTIF[start][3] + 1, MOTIF[start + length - 1][4] + 1
 
 
@@ -200,22 +237,23 @@ def make_run(by, ends, groups, start):
                            shown=flat(before) + notes + flat(after))
 
 
-def apart(spans):
-    """Yield the (span, item) pairs of `spans` that do not overlap an earlier pair in time."""
-    kept = []
-    for (t0, t1), item in spans:
-        if not any(t0 < k1 and k0 < t1 for k0, k1 in kept):
-            kept.append((t0, t1))
-            yield (t0, t1), item
+def identity(run):
+    """Return the keys by which two passages are the same statement: where it ends in its line, where it starts in
+    its line (a shorter cell that begins with a longer passage is part of it), and its start and end."""
+    last, first = run.groups[-1][-1], run.groups[0][0]
+    end = last.onset + last.dur
+    return ("end", first.line, end), ("start", first.line, first.onset), ("span", first.onset, end)
 
 
 def find_runs(merged, min_len=6):
-    """Return the longest partial matches of MOTIF, longest first, without two at the same time.
+    """Return the longest partial matches of MOTIF, longest first.
 
     A run is a stretch of one line that matches MOTIF[start:start + length] in pitch class and rhythm.
+    Runs may overlap in time. A shorter run is dropped only if a longer one has the same alignment with MOTIF,
+    which means that it is a part of the same statement.
     Notes that repeat one pitch in a row count as one note: a group of repeats matches a note of MOTIF if
     the durations of the group add up to the duration of that note.
-    If a chord doubles the line, the run whose intervals are closest to those of MOTIF_LY wins.
+    If a chord doubles the line, the run whose intervals are closest to those of the melody wins.
     """
     by, ends = index(merged)
 
@@ -240,38 +278,55 @@ def find_runs(merged, min_len=6):
             if len(c) >= min_len:
                 runs.append((len(c), j, c))
     runs.sort(key=lambda r: (-r[0], shape_error(r[2], r[1])))
-    spans = (((c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur), (j, c)) for _, j, c in runs)
-    return [make_run(by, ends, c, j) for _, (j, c) in apart(spans)]
+    seen, kept = set(), []
+    for _, j, c in runs:
+        phrase_start = c[0][0].onset - sum(m[1] for m in MOTIF[:j])  # where MOTIF would begin, if this run were its start
+        if phrase_start not in seen:
+            seen.add(phrase_start)
+            kept.append(make_run(by, ends, c, j))
+    return kept
 
 
-def find_core(merged, transposed=False):
+def find_core(merged, transposed=False, wrong=0, length=None):
     """Return the passages in which the notes MOTIF[CORE] have the same pitch classes, with any rhythm.
 
     If `transposed` is true, the passages have the same intervals instead, so the key may differ.
+    `wrong` notes may be anything. `length` keeps only the first `length` notes of the core.
     Notes that repeat one pitch in a row count as one note.
     """
     by, ends = index(merged)
-    lo, hi = CORE
+    lo = CORE[0]
+    hi = CORE[1] if length is None else lo + length
 
-    def follow(line, t, i, prev):
+    def follow(line, t, i, prev, errors, allowed):
         for g in by.get((line, t), ()):
             pc, before = MOTIF[lo + i][0], MOTIF[lo + i - 1][0]
-            if (not transposed and g.midi % 12 == pc) or (transposed and (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)):
-                # Try every number of repeats, because a held chord note of the same pitch can run on after the melody.
-                for group in repeats(by, g):
-                    if lo + i + 1 == hi:
-                        yield [group]
-                    else:
-                        for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, g):
-                            yield [group] + rest
+            right = (g.midi % 12 == pc) if not transposed else (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)
+            if errors + (not right) > allowed:
+                continue
+            # Try every number of repeats, because a held chord note of the same pitch can run on after the melody.
+            for group in repeats(by, g):
+                if lo + i + 1 == hi:
+                    yield [group]
+                else:
+                    for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, g, errors + (not right), allowed):
+                        yield [group] + rest
 
-    hits = []
+    # Passages may overlap. Starts at the repeats of the first note give the same statement, and so does
+    # the same statement in two staves, so each statement is kept once, at its earliest start.
+    best = {}
     for line, t in by:
-        found = list(follow(line, t, 0, None))
+        for allowed in range(wrong + 1):  # a start that has an exact match needs no wrong note
+            # Each wrong note multiplies the ways to match, so look at a limited number of them only.
+            found = list(islice(follow(line, t, 0, None, 0, allowed), MAX_CHAINS))
+            if found:
+                break
         if found:
             c = min(found, key=lambda c: (shape_error(c, lo), -len(c[0])))
-            hits.append(((c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur), c))
-    return [make_run(by, ends, c, lo) for _, c in apart(sorted(hits, key=lambda h: h[0]))]
+            span = (c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur)
+            if (line, span[1]) not in best or span[0] < best[(line, span[1])][0][0]:
+                best[(line, span[1])] = (span, c)
+    return [make_run(by, ends, c, lo) for _, c in sorted({span: (span, c) for span, c in best.values()}.values(), key=lambda h: h[0])]
 
 
 def eighths(dur):
@@ -284,7 +339,7 @@ def describe(pc, dur):
 
 
 def difference(run):
-    """Return the text that tells how a partial match differs from MOTIF_LY."""
+    """Return the text that tells how a partial match differs from the melody."""
     j, end = run.start, run.start + run.length
     text = [f"Your notes {numbers(j, run.length)[0]} to {numbers(j, run.length)[1]} (of {len(IDEAL)}) match in pitch and rhythm."]
     if j > 0:
@@ -297,7 +352,7 @@ def difference(run):
 
 
 def rhythm_text(run):
-    """Return the text that tells the rhythm of a core match next to the rhythm of MOTIF_LY."""
+    """Return the text that tells the rhythm of a core match next to the rhythm of the melody."""
     def row(durations):
         return " ".join(str(eighths(d)) for d in durations)
     return (f"In eighth notes, the score plays them as {row(total(g) for g in run.groups)}; yours are "
@@ -305,13 +360,26 @@ def rhythm_text(run):
 
 
 def rhythm_difference(run):
-    """Return the text that tells how the rhythm of a same-pitch core match differs from MOTIF_LY."""
+    """Return the text that tells how the rhythm of a same-pitch core match differs from the melody."""
     first, last = numbers(run.start, run.length)
     return f"Your notes {first} to {last} (of {len(IDEAL)}) have the same pitches here, but not the same rhythm. {rhythm_text(run)}"
 
 
+def wrong_note_difference(run, same_rhythm):
+    """Return the text that tells which note of a one-note-different core match is not the one of the melody."""
+    first, last = numbers(run.start, run.length)
+    parts = []
+    for k, group in enumerate(run.groups, start=run.start):
+        if group[0].midi % 12 != MOTIF[k][0]:
+            a, b = MOTIF[k][3] + 1, MOTIF[k][4] + 1
+            parts.append(f"Your note{'' if a == b else 's'} {a if a == b else f'{a} to {b}'} {'is' if a == b else 'are'} "
+                         f"{PC_NAME[MOTIF[k][0]]}; the score has {PC_NAME[group[0].midi % 12]} there.")
+    return (f"Your notes {first} to {last} (of {len(IDEAL)}) have the same pitches here, except one. {' '.join(parts)} "
+            + ("The rhythm is the same." if same_rhythm else f"The rhythm differs. {rhythm_text(run)}"))
+
+
 def key_difference(run, same_rhythm):
-    """Return the text that tells how a transposed core match differs from MOTIF_LY."""
+    """Return the text that tells how a transposed core match differs from the melody."""
     mine, here = MOTIF[run.start][0], run.run[0].midi % 12
     up = (here - mine) % 12
     first, last = numbers(run.start, run.length)
@@ -409,19 +477,19 @@ def excerpt(chain, measures):
 
 
 def original_musicxml():
-    """Return a MusicXML score of MOTIF_LY that the page only uses to play the melody.
+    """Return a MusicXML score of the melody that the page only uses to play it.
 
-    It has the pitches and durations of MOTIF_LY and the ties that it marks. The score looks like nothing:
+    It has the pitches and durations of the melody and the ties that it marks. The score looks like nothing:
     it uses LilyPond's default clef, key and 4/4, and splits a note that crosses a barline into tied notes.
     The drawing of the original comes from original_svg().
     """
     bar = 8  # eighth notes in 4/4
     kinds = {8: ("whole", 0), 6: ("half", 1), 4: ("half", 0), 3: ("quarter", 1), 2: ("quarter", 0), 1: ("eighth", 0)}
-    tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", MOTIF_LY)
+    tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", DEF["lilypond"])
     notes, pos = [], 0
     for i, (tie, name, octave, den, dots) in enumerate(tokens):
         pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),
-                 3 + octave.count("'") - octave.count(",") + ORIGINAL_OCTAVES_UP)
+                 3 + octave.count("'") - octave.count(",") + DEF["original"]["octaves_up"])
         tied_on = i + 1 < len(tokens) and bool(tokens[i + 1][0])
         remaining, pieces = int(Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots)))), []
         while remaining:
@@ -449,19 +517,21 @@ def original_musicxml():
 
 
 def original_svg():
-    """Return the SVG that LilyPond draws for MOTIF_LY exactly as written.
+    """Return the SVG that LilyPond draws for the melody exactly as written.
 
-    The LilyPond file holds the notes of MOTIF_LY, a one-eighth pickup (\\partial 8) and 6/8, which is the only meter
-    in which the durations of MOTIF_LY fill the bars. LilyPond uses its own clef and key.
-    \\transpose moves the notes up ORIGINAL_OCTAVES_UP octaves and leaves the text of MOTIF_LY as it is.
+    The LilyPond file holds the notes of the melody, its pickup (\\partial) and its time, which the definition gives
+    (the durations of the melody fill the bars only in that time). LilyPond uses its own clef and key.
+    \\transpose moves the notes up `octaves_up` octaves and leaves the text of the melody as it is.
     It only adds what a tight, cropped drawing needs: no indent, no page number and no tagline.
     LilyPond runs in the Docker image of the project notes. If it cannot run, this raises an error. The original
     must never be drawn by anything else.
     """
+    original = DEF["original"]
     source = ('\\version "2.25.12"\n'
               "\\paper { indent = 0\\mm print-page-number = ##f oddHeaderMarkup = ##f evenHeaderMarkup = ##f "
               "oddFooterMarkup = ##f evenFooterMarkup = ##f tagline = ##f }\n"
-              "\\transpose c c" + "'" * ORIGINAL_OCTAVES_UP + " { \\time 6/8 \\partial 8 " + MOTIF_LY + " }\n")
+              "\\transpose c c" + "'" * original["octaves_up"] + f" {{ \\time {original['time']} \\partial {original['partial']} "
+              + DEF["lilypond"] + " }\n")
     with tempfile.TemporaryDirectory() as tmp:
         pathlib.Path(tmp, "original.ly").write_text(source, encoding="utf-8")
         command = ["docker", "run", "--rm", "-v", f"{tmp}:/app", "-w", "/app", "jeandeaual/lilypond:latest",
@@ -488,13 +558,37 @@ def read_csv(path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("motif", help="the id of a definition in leitmotifs/definitions, for example siegfried")
     ap.add_argument("--data", type=pathlib.Path, default=ROOT / "data")
-    ap.add_argument("--out", type=pathlib.Path, default=ROOT / "leitmotifs" / "motifs" / f"{MOTIF_ID}.json")
+    ap.add_argument("--out", type=pathlib.Path, help="default: leitmotifs/motifs/<id>.json")
     ap.add_argument("--closest", type=int, default=2, help="partial matches of the whole phrase that make level 1, if none is complete")
+    ap.add_argument("--refresh", action="store_true",
+                    help="only refresh the texts of the existing output file, which are the translations and the level descriptions, without the search (a few seconds)")
     args = ap.parse_args()
+    use(load_definition(args.motif))
+    args.out = args.out or ROOT / "leitmotifs" / "motifs" / f"{DEF['id']}.json"
+    if args.refresh:
+        translations = json.loads((ROOT / "leitmotifs" / "translations.json").read_text(encoding="utf-8"))
+        data = json.loads(args.out.read_text(encoding="utf-8"))
+        missing = set()
+        for o in data["occurrences"]:
+            for line in o["libretto"] or []:
+                if line["kind"] == "sung":
+                    line.pop("translation", None)
+                    if line["text"] in translations:
+                        line["translation"] = translations[line["text"]]
+                    else:
+                        missing.add(line["text"])
+        data["levels"] = levels()
+        args.out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"texts refreshed in {args.out}")
+        for text in sorted(missing):
+            print(f"no English in translations.json for: {text}")
+        return
     ann, score = args.data / "02_Annotations", args.data / "01_RawData" / "score_musicxml"
 
-    sections, runs, cores, keys = [], [], [], []
+    sections, runs, cores, wrongs, keys = [], [], [], [], []
+    shorts = {k: [] for k in openings()}
     for opera, works in OPERAS:
         for work in works:
             scenes = [(float(r["measure_start"]), float(r["measure_end"]), int(r["scene"])) for r in read_csv(f"{ann}/ann_score_scenes/Wagner_{work}.csv")]
@@ -513,29 +607,36 @@ def main():
             act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets)
             runs += [(run, act) for run in find_runs(merged)]
             cores += [(run, act) for run in find_core(merged)]
+            wrongs += [(run, act) for run in find_core(merged, wrong=1)]
             keys += [(run, act) for run in find_core(merged, transposed=True)]
-
-    def span(run, act):
-        return act.work, run.shown[0].onset, run.shown[-1].onset + run.shown[-1].dur
+            for k in shorts:
+                shorts[k] += [(run, act) for run in find_core(merged, transposed=True, length=k)]
 
     def new_in(found, taken):
-        """Return the passages of `found` that do not overlap a span of `taken`, and add them to `taken`."""
-        fresh = [f for f in found if not any(w == span(*f)[0] and span(*f)[1] < t1 and t0 < span(*f)[2] for w, t0, t1 in taken)]
-        taken += [span(*f) for f in fresh]
+        """Return the passages of `found` that are not the same statement as one in `taken`, and add them to `taken`.
+        A passage that only overlaps one in `taken` in time is a different statement and stays."""
+        fresh = []
+        for run, act in found:
+            keys_of = [(act.work, k) for k in identity(run)]
+            if not any(k in taken for k in keys_of):
+                fresh.append((run, act))
+                taken.update(keys_of)
         return fresh
 
-    taken = []
+    taken = set()
     level1 = [f for f in runs if f[0].length == N] or sorted(runs, key=lambda f: -f[0].length)[:args.closest]
-    taken += [span(*f) for f in level1]
-    level2 = new_in(cores, taken)
-    level3 = new_in(keys, taken)
+    for run, act in level1:
+        taken.update((act.work, k) for k in identity(run))
+    found_at = {1: level1, 2: new_in(cores, taken), 3: new_in(wrongs, taken), 4: new_in(keys, taken)}
+    for level, k in enumerate(openings(), start=5):  # the shorter the cell, the later the level
+        found_at[level] = new_in(shorts[k], taken)
 
     translations_path = ROOT / "leitmotifs" / "translations.json"
     translations = json.loads(translations_path.read_text(encoding="utf-8")) if translations_path.exists() else {}
     untranslated = set()
 
     occurrences = []
-    for level, found in ((1, level1), (2, level2), (3, level3)):
+    for level, found in sorted(found_at.items()):
         for run, act in found:
             def locate(t):
                 mi = bisect_right(act.offsets, t) - 1
@@ -550,11 +651,21 @@ def main():
             elif level == 2:
                 label = "Same pitches and rhythm" if same_rhythm else "Same pitches, different rhythm"
                 note = None if same_rhythm else rhythm_difference(run)
-            else:
+            elif level == 3:
+                label = "Same pitches, one note different"
+                note = wrong_note_difference(run, same_rhythm)
+            elif level == 4:
                 label = "Another key, same rhythm" if same_rhythm else "Another key, different rhythm"
                 note = key_difference(run, same_rhythm)
+            else:
+                first, last = numbers(run.start, run.length)
+                label = f"First {last - first + 1} notes, another key"
+                note = key_difference(run, same_rhythm)
+            unique = f"{act.work[6:]}-{a:.3f}"
+            while unique in {o["id"] for o in occurrences}:  # overlapping passages may begin at the same note
+                unique += f"-L{level}"
             occurrences.append(dict(
-                id=f"{act.work[6:]}-{a:.3f}", act=act.work, level=level,
+                id=unique, act=act.work, level=level,
                 scene=next((sc for s, e, sc in act.scenes if s <= a <= e + 0.001), None), label=label, note=note,
                 libretto=[dict(kind="sung", person=p, text=x, **({"translation": translations[x]} if x in translations else {}))
                           for s, e, p, x in act.singing if s < b and e >= a],
@@ -564,18 +675,22 @@ def main():
     # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
     width = round(sum(s["to"] - s["from"] for s in sections) * 0.04)
     sections.insert(0, dict(id="original", opera="", act=ORIGINAL_ACT, label="Original", short="Orig", original=True, **{"from": 0, "to": width}))
+    up, words = DEF["original"]["octaves_up"], {1: "one", 2: "two", 3: "three"}
+    pickups = {"2": "one half note", "4": "one quarter note", "8": "one eighth note", "16": "one sixteenth note"}
     occurrences.append(dict(
         id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
-        note="The melody as you gave it, one octave higher, drawn by LilyPond from your notes. The first note is a one-eighth pickup, the bars are 6/8, and the clef and key are LilyPond's own. It is not a passage of the score.",
+        note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
+             + f"drawn by LilyPond from your notes. The first note is a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
+             f"the bars are in {DEF['original']['time']}, and the clef and key are LilyPond's own. It is not a passage of the score.",
         libretto=None, notation=dict(svg=original_svg(), musicxml=original_musicxml()), **{"from": width / 2, "to": width / 2 + 1}))
     order = {s["act"]: i for i, s in enumerate(sections)}
     occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(dict(format=1, motif=dict(id=MOTIF_ID, name=MOTIF_NAME,
+        json.dump(dict(format=1, motif=dict(id=DEF["id"], name=DEF["name"],
                                             description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."),
-                       levels=LEVELS, sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
+                       levels=levels(), sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
     print(f"{len(occurrences)} occurrences written to {args.out}")
     for text in sorted(untranslated):
         print(f"no English in {translations_path.name} for: {text}")

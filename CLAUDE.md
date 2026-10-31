@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A local copy of the **Wagner Ring Dataset (WRD)**: a multi-modal, multi-version annotated dataset of Wagner's *Der Ring des Nibelungen* (4 operas, 11 acts, 21,939 measures, 16 commercial recordings, ~232 h). It is data, not a codebase: there is no build, lint or test step. The git repo tracks only `CLAUDE.md`, `README.md` and `tools/`; `data/` is gitignored. Almost all work is reading the CSV annotations and scores.
+A local copy of the **Wagner Ring Dataset (WRD)**: a multi-modal, multi-version annotated dataset of Wagner's *Der Ring des Nibelungen* (4 operas, 11 acts, 21,939 measures, 16 commercial recordings, ~232 h). It is data, not a codebase: there is no build, lint or test step. The git repo tracks `CLAUDE.md`, `README.md`, `tools/` and `leitmotifs/` (an HTML explorer built on the dataset, see the last section); `data/` is gitignored. Almost all work is reading the CSV annotations and scores.
 
 - Source: Zenodo record 7672157 (DOI 10.5281/zenodo.7672157), v1.0, file `WagnerRing_Public_zenodo_v0-1.zip` (10,557,603,204 bytes, md5 `27b7af7082ca721a8ff1fb5d04503f7a`).
 - Paper: Weiß et al., *TISMIR* 6(1):135–149, 2023, DOI 10.5334/tismir.161. Record licence is CC BY 3.0. Cite the paper and DOI.
@@ -75,3 +75,11 @@ Both use paths relative to the dataset root, so run them from `data/` (`cd data 
 - `merge_ripped_audio.py` (needs numpy, pandas, librosa, soundfile) concatenates CD rips into per-act WAVs in `01_RawData/audio_wav/`. It does not resample, so rips keep the CD sample rate and will not match the public 22.05 kHz files.
 
 Run Python on dataset files with `python3 -I`, and run these scripts only after reading what they currently do.
+
+## Leitmotif explorer (`leitmotifs/`)
+
+`leitmotifs/index.html` shows the passages of the piano score that match a leitmotif, on a timeline of the four operas, with the notation, the sung text and a MIDI-style Play button. `leitmotifs/README.md` says how to open it, rebuild it and add a leitmotif. `leitmotifs/DATA-SPEC.md` is the format of the data.
+
+Every file in `leitmotifs/motifs/` is generated. Never edit one by hand, and never make one in a throwaway: the user must be able to delete them and rebuild them with `tools/reproduce.sh`. The hand-written inputs are `leitmotifs/definitions/*.json` (one melody per leitmotif) and `leitmotifs/translations.json` (English for the sung German, shared by all leitmotifs). The searches serve every leitmotif, so a search or an analysis belongs in a script under `tools/` (`find_motif.py`, `make_sample.py`, `analyze_levels.py`), not in a scratch file.
+
+Matching rules, in `tools/find_motif.py`: one staff and voice, tied notes merged, a run of repeated notes counts as one note, octave is ignored, and passages may overlap in time (two are one statement only if they end on the same note of the same line, or start and end together). Step 2 of the rebuild needs Docker, because LilyPond draws the original melody.

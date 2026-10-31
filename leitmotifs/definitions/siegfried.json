@@ -1,0 +1,7 @@
+{
+ "id": "siegfried",
+ "name": "Siegfried",
+ "lilypond": "g,8 c4. ~c4 c8 es4. d4 c8 aes2. c4. bes,4 aes,8 es4. ~es4 es8 f4. ~f8 es8 f8 g2.",
+ "core_notes": [2, 13],
+ "original": { "octaves_up": 1, "time": "6/8", "partial": "8" }
+}
