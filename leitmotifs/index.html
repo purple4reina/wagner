@@ -27,6 +27,24 @@
 [hidden] { display: none !important; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.55 var(--sans); }
 main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px; }
+
+/* the leitmotifs that were analyzed, down the left side; a row above the page on a narrow screen */
+.layout { display: flex; align-items: flex-start; }
+.layout main { flex: 1; min-width: 0; }
+#motifs { position: sticky; top: 0; flex: 0 0 clamp(150px, 16vw, 210px); padding: clamp(28px, 6vw, 64px) 0 0 clamp(16px, 2vw, 32px); }
+#motifs p { margin: 0 0 10px; color: var(--muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+#motifs ul { margin: 0; padding: 0; list-style: none; }
+#motifs a { display: block; margin-left: -12px; padding: 6px 12px; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; color: var(--ink); text-decoration: none; font: 500 1.1rem/1.3 var(--serif); }
+#motifs a:hover { color: var(--motif); }
+#motifs a[aria-current] { border-left-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); }
+#motifs a:focus-visible { outline: 2px solid var(--motif); outline-offset: 2px; }
+@media (max-width: 900px) {
+  .layout { display: block; }
+  #motifs { position: static; padding: 16px clamp(16px, 4vw, 48px) 0; }
+  #motifs ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  #motifs a { margin: 0; padding: 3px 14px; border: 1px solid var(--rule); border-radius: 999px; }
+  #motifs a[aria-current] { border-color: var(--motif); }
+}
 h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.015em; margin: clamp(28px, 6vw, 64px) 0 12px; }
 .lede { max-width: 62ch; margin: 0; color: var(--muted); }
 #status p { margin: 24px 0 0; max-width: 62ch; }
@@ -89,6 +107,11 @@ footer a { color: inherit; }
 </style>
 </head>
 <body>
+<div class="layout">
+<nav id="motifs" aria-label="Leitmotifs" hidden>
+  <p>Leitmotifs</p>
+  <ul></ul>
+</nav>
 <main>
   <header>
     <h1 id="title">Leitmotif timeline</h1>
@@ -130,6 +153,7 @@ footer a { color: inherit; }
     The English lines are literal translations that Claude wrote for this page. They are not from a published edition.
   </footer>
 </main>
+</div>
 
 <script>
 const VEROVIO = 'https://cdn.jsdelivr.net/npm/verovio@4.3.1/dist/verovio-toolkit-wasm.js';
@@ -157,6 +181,20 @@ fetch(dataUrl, { cache: 'no-cache' }) // the data changes when the finder runs, 
       s.append(el('p', 'detail', 'Browsers block a page opened from disk from reading its data. In this folder run "python3 -m http.server" and open http://localhost:8000/.'));
     }
   });
+
+fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; without it the page has no sidebar
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(({ motifs }) => {
+    for (const m of motifs) {
+      const link = el('a', '', m.name), item = el('li');
+      link.href = `?motif=${encodeURIComponent(m.id)}`;
+      if (m.id === motifId) link.setAttribute('aria-current', 'page');
+      item.append(link);
+      $('motifs').querySelector('ul').append(item);
+    }
+    $('motifs').hidden = !motifs.length;
+  })
+  .catch(() => {});
 
 function init(data) {
   if (data.format !== 1 || !data.sections?.length || !Array.isArray(data.occurrences)) {

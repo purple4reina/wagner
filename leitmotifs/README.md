@@ -12,6 +12,7 @@ cd leitmotifs && python3 -m http.server
 ```
 
 Then open `http://localhost:8000/` for the Siegfried motif, or `http://localhost:8000/?motif=sample` for the test file.
+The list down the left side of the page shows every leitmotif that has been analyzed. Click one to open it.
 
 ## Rebuild all generated files
 

@@ -578,6 +578,14 @@ def read_csv(path):
         return list(csv.DictReader(f, delimiter=";"))
 
 
+def write_index():
+    """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file."""
+    folder = ROOT / "leitmotifs" / "motifs"
+    found = [load_definition(p.stem) for p in DEFINITIONS.glob("*.json") if (folder / p.name).exists()]
+    listing = [dict(id=d["id"], name=d["name"]) for d in sorted(found, key=lambda d: d["name"])]
+    (folder / "index.json").write_text(json.dumps(dict(motifs=listing), ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("motif", help="the id of a definition in leitmotifs/definitions, for example siegfried")
@@ -588,6 +596,7 @@ def main():
                     help="only refresh the texts of the existing output file (the translations and the level descriptions) and the original melody, without the search (a few seconds)")
     args = ap.parse_args()
     use(load_definition(args.motif))
+    listed = args.out is None  # a file in another place is a trial run: leave the list of the page alone
     args.out = args.out or ROOT / "leitmotifs" / "motifs" / f"{DEF['id']}.json"
     if args.refresh:
         translations = json.loads((ROOT / "leitmotifs" / "translations.json").read_text(encoding="utf-8"))
@@ -607,6 +616,8 @@ def main():
         print(f"texts refreshed in {args.out}")
         for text in sorted(missing):
             print(f"no English in translations.json for: {text}")
+        if listed:
+            write_index()
         return
     ann, score = args.data / "02_Annotations", args.data / "01_RawData" / "score_musicxml"
 
@@ -710,6 +721,8 @@ def main():
     print(f"{len(occurrences)} occurrences written to {args.out}")
     for text in sorted(untranslated):
         print(f"no English in {translations_path.name} for: {text}")
+    if listed:
+        write_index()
 
 
 if __name__ == "__main__":

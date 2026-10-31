@@ -6,6 +6,9 @@
 - URL: `index.html?motif=<id>`. The default `<id>` is `siegfried`.
 - The browser blocks `fetch` on a page that it opens from disk. Serve this folder with `python3 -m http.server`.
 - `motifs/sample.json` is a test file. Its sections come from the dataset. Every occurrence in it is made up.
+- `motifs/index.json` is the list of motifs, `{ "motifs": [{ "id": "gold", "name": "Gold" }] }`. The page shows it as links down
+  its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
+  one entry for each definition that has a motif file, in the order of the names.
 
 The page ignores fields that this document does not list.
 
