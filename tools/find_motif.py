@@ -4,10 +4,11 @@ file that leitmotifs/index.html reads (format: leitmotifs/DATA-SPEC.md).
 The melody comes from a definition file, leitmotifs/definitions/<id>.json, so that the same searches serve
 every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
 and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
-page draws the melody).
+page draws the melody; clef and key_signature are optional, see original_musicxml()).
 
 Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
 passage are in one staff and voice, they follow each other with no gap, and tied notes are merged.
+Two notes that follow each other cannot start in the same chord: a chord that repeats is not a melody.
 Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
 note of the same staff and voice, or they begin and end at the same moments.
 The notation excerpt of a passage is copied from the score (see excerpt()).
@@ -213,6 +214,15 @@ def total(group):
     return sum(n.dur for n in group)
 
 
+def follows(by, prev, g):
+    """Tell whether note `g` can come after note `prev` in a passage. It cannot if it has another pitch and both start
+    in the same chord of their line: a chord that repeats (a tremolo) holds every note of the melody at each step, so
+    it would match any melody that uses those notes. A melody in thirds or sixths changes its chord at each step, so
+    it passes, and so does a pitch that repeats."""
+    chord = lambda n: {h.midi for h in by.get((n.line, n.onset), ())}
+    return prev is None or g.midi == prev.midi or chord(prev) != chord(g)
+
+
 def make_run(by, ends, groups, start):
     """Return a passage: `groups` of notes that match MOTIF from MOTIF[start], with the groups of the line before and after."""
     def nearest(candidates, g):
@@ -258,16 +268,16 @@ def find_runs(merged, min_len=6):
     """
     by, ends = index(merged)
 
-    def extend(line, t, j):
+    def extend(line, t, j, prev=None):
         best = []
         for g in by.get((line, t), ()):
-            if g.midi % 12 != MOTIF[j][0]:
+            if g.midi % 12 != MOTIF[j][0] or not follows(by, prev, g):
                 continue
             for group in repeats(by, g):
                 if total(group) > MOTIF[j][1]:
                     break
                 if total(group) == MOTIF[j][1]:
-                    c = [group] + (extend(line, t + total(group), j + 1) if j + 1 < N else [])
+                    c = [group] + (extend(line, t + total(group), j + 1, group[-1]) if j + 1 < N else [])
                     if not best or (len(c), -shape_error(c, j)) > (len(best), -shape_error(best, j)):
                         best = c
         return best
@@ -303,14 +313,14 @@ def find_core(merged, transposed=False, wrong=0, length=None):
         for g in by.get((line, t), ()):
             pc, before = MOTIF[lo + i][0], MOTIF[lo + i - 1][0]
             right = (g.midi % 12 == pc) if not transposed else (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)
-            if errors + (not right) > allowed:
+            if errors + (not right) > allowed or not follows(by, prev, g):
                 continue
             # Try every number of repeats, because a held chord note of the same pitch can run on after the melody.
             for group in repeats(by, g):
                 if lo + i + 1 == hi:
                     yield [group]
                 else:
-                    for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, g, errors + (not right), allowed):
+                    for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, group[-1], errors + (not right), allowed):
                         yield [group] + rest
 
     # Passages may overlap. Starts at the repeats of the first note give the same statement, and so does
@@ -480,24 +490,25 @@ def excerpt(chain, measures):
 def original_musicxml():
     """Return the MusicXML score of the melody, which the page engraves and plays like a passage of the score.
 
-    The score has a treble clef, no key signature, and the time and the pickup that the definition gives. It has one
-    tie for each ~ of the melody. A note that crosses a barline becomes two tied notes. The eighth notes of one beat
-    are beamed.
+    The score has the time and the pickup that the definition gives, and its clef ("clef": "bass", else treble) and
+    key signature ("key_signature": the number of sharps, or minus the number of flats, else none). It has one
+    tie for each ~ of the melody. A note that crosses a barline becomes two tied notes. The notes shorter than a
+    quarter note in one beat are beamed.
     """
     original = DEF["original"]
     beats, unit = map(int, original["time"].split("/"))
-    bar = 8 * beats // unit  # eighth notes in a bar
-    group = 3 if unit == 8 and beats % 3 == 0 else 8 // unit  # eighth notes in a beat; a beam stops at the end of a beat
-    kinds = {8: ("whole", 0), 6: ("half", 1), 4: ("half", 0), 3: ("quarter", 1), 2: ("quarter", 0), 1: ("eighth", 0)}
-    eighths = lambda den, dots: int(Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots))))
-    pickup = eighths(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
+    bar = 16 * beats // unit  # sixteenth notes in a bar
+    group = 6 if unit == 8 and beats % 3 == 0 else 16 // unit  # sixteenth notes in a beat; a beam stops at the end of a beat
+    kinds = {16: ("whole", 0), 12: ("half", 1), 8: ("half", 0), 6: ("quarter", 1), 4: ("quarter", 0), 3: ("eighth", 1), 2: ("eighth", 0), 1: ("16th", 0)}
+    sixteenths = lambda den, dots: int(Fraction(16, int(den)) * (2 - Fraction(1, 2 ** len(dots))))
+    pickup = sixteenths(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
     tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", DEF["lilypond"])
-    notes, pos = [], (bar - pickup) % bar  # pos counts eighth notes from the start of the first bar
+    notes, pos = [], (bar - pickup) % bar  # pos counts sixteenth notes from the start of the first bar
     for i, (tie, name, octave, den, dots) in enumerate(tokens):
         pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),
                  3 + octave.count("'") - octave.count(",") + original["octaves_up"])
         tied_on = i + 1 < len(tokens) and bool(tokens[i + 1][0])
-        remaining, pieces = eighths(den, dots), []
+        remaining, pieces = sixteenths(den, dots), []
         while remaining:
             room = min(remaining, bar - pos % bar)  # up to the next barline
             while room:
@@ -505,7 +516,7 @@ def original_musicxml():
                 pieces.append((part, pos))
                 room, remaining, pos = room - part, remaining - part, pos + part
         for k, (part, at) in enumerate(pieces):
-            notes.append(dict(pitch=pitch, eighths=part, pos=at, measure=at // bar, tie_stop=bool(tie) if k == 0 else True,
+            notes.append(dict(pitch=pitch, sixteenths=part, pos=at, measure=at // bar, tie_stop=bool(tie) if k == 0 else True,
                               tie_start=True if k < len(pieces) - 1 else tied_on))
 
     run = []
@@ -514,30 +525,33 @@ def original_musicxml():
             n["beam"] = "begin" if j == 0 else "end" if j == len(run) - 1 else "continue"
         run.clear()
     for n in notes:
-        if run and not (n["eighths"] == 1 and n["pos"] // group == run[-1]["pos"] // group):
+        if run and not (n["sixteenths"] < 4 and n["pos"] // group == run[-1]["pos"] // group):
             beam_run()
-        if n["eighths"] == 1:
+        if n["sixteenths"] < 4:
             run.append(n)
     beam_run()
 
+    fifths = original.get("key_signature", 0)
+    signature = {step: 1 if fifths > 0 else -1 for step in ("FCGDAEB"[:fifths] if fifths > 0 else "BEADGCF"[:-fifths])}
     measures, in_effect = defaultdict(str), {}  # in_effect: the accidental of a pitch in the bar, as the reader remembers it
     for n in notes:
         step, alter, octave = n["pitch"]
-        kind, dots = kinds[n["eighths"]]
+        kind, dots = kinds[n["sixteenths"]]
         if n["pos"] % bar == 0 or n["pos"] == bar - pickup:
             in_effect = {}
         accidental = ""
-        if not n["tie_stop"] and in_effect.get((step, octave), 0) != alter:  # a note tied from the last bar needs none
+        if not n["tie_stop"] and in_effect.get((step, octave), signature.get(step, 0)) != alter:  # a note tied from the last bar needs none
             accidental = f"<accidental>{ {-1: 'flat', 1: 'sharp', 0: 'natural'}[alter] }</accidental>"
             in_effect[(step, octave)] = alter
         measures[n["measure"]] += (f"<note><pitch><step>{step}</step>{f'<alter>{alter}</alter>' if alter else ''}<octave>{octave}</octave></pitch>"
-                                   f"<duration>{n['eighths']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
+                                   f"<duration>{n['sixteenths']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
                                    + f"<voice>1</voice><type>{kind}</type>" + "<dot/>" * dots + accidental
                                    + (f'<beam number="1">{n["beam"]}</beam>' if n.get("beam") else "")
                                    + ("<notations>" + '<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"] + "</notations>"
                                       if n["tie_stop"] or n["tie_start"] else "") + "</note>")
-    attributes = (f"<attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>{beats}</beats><beat-type>{unit}</beat-type></time>"
-                  "<clef><sign>G</sign><line>2</line></clef></attributes>")
+    clef = "<sign>F</sign><line>4</line>" if original.get("clef") == "bass" else "<sign>G</sign><line>2</line>"
+    attributes = (f"<attributes><divisions>4</divisions><key><fifths>{fifths}</fifths></key><time><beats>{beats}</beats><beat-type>{unit}</beat-type></time>"
+                  f"<clef>{clef}</clef></attributes>")
     first = 0 if pickup else 1  # the number of the first measure: 0 for a pickup bar
     body = "".join(f'<measure number="{m + first}"{" implicit=" + chr(34) + "yes" + chr(34) if m == 0 and pickup else ""}>{attributes if m == 0 else ""}{xml}</measure>'
                    for m, xml in sorted(measures.items()))
@@ -549,11 +563,13 @@ def original_occurrence(at):
     """Return the occurrence that holds the original melody, at measure `at` of its section."""
     up, words = DEF["original"]["octaves_up"], {1: "one", 2: "two", 3: "three"}
     pickups = {"2": "one half note", "4": "one quarter note", "8": "one eighth note", "16": "one sixteenth note"}
+    sig = DEF["original"].get("key_signature", 0)
+    key = f"{words.get(abs(sig), abs(sig))} {'sharp' if sig > 0 else 'flat'}{'' if abs(sig) == 1 else 's'} in the key signature" if sig else "no key signature"
     return dict(
         id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
         note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
-             + f"engraved from your notes. The first note is a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
-             f"the bars are in {DEF['original']['time']}, and the clef and key are plain: a treble clef and no key signature. It is not a passage of the score.",
+             + f"engraved from your notes. It starts with a pickup of {pickups.get(DEF['original']['partial'], DEF['original']['partial'])}, "
+             f"the bars are in {DEF['original']['time']}, and the score has a {DEF['original'].get('clef', 'treble')} clef and {key}. It is not a passage of the score.",
         libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": at, "to": at + 1})
 
 

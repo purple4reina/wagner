@@ -75,14 +75,14 @@ def pitch_search(seq, mode, tolerance):
         def follow(t, i, prev, errors):
             for g in by.get((line, t), ()):
                 errors_now = errors + (0 if check(g, prev, i) else 1)
-                if errors_now > tolerance:
+                if errors_now > tolerance or not fm.follows(by, prev, g):
                     continue
                 group = list(fm.repeats(by, g))[-1]
                 end = group[-1].onset + group[-1].dur
                 if i + 1 == n:
                     yield end
                 else:
-                    yield from follow(end, i + 1, g, errors_now)
+                    yield from follow(end, i + 1, group[-1], errors_now)
         return next(follow(t, 0, None, 0), None)
 
     return first_chain
