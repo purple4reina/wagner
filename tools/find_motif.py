@@ -53,7 +53,8 @@ def levels():
     for level, k in enumerate(openings(), start=5):
         a, b = numbers(CORE[0], k)
         out.append(dict(level=level, name=f"Opening, other keys" if level == 5 else "Shorter opening, other keys",
-                        description=f"Only the first notes, {a} to {b} of the phrase, have the same intervals, moved to another key. The rhythm may differ. {chance}"))
+                        description=f"Only the first notes, {a} to {b} of the phrase, have the same intervals, moved to another key. The rhythm may differ. {chance}",
+                        **({"hidden_by_default": True} if level == 4 + len(openings()) else {})))  # the shortest opening is mostly chance
     return out
 
 

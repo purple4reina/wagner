@@ -40,7 +40,8 @@
   {
    "level": 6,
    "name": "Shorter opening, other keys",
-   "description": "Only the first notes, 2 to 8 of the phrase, have the same intervals, moved to another key. The rhythm may differ. Short cells also match by chance, so some of these passages are coincidences."
+   "description": "Only the first notes, 2 to 8 of the phrase, have the same intervals, moved to another key. The rhythm may differ. Short cells also match by chance, so some of these passages are coincidences.",
+   "hidden_by_default": true
   }
  ],
  "sections": [

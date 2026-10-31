@@ -183,12 +183,18 @@ function init(data) {
     skipped && `${skipped} more fall outside every section and are not shown.`,
   ].filter(Boolean).join(' ');
 
+  // A level that the data marks "hidden_by_default" starts switched off, unless the link points into it.
+  const linked = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
+  for (const n of new Set(occs.map(o => o.level))) {
+    if (levelInfo.get(n)?.hidden_by_default && n !== occs[linked]?.level) hidden.add(n);
+  }
+  if (hidden.size >= levelCount) hidden.clear(); // keep one level on
+
   buildLevels();
   buildTimeline();
   if (!occs.length) return;
   $('detail').hidden = false;
-  const k = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
-  select(k >= 0 ? k : 0);
+  select(linked >= 0 ? linked : occs.findIndex((_, i) => visible(i)));
 }
 
 function buildLevels() {
@@ -200,7 +206,7 @@ function buildLevels() {
     if (info?.description) text.append(el('small', '', info.description));
     button.type = 'button';
     button.className = 'levelbtn';
-    button.setAttribute('aria-pressed', 'true');
+    button.setAttribute('aria-pressed', String(!hidden.has(n)));
     button.append(swatch, text, el('span', 'count', `${occs.filter(o => o.level === n).length}`));
     button.onclick = () => toggleLevel(n, button);
     $('levels').append(button);
@@ -255,6 +261,7 @@ function buildTimeline() {
     const s = sections[o.s], m = el('i');
     m.style.left = `${(o.from - s.from) / (s.to - s.from) * 100}%`;
     m.style.setProperty('--lv', o.level);
+    m.hidden = hidden.has(o.level);
     s.seg.append(m);
     return m;
   });
