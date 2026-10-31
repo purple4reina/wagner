@@ -104,7 +104,7 @@ footer a { color: inherit; }
     <div>
       <div class="notation" id="notation" aria-live="polite"></div>
       <div class="player">
-        <button type="button" id="play" disabled aria-label="Play the melody that the notation shows">Play</button>
+        <button type="button" id="play" disabled aria-label="Play the melody that the notation shows" title="Play or stop (space bar)">Play</button>
       </div>
       <div class="stepper">
         <button type="button" id="prev">Previous</button>
@@ -274,6 +274,13 @@ function buildTimeline() {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'ArrowLeft') step(-1);
     if (e.key === 'ArrowRight') step(1);
+    if (e.key === ' ' && !e.target.closest('input, select, textarea')) { // the space bar starts and stops the sound
+      e.preventDefault(); // no page scroll, and no click on a button that has the focus
+      if (!e.repeat && !$('play').disabled) $('play').click();
+    }
+  });
+  addEventListener('keyup', e => {
+    if (e.key === ' ' && !e.target.closest('input, select, textarea')) e.preventDefault(); // a button would click on keyup
   });
   $('prev').onclick = () => step(-1);
   $('next').onclick = () => step(1);
