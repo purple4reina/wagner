@@ -37,8 +37,15 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 .grid { display: grid; grid-template-rows: auto 60px auto; column-gap: 3px; min-width: 760px; }
 .opera { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 3px solid var(--oc); font: italic 500 1.05rem/1.2 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .seg { position: relative; border-radius: 3px; background: color-mix(in srgb, var(--oc) 16%, var(--paper)); }
-.seg i { position: absolute; top: 8px; bottom: 8px; width: 2px; margin-left: -1px; background: var(--motif); pointer-events: none; }
-.seg i.sel { top: -6px; bottom: -6px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--sel); box-shadow: 0 0 0 2px var(--paper); z-index: 1; }
+/* --lv is the level of a mark: the farther from the original, the shorter and fainter it is */
+.seg i { position: absolute; top: calc(8px + (var(--lv, 1) - 1) * 7px); bottom: calc(8px + (var(--lv, 1) - 1) * 7px); width: 2px; margin-left: -1px; background: var(--motif); opacity: max(.4, calc(1 - (var(--lv, 1) - 1) * .22)); pointer-events: none; }
+.seg i.sel { top: -6px; bottom: -6px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--sel); opacity: 1; box-shadow: 0 0 0 2px var(--paper); z-index: 1; }
+.swatch { display: block; width: 3px; height: max(8px, calc(22px - (var(--lv, 1) - 1) * 5px)); margin: 0 auto; border-radius: 1px; background: var(--motif); opacity: max(.4, calc(1 - (var(--lv, 1) - 1) * .22)); }
+.levels { display: grid; gap: 8px; max-width: 760px; margin-top: 28px; }
+.levelbtn { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; padding: 8px 14px; text-align: left; }
+.levelbtn[aria-pressed="false"] { opacity: .5; }
+.levelbtn small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.35; }
+.levelbtn .count { color: var(--muted); font-size: .85rem; }
 .act { margin-top: 9px; font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 #tip { position: fixed; z-index: 5; transform: translate(-50%, calc(-100% - 10px)); padding: 5px 9px; border-radius: 4px; background: var(--ink); color: var(--paper); font-size: .8rem; line-height: 1.3; white-space: nowrap; pointer-events: none; }
 #tip small { display: block; opacity: .75; }
@@ -57,13 +64,18 @@ button:disabled { opacity: .4; cursor: default; }
 button:focus-visible { outline: 2px solid var(--motif); outline-offset: 2px; }
 h2 { margin: 0; font: 500 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--serif); }
 .meta { margin: 4px 0 0; color: var(--muted); }
+.chip { display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; padding: 1px 10px 1px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); font-size: .8rem; }
+.chip .swatch { height: 12px; margin: 0; }
 #form { margin: 18px 0 0; color: var(--motif); font: italic 1.1rem/1.4 var(--serif); }
 #note { max-width: 56ch; margin: 12px 0 0; }
 #form:empty, #note:empty { display: none; }
 #libretto { max-width: 56ch; margin-top: 28px; }
 .who { font-weight: 600; font-size: .85rem; }
-.words { margin: 2px 0 14px; font: 1.2rem/1.5 var(--serif); white-space: pre-line; }
-.stage { margin: 0 0 14px; padding-left: 14px; border-left: 2px solid var(--rule); color: var(--muted); font: italic 1rem/1.5 var(--serif); white-space: pre-line; }
+.sung { margin-bottom: 14px; }
+.words { margin: 2px 0 0; font: 1.2rem/1.5 var(--serif); white-space: pre-line; }
+.trans { margin: 1px 0 0; color: var(--muted); font-size: .95rem; white-space: pre-line; }
+.stage { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid var(--rule); color: var(--muted); }
+.stage .words { font: italic 1rem/1.5 var(--serif); }
 .quiet { margin: 0; color: var(--muted); }
 footer { max-width: 70ch; margin-top: 56px; color: var(--muted); font-size: .8rem; }
 footer a { color: inherit; }
@@ -77,6 +89,7 @@ footer a { color: inherit; }
   </header>
 
   <div id="status" role="status"></div>
+  <div class="levels" id="levels" role="group" aria-label="Levels: how close each appearance is to the original" hidden></div>
 
   <section class="scroll" id="timeline" aria-label="Every appearance of the motif, in story order" hidden>
     <div class="grid" id="grid"></div>
@@ -104,6 +117,7 @@ footer a { color: inherit; }
   <footer>
     Measure positions, sung text, scene boundaries and the piano score come from the Wagner Ring Dataset
     (Weiß et al., <i>TISMIR</i> 6(1), 2023, <a href="https://doi.org/10.5334/tismir.161">doi:10.5334/tismir.161</a>, CC BY 3.0).
+    The English lines are literal translations that Claude wrote for this page. They are not from a published edition.
   </footer>
 </main>
 
@@ -119,7 +133,9 @@ const el = (tag, cls, text) => {
 
 const motifId = new URLSearchParams(location.search).get('motif') || 'siegfried';
 const dataUrl = `motifs/${encodeURIComponent(motifId)}.json`;
-let sections, occs, marks, current = -1;
+let sections, occs, marks, levelInfo, levelCount, current = -1;
+const hidden = new Set(); // the levels that the viewer switched off
+const visible = i => !hidden.has(occs[i].level);
 
 fetch(dataUrl)
   .then(r => r.ok ? r.json() : Promise.reject(new Error(`${dataUrl} returned ${r.status}.`)))
@@ -140,10 +156,12 @@ function init(data) {
   if (sections.some(s => !(s.to > s.from))) throw new Error('Every section needs "to" greater than "from".');
 
   const placed = data.occurrences
-    .map(o => ({ ...o, s: sections.findIndex(s => s.act === o.act && o.from >= s.from && o.from < s.to) }))
+    .map(o => ({ ...o, level: o.level ?? 1, s: sections.findIndex(s => s.act === o.act && o.from >= s.from && o.from < s.to) }))
     .filter(o => o.s >= 0);
   occs = placed.sort((a, b) => a.s - b.s || a.from - b.from);
   const skipped = data.occurrences.length - occs.length;
+  levelInfo = new Map((data.levels || []).map(l => [l.level, l]));
+  levelCount = new Set(occs.map(o => o.level)).size;
 
   const name = data.motif?.name || motifId;
   document.title = `The ${name} motif`;
@@ -154,11 +172,42 @@ function init(data) {
     skipped && `${skipped} more fall outside every section and are not shown.`,
   ].filter(Boolean).join(' ');
 
+  buildLevels();
   buildTimeline();
   if (!occs.length) return;
   $('detail').hidden = false;
   const k = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
   select(k >= 0 ? k : 0);
+}
+
+function buildLevels() {
+  if (levelCount < 2) return;
+  for (const n of [...new Set(occs.map(o => o.level))].sort((a, b) => a - b)) {
+    const info = levelInfo.get(n), button = el('button'), swatch = el('i', 'swatch'), text = el('span');
+    swatch.style.setProperty('--lv', n);
+    text.append(el('b', '', `Level ${n}`), info?.name ? ` ${info.name}` : '');
+    if (info?.description) text.append(el('small', '', info.description));
+    button.type = 'button';
+    button.className = 'levelbtn';
+    button.setAttribute('aria-pressed', 'true');
+    button.append(swatch, text, el('span', 'count', `${occs.filter(o => o.level === n).length}`));
+    button.onclick = () => toggleLevel(n, button);
+    $('levels').append(button);
+  }
+  $('levels').hidden = false;
+}
+
+function toggleLevel(n, button) {
+  const switchOn = hidden.has(n);
+  if (!switchOn && hidden.size + 1 >= levelCount) return; // keep one level on
+  if (switchOn) hidden.delete(n); else hidden.add(n);
+  button.setAttribute('aria-pressed', String(switchOn));
+  occs.forEach((o, i) => { marks[i].hidden = hidden.has(o.level); });
+  if (visible(current)) return updateStepper();
+  for (let d = 1; d < occs.length; d++) {
+    const to = [current + d, current - d].find(i => i >= 0 && i < occs.length && visible(i));
+    if (to !== undefined) return select(to);
+  }
 }
 
 function buildTimeline() {
@@ -191,6 +240,7 @@ function buildTimeline() {
   marks = occs.map(o => {
     const s = sections[o.s], m = el('i');
     m.style.left = `${(o.from - s.from) / (s.to - s.from) * 100}%`;
+    m.style.setProperty('--lv', o.level);
     s.seg.append(m);
     return m;
   });
@@ -201,6 +251,7 @@ function buildTimeline() {
     if (!e.target.closest('.seg')) return -1;
     let best = -1, dist = 8;
     marks.forEach((m, i) => {
+      if (m.hidden) return;
       const r = m.getBoundingClientRect(), d = Math.abs(e.clientX - (r.left + r.width / 2));
       if (d <= dist) { dist = d; best = i; }
     });
@@ -211,11 +262,24 @@ function buildTimeline() {
   grid.addEventListener('click', e => { const i = nearest(e); if (i >= 0) select(i); });
   addEventListener('keydown', e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    if (e.key === 'ArrowLeft') select(current - 1);
-    if (e.key === 'ArrowRight') select(current + 1);
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
   });
-  $('prev').onclick = () => select(current - 1);
-  $('next').onclick = () => select(current + 1);
+  $('prev').onclick = () => step(-1);
+  $('next').onclick = () => step(1);
+}
+
+// Stepping skips the appearances of levels that the viewer switched off.
+function step(d) {
+  const to = d < 0 ? occs.findLastIndex((_, i) => i < current && visible(i)) : occs.findIndex((_, i) => i > current && visible(i));
+  if (to >= 0) select(to);
+}
+
+function updateStepper() {
+  const shown = occs.map((_, i) => i).filter(visible);
+  $('count').textContent = `${shown.indexOf(current) + 1} of ${shown.length}`;
+  $('prev').disabled = !shown.some(i => i < current);
+  $('next').disabled = !shown.some(i => i > current);
 }
 
 const place = o => [sections[o.s].opera, sections[o.s].label].join(', ');
@@ -226,7 +290,8 @@ function tip(i) {
   if (i < 0) return;
   const o = occs[i], r = marks[i].getBoundingClientRect(), t = $('tip');
   t.replaceChildren(`${place(o)}, measure ${Math.floor(o.from)}`);
-  if (o.label) t.append(el('small', '', o.label));
+  const small = [levelCount > 1 && `Level ${o.level}`, o.label].filter(Boolean).join(', ');
+  if (small) t.append(el('small', '', small));
   t.style.left = `${Math.min(Math.max(r.left + r.width / 2, 110), innerWidth - 110)}px`;
   t.style.top = `${r.top}px`;
 }
@@ -237,9 +302,7 @@ function select(i) {
   current = i;
   marks[i].classList.add('sel');
   history.replaceState(null, '', `#${encodeURIComponent(occs[i].id)}`);
-  $('count').textContent = `${i + 1} of ${occs.length}`;
-  $('prev').disabled = i === 0;
-  $('next').disabled = i === occs.length - 1;
+  updateStepper();
   show(occs[i]);
 }
 
@@ -248,20 +311,26 @@ function show(o) {
   if (o.scene > 0 && s.label !== `Scene ${o.scene}`) where.push(`Scene ${o.scene}`);
   const a = Math.floor(o.from), b = Math.ceil(o.to) - 1;
   $('where').textContent = where.join(', ');
-  $('measures').textContent = b > a ? `Measures ${a}–${b}` : `Measure ${a}`;
+  const measures = $('measures');
+  measures.textContent = b > a ? `Measures ${a}–${b}` : `Measure ${a}`;
+  if (levelCount > 1) {
+    const info = levelInfo.get(o.level), chip = el('span', 'chip'), swatch = el('i', 'swatch');
+    swatch.style.setProperty('--lv', o.level);
+    chip.title = info?.description || '';
+    chip.append(swatch, `Level ${o.level}${info?.name ? `: ${info.name}` : ''}`);
+    measures.append(chip);
+  }
   $('form').textContent = o.label || '';
   $('note').textContent = o.note || '';
 
   const lib = $('libretto'), lines = o.libretto || [];
   lib.replaceChildren();
   for (const l of lines) {
-    if (l.kind === 'sung') {
-      const d = el('div');
-      d.append(el('span', 'who', l.person), el('p', 'words', l.text));
-      lib.append(d);
-    } else {
-      lib.append(el('p', 'stage', l.text));
-    }
+    const d = el('div', l.kind === 'sung' ? 'sung' : 'stage');
+    if (l.kind === 'sung') d.append(el('span', 'who', l.person));
+    d.append(el('p', 'words', l.text));
+    if (l.translation) d.append(el('p', 'trans', l.translation));
+    lib.append(d);
   }
   if (!lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
 

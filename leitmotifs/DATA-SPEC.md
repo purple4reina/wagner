@@ -23,12 +23,23 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 {
   "format": 1,
   "motif": { "id": "siegfried", "name": "Siegfried", "description": "Optional. One sentence." },
+  "levels": [ ],
   "sections": [ ],
   "occurrences": [ ]
 }
 ```
 
 `motif.name` appears in the page title. `motif.description` appears under the title.
+
+## `levels`
+
+A level tells how close an occurrence is to the original form of the motif. Level 1 is the closest. A higher number is farther away. The list is optional, and the builder of the data adds a level when it finds a new, farther group of occurrences.
+
+```json
+{ "level": 2, "name": "Same core pitches", "description": "One or two sentences that say what a level 2 occurrence has in common with the original." }
+```
+
+When the data holds two or more levels, the page shows a legend with one switch for each level. Each switch hides or shows the marks of its level. A mark gets shorter and fainter as its level number grows. The detail view names the level of the occurrence. A level that is missing from this list still works. The page calls it "Level N".
 
 ## `sections`
 
@@ -57,6 +68,7 @@ One entry for each use of the motif. The page draws a mark at `from`.
 | Field | Type | Meaning |
 |---|---|---|
 | `id` | string | Unique and stable. The page puts it in the URL hash. |
+| `level` | integer, optional | The level of the occurrence. The default is 1. |
 | `act` | string | WorkID. A section with this `act` must contain `from`. The page skips an occurrence that fits no section and reports the count. |
 | `from`, `to` | number | Range of the motif in the act. |
 | `scene` | integer or null | Scene number from `ann_score_scenes` at `from`. The page shows nothing for `0` and null. It also shows nothing when the number repeats the section label, as in *Das Rheingold*. |
@@ -70,11 +82,13 @@ One entry for each use of the motif. The page draws a mark at `from`.
 Each entry is one of:
 
 ```json
-{ "kind": "sung", "person": "Siegfried", "text": "First line\nSecond line" }
-{ "kind": "direction", "text": "Wagner's stage direction" }
+{ "kind": "sung", "person": "Siegfried", "text": "First line\nSecond line", "translation": "Optional English" }
+{ "kind": "direction", "text": "Wagner's stage direction", "translation": "Optional English" }
 ```
 
 `text` may contain `\n`. The page keeps the line breaks.
+
+`translation` is optional. The page shows it under `text`, in a quieter style. The dataset has no translations. `tools/find_motif.py` reads `leitmotifs/translations.json`, which maps each German `text` to its English text, and prints each `text` that has no entry.
 
 If the array has no `sung` entry, the page shows "Nobody sings during this passage."
 

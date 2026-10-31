@@ -5,6 +5,23 @@
   "name": "Sample",
   "description": "Test fixture. Real section geometry from the Wagner Ring Dataset; every occurrence, text and note is made up."
  },
+ "levels": [
+  {
+   "level": 1,
+   "name": "[placeholder level one]",
+   "description": "[placeholder description of level one]"
+  },
+  {
+   "level": 2,
+   "name": "[placeholder level two]",
+   "description": "[placeholder description of level two]"
+  },
+  {
+   "level": 3,
+   "name": "[placeholder level three]",
+   "description": "[placeholder description of level three]"
+  }
+ ],
  "sections": [
   {
    "id": "A-1",
@@ -129,7 +146,8 @@
    "id": "x01",
    "act": "WWV086A",
    "scene": 1,
-   "label": null,
+   "level": 3,
+   "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -138,7 +156,7 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
    "from": 125.352,
    "to": 126.852
@@ -147,7 +165,8 @@
    "id": "x02",
    "act": "WWV086A",
    "scene": 1,
-   "label": null,
+   "level": 1,
+   "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -157,27 +176,27 @@
     {
      "kind": "sung",
      "person": "[placeholder singer one]",
-     "text": "[a short placeholder line]"
-    },
-    {
-     "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[a short placeholder line]"
+     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><alter>-1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>D</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 133.36,
-   "to": 135.86
+   "from": 477.415,
+   "to": 479.915
   },
   {
    "id": "x03",
    "act": "WWV086A",
    "scene": 2,
-   "label": "[placeholder form B]",
-   "note": "[placeholder note on what is happening on stage]",
+   "level": 3,
+   "label": "[placeholder form A]",
+   "note": null,
    "libretto": [
+    {
+     "kind": "direction",
+     "text": "[placeholder stage direction]"
+    },
     {
      "kind": "sung",
      "person": "[placeholder singer one]",
@@ -185,16 +204,17 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 1240.531,
-   "to": 1242.031
+   "from": 1411.278,
+   "to": 1412.778
   },
   {
    "id": "x04",
    "act": "WWV086A",
    "scene": 4,
-   "label": "[placeholder form B]",
+   "level": 3,
+   "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -204,60 +224,43 @@
     },
     {
      "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+     "person": "[placeholder singer one]",
+     "text": "[a short placeholder line]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>C</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 3501.389,
-   "to": 3503.889
+   "from": 3666.095,
+   "to": 3668.595
   },
   {
    "id": "x05",
    "act": "WWV086B-1",
    "scene": 1,
-   "label": null,
-   "note": null,
+   "level": 3,
+   "label": "[placeholder form B]",
+   "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+     "kind": "direction",
+     "text": "[placeholder stage direction]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 63.333,
-   "to": 65.833
+   "from": 262.557,
+   "to": 265.057
   },
   {
    "id": "x06",
    "act": "WWV086B-1",
    "scene": 3,
-   "label": null,
+   "level": 3,
+   "label": "[placeholder form B]",
    "note": "[placeholder note on what is happening on stage]",
-   "libretto": [],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
-   },
-   "from": 878.236,
-   "to": 880.736
-  },
-  {
-   "id": "x07",
-   "act": "WWV086B-2",
-   "scene": 1,
-   "label": null,
-   "note": null,
    "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[a short placeholder line]"
-    },
     {
      "kind": "sung",
      "person": "[placeholder singer two]",
@@ -265,48 +268,60 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 362.467,
-   "to": 364.967
+   "from": 1495.078,
+   "to": 1496.578
+  },
+  {
+   "id": "x07",
+   "act": "WWV086B-2",
+   "scene": 2,
+   "level": 1,
+   "label": null,
+   "note": null,
+   "libretto": [],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+   },
+   "from": 976.324,
+   "to": 978.824
   },
   {
    "id": "x08",
    "act": "WWV086B-2",
-   "scene": 5,
+   "scene": 3,
+   "level": 2,
+   "label": "[placeholder form A]",
+   "note": null,
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "[placeholder singer one]",
+     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><alter>-1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+   },
+   "from": 1327.305,
+   "to": 1329.805
+  },
+  {
+   "id": "x09",
+   "act": "WWV086B-3",
+   "scene": 2,
+   "level": 2,
    "label": "[placeholder form B]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
      "kind": "direction",
      "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
-    },
-    {
-     "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
-   },
-   "from": 2058.871,
-   "to": 2061.371
-  },
-  {
-   "id": "x09",
-   "act": "WWV086B-3",
-   "scene": 2,
-   "label": "[placeholder form A]",
-   "note": "[placeholder note on what is happening on stage]",
-   "libretto": [
-    {
-     "kind": "direction",
-     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>D</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
    "from": 640.352,
    "to": 642.852
@@ -315,74 +330,77 @@
    "id": "x10",
    "act": "WWV086B-3",
    "scene": 3,
+   "level": 2,
    "label": "[placeholder form A]",
-   "note": "[placeholder note on what is happening on stage]",
+   "note": null,
    "libretto": [
     {
      "kind": "sung",
-     "person": "[placeholder singer two]",
+     "person": "[placeholder singer one]",
+     "text": "[a short placeholder line]"
+    },
+    {
+     "kind": "sung",
+     "person": "[placeholder singer one]",
      "text": "[a short placeholder line]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 1615.203,
-   "to": 1617.703
+   "from": 1108.072,
+   "to": 1110.572
   },
   {
    "id": "x11",
    "act": "WWV086C-1",
    "scene": 1,
+   "level": 3,
    "label": null,
-   "note": "[placeholder note on what is happening on stage]",
+   "note": null,
    "libretto": [
     {
      "kind": "direction",
-     "text": "[placeholder stage direction]"
+     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
     },
     {
      "kind": "sung",
      "person": "[placeholder singer two]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+     "text": "[a short placeholder line]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 8.197,
-   "to": 9.697
+   "from": 109.786,
+   "to": 112.286
   },
   {
    "id": "x12",
    "act": "WWV086C-1",
    "scene": 1,
-   "label": "[placeholder form B]",
-   "note": null,
+   "level": 3,
+   "label": null,
+   "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
-    },
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
+     "kind": "direction",
+     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 988.353,
-   "to": 989.853
+   "from": 1117.226,
+   "to": 1119.726
   },
   {
    "id": "x13",
    "act": "WWV086C-1",
    "scene": 1,
-   "label": "[placeholder form B]",
-   "note": null,
+   "level": 2,
+   "label": null,
+   "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
      "kind": "direction",
@@ -390,15 +408,16 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 1005.255,
-   "to": 1006.755
+   "from": 1259.783,
+   "to": 1261.283
   },
   {
    "id": "x14",
    "act": "WWV086C-1",
    "scene": 1,
+   "level": 3,
    "label": "[placeholder form B]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
@@ -414,41 +433,43 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 1019.084,
-   "to": 1021.584
+   "from": 1273.612,
+   "to": 1276.112
   },
   {
    "id": "x15",
    "act": "WWV086C-1",
    "scene": 3,
+   "level": 3,
    "label": null,
    "note": null,
    "libretto": [
     {
-     "kind": "direction",
-     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
-    },
-    {
      "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+     "person": "[placeholder singer two]",
+     "text": "[a short placeholder line]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 2800.281,
-   "to": 2801.781
+   "from": 2672.946,
+   "to": 2674.446
   },
   {
    "id": "x16",
    "act": "WWV086C-2",
    "scene": 1,
-   "label": "[placeholder form A]",
+   "level": 2,
+   "label": "[placeholder form B]",
    "note": null,
    "libretto": [
+    {
+     "kind": "direction",
+     "text": "[placeholder stage direction]"
+    },
     {
      "kind": "sung",
      "person": "[placeholder singer one]",
@@ -456,18 +477,24 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>C</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 434.693,
-   "to": 437.193
+   "from": 248.534,
+   "to": 250.034
   },
   {
    "id": "x17",
    "act": "WWV086C-2",
-   "scene": 2,
-   "label": null,
+   "scene": 1,
+   "level": 3,
+   "label": "[placeholder form B]",
    "note": null,
    "libretto": [
+    {
+     "kind": "sung",
+     "person": "[placeholder singer two]",
+     "text": "[a short placeholder line]"
+    },
     {
      "kind": "sung",
      "person": "[placeholder singer two]",
@@ -475,16 +502,17 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 951.036,
-   "to": 953.536
+   "from": 254.549,
+   "to": 256.049
   },
   {
    "id": "x18",
    "act": "WWV086C-2",
-   "scene": 2,
-   "label": "[placeholder form B]",
+   "scene": 1,
+   "level": 3,
+   "label": null,
    "note": null,
    "libretto": [
     {
@@ -494,45 +522,32 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 963.189,
-   "to": 964.689
+   "from": 266.702,
+   "to": 268.202
   },
   {
    "id": "x19",
    "act": "WWV086C-2",
-   "scene": 2,
+   "scene": 3,
+   "level": 3,
    "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
-   "libretto": [
-    {
-     "kind": "direction",
-     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
-    },
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
-    },
-    {
-     "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[a short placeholder line]"
-    }
-   ],
+   "libretto": [],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>D</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 995.809,
-   "to": 998.309
+   "from": 1474.923,
+   "to": 1477.423
   },
   {
    "id": "x20",
    "act": "WWV086C-3",
-   "scene": 0,
+   "scene": 1,
+   "level": 1,
    "label": "[placeholder form A]",
-   "note": "[placeholder note on what is happening on stage]",
+   "note": null,
    "libretto": [
     {
      "kind": "sung",
@@ -543,14 +558,15 @@
    "notation": {
     "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 53.301,
-   "to": 55.801
+   "from": 219.821,
+   "to": 222.321
   },
   {
    "id": "x21",
    "act": "WWV086C-3",
    "scene": 1,
-   "label": "[placeholder form B]",
+   "level": 2,
+   "label": null,
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -564,7 +580,7 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
    "from": 428.501,
    "to": 430.001
@@ -572,8 +588,9 @@
   {
    "id": "x22",
    "act": "WWV086C-3",
-   "scene": 3,
-   "label": "[placeholder form B]",
+   "scene": 2,
+   "level": 3,
+   "label": "[placeholder form A]",
    "note": null,
    "libretto": [
     {
@@ -583,36 +600,32 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><alter>-1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>D</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 1008.224,
-   "to": 1010.724
+   "from": 449.537,
+   "to": 452.037
   },
   {
    "id": "x23",
    "act": "WWV086C-3",
    "scene": 3,
-   "label": null,
+   "level": 3,
+   "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
-    }
-   ],
+   "libretto": [],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 1018.178,
-   "to": 1019.678
+   "from": 1191.036,
+   "to": 1193.536
   },
   {
    "id": "x24",
    "act": "WWV086C-3",
    "scene": 3,
+   "level": 3,
    "label": null,
-   "note": "[placeholder note on what is happening on stage]",
+   "note": null,
    "libretto": [
     {
      "kind": "sung",
@@ -621,16 +634,17 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 1704.126,
-   "to": 1705.626
+   "from": 1633.187,
+   "to": 1634.687
   },
   {
    "id": "x25",
    "act": "WWV086D-0",
    "scene": 0,
-   "label": "[placeholder form B]",
+   "level": 3,
+   "label": "[placeholder form A]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -640,16 +654,17 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>C</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 312.851,
-   "to": 315.351
+   "from": 391.935,
+   "to": 394.435
   },
   {
    "id": "x26",
    "act": "WWV086D-0",
    "scene": 0,
-   "label": "[placeholder form B]",
+   "level": 2,
+   "label": "[placeholder form A]",
    "note": null,
    "libretto": [
     {
@@ -659,15 +674,16 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>D</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 341.283,
-   "to": 342.783
+   "from": 541.86,
+   "to": 544.36
   },
   {
    "id": "x27",
    "act": "WWV086D-1",
    "scene": 1,
+   "level": 2,
    "label": "[placeholder form B]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
@@ -682,17 +698,121 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 44.392,
-   "to": 46.892
+   "from": 184.596,
+   "to": 187.096
   },
   {
    "id": "x28",
    "act": "WWV086D-1",
    "scene": 1,
+   "level": 2,
    "label": "[placeholder form A]",
+   "note": "[placeholder note on what is happening on stage]",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "[placeholder singer two]",
+     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+    },
+    {
+     "kind": "sung",
+     "person": "[placeholder singer one]",
+     "text": "[a short placeholder line]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>G</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+   },
+   "from": 208.988,
+   "to": 211.488
+  },
+  {
+   "id": "x29",
+   "act": "WWV086D-1",
+   "scene": 1,
+   "level": 3,
+   "label": null,
+   "note": "[placeholder note on what is happening on stage]",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "[placeholder singer two]",
+     "text": "[a short placeholder line]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>E</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+   },
+   "from": 240.44,
+   "to": 242.94
+  },
+  {
+   "id": "x30",
+   "act": "WWV086D-1",
+   "scene": 3,
+   "level": 1,
+   "label": "[placeholder form B]",
    "note": null,
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "[placeholder singer one]",
+     "text": "[a short placeholder line]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+   },
+   "from": 1417.383,
+   "to": 1418.883
+  },
+  {
+   "id": "x31",
+   "act": "WWV086D-2",
+   "scene": 3,
+   "level": 3,
+   "label": null,
+   "note": "[placeholder note on what is happening on stage]",
+   "libretto": [],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+   },
+   "from": 472.211,
+   "to": 474.711
+  },
+  {
+   "id": "x32",
+   "act": "WWV086D-2",
+   "scene": 5,
+   "level": 2,
+   "label": "[placeholder form A]",
+   "note": "[placeholder note on what is happening on stage]",
+   "libretto": [
+    {
+     "kind": "direction",
+     "text": "[placeholder stage direction]"
+    },
+    {
+     "kind": "sung",
+     "person": "[placeholder singer two]",
+     "text": "[a short placeholder line]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+   },
+   "from": 1388.628,
+   "to": 1390.128
+  },
+  {
+   "id": "x33",
+   "act": "WWV086D-3",
+   "scene": 1,
+   "level": 3,
+   "label": null,
+   "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
      "kind": "direction",
@@ -700,142 +820,37 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>D</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 65.445,
-   "to": 66.945
-  },
-  {
-   "id": "x29",
-   "act": "WWV086D-1",
-   "scene": 1,
-   "label": "[placeholder form B]",
-   "note": null,
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
-   },
-   "from": 79.74,
-   "to": 81.24
-  },
-  {
-   "id": "x30",
-   "act": "WWV086D-1",
-   "scene": 3,
-   "label": "[placeholder form B]",
-   "note": "[placeholder note on what is happening on stage]",
-   "libretto": [],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>C</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
-   },
-   "from": 1621.315,
-   "to": 1623.815
-  },
-  {
-   "id": "x31",
-   "act": "WWV086D-2",
-   "scene": 1,
-   "label": "[placeholder form A]",
-   "note": "[placeholder note on what is happening on stage]",
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer one]",
-     "text": "[a short placeholder line]"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
-   },
-   "from": 62.697,
-   "to": 64.197
-  },
-  {
-   "id": "x32",
-   "act": "WWV086D-2",
-   "scene": 4,
-   "label": "[placeholder form A]",
-   "note": "[placeholder note on what is happening on stage]",
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
-   },
-   "from": 889.811,
-   "to": 891.311
-  },
-  {
-   "id": "x33",
-   "act": "WWV086D-3",
-   "scene": 1,
-   "label": "[placeholder form A]",
-   "note": null,
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
-   },
-   "from": 304.799,
-   "to": 307.299
+   "from": 76.783,
+   "to": 79.283
   },
   {
    "id": "x34",
    "act": "WWV086D-3",
    "scene": 1,
-   "label": "[placeholder form A]",
+   "level": 3,
+   "label": "[placeholder form B]",
    "note": null,
    "libretto": [
     {
      "kind": "sung",
-     "person": "[placeholder singer two]",
-     "text": "[a short placeholder line]"
-    },
-    {
-     "kind": "sung",
      "person": "[placeholder singer one]",
-     "text": "[placeholder sung text, first line,\nsecond line of the same phrase,\nand a third line to show wrapping]"
+     "text": "[a short placeholder line]"
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
    },
-   "from": 325.446,
-   "to": 327.946
+   "from": 99.517,
+   "to": 101.017
   },
   {
    "id": "x35",
    "act": "WWV086D-3",
-   "scene": 2,
-   "label": "[placeholder form A]",
-   "note": null,
-   "libretto": [],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
-   },
-   "from": 940.021,
-   "to": 941.521
-  },
-  {
-   "id": "x36",
-   "act": "WWV086D-3",
-   "scene": 3,
-   "label": "[placeholder form A]",
+   "scene": 1,
+   "level": 1,
+   "label": "[placeholder form B]",
    "note": "[placeholder note on what is happening on stage]",
    "libretto": [
     {
@@ -845,10 +860,34 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>E</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note></measure><measure number=\"2\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>8</duration><type>whole</type></note></measure></part></score-partwise>"
    },
-   "from": 1469.217,
-   "to": 1471.717
+   "from": 107.474,
+   "to": 109.974
+  },
+  {
+   "id": "x36",
+   "act": "WWV086D-3",
+   "scene": 3,
+   "level": 1,
+   "label": "[placeholder form B]",
+   "note": "[placeholder note on what is happening on stage]",
+   "libretto": [
+    {
+     "kind": "direction",
+     "text": "[a longer placeholder stage direction that runs over several lines, so the italic block can be judged at its natural width on a normal screen]"
+    },
+    {
+     "kind": "sung",
+     "person": "[placeholder singer two]",
+     "text": "[a short placeholder line]"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>2</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><type>quarter</type></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>2</duration><type>quarter</type></note></measure></part></score-partwise>"
+   },
+   "from": 1419.829,
+   "to": 1421.329
   }
  ]
 }
