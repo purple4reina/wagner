@@ -33,13 +33,21 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 
 ## `levels`
 
-A level tells how close an occurrence is to the original form of the motif. Level 1 is the closest. A higher number is farther away. The list is optional, and the builder of the data adds a level when it finds a new, farther group of occurrences.
+A level tells how close an occurrence is to the original form of the motif. Level 0 is the original melody itself (see `original` under `sections`). Level 1 is the closest passage of the score. A higher number is farther away. The list is optional, and the builder of the data adds a level when it finds a new, farther group of occurrences.
 
 ```json
 { "level": 2, "name": "Same core pitches", "description": "One or two sentences that say what a level 2 occurrence has in common with the original." }
+{ "level": 0, "label": "Original", "name": "The melody as given", "description": "The melody as you gave it. It is not a passage of the score." }
 ```
 
-When the data holds two or more levels, the page shows a legend with one switch for each level. Each switch hides or shows the marks of its level. A mark gets shorter and fainter as its level number grows. The detail view names the level of the occurrence. A level that is missing from this list still works. The page calls it "Level N".
+| Field | Type | Meaning |
+|---|---|---|
+| `level` | integer | The number of the level. |
+| `label` | string, optional | The short name of the level. The default is `Level N`. |
+| `name` | string, optional | What the level is. The page writes it after the label. |
+| `description` | string, optional | One or two sentences. The page shows them under the name in the legend and in the tooltip of the level tag. |
+
+When the data holds two or more levels, the page shows a legend with one switch for each level. Each switch hides or shows the marks of its level. A mark gets shorter and fainter as its level number grows, so level 0 has the tallest mark. The detail view names the level of the occurrence. A level that is missing from this list still works. The page calls it "Level N".
 
 ## `sections`
 
@@ -48,11 +56,12 @@ Sections are the segments of the ribbon, in story order. The page makes the widt
 | Field | Type | Meaning |
 |---|---|---|
 | `id` | string | Unique name of the section. |
-| `opera` | string | Opera title. Adjacent sections with the same title share one bracket and one color. |
+| `opera` | string | Opera title. Adjacent sections with the same title share one bracket and one color. It may be empty. The bracket then has a line and no title. |
 | `act` | string | WorkID of the act, for example `WWV086B-2`. Occurrences refer to this value. |
 | `label` | string | Full name, for example `Act 2`, `Prologue`, `Scene 3`. |
 | `short` | string, optional | Name under the ribbon when `label` is too long for the segment, for example `Pro`. |
 | `from`, `to` | number | Range of the section in the act. |
+| `original` | boolean, optional | `true` marks the section of the original melody, which is not a part of the score. The page draws it in the accent color and does not count it when it gives colors to the operas. |
 
 Use one section for each act. Use one section for each scene of *Das Rheingold*, because it has one act. Sections of one act must not overlap.
 
@@ -60,6 +69,8 @@ Take the values from the dataset as follows:
 
 - `from` is the first `measure_start` in `ann_score_scenes` for the act. It is `0.888` for `WWV086B-2` and `WWV086B-3`, which start with a pickup measure.
 - `to` is `floor(last measure_end) + 1`. For *Das Rheingold*, `to` of a scene is the `measure_start` of the next scene.
+
+The original melody has its own section, with `original: true`. Put it first in the list, so that its mark sits to the left of the start of *Das Rheingold*. Its `act` is a name that no act of the score has, for example `ORIGINAL`. Its measures are not real, so choose the width that you want. About 4% of the total of the other sections is enough for a visible mark.
 
 ## `occurrences`
 
@@ -74,8 +85,8 @@ One entry for each use of the motif. The page draws a mark at `from`.
 | `scene` | integer or null | Scene number from `ann_score_scenes` at `from`. The page shows nothing for `0` and null. It also shows nothing when the number repeats the section label, as in *Das Rheingold*. |
 | `label` | string, optional | The form of the motif, for example `Horn call, second version`. The page shows it in italics and in the tooltip. |
 | `note` | string, optional | One or two sentences that tell what happens in the story. |
-| `libretto` | array | The text of this passage, in score order. See below. Use `[]` if there is none. |
-| `notation` | object or null | `{ "musicxml": "<string>" }`. See below. |
+| `libretto` | array or null | The text of this passage, in score order. See below. Use `[]` if there is none. Use `null` if no text applies, as for the original melody. The page then hides the text block. |
+| `notation` | object or null | `{ "musicxml": "<string>", "svg": "<string>" }`. `svg` is optional. See below. |
 
 ### `libretto`
 
@@ -90,7 +101,7 @@ Each entry is one of:
 
 `translation` is optional. The page shows it under `text`, in a quieter style. The dataset has no translations. `tools/find_motif.py` reads `leitmotifs/translations.json`, which maps each German `text` to its English text, and prints each `text` that has no entry.
 
-If the array has no `sung` entry, the page shows "Nobody sings during this passage."
+If the array has no `sung` entry, the page shows "Nobody sings during this passage." The page shows nothing if `libretto` is `null`.
 
 Sources:
 
@@ -106,6 +117,10 @@ Sources:
 - The file contains only the notes of the motif, in one staff. It leaves out the other notes and the rests. The builder removes a beam, slur or tuplet bracket when the cut leaves it without a start or an end.
 
 The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an internet connection.
+
+`svg` is optional. It is the text of an SVG file, for example an engraving that LilyPond made. If it is present, the page shows it in the notation panel instead of the Verovio engraving. In that case `musicxml` only drives the sound. Use it when the notation must look exactly as someone wrote it, as for the original melody. The page shows the SVG as an image with a `data:` URL. The code and the styles inside the SVG therefore cannot run or change the page. The image fills the width of the panel and is at most 420 pixels high. LilyPond draws black on a transparent background. In a dark color scheme the page inverts the image (`filter: invert(1)`), so that the notation is white on the dark panel. An SVG with other colors gets inverted colors in that scheme, so draw it in black.
+
+The Play button needs no audio data. The page asks Verovio for a MIDI version of the same file and plays it with Web Audio. The page highlights each note while it sounds. An `svg` image has no note ids, so the page does not highlight a note then. The sound has the printed note values of the `musicxml` staff: a tie sounds as one note, and a repeated note sounds again. Verovio ignores a `time-modification` that has no tuplet bracket, so a note with such a marking sounds as long as its printed value, and not as long as its `<duration>`.
 
 ## Example
 
@@ -138,5 +153,5 @@ The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an inte
 
 ## Not in version 1
 
-- Audio. The positions are score measures. A later step can find the time of any position in `ann_audio_measure`.
+- Recordings. The sound on the page is a synthesized version of the notation. The positions are score measures, so a later step can find the time of any position in `ann_audio_measure` and play a recording.
 - A match score for each occurrence. The page does not show how sure the builder of the data is.

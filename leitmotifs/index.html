@@ -56,6 +56,10 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 .notation { display: flex; align-items: center; justify-content: center; min-height: 160px; padding: 20px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
 .notation svg { max-width: 100%; height: auto; fill: currentColor; }
 .notation .definition-scale { color: inherit; } /* Verovio hard-codes color="black" here */
+.notation img { display: block; width: 100%; height: auto; max-height: 420px; object-fit: contain; } /* an engraving that comes as an image, black on transparent */
+@media (prefers-color-scheme: dark) { .notation img { filter: invert(1); } }
+.notation .note.playing { color: var(--sel); }
+.player { margin-top: 14px; }
 .stepper { display: flex; align-items: center; gap: 16px; margin-top: 14px; color: var(--muted); font-size: .9rem; }
 .stepper span { flex: 1; text-align: center; }
 button { padding: 6px 14px; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--ink); font: inherit; cursor: pointer; }
@@ -99,6 +103,9 @@ footer a { color: inherit; }
   <article id="detail" hidden>
     <div>
       <div class="notation" id="notation" aria-live="polite"></div>
+      <div class="player">
+        <button type="button" id="play" disabled aria-label="Play the melody that the notation shows">Play</button>
+      </div>
       <div class="stepper">
         <button type="button" id="prev">Previous</button>
         <span id="count"></span>
@@ -137,7 +144,7 @@ let sections, occs, marks, levelInfo, levelCount, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
 const visible = i => !hidden.has(occs[i].level);
 
-fetch(dataUrl)
+fetch(dataUrl, { cache: 'no-cache' }) // the data changes when the finder runs, so ask the server each time
   .then(r => r.ok ? r.json() : Promise.reject(new Error(`${dataUrl} returned ${r.status}.`)))
   .then(init)
   .catch(err => {
@@ -166,9 +173,10 @@ function init(data) {
   const name = data.motif?.name || motifId;
   document.title = `The ${name} motif`;
   $('title').textContent = document.title;
+  const inScore = occs.filter(o => !sections[o.s].original).length; // the original melody is not an appearance
   $('lede').textContent = [
     data.motif?.description,
-    `${occs.length} ${occs.length === 1 ? 'appearance' : 'appearances'} across the cycle.`,
+    `${inScore} ${inScore === 1 ? 'appearance' : 'appearances'} across the cycle.`,
     skipped && `${skipped} more fall outside every section and are not shown.`,
   ].filter(Boolean).join(' ');
 
@@ -185,7 +193,7 @@ function buildLevels() {
   for (const n of [...new Set(occs.map(o => o.level))].sort((a, b) => a - b)) {
     const info = levelInfo.get(n), button = el('button'), swatch = el('i', 'swatch'), text = el('span');
     swatch.style.setProperty('--lv', n);
-    text.append(el('b', '', `Level ${n}`), info?.name ? ` ${info.name}` : '');
+    text.append(el('b', '', levelLabel(n)), info?.name ? ` ${info.name}` : '');
     if (info?.description) text.append(el('small', '', info.description));
     button.type = 'button';
     button.className = 'levelbtn';
@@ -214,12 +222,14 @@ function buildTimeline() {
   const grid = $('grid');
   grid.style.gridTemplateColumns = sections.map(s => `minmax(0, ${s.to - s.from}fr)`).join(' ');
 
+  // A section of the original melody takes the accent color and no palette slot, so the operas keep their colors.
   const operas = [];
+  let palette = 0;
   sections.forEach((s, i) => {
     const last = operas[operas.length - 1];
-    if (last?.name === s.opera) last.n++;
-    else operas.push({ name: s.opera, col: i + 1, n: 1 });
-    s.color = `var(--o${(operas.length - 1) % 4})`;
+    if (last?.name === s.opera && !s.original) last.n++;
+    else operas.push({ name: s.opera, col: i + 1, n: 1, color: s.original ? 'var(--motif)' : `var(--o${palette++ % 4})` });
+    s.color = operas[operas.length - 1].color;
   });
   for (const o of operas) {
     const e = el('div', 'opera', o.name);
@@ -232,7 +242,7 @@ function buildTimeline() {
     s.seg.style.gridArea = `2 / ${i + 1}`;
     s.seg.style.setProperty('--oc', s.color);
     const label = el('div', 'act', s.short || s.label);
-    label.title = `${s.opera}, ${s.label}`;
+    label.title = [s.opera, s.label].filter(Boolean).join(', ');
     label.style.gridArea = `3 / ${i + 1}`;
     grid.append(s.seg, label);
   });
@@ -267,6 +277,7 @@ function buildTimeline() {
   });
   $('prev').onclick = () => step(-1);
   $('next').onclick = () => step(1);
+  $('play').onclick = () => playing ? stopPlayback() : startPlayback();
 }
 
 // Stepping skips the appearances of levels that the viewer switched off.
@@ -282,15 +293,17 @@ function updateStepper() {
   $('next').disabled = !shown.some(i => i > current);
 }
 
-const place = o => [sections[o.s].opera, sections[o.s].label].join(', ');
+const place = o => [sections[o.s].opera, sections[o.s].label].filter(Boolean).join(', ');
+const levelLabel = n => levelInfo.get(n)?.label || `Level ${n}`;
 
 function tip(i) {
   $('tip').hidden = i < 0;
   $('grid').style.cursor = i < 0 ? '' : 'pointer';
   if (i < 0) return;
   const o = occs[i], r = marks[i].getBoundingClientRect(), t = $('tip');
-  t.replaceChildren(`${place(o)}, measure ${Math.floor(o.from)}`);
-  const small = [levelCount > 1 && `Level ${o.level}`, o.label].filter(Boolean).join(', ');
+  t.replaceChildren(sections[o.s].original ? place(o) : `${place(o)}, measure ${Math.floor(o.from)}`);
+  const level = levelLabel(o.level), repeats = (o.label || '').toLowerCase().includes(level.toLowerCase());
+  const small = [levelCount > 1 && !repeats && level, o.label].filter(Boolean).join(', ');
   if (small) t.append(el('small', '', small));
   t.style.left = `${Math.min(Math.max(r.left + r.width / 2, 110), innerWidth - 110)}px`;
   t.style.top = `${r.top}px`;
@@ -307,23 +320,25 @@ function select(i) {
 }
 
 function show(o) {
-  const s = sections[o.s], where = [s.opera, s.label];
+  const s = sections[o.s], where = [s.opera, s.label].filter(Boolean);
   if (o.scene > 0 && s.label !== `Scene ${o.scene}`) where.push(`Scene ${o.scene}`);
   const a = Math.floor(o.from), b = Math.ceil(o.to) - 1;
   $('where').textContent = where.join(', ');
   const measures = $('measures');
-  measures.textContent = b > a ? `Measures ${a}–${b}` : `Measure ${a}`;
+  measures.textContent = s.original ? '' : b > a ? `Measures ${a}–${b}` : `Measure ${a}`;
   if (levelCount > 1) {
     const info = levelInfo.get(o.level), chip = el('span', 'chip'), swatch = el('i', 'swatch');
     swatch.style.setProperty('--lv', o.level);
     chip.title = info?.description || '';
-    chip.append(swatch, `Level ${o.level}${info?.name ? `: ${info.name}` : ''}`);
+    if (s.original) chip.style.marginLeft = '0'; // no measures text before it
+    chip.append(swatch, `${levelLabel(o.level)}${info?.name ? `: ${info.name}` : ''}`);
     measures.append(chip);
   }
   $('form').textContent = o.label || '';
   $('note').textContent = o.note || '';
 
   const lib = $('libretto'), lines = o.libretto || [];
+  lib.hidden = o.libretto === null; // null: no text applies, as for the original melody
   lib.replaceChildren();
   for (const l of lines) {
     const d = el('div', l.kind === 'sung' ? 'sung' : 'stage');
@@ -332,9 +347,9 @@ function show(o) {
     if (l.translation) d.append(el('p', 'trans', l.translation));
     lib.append(d);
   }
-  if (!lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
+  if (o.libretto !== null && !lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
 
-  showNotation(o.notation?.musicxml);
+  showNotation(o.notation ?? undefined);
 }
 
 let engine, seq = 0;
@@ -355,18 +370,122 @@ function loadEngine() {
   return engine;
 }
 
-async function showNotation(xml) {
+// `notation.svg`, if the occurrence has it, is shown instead of the Verovio engraving. It is an image, so
+// its code cannot run and its styles cannot reach the page. `notation.musicxml` then only drives the sound.
+async function showNotation({ musicxml, svg } = {}) {
   const box = $('notation'), mine = ++seq;
-  box.replaceChildren(el('p', 'quiet', xml ? 'Engraving…' : 'No notation for this appearance.'));
-  if (!xml) return;
+  stopPlayback();
+  heard = [];
+  timemap = [];
+  $('play').disabled = true;
+  if (svg) {
+    const img = el('img');
+    img.alt = 'The notation of this example';
+    img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    box.replaceChildren(img);
+  } else {
+    box.replaceChildren(el('p', 'quiet', musicxml ? 'Engraving…' : 'No notation for this appearance.'));
+  }
+  if (!musicxml) return;
   try {
     const tk = await loadEngine();
     if (mine !== seq) return;
-    if (!tk.loadData(xml)) throw new Error('The notation for this appearance could not be read.');
-    box.innerHTML = tk.renderToSVG(1);
+    if (!tk.loadData(musicxml)) throw new Error('The notation for this appearance could not be read.');
+    if (!svg) box.innerHTML = tk.renderToSVG(1);
+    // The sound comes from the notation. With a Verovio engraving the two always agree, and the notes light up
+    // as they sound. An image has no note ids, so it gets no highlight.
+    heard = parseMidi(tk.renderToMIDI());
+    timemap = svg ? [] : tk.renderToTimemap();
+    $('play').disabled = !heard.length;
   } catch (err) {
-    if (mine === seq) box.replaceChildren(el('p', 'quiet', err.message));
+    if (mine === seq && !svg) box.replaceChildren(el('p', 'quiet', err.message));
   }
+}
+
+// Playback: Verovio writes a MIDI file for the notation, and Web Audio plays its notes.
+let heard = [], timemap = [], playing = false, timers = [], voices = [], audio;
+
+function parseMidi(base64) {
+  const bytes = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+  const ppq = (bytes[12] << 8) | bytes[13];
+  let tempo = 500000, p = 14;
+  const notes = [], ticks = [];
+  const varLength = (i) => { let n = 0, b; do { b = bytes[i.at++]; n = (n << 7) | (b & 0x7f); } while (b & 0x80); return n; };
+  while (p + 8 <= bytes.length) {
+    const end = p + 8 + ((bytes[p + 4] << 24) | (bytes[p + 5] << 16) | (bytes[p + 6] << 8) | bytes[p + 7]);
+    const i = { at: p + 8 }, open = {};
+    let t = 0, status = 0;
+    while (i.at < end) {
+      t += varLength(i);
+      if (bytes[i.at] >= 0x80) status = bytes[i.at++];
+      if (status === 0xff) {
+        const type = bytes[i.at++], len = varLength(i);
+        if (type === 0x51) tempo = (bytes[i.at] << 16) | (bytes[i.at + 1] << 8) | bytes[i.at + 2];
+        i.at += len;
+      } else if (status === 0xf0 || status === 0xf7) {
+        i.at += varLength(i);
+      } else {
+        const kind = status & 0xf0, pitch = bytes[i.at++], velocity = (kind === 0xc0 || kind === 0xd0) ? 0 : bytes[i.at++];
+        if (kind === 0x90 && velocity > 0) open[pitch] = t;
+        else if ((kind === 0x80 || kind === 0x90) && open[pitch] !== undefined) {
+          ticks.push({ pitch, start: open[pitch], end: t });
+          delete open[pitch];
+        }
+      }
+    }
+    p = end;
+  }
+  for (const n of ticks) notes.push({ pitch: n.pitch, start: n.start * tempo / ppq / 1e6, end: n.end * tempo / ppq / 1e6 });
+  return notes.sort((a, b) => a.start - b.start || a.pitch - b.pitch);
+}
+
+function startPlayback() {
+  audio ??= new AudioContext();
+  audio.resume();
+  const lead = 0.1, now = audio.currentTime + lead;
+  for (const n of heard) {
+    const start = now + n.start, end = now + n.end, gain = audio.createGain(), oscs = [];
+    // A soft piano-like tone: a triangle wave and a quieter octave above it, with a decay.
+    for (const [type, ratio, level] of [['triangle', 1, 1], ['sine', 2, .25]]) {
+      const o = audio.createOscillator(), g = audio.createGain();
+      o.type = type;
+      o.frequency.value = 440 * 2 ** ((n.pitch - 69) / 12) * ratio;
+      g.gain.value = level;
+      o.connect(g).connect(gain);
+      o.start(start);
+      o.stop(end + 0.4);
+      oscs.push(o);
+    }
+    gain.gain.setValueAtTime(0, start);
+    gain.gain.linearRampToValueAtTime(.22, start + .015);
+    gain.gain.exponentialRampToValueAtTime(.06, Math.max(end, start + .1));
+    gain.gain.linearRampToValueAtTime(0, end + .35);
+    gain.connect(audio.destination);
+    voices.push({ gain, oscs });
+  }
+  for (const e of timemap) {
+    timers.push(setTimeout(() => {
+      for (const id of e.off || []) $('notation').querySelector(`[id="${id}"]`)?.classList.remove('playing');
+      for (const id of e.on || []) $('notation').querySelector(`[id="${id}"]`)?.classList.add('playing');
+    }, lead * 1000 + e.tstamp));
+  }
+  timers.push(setTimeout(stopPlayback, (lead + Math.max(...heard.map(n => n.end))) * 1000 + 400));
+  playing = true;
+  $('play').textContent = 'Stop';
+}
+
+function stopPlayback() {
+  timers.forEach(clearTimeout);
+  timers = [];
+  for (const v of voices) {
+    v.gain.gain.cancelScheduledValues(0);
+    v.gain.gain.setTargetAtTime(0, audio.currentTime, .03);
+    v.oscs.forEach(o => o.stop(audio.currentTime + .2));
+  }
+  voices = [];
+  document.querySelectorAll('#notation .playing').forEach(n => n.classList.remove('playing'));
+  playing = false;
+  $('play').textContent = 'Play';
 }
 </script>
 </body>
