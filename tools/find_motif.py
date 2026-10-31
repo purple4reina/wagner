@@ -19,6 +19,7 @@ MOTIF_ID, MOTIF_NAME = "siegfried", "Siegfried"
 MOTIF_LY = "g,8 c4. ~c4 c8 es4. d4 c8 aes2. c4. bes,4 aes,8 es4. ~es4 es8 f4. ~f8 es8 f8 g2."
 CORE_NOTES = (2, 13)  # the notes of MOTIF_LY that levels 2 and 3 look for, counted from 1
 ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not part of the score
+ORIGINAL_OCTAVES_UP = 1  # the original is drawn and played this many octaves above MOTIF_LY; the search is not affected
 LEVELS = [
     dict(level=0, label="Original", name="The melody as given",
          description="The melody as you gave it. It is not a passage of the score."),
@@ -419,7 +420,8 @@ def original_musicxml():
     tokens = re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d+)(\.*)", MOTIF_LY)
     notes, pos = [], 0
     for i, (tie, name, octave, den, dots) in enumerate(tokens):
-        pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0), 3 + octave.count("'") - octave.count(","))
+        pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),
+                 3 + octave.count("'") - octave.count(",") + ORIGINAL_OCTAVES_UP)
         tied_on = i + 1 < len(tokens) and bool(tokens[i + 1][0])
         remaining, pieces = int(Fraction(8, int(den)) * (2 - Fraction(1, 2 ** len(dots)))), []
         while remaining:
@@ -449,7 +451,9 @@ def original_musicxml():
 def original_svg():
     """Return the SVG that LilyPond draws for MOTIF_LY exactly as written.
 
-    The LilyPond file holds the notes of MOTIF_LY and nothing else, so LilyPond uses its own clef, key and time.
+    The LilyPond file holds the notes of MOTIF_LY, a one-eighth pickup (\\partial 8) and 6/8, which is the only meter
+    in which the durations of MOTIF_LY fill the bars. LilyPond uses its own clef and key.
+    \\transpose moves the notes up ORIGINAL_OCTAVES_UP octaves and leaves the text of MOTIF_LY as it is.
     It only adds what a tight, cropped drawing needs: no indent, no page number and no tagline.
     LilyPond runs in the Docker image of the project notes. If it cannot run, this raises an error. The original
     must never be drawn by anything else.
@@ -457,7 +461,7 @@ def original_svg():
     source = ('\\version "2.25.12"\n'
               "\\paper { indent = 0\\mm print-page-number = ##f oddHeaderMarkup = ##f evenHeaderMarkup = ##f "
               "oddFooterMarkup = ##f evenFooterMarkup = ##f tagline = ##f }\n"
-              "{ " + MOTIF_LY + " }\n")
+              "\\transpose c c" + "'" * ORIGINAL_OCTAVES_UP + " { \\time 6/8 \\partial 8 " + MOTIF_LY + " }\n")
     with tempfile.TemporaryDirectory() as tmp:
         pathlib.Path(tmp, "original.ly").write_text(source, encoding="utf-8")
         command = ["docker", "run", "--rm", "-v", f"{tmp}:/app", "-w", "/app", "jeandeaual/lilypond:latest",
@@ -562,7 +566,7 @@ def main():
     sections.insert(0, dict(id="original", opera="", act=ORIGINAL_ACT, label="Original", short="Orig", original=True, **{"from": 0, "to": width}))
     occurrences.append(dict(
         id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
-        note="The melody as you gave it, drawn by LilyPond from your notes with LilyPond's own clef, key and time. It is not a passage of the score.",
+        note="The melody as you gave it, one octave higher, drawn by LilyPond from your notes. The first note is a one-eighth pickup, the bars are 6/8, and the clef and key are LilyPond's own. It is not a passage of the score.",
         libretto=None, notation=dict(svg=original_svg(), musicxml=original_musicxml()), **{"from": width / 2, "to": width / 2 + 1}))
     order = {s["act"]: i for i, s in enumerate(sections)}
     occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
