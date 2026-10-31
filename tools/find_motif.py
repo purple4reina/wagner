@@ -23,6 +23,8 @@ LEVELS = [
          description="The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."),
     dict(level=2, name="Same core pitches",
          description="Notes 2 to 13 of the phrase have the same pitches, in any octave, but the rhythm differs."),
+    dict(level=3, name="Other keys",
+         description="Notes 2 to 13 of the phrase have the same intervals, moved to another key, in any octave. The rhythm may differ."),
 ]
 OPERAS = [
     ("Das Rheingold", ["WWV086A"]),
@@ -186,23 +188,27 @@ def find_runs(merged, min_len=6):
     return [make_run(by, ends, c, j) for _, (j, c) in apart(spans)]
 
 
-def find_core(merged):
-    """Return the passages in which the notes MOTIF[CORE] have the same pitch classes, with any rhythm."""
+def find_core(merged, transposed=False):
+    """Return the passages in which the notes MOTIF[CORE] have the same pitch classes, with any rhythm.
+
+    If `transposed` is true, the passages have the same intervals instead, so the key may differ.
+    """
     by, ends = index(merged)
     lo, hi = CORE
 
-    def follow(line, t, i):
+    def follow(line, t, i, prev):
         for g in by.get((line, t), ()):
-            if g.midi % 12 == MOTIF[lo + i][0]:
+            pc, before = MOTIF[lo + i][0], MOTIF[lo + i - 1][0]
+            if (not transposed and g.midi % 12 == pc) or (transposed and (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)):
                 if lo + i + 1 == hi:
                     yield [g]
                 else:
-                    for rest in follow(line, t + g.dur, i + 1):
+                    for rest in follow(line, t + g.dur, i + 1, g):
                         yield [g] + rest
 
     hits = []
     for line, t in by:
-        found = list(follow(line, t, 0))
+        found = list(follow(line, t, 0, None))
         if found:
             c = min(found, key=lambda c: shape_error(c, lo))
             hits.append(((c[0].onset, c[-1].onset + c[-1].dur), c))
@@ -231,13 +237,26 @@ def difference(run):
     return " ".join(text)
 
 
-def rhythm_difference(run):
-    """Return the text that tells how the rhythm of a core match differs from MOTIF_LY."""
+def rhythm_text(run):
+    """Return the text that tells the rhythm of a core match next to the rhythm of MOTIF_LY."""
     def row(durations):
         return " ".join(str(eighths(d)) for d in durations)
-    return (f"Your notes {run.start + 1} to {run.start + run.length} (of {N}) have the same pitches here, but not the same rhythm. "
-            f"In eighth notes, the score plays them as {row(g.dur for g in run.run)}; yours are "
+    return (f"In eighth notes, the score plays them as {row(g.dur for g in run.run)}; yours are "
             f"{row(m[1] for m in MOTIF[run.start:run.start + run.length])}.")
+
+
+def rhythm_difference(run):
+    """Return the text that tells how the rhythm of a same-pitch core match differs from MOTIF_LY."""
+    return f"Your notes {run.start + 1} to {run.start + run.length} (of {N}) have the same pitches here, but not the same rhythm. {rhythm_text(run)}"
+
+
+def key_difference(run, same_rhythm):
+    """Return the text that tells how a transposed core match differs from MOTIF_LY."""
+    mine, here = MOTIF[run.start][0], run.run[0].midi % 12
+    up = (here - mine) % 12
+    return (f"Your notes {run.start + 1} to {run.start + run.length} (of {N}) have the same intervals here, in another key: "
+            f"your {PC_NAME[mine]} becomes {PC_NAME[here]}, which is {up} semitone{'' if up == 1 else 's'} up or {12 - up} down. "
+            + ("The rhythm is the same." if same_rhythm else f"The rhythm differs. {rhythm_text(run)}"))
 
 
 def trim_spans(notes):
@@ -341,7 +360,7 @@ def main():
     args = ap.parse_args()
     ann, score = args.data / "02_Annotations", args.data / "01_RawData" / "score_musicxml"
 
-    sections, runs, cores = [], [], []
+    sections, runs, cores, keys = [], [], [], []
     for opera, works in OPERAS:
         for work in works:
             scenes = [(float(r["measure_start"]), float(r["measure_end"]), int(r["scene"])) for r in read_csv(f"{ann}/ann_score_scenes/Wagner_{work}.csv")]
@@ -360,20 +379,29 @@ def main():
             act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets)
             runs += [(run, act) for run in find_runs(merged)]
             cores += [(run, act) for run in find_core(merged)]
+            keys += [(run, act) for run in find_core(merged, transposed=True)]
 
     def span(run, act):
         return act.work, run.shown[0].onset, run.shown[-1].onset + run.shown[-1].dur
 
+    def new_in(found, taken):
+        """Return the passages of `found` that do not overlap a span of `taken`, and add them to `taken`."""
+        fresh = [f for f in found if not any(w == span(*f)[0] and span(*f)[1] < t1 and t0 < span(*f)[2] for w, t0, t1 in taken)]
+        taken += [span(*f) for f in fresh]
+        return fresh
+
+    taken = []
     level1 = [f for f in runs if f[0].length == N] or sorted(runs, key=lambda f: -f[0].length)[:args.closest]
-    taken = [span(*f) for f in level1]
-    level2 = [f for f in cores if not any(w == span(*f)[0] and span(*f)[1] < t1 and t0 < span(*f)[2] for w, t0, t1 in taken)]
+    taken += [span(*f) for f in level1]
+    level2 = new_in(cores, taken)
+    level3 = new_in(keys, taken)
 
     translations_path = ROOT / "leitmotifs" / "translations.json"
     translations = json.loads(translations_path.read_text(encoding="utf-8")) if translations_path.exists() else {}
     untranslated = set()
 
     occurrences = []
-    for level, found in ((1, level1), (2, level2)):
+    for level, found in ((1, level1), (2, level2), (3, level3)):
         for run, act in found:
             def locate(t):
                 mi = bisect_right(act.offsets, t) - 1
@@ -384,9 +412,12 @@ def main():
             if level == 1:
                 label = "Exact match" if run.length == N else f"Closest match: {run.length} of {N} notes"
                 note = None if run.length == N else difference(run)
-            else:
+            elif level == 2:
                 label = "Same pitches and rhythm" if same_rhythm else "Same pitches, different rhythm"
                 note = None if same_rhythm else rhythm_difference(run)
+            else:
+                label = "Another key, same rhythm" if same_rhythm else "Another key, different rhythm"
+                note = key_difference(run, same_rhythm)
             occurrences.append(dict(
                 id=f"{act.work[6:]}-{a:.3f}", act=act.work, level=level,
                 scene=next((sc for s, e, sc in act.scenes if s <= a <= e + 0.001), None), label=label, note=note,
