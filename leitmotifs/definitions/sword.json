@@ -1,7 +1,7 @@
 {
  "id": "sword",
  "name": "Sword",
- "lilypond": "g8 c'2 c4.. e16 g4. c'8 e2",
+ "lilypond": "g8 c'2 c4.. e16 g4. c'8 e'2",
  "core_notes": [1, 7],
  "max_level": 2,
  "original": { "octaves_up": 1, "time": "4/4", "partial": "8" }
