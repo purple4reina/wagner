@@ -1,0 +1,8 @@
+{
+ "id": "brunnhilde-in-sleep",
+ "name": "Brünnhilde in Sleep",
+ "lilypond": "e4 cis'4 b4 gis8. fis16 e4",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 1, "time": "4/4", "key_signature": 4 }
+}

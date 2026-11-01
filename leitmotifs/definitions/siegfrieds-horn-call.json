@@ -1,0 +1,8 @@
+{
+ "id": "siegfrieds-horn-call",
+ "name": "Siegfried's Horn Call",
+ "lilypond": "f8 c'8. a16 f8 g8 a8 bes8 a8 g8 g4.",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 1, "time": "6/8", "key_signature": -1 }
+}

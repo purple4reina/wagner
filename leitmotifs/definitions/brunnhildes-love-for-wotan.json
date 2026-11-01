@@ -1,0 +1,8 @@
+{
+ "id": "brunnhildes-love-for-wotan",
+ "name": "Brünnhilde's Love for Wotan",
+ "lilypond": "e4. dis8 cis8. b,16 a2 gis4 fis4. e8 dis8. cis16 cis'2 b8 a8 gis4",
+ "core_notes": [1, 11],
+ "openings": [],
+ "original": { "octaves_up": 2, "time": "3/4", "key_signature": 4 }
+}

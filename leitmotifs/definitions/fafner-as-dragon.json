@@ -1,0 +1,8 @@
+{
+ "id": "fafner-as-dragon",
+ "name": "Fafner as Dragon",
+ "lilypond": "ges32 aes32 bes32 b32 c'8 r16 c'16 c'8 r8 ges8 r8 c'8",
+ "core_notes": [1, 9],
+ "max_level": 2,
+ "original": { "octaves_up": -2, "time": "3/4", "partial": "8", "clef": "bass", "key_signature": -4 }
+}

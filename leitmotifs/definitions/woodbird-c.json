@@ -1,0 +1,8 @@
+{
+ "id": "woodbird-c",
+ "name": "Woodbird (C)",
+ "lilypond": "cis'4. b8 gis8. fis16 e8 cis8 e8 gis8 e8 gis8 b4.",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 2, "time": "9/8", "partial": "2.", "key_signature": 4 }
+}

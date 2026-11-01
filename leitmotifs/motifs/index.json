@@ -1,6 +1,18 @@
 {
  "motifs": [
   {
+   "id": "blow-bellows",
+   "name": "Blow Bellows"
+  },
+  {
+   "id": "brunnhilde-in-sleep",
+   "name": "Brünnhilde in Sleep"
+  },
+  {
+   "id": "brunnhildes-love-for-wotan",
+   "name": "Brünnhilde's Love for Wotan"
+  },
+  {
    "id": "curse",
    "name": "Curse"
   },
@@ -15,6 +27,10 @@
   {
    "id": "erda",
    "name": "Erda"
+  },
+  {
+   "id": "fafner-as-dragon",
+   "name": "Fafner as Dragon"
   },
   {
    "id": "gold",
@@ -53,6 +69,10 @@
    "name": "Siegfried"
   },
   {
+   "id": "siegfrieds-horn-call",
+   "name": "Siegfried's Horn Call"
+  },
+  {
    "id": "sieglinde",
    "name": "Sieglinde"
   },
@@ -83,6 +103,18 @@
   {
    "id": "walsungs",
    "name": "Wälsungs"
+  },
+  {
+   "id": "woodbird-ab",
+   "name": "Woodbird (A/B)"
+  },
+  {
+   "id": "woodbird-c",
+   "name": "Woodbird (C)"
+  },
+  {
+   "id": "world-ash",
+   "name": "World Ash"
   },
   {
    "id": "wotans-spear",

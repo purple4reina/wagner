@@ -1,0 +1,8 @@
+{
+ "id": "world-ash",
+ "name": "World Ash",
+ "lilypond": "bes4 es'4 bes4. ges8 es2 ges4 bes2. ~bes4",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 1, "time": "6/4", "partial": "4", "key_signature": -6 }
+}
