@@ -9,6 +9,10 @@
    "name": "Brünnhilde in Sleep"
   },
   {
+   "id": "brunnhilde-the-woman",
+   "name": "Brünnhilde the Woman"
+  },
+  {
    "id": "brunnhildes-love-for-wotan",
    "name": "Brünnhilde's Love for Wotan"
   },
@@ -35,6 +39,14 @@
   {
    "id": "gold",
    "name": "Gold"
+  },
+  {
+   "id": "gunther",
+   "name": "Gunther"
+  },
+  {
+   "id": "gutrune",
+   "name": "Gutrune"
   },
   {
    "id": "hunding",
