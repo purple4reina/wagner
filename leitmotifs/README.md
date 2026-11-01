@@ -28,7 +28,7 @@ The script runs these steps in order. You can run each step alone.
 
 | Step | Command | Result |
 |---|---|---|
-| 1. Fetch the dataset | `python3 -I tools/fetch_from_zenodo.py --only 01_RawData/score_musicxml/ --only 02_Annotations/ann_score_scenes/ --only 02_Annotations/ann_score_singing/` | 33 files in `data/` (about 180 MB). The script skips this step if the files are there. |
+| 1. Fetch the dataset | `python3 -I tools/fetch_from_zenodo.py --only 01_RawData/score_musicxml/ --only 02_Annotations/ann_score_scenes/ --only 02_Annotations/ann_score_singing/ --only 02_Annotations/ann_audio_measure/` | 209 files in `data/` (about 185 MB). The script skips this step if the files are there. |
 | 2. Find the passages | `python3 -I tools/find_motif.py siegfried` | `motifs/siegfried.json` |
 | 3. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 

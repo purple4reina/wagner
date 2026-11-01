@@ -82,4 +82,6 @@ Run Python on dataset files with `python3 -I`, and run these scripts only after 
 
 Every file in `leitmotifs/motifs/` is generated. Never edit one by hand, and never make one in a throwaway: the user must be able to delete them and rebuild them with `tools/reproduce.sh`. The hand-written inputs are `leitmotifs/definitions/*.json` (one melody per leitmotif) and `leitmotifs/translations.json` (English for the sung German, shared by all leitmotifs). The searches serve every leitmotif, so a search or an analysis belongs in a script under `tools/` (`find_motif.py`, `make_sample.py`, `analyze_levels.py`), not in a scratch file.
 
+The sound of the Play button has the tempo of one recording (`PERFORMANCE` in `tools/find_motif.py`, from its `ann_audio_measure` file), written into each excerpt as a `<sound tempo>`; the original melody plays at 120.
+
 Matching rules, in `tools/find_motif.py`: one staff and voice, tied notes merged, a run of repeated notes counts as one note, octave is ignored, two notes that follow each other cannot start in the same chord (a repeated chord, such as a tremolo, is not a melody), and passages may overlap in time (two are one statement only if they end on the same note of the same line, or start and end together).

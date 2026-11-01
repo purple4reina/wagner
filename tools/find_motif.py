@@ -14,7 +14,8 @@ melody is a gap of that length: level 1 needs the same rest in the score, the ot
 Two notes that follow each other cannot start in the same chord: a chord that repeats is not a melody.
 Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
 note of the same staff and voice, or they begin and end at the same moments.
-The notation excerpt of a passage is copied from the score (see excerpt()).
+The notation excerpt of a passage is copied from the score (see excerpt()). It carries the tempo of one recording
+(see PERFORMANCE), so that the sound of the page plays at the speed of a performance.
 
 usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
@@ -30,6 +31,7 @@ MAX_CHAINS = 64  # the most ways to match one start that find_core() compares
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFINITIONS = ROOT / "leitmotifs" / "definitions"
 ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not part of the score
+PERFORMANCE = "Karajan1966"  # the recording whose measure times set the tempo of the sound (one of the three with hand-made times)
 
 
 def openings():
@@ -480,13 +482,14 @@ def trim_spans(notes):
                 parent.remove(s)
 
 
-def excerpt(chain, measures, rests=()):
+def excerpt(chain, measures, rests=(), tempo=None):
     """Return a MusicXML score of the source notes of one match.
 
     The notes are copies of the notes in the score, so the clef, key, time signature, octave, rhythm,
     accidentals, stems, beams and ties are the ones of the score. Other notes are left out. The rests of the same
     staff and voice between the first and the last note are copied too, so that a melody with rests shows them. A rest
     that a chosen note sounds through (a chord with a shorter tone) is left out, because the notes follow each other.
+    `tempo` is in quarter notes per minute. It sets the speed of the sound and shows nothing in the engraving.
     """
     pieces = sorted((p for g in chain for p in g.pieces), key=lambda p: p.onset)
     notes = []
@@ -540,6 +543,12 @@ def excerpt(chain, measures, rests=()):
                     ET.SubElement(c, "clef-octave-change").text = p.clef[2]
         m.append(n)
         last = now
+
+    if tempo:
+        direction = ET.Element("direction")  # Verovio prints an empty tempo mark as nothing
+        ET.SubElement(ET.SubElement(direction, "direction-type"), "words")
+        ET.SubElement(direction, "sound", tempo=str(tempo))
+        part[0].insert(1, direction)  # after the attributes of the first measure
 
     root = ET.Element("score-partwise", version="3.0")
     ET.SubElement(ET.SubElement(ET.SubElement(root, "part-list"), "score-part", id="P1"), "part-name")
@@ -657,6 +666,23 @@ def read_csv(path):
         return list(csv.DictReader(f, delimiter=";"))
 
 
+def seconds_at(path):
+    """Return a function from a score position (a measure number with a fraction) to its time in the recording, in
+    seconds, by linear interpolation between the measure times of `path` (an ann_audio_measure file). It returns None
+    outside the measures that the file lists. The last row is the end of the act, at a position such as 1732.999, so
+    the whole number after it (where a passage at the end of the act stops) still counts."""
+    rows = [(float(r["measure"]), float(r["start"])) for r in read_csv(path)]
+    numbers = [m for m, _ in rows]
+
+    def at(position):
+        i = min(bisect_right(numbers, position) - 1, len(rows) - 2)
+        if i < 0 or position - numbers[-1] > 0.002:
+            return None
+        (m0, t0), (m1, t1) = rows[i], rows[i + 1]
+        return t0 + (t1 - t0) * (position - m0) / (m1 - m0)
+    return at
+
+
 def motif_block():
     """Return the "motif" part of a motif file: the id, the name, a description, and the source of the melody. The
     definition names its source by a key of leitmotifs/sources.json, so that one citation serves every leitmotif."""
@@ -729,7 +755,8 @@ def main():
             merged, measures, offsets, rests = read_act(score / f"Wagner_{work}.xml")
             singing = [(float(r["measure_start"]), float(r["measure_end"]), r["person"], r["text"])
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
-            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests)
+            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests,
+                                  seconds=seconds_at(f"{ann}/ann_audio_measure/Wagner_{work}_{PERFORMANCE}.csv"))
             top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
             if top >= 2:
@@ -772,6 +799,9 @@ def main():
                 return act.measures[mi]["number"] + round(float((t - act.offsets[mi]) / act.measures[mi]["nominal"]), 3)
 
             a, b = locate(run.shown[0].onset), locate(run.shown[-1].onset + run.shown[-1].dur)
+            t0, t1 = act.seconds(a), act.seconds(b)
+            quarters = run.shown[-1].onset + run.shown[-1].dur - run.shown[0].onset
+            tempo = round(60 * float(quarters) / (t1 - t0), 1) if t0 is not None and t1 is not None and t1 > t0 else None
             same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:])) and all(
                 nxt[0].onset - (g[-1].onset + g[-1].dur) == m[5] for g, nxt, m in zip(run.groups, run.groups[1:], MOTIF[run.start:]))  # the rests too
             if level == 1:
@@ -799,7 +829,7 @@ def main():
                 scene=next((sc for s, e, sc in act.scenes if s <= a <= e + 0.001), None), label=label, note=note,
                 libretto=[dict(kind="sung", person=p, text=x, **({"translation": translations[x]} if x in translations else {}))
                           for s, e, p, x in act.singing if s < b and e >= a],
-                notation=dict(musicxml=excerpt(run.shown, act.measures, act.rests)), **{"from": a, "to": b}))
+                notation=dict(musicxml=excerpt(run.shown, act.measures, act.rests, tempo)), **{"from": a, "to": b}))
             untranslated |= {l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l}
             print(f"level {level}  {act.work:10s} measure {a:9.3f}  {label}")
     # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.

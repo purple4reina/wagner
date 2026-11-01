@@ -132,7 +132,7 @@ The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an inte
 
 `svg` is optional. It is the text of an SVG file, for example an engraving that LilyPond made. If it is present, the page shows it in the notation panel instead of the Verovio engraving. In that case `musicxml` only drives the sound. Use it when the notation must look exactly as someone drew it. The page shows the SVG as an image with a `data:` URL. The code and the styles inside the SVG therefore cannot run or change the page. The image fills the width of the panel and is at most 420 pixels high. LilyPond draws black on a transparent background. In a dark color scheme the page inverts the image (`filter: invert(1)`), so that the notation is white on the dark panel. An SVG with other colors gets inverted colors in that scheme, so draw it in black.
 
-The Play button needs no audio data. The page asks Verovio for a MIDI version of the same file and plays it with Web Audio. The page highlights each note while it sounds. An `svg` image has no note ids, so the page does not highlight a note then. The sound has the printed note values of the `musicxml` staff: a tie sounds as one note, and a repeated note sounds again. Verovio ignores a `time-modification` that has no tuplet bracket, so a note with such a marking sounds as long as its printed value, and not as long as its `<duration>`.
+The Play button needs no audio data. The page asks Verovio for a MIDI version of the same file and plays it with Web Audio. The sound plays at the tempo of the file: a `<direction>` in the first measure with `<sound tempo="N"/>` (N quarter notes per minute) sets it, and without one the sound plays at 120. Verovio prints such a direction as nothing. `tools/find_motif.py` writes the tempo of one recording (`PERFORMANCE`): the notated length of the passage in quarter notes, divided by the time between its first and its last note in the `ann_audio_measure` file of that recording. The tempo is constant over a passage. The original melody is not in a recording and plays at 120. The page highlights each note while it sounds. An `svg` image has no note ids, so the page does not highlight a note then. The sound has the printed note values of the `musicxml` staff: a tie sounds as one note, and a repeated note sounds again. Verovio ignores a `time-modification` that has no tuplet bracket, so a note with such a marking sounds as long as its printed value, and not as long as its `<duration>`.
 
 ## Example
 
@@ -165,5 +165,5 @@ The Play button needs no audio data. The page asks Verovio for a MIDI version of
 
 ## Not in version 1
 
-- Recordings. The sound on the page is a synthesized version of the notation. The positions are score measures, so a later step can find the time of any position in `ann_audio_measure` and play a recording.
+- Recordings. The sound on the page is a synthesized version of the notation, at the tempo of a recording. The positions are score measures, so a later step can find the time of any position in `ann_audio_measure` and play a recording.
 - A match score for each occurrence. The page does not show how sure the builder of the data is.
