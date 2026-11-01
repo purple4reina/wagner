@@ -57,9 +57,9 @@ A level tells how close an occurrence is to the original form of the motif. Leve
 | `label` | string, optional | The short name of the level. The default is `Level N`. |
 | `name` | string, optional | What the level is. The page writes it after the label. |
 | `description` | string, optional | One or two sentences. The page shows them under the name in the legend and in the tooltip of the level tag. |
-| `hidden_by_default` | boolean, optional | When true, the page loads with the switch of this level off. The viewer can switch it on. The page ignores the flag if it would switch off every level, or if the link (`#id`) points to an occurrence of this level. |
+| `hidden_by_default` | boolean, optional | When true, the page loads with the button of this level off. The viewer can switch it on. The page ignores the flag if it would switch off every level, or if the link (`#id`) points to an occurrence of this level. |
 
-When the data holds two or more levels, the page shows a legend with one switch for each level. Each switch hides or shows the marks of its level. A mark gets shorter and fainter as its level number grows, so level 0 has the tallest mark. The detail view names the level of the occurrence. A level that is missing from this list still works. The page calls it "Level N".
+When the data holds two or more levels, the page shows a legend with one button for each level. The first click on a button shows the marks of that level alone. After that, a click on a button shows or hides the marks of its level, and a click on the only level that is on brings back the levels of the start. The button of the original (the level of the `original` section) is always on and cannot be clicked. A mark gets shorter and fainter as its level number grows, so level 0 has the tallest mark. The detail view names the level of the occurrence. A level that is missing from this list still works. The page calls it "Level N".
 
 ## `sections`
 

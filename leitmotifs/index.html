@@ -67,6 +67,7 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 @media (max-width: 760px) { .levels { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 1fr; } }
 .levelbtn { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; padding: 8px 14px; text-align: left; }
 .levelbtn[aria-pressed="false"] { opacity: .5; }
+.levelbtn:disabled { opacity: 1; } /* the original is always on, so it must not look off */
 .levelbtn small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.35; }
 .levelbtn .count { color: var(--muted); font-size: .85rem; }
 .act { margin-top: 9px; font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -172,6 +173,8 @@ const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'sieg
 let motifId = idInUrl(), loadSeq = 0;
 let sections, occs, marks, levelInfo, levelCount, motifSource, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
+const levelButtons = new Map();
+let freeLevels, startHidden, soloing; // the levels that the viewer can switch (all but the original), the ones that were off at the start, and whether the viewer has picked a level since
 const visible = i => !hidden.has(occs[i].level);
 
 // Show the motif `id`. The page, the notation engine and the sound stay; only the view is rebuilt.
@@ -201,6 +204,7 @@ function clear() {
   sections = []; occs = []; marks = []; motifSource = undefined;
   current = -1;
   hidden.clear();
+  levelButtons.clear();
   for (const id of ['status', 'levels', 'grid']) $(id).replaceChildren();
   for (const id of ['levels', 'timeline', 'detail', 'source']) $(id).hidden = true;
   $('grid').style.gridTemplateColumns = '';
@@ -268,6 +272,7 @@ function init(data) {
   const skipped = data.occurrences.length - occs.length;
   levelInfo = new Map((data.levels || []).map(l => [l.level, l]));
   levelCount = new Set(occs.map(o => o.level)).size;
+  freeLevels = [...new Set(occs.filter(o => !sections[o.s].original).map(o => o.level))];
 
   const name = data.motif?.name || motifId;
   document.title = `The ${name} motif`;
@@ -282,10 +287,12 @@ function init(data) {
 
   // A level that the data marks "hidden_by_default" starts switched off, unless the link points into it.
   const linked = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
-  for (const n of new Set(occs.map(o => o.level))) {
+  for (const n of freeLevels) {
     if (levelInfo.get(n)?.hidden_by_default && n !== occs[linked]?.level) hidden.add(n);
   }
-  if (hidden.size >= levelCount) hidden.clear(); // keep one level on
+  if (hidden.size >= freeLevels.length) hidden.clear(); // keep one level on
+  startHidden = new Set(hidden);
+  soloing = false;
 
   buildLevels();
   buildTimeline();
@@ -305,18 +312,29 @@ function buildLevels() {
     button.className = 'levelbtn';
     button.setAttribute('aria-pressed', String(!hidden.has(n)));
     button.append(swatch, text, el('span', 'count', `${occs.filter(o => o.level === n).length}`));
-    button.onclick = () => toggleLevel(n, button);
+    button.onclick = () => toggleLevel(n);
+    if (!freeLevels.includes(n)) { button.disabled = true; button.title = 'The original always shows.'; }
+    levelButtons.set(n, button);
     $('levels').append(button);
   }
   $('levels').style.setProperty('--rows', Math.ceil(levelCount / 2));
   $('levels').hidden = false;
 }
 
-function toggleLevel(n, button) {
-  const switchOn = hidden.has(n);
-  if (!switchOn && hidden.size + 1 >= levelCount) return; // keep one level on
-  if (switchOn) hidden.delete(n); else hidden.add(n);
-  button.setAttribute('aria-pressed', String(switchOn));
+// The first click on a level shows that level alone. After that, a click switches one more level on or off,
+// and a click on the only level that is on brings back the levels of the start.
+function toggleLevel(n) {
+  if (!soloing) {
+    soloing = true;
+    freeLevels.forEach(l => hidden.add(l));
+    hidden.delete(n);
+  } else if (!hidden.has(n) && hidden.size + 1 >= freeLevels.length) {
+    soloing = false;
+    hidden.clear();
+    startHidden.forEach(l => hidden.add(l));
+  } else if (hidden.has(n)) hidden.delete(n);
+  else hidden.add(n);
+  levelButtons.forEach((b, l) => b.setAttribute('aria-pressed', String(!hidden.has(l))));
   occs.forEach((o, i) => { marks[i].hidden = hidden.has(o.level); });
   if (visible(current)) return updateStepper();
   for (let d = 1; d < occs.length; d++) {
