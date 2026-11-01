@@ -75,7 +75,8 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 /* the clicked appearance: its text in three columns, above the notation, which runs the full width */
 #detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.25fr); gap: 28px clamp(24px, 3vw, 48px); margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
 #detail > .score { grid-column: 1 / -1; }
-@media (max-width: 1100px) { #detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } #detail > .where { grid-column: 1 / -1; } }
+#detail:has(#libretto[hidden]) .what { grid-column: 2 / -1; } /* no text to read: the explanation takes the column of the libretto too */
+@media (max-width: 1100px) { #detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } #detail > .where, #detail:has(#libretto[hidden]) .what { grid-column: 1 / -1; } }
 @media (max-width: 760px) { #detail { grid-template-columns: 1fr; } }
 .notation { display: flex; align-items: center; justify-content: center; min-height: 160px; padding: 20px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
 .notation svg { max-width: 100%; height: auto; fill: currentColor; }
@@ -160,7 +161,6 @@ footer p { margin: 0 0 .8em; }
   </article>
 
   <footer>
-    <p id="source" hidden></p>
     <p>
       Measure positions, sung text, scene boundaries and the piano score come from the Wagner Ring Dataset
       (Weiß et al., <i>TISMIR</i> 6(1), 2023, <a href="https://doi.org/10.5334/tismir.161">doi:10.5334/tismir.161</a>, CC BY 3.0).
@@ -184,7 +184,7 @@ const el = (tag, cls, text) => {
 
 const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
 let motifId = idInUrl(), loadSeq = 0;
-let sections, occs, marks, levelInfo, levelCount, current = -1;
+let sections, occs, marks, levelInfo, levelCount, cite, current = -1; // cite: where the melody comes from
 const hidden = new Set(); // the levels that the viewer switched off
 const levelButtons = new Map();
 let fullScore = false, fullData; // whether the viewer wants the whole piano score, and the open motif's full scores by occurrence id (fetched on the first need)
@@ -220,7 +220,7 @@ function clear() {
   hidden.clear();
   levelButtons.clear();
   for (const id of ['status', 'levels', 'grid']) $(id).replaceChildren();
-  for (const id of ['levels', 'timeline', 'detail', 'source']) $(id).hidden = true;
+  for (const id of ['levels', 'timeline', 'detail']) $(id).hidden = true;
   $('grid').style.gridTemplateColumns = '';
   scrollTo(0, 0);
 }
@@ -290,9 +290,7 @@ function init(data) {
   const name = data.motif?.name || motifId;
   document.title = `The ${name} motif`;
   $('title').textContent = document.title;
-  const cite = data.motif?.source; // where the melody comes from
-  $('source').hidden = !cite;
-  if (cite) $('source').replaceChildren('Source of the melody: ', cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
+  cite = data.motif?.source;
 
   // A level that the data marks "hidden_by_default" starts switched off, unless the link points into it.
   const linked = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
@@ -491,8 +489,13 @@ function show(o) {
     chip.append(swatch, `${levelLabel(o.level)}${info?.name ? `: ${info.name}` : ''}`);
     measures.append(chip);
   }
-  $('form').textContent = o.label || '';
-  $('note').textContent = o.note || '';
+  if (s.original && cite) { // the original melody has no passage to describe: it shows where the melody comes from
+    $('form').textContent = 'Source';
+    $('note').replaceChildren(cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
+  } else {
+    $('form').textContent = o.label || '';
+    $('note').textContent = o.note || '';
+  }
 
   const lib = $('libretto'), lines = o.libretto || [];
   lib.hidden = o.libretto === null; // null: no text applies, as for the original melody

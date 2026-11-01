@@ -39,8 +39,9 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 
 `motif.name` appears in the page title. The page does not show `motif.description`.
 
-`motif.source` is where the melody comes from. The page writes it in the footer, above the credit for the dataset, as
-"Source of the melody: author, *title* (publication)." The page shows no such line if the field is missing. `tools/find_motif.py` copies it from
+`motif.source` is where the melody comes from. The page shows it with the original melody, in the place of that occurrence's `label` and
+`note`: the word "Source", then "author, *title* (publication)." across the columns of the explanation and the text. If the field is missing, the
+page shows the `label` and the `note` of the original instead. `tools/find_motif.py` copies the field from
 `sources.json`, which holds one citation for each key that a definition names in its `source` field.
 
 ## `levels`
