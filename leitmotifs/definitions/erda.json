@@ -1,0 +1,8 @@
+{
+ "id": "erda",
+ "name": "Erda",
+ "lilypond": "cis4. dis8 e4. fis8 gis4. cis'8 e'2",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": 4 }
+}

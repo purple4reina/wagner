@@ -1,0 +1,8 @@
+{
+ "id": "curse",
+ "name": "Curse",
+ "lilypond": "fis8 fis8 a2 a4 a8. a16 c2. r8 c'8 e'2 e4 e8 c8 g2",
+ "core_notes": [1, 13],
+ "openings": [],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "4", "clef": "bass", "key_signature": 2 }
+}

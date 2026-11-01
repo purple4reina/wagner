@@ -1,0 +1,8 @@
+{
+ "id": "hunding",
+ "name": "Hunding",
+ "lilypond": "c4 c4 r8. c32 c32 c8 aes,8 f8 d8. d16 d4 r2 r2 r8 es8 c8 es8 d8. d16 d4",
+ "core_notes": [1, 10],
+ "max_level": 2,
+ "original": { "octaves_up": 1, "time": "4/4", "clef": "bass", "key_signature": -3 }
+}

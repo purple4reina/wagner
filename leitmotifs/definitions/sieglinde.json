@@ -1,0 +1,8 @@
+{
+ "id": "sieglinde",
+ "name": "Sieglinde",
+ "lilypond": "r8 bes,8 e8 g8 bes8. a16 g4 r4 r4 r8 d8 g8 bes8 d'8. c'16 bes2.",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 1, "time": "3/4", "key_signature": -1 }
+}

@@ -1,0 +1,8 @@
+{
+ "id": "loge",
+ "name": "Loge",
+ "lilypond": "fis4 ~fis16 cis'16 c'16 f16 e16 b16 bes16 es16 d16 a16 aes16 des16 c16",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 1, "time": "2/4", "key_signature": 3 }
+}

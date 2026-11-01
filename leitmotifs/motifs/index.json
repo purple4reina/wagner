@@ -1,16 +1,84 @@
 {
  "motifs": [
   {
+   "id": "curse",
+   "name": "Curse"
+  },
+  {
+   "id": "donners-call",
+   "name": "Donner's Call"
+  },
+  {
+   "id": "dragon",
+   "name": "Dragon"
+  },
+  {
+   "id": "erda",
+   "name": "Erda"
+  },
+  {
    "id": "gold",
    "name": "Gold"
+  },
+  {
+   "id": "hunding",
+   "name": "Hunding"
+  },
+  {
+   "id": "loge",
+   "name": "Loge"
+  },
+  {
+   "id": "nibelungs-and-mining-of-gold",
+   "name": "Nibelungs and Mining of Gold"
+  },
+  {
+   "id": "rhine",
+   "name": "Rhine"
   },
   {
    "id": "rhine-daughters",
    "name": "Rhine Daughters"
   },
   {
+   "id": "rhinegold",
+   "name": "Rhinegold"
+  },
+  {
    "id": "siegfried",
    "name": "Siegfried"
+  },
+  {
+   "id": "sieglinde",
+   "name": "Sieglinde"
+  },
+  {
+   "id": "siegmund",
+   "name": "Siegmund"
+  },
+  {
+   "id": "sword",
+   "name": "Sword"
+  },
+  {
+   "id": "valhalla",
+   "name": "Valhalla"
+  },
+  {
+   "id": "valkyries",
+   "name": "Valkyries"
+  },
+  {
+   "id": "valkyries-warcry",
+   "name": "Valkyries Warcry"
+  },
+  {
+   "id": "walsungs-woe",
+   "name": "Wälsung's Woe"
+  },
+  {
+   "id": "walsungs",
+   "name": "Wälsungs"
   },
   {
    "id": "wotans-spear",

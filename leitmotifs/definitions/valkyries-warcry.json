@@ -1,0 +1,8 @@
+{
+ "id": "valkyries-warcry",
+ "name": "Valkyries Warcry",
+ "lilypond": "g8 dis8. g,16 b,4. ~b,4 r8 g8 dis8. g,16 b,4. ~b,8 r8 b,16 b,16 e2. ~e8 r8 e16 e16 g2.",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 2, "time": "9/8", "key_signature": 2 }
+}

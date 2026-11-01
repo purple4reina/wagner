@@ -1,0 +1,7 @@
+{
+ "id": "dragon",
+ "name": "Dragon",
+ "lilypond": "dis4 e4 dis4 fis8. r16 eis4 fis4 eis4 gis8. r16 fisis4 gis4 fisis4 b8. r16 aes4 d'8. r16 cis'4 fis'8. r16",
+ "core_notes": [1, 8],
+ "original": { "octaves_up": -1, "time": "4/4", "clef": "bass", "key_signature": 3 }
+}
