@@ -327,15 +327,18 @@ function toggleLevel(n, button) {
 
 function buildTimeline() {
   const grid = $('grid');
-  grid.style.gridTemplateColumns = sections.map(s => `minmax(0, ${s.to - s.from}fr)`).join(' ');
+  // The original has no box, so its column is a gap at the left. An empty column of the same width at the right
+  // keeps the operas in the middle of the space.
+  const mirror = sections[0].original ? ` minmax(0, ${sections[0].to - sections[0].from}fr)` : '';
+  grid.style.gridTemplateColumns = sections.map(s => `minmax(0, ${s.to - s.from}fr)`).join(' ') + mirror;
 
-  // A section of the original melody takes the accent color and no palette slot, so the operas keep their colors.
+  // A section of the original melody has no box and no line above it, only its mark. It takes no palette slot, so the operas keep their colors.
   const operas = [];
   let palette = 0;
   sections.forEach((s, i) => {
     const last = operas[operas.length - 1];
     if (last?.name === s.opera && !s.original) last.n++;
-    else operas.push({ name: s.opera, col: i + 1, n: 1, color: s.original ? 'var(--motif)' : `var(--o${palette++ % 4})` });
+    else operas.push({ name: s.opera, col: i + 1, n: 1, color: s.original ? 'transparent' : `var(--o${palette++ % 4})` });
     s.color = operas[operas.length - 1].color;
   });
   for (const o of operas) {
