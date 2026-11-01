@@ -8,7 +8,11 @@ A seed is a pattern of n notes (5 <= n <= NMAX) such that
     scale runs, arpeggio cells and other texture that is predictable from its own first notes.
 `kind` chooses the interval alphabet: "semi" (semitones, exact), "dint" (diatonic steps, so that a major and a minor
 third are the same; finds mode variants) or "semi_nr" (semitones, rhythm ignored: finds motifs whose rhythm changes). Result: discovery/work/seeds_<kind>.pkl, a list of dicts.
-Run: discovery/.venv/bin/python -I discovery/tools/s03_seeds.py <semi|dint> [IC_MIN]
+Kinds "semi_simple" / "dint_simple": the seeds that the pitch-variety rules (`too_simple` below: < 3 distinct pitches, a near-
+periodic cell shorter than 5 notes, an oscillation) removed from "semi" / "dint". The user's criterion says the 5 notes need not
+have different pitches, so these seeds are included too; they are mined apart so that the ids of the earlier candidates, which
+the committed reviewer verdicts refer to, do not change.
+Run: discovery/.venv/bin/python -I discovery/tools/s03_seeds.py <semi|dint|semi_nr|semi_simple|dint_simple> [IC_MIN]
 """
 import os
 import pickle
@@ -43,10 +47,10 @@ def too_simple(ints, pitches, kind_offset=None):
     return False
 
 
-def mine_seeds(c, kind, ic_min, verbose=True, min_stmt=3, min_scenes=2, nmin=NMIN):
+def mine_seeds(c, kind, ic_min, verbose=True, min_stmt=3, min_scenes=2, nmin=NMIN, pitch_filter=True):
     """Seeds of corpus `c` (the real one, or a surrogate from s03b_null.py)."""
     use_rhythm = not kind.endswith("_nr")
-    tok = c["dint" if kind == "dint" else "semi"]
+    tok = c["dint" if kind.startswith("dint") else "semi"]
     N = len(tok)
     skip = 31
     bi = mine.markov_bits(tok, c["seg"], 32, skip=skip)
@@ -92,7 +96,7 @@ def mine_seeds(c, kind, ic_min, verbose=True, min_stmt=3, min_scenes=2, nmin=NMI
                 if len(set(c["scene"][so[f]].tolist())) < min_scenes:
                     continue
                 w = so[a]
-                if too_simple(tok[w:w + n - 1].tolist(), c["pitch"][w:w + n].tolist(), 9 if kind == "dint" else 15):
+                if pitch_filter and too_simple(tok[w:w + n - 1].tolist(), c["pitch"][w:w + n].tolist(), 9 if kind.startswith("dint") else 15):
                     continue
                 ends = np.concatenate([f[1:], [b]])
                 stm = []
@@ -109,8 +113,20 @@ def mine_seeds(c, kind, ic_min, verbose=True, min_stmt=3, min_scenes=2, nmin=NMI
     return seeds
 
 
+def seed_key(x):
+    return (x["n"], tuple(x["tokens"][0]), tuple(x["tokens"][1]))
+
+
 def main(kind, ic_min):
-    seeds = mine_seeds(corpus.load(), kind, ic_min)
+    c = corpus.load()
+    if kind.endswith("_simple"):
+        base = kind[:-len("_simple")]
+        kept = {seed_key(x) for x in mine_seeds(c, base, ic_min, verbose=False)}
+        seeds = [x for x in mine_seeds(c, base, ic_min, verbose=False, pitch_filter=False) if seed_key(x) not in kept]
+        for x in seeds:
+            x["kind"] = kind
+    else:
+        seeds = mine_seeds(c, kind, ic_min)
     with open(os.path.join(WORK, f"seeds_{kind}.pkl"), "wb") as f:
         pickle.dump(seeds, f)
     print(len(seeds), "seeds saved")

@@ -1,0 +1,186 @@
+{
+ "id": "LM510",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C#5",
+  "E6",
+  "D6",
+  "C#6",
+  "B5",
+  "G5"
+ ],
+ "pattern_durations": [
+  2.0,
+  0.5,
+  0.5,
+  0.5,
+  0.5
+ ],
+ "pattern_intervals": [
+  15,
+  -2,
+  -1,
+  -2,
+  -4
+ ],
+ "n_occurrences": 5,
+ "n_exact": 5,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Fafner; Siegfried; mockery",
+ "member_candidates": [
+  929
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 1104.5,
+   "pos1": 1105.5,
+   "measure": 1104,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "40:19.7",
+   "text": "~ Fafner: Schweig dein faules Schwatzen;",
+   "notes": [
+    "C#5",
+    "E6",
+    "D6",
+    "C#6",
+    "B5",
+    "G5"
+   ],
+   "durations": [
+    2.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1673.0,
+   "pos1": 1673.5,
+   "measure": 1673,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "64:58.1",
+   "text": "~ Siegfried: daß er vor Dieben dich deckt.",
+   "notes": [
+    "Bb2",
+    "Db4",
+    "Cb4",
+    "Bb3",
+    "Ab3",
+    "E3"
+   ],
+   "durations": [
+    1.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1675.0,
+   "pos1": 1675.5,
+   "measure": 1675,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "65:04.4",
+   "text": "~ Siegfried: daß er vor Dieben dich deckt.",
+   "notes": [
+    "Bb2",
+    "Db4",
+    "Cb4",
+    "Bb3",
+    "Ab3",
+    "E3"
+   ],
+   "durations": [
+    1.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1677.0,
+   "pos1": 1677.5,
+   "measure": 1677,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "65:11.1",
+   "text": "~ Siegfried: daß er vor Dieben dich deckt.",
+   "notes": [
+    "Ab2",
+    "B3",
+    "A3",
+    "G#3",
+    "F#3",
+    "D3"
+   ],
+   "durations": [
+    1.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1679.0,
+   "pos1": 1679.5,
+   "measure": 1679,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "65:17.8",
+   "text": "~ Siegfried: Da lieg’ auch du, dunkler Wurm!",
+   "notes": [
+    "Ab2",
+    "B3",
+    "A3",
+    "G#3",
+    "F#3",
+    "D3"
+   ],
+   "durations": [
+    1.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.1,
+ "strength": "weak",
+ "meets_criteria": true
+}

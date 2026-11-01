@@ -1,0 +1,128 @@
+{
+ "id": "LM466",
+ "n_notes": 6,
+ "pattern_notes": [
+  "Eb4",
+  "Ab3",
+  "D4",
+  "Eb4",
+  "F4",
+  "Eb4"
+ ],
+ "pattern_durations": [
+  1.5,
+  2.25,
+  0.25,
+  0.25,
+  0.25
+ ],
+ "pattern_intervals": [
+  -7,
+  6,
+  1,
+  2,
+  -2
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Siegfried's name, Rhinemaidens",
+ "member_candidates": [
+  879
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 1023.5,
+   "pos1": 1025.0,
+   "measure": 1023,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "24:16.0",
+   "text": "Siegfried: Jetzt sag, – woher heiß’ ich «Siegfried»?",
+   "notes": [
+    "Eb4",
+    "Ab3",
+    "D4",
+    "Eb4",
+    "F4",
+    "Eb4"
+   ],
+   "durations": [
+    1.5,
+    2.25,
+    0.25,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 222.88888888888889,
+   "pos1": 223.33333333333334,
+   "measure": 222,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "8:58.5",
+   "text": "Floßhilde: Freigebig solltest Frauen du sein!",
+   "notes": [
+    "F#3",
+    "B2",
+    "E#3",
+    "F#3",
+    "G#3",
+    "F#3"
+   ],
+   "durations": [
+    0.5,
+    1.0,
+    0.16,
+    0.17,
+    0.17
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 334.6666666666667,
+   "pos1": 335.6666666666667,
+   "measure": 334,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "13:28.3",
+   "text": "Woglinde: nur seine Flut sühnet den Fluch!; Wellgunde und Floßhilde: nur seine Flut sühnet den Fluch!",
+   "notes": [
+    "C3",
+    "F2",
+    "B2",
+    "C3",
+    "D3",
+    "C3"
+   ],
+   "durations": [
+    1.5,
+    2.5,
+    0.16,
+    0.17,
+    0.17
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 26.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

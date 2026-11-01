@@ -1,0 +1,119 @@
+{
+ "id": "LM633",
+ "n_notes": 5,
+ "pattern_notes": [
+  "E4",
+  "G3",
+  "F#3",
+  "E4",
+  "F#3"
+ ],
+ "pattern_durations": [
+  0.25,
+  3.0,
+  0.25,
+  0.25
+ ],
+ "pattern_intervals": [
+  -9,
+  -1,
+  10,
+  -10
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1188
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 453.1875,
+   "pos1": 454.125,
+   "measure": 453,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "14:25.5",
+   "text": "Brünnhilde: Wer von euch Schwestern schweifte nach Osten?; Siegrune: Nach Osten weithin dehnt sich ein Wald:",
+   "notes": [
+    "E4",
+    "G3",
+    "F#3",
+    "E4",
+    "F#3"
+   ],
+   "durations": [
+    0.25,
+    3.0,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 487.4166666666667,
+   "pos1": 488.5,
+   "measure": 487,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "15:21.0",
+   "text": "Brünnhilde: lache, ob Not, ob Leiden dich nagt!",
+   "notes": [
+    "C4",
+    "D#3",
+    "D3",
+    "C4",
+    "D3"
+   ],
+   "durations": [
+    0.25,
+    2.5,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 435.27777777777777,
+   "pos1": 436.1111111111111,
+   "measure": 435,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "17:48.3",
+   "text": "Woglinde, Wellgunde und Floßhilde: Leb’ wohl, Siegfried!",
+   "notes": [
+    "Gb4",
+    "A3",
+    "Ab3",
+    "Gb4",
+    "Ab3"
+   ],
+   "durations": [
+    0.25,
+    3.0,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

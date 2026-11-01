@@ -59,7 +59,7 @@ def main():
             s = share(x, y)
             ra, rb = cands[groups[a]["rep"]], cands[groups[b]["rep"]]
             q = 0.0
-            if ra["kind"] == rb["kind"]:
+            if ra["kind"].startswith("dint") == rb["kind"].startswith("dint"):  # same interval alphabet
                 ia, ib = ra["seed"]["tokens"][0], rb["seed"]["tokens"][0]
                 m = SequenceMatcher(None, ia, ib, autojunk=False).find_longest_match(0, len(ia), 0, len(ib))
                 q = m.size / max(1, min(len(ia), len(ib))) if m.size >= RUN else 0.0

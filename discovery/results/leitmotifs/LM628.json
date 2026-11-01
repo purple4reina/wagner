@@ -1,0 +1,119 @@
+{
+ "id": "LM628",
+ "n_notes": 5,
+ "pattern_notes": [
+  "C4",
+  "E4",
+  "C4",
+  "C5",
+  "E5"
+ ],
+ "pattern_durations": [
+  3.75,
+  0.25,
+  1.5,
+  0.5
+ ],
+ "pattern_intervals": [
+  4,
+  -4,
+  12,
+  4
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 3,
+ "reviewer_themes": "the sword, Nothung",
+ "member_candidates": [
+  1180
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3784.0,
+   "pos1": 3785.5,
+   "measure": 3784,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "140:47.8",
+   "text": "Wotan: sicher vor Bang’ und Grau’n!",
+   "notes": [
+    "C4",
+    "E4",
+    "C4",
+    "C5",
+    "E5"
+   ],
+   "durations": [
+    3.75,
+    0.25,
+    1.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2561.0,
+   "pos1": 2562.6666666666665,
+   "measure": 2561,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "72:28.1",
+   "text": "Mime: räum’ ich ihn leicht aus dem Weg,",
+   "notes": [
+    "C4",
+    "E4",
+    "C4",
+    "C5",
+    "E5"
+   ],
+   "durations": [
+    2.5,
+    0.5,
+    1.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 1080.0,
+   "pos1": 1080.75,
+   "measure": 1080,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "43:06.7",
+   "text": "Brünnhilde: Wohl kenn’ ich seine Schärfe,",
+   "notes": [
+    "C4",
+    "E4",
+    "C4",
+    "C5",
+    "E5"
+   ],
+   "durations": [
+    1.75,
+    0.25,
+    0.75,
+    0.25
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.6,
+ "strength": "weak",
+ "meets_criteria": true
+}

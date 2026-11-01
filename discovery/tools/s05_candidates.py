@@ -5,7 +5,9 @@
 * Features of the representative occurrence: n notes, IC bits, rhythm uniformity (share of the most common duration),
   duration contrast, stepwise share (|interval| <= 2 semitones), and of the family: occurrences, scenes, acts,
   operas, distinct "passages" (occurrences more than PASSAGE quarter notes apart), streams.
-* tier: "figuration" = the rhythm is (nearly) uniform, "motif" otherwise. Both are kept; tiers are reviewed separately.
+* The rhythm features (uniform, contrast, median_ioi) are DESCRIPTIVE only. No selection step may use them: the user's
+  rhythm criterion is that occurrences of a match have similar rhythm, not that a motif's own durations must vary
+  (an earlier version tiered candidates by uniformity; that was a mistake, see METHODOLOGY section 9).
 Result: discovery/work/candidates.pkl and candidates.tsv.
 Run: discovery/.venv/bin/python -I discovery/tools/s05_candidates.py
 """
@@ -85,29 +87,45 @@ def main():
             continue
         cands.append(dict(kind="dint", fam=fm, seed=seeds["dint"][fm["rep"]]))
         added += 1
+    # Seeds that the pitch-variety rules used to remove (kinds *_simple, see s03_seeds.py) are appended AFTER the earlier
+    # candidates so that their ids, which the committed reviewer verdicts refer to, stay the same. A family is added only if
+    # fewer than LINK of its occurrences lie where an existing candidate already is (it would add no new place).
+    n_old, simple_added = len(cands), 0
+    index = {}
+    for x in cands:
+        for o in x["fam"]["occ"]:
+            index.setdefault(o["act"], []).append((o["t0"] - SLACK, o["t1"] + SLACK))
+    for kind in ("semi_simple", "dint_simple"):
+        path = os.path.join(WORK, f"seeds_{kind}.pkl")
+        if not os.path.exists(path):
+            continue
+        seeds[kind] = pickle.load(open(path, "rb"))
+        for fm in pickle.load(open(os.path.join(WORK, f"families_{kind}.pkl"), "rb")):
+            iv = occ_intervals(fm)
+            hit = sum(1 for act, t0, t1 in iv if any(s0 <= t1 and t0 <= e for s0, e in index.get(act, ())))
+            if hit >= LINK * len(iv):
+                continue
+            cands.append(dict(kind=kind, fam=fm, seed=seeds[kind][fm["rep"]]))
+            simple_added += 1
+            for act, t0, t1 in iv:
+                index.setdefault(act, []).append((t0 - SLACK, t1 + SLACK))
     for i, x in enumerate(cands):
         x["id"] = i
         x["f"] = features(c, x["seed"], x["fam"], x["kind"])
         f = x["f"]
-        x["tier"] = "figuration" if f["uniform"] >= 0.85 else "motif"
     with open(os.path.join(WORK, "candidates.pkl"), "wb") as fh:
         pickle.dump(cands, fh)
-    cols = ["id", "kind", "tier", "n", "ic", "n_occ", "passages", "n_scenes", "n_acts", "n_operas", "uniform", "contrast",
+    cols = ["id", "kind", "n", "ic", "n_occ", "passages", "n_scenes", "n_acts", "n_operas", "uniform", "contrast",
             "median_ioi", "stepwise", "pitches", "top_stream_share"]
     with open(os.path.join(WORK, "candidates.tsv"), "w") as fh:
         fh.write("\t".join(cols) + "\n")
         for x in cands:
-            row = {**x["f"], "id": x["id"], "kind": x["kind"], "tier": x["tier"]}
+            row = {**x["f"], "id": x["id"], "kind": x["kind"]}
             fh.write("\t".join(f"{row[k]:.2f}" if isinstance(row[k], float) else str(row[k]) for k in cols) + "\n")
-    print(f"{len(fams['semi'])} semitone families + {added} diatonic = {len(cands)} candidates")
-    tiers = Counter(x["tier"] for x in cands)
-    print("tiers:", dict(tiers))
-    for tier in ("motif", "figuration"):
-        sub = [x["f"] for x in cands if x["tier"] == tier]
-        print(tier, "n>=6:", sum(f["n"] >= 6 for f in sub), " n>=8:", sum(f["n"] >= 8 for f in sub),
-              " passages>=3:", sum(f["passages"] >= 3 for f in sub), " ops>=2:", sum(f["n_operas"] >= 2 for f in sub),
-              " stepwise<0.8:", sum(f["stepwise"] < 0.8 for f in sub))
-
+    print(f"{len(fams['semi'])} semitone families + {added} diatonic + {simple_added} formerly pitch-filtered = {len(cands)} candidates")
+    sub = [x["f"] for x in cands]
+    print("n>=6:", sum(f["n"] >= 6 for f in sub), " n>=8:", sum(f["n"] >= 8 for f in sub),
+          " passages>=3:", sum(f["passages"] >= 3 for f in sub), " ops>=2:", sum(f["n_operas"] >= 2 for f in sub))
 
 if __name__ == "__main__":
     main()

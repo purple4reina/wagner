@@ -1,0 +1,146 @@
+{
+ "id": "LM652",
+ "n_notes": 5,
+ "pattern_notes": [
+  "D5",
+  "Eb5",
+  "F5",
+  "Gb4",
+  "C4"
+ ],
+ "pattern_durations": [
+  0.25,
+  0.25,
+  0.25,
+  1.5
+ ],
+ "pattern_intervals": [
+  1,
+  2,
+  -11,
+  -6
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 4,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Alberich; Siegfried's pledge; night falls",
+ "member_candidates": [
+  1289
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 407.75,
+   "pos1": 408.5,
+   "measure": 407,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "11:39.2",
+   "text": "Wellgunde und  Woglinde: Hahahahahaha!; Alberich: Wehe! Ach wehe! O Schmerz! O Schmerz!",
+   "notes": [
+    "D5",
+    "Eb5",
+    "F5",
+    "Gb4",
+    "C4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 2278.75,
+   "pos1": 2280.0,
+   "measure": 2278,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "77:21.4",
+   "text": "Alberich: Daß ich überall weile, wo keiner mich wähnt,",
+   "notes": [
+    "Cb5",
+    "C5",
+    "D5",
+    "Eb4",
+    "A3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 684.8125,
+   "pos1": 686.0,
+   "measure": 684,
+   "scene": "2",
+   "streams": [
+    "L112"
+   ],
+   "time": "29:24.5",
+   "text": "Siegfried: Froh und frei entblühe dem Bund; Siegfried und Gunther: Blutbrüderschaft heut’.",
+   "notes": [
+    "D5",
+    "Eb5",
+    "F5",
+    "Gb4",
+    "C4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    4.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1700.90625,
+   "pos1": 1701.25,
+   "measure": 1700,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "78:21.9",
+   "text": "~ Siegfried: Die Nacht bricht an: –",
+   "notes": [
+    "G#2",
+    "A2",
+    "B2",
+    "C2",
+    "F#1"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    1.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.8,
+ "strength": "weak",
+ "meets_criteria": true
+}

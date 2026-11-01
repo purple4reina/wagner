@@ -1,0 +1,131 @@
+{
+ "id": "LM617",
+ "n_notes": 5,
+ "pattern_notes": [
+  "D3",
+  "C#3",
+  "A3",
+  "D3",
+  "C#3"
+ ],
+ "pattern_durations": [
+  3.0,
+  2.0,
+  1.0,
+  3.0
+ ],
+ "pattern_intervals": [
+  -1,
+  8,
+  -7,
+  -1
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1168
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 2555.0,
+   "pos1": 2562.0,
+   "measure": 2555,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "85:00.9",
+   "text": "Loge: wichtig acht’ ich vor allem,; Loge: daß des Hortes Häufer, der Niblungen Heer,",
+   "notes": [
+    "D3",
+    "C#3",
+    "A3",
+    "D3",
+    "C#3"
+   ],
+   "durations": [
+    3.0,
+    2.0,
+    1.0,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 2574.0,
+   "pos1": 2581.8333333333335,
+   "measure": 2574,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "85:31.9",
+   "text": "Loge: doch, wenn im Schlaf ein Dieb dich beschlich’,; Loge: den Ring schlau dir entriss’ –",
+   "notes": [
+    "F3",
+    "E3",
+    "C4",
+    "F3",
+    "E3",
+    "G4",
+    "F3",
+    "E3",
+    "C4",
+    "F3",
+    "E3"
+   ],
+   "durations": [
+    3.0,
+    2.0,
+    1.0,
+    3.0,
+    2.0,
+    1.0,
+    3.0,
+    2.0,
+    1.0,
+    5.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 1262.0,
+   "pos1": 1265.0,
+   "measure": 1262,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "28:44.8",
+   "text": "Mime: vernagelt bin ich nun ganz! –; Mime: Wie helf’ ich mir jetzt?",
+   "notes": [
+    "F2",
+    "E2",
+    "C3",
+    "F2",
+    "E2"
+   ],
+   "durations": [
+    3.0,
+    2.0,
+    1.0,
+    3.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.2,
+ "strength": "weak",
+ "meets_criteria": true
+}

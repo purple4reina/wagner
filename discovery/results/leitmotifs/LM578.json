@@ -1,0 +1,157 @@
+{
+ "id": "LM578",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C#5",
+  "D#5",
+  "E5",
+  "F#5",
+  "G4",
+  "F#4"
+ ],
+ "pattern_durations": [
+  0.5,
+  0.5,
+  0.5,
+  0.5,
+  3.0
+ ],
+ "pattern_intervals": [
+  2,
+  1,
+  2,
+  -11,
+  -1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 4,
+ "n_acts": 4,
+ "n_operas": 2,
+ "reviewer_themes": "weapons, calls to arms",
+ "member_candidates": [
+  1078
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2948.3333333333335,
+   "pos1": 2950.0,
+   "measure": 2948,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "82:06.0",
+   "text": "Siegfried: So schneidet Siegfrieds Schwert!",
+   "notes": [
+    "C#5",
+    "D#5",
+    "E5",
+    "F#5",
+    "G4",
+    "F#4"
+   ],
+   "durations": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 81.8330078125,
+   "pos1": 82.875,
+   "measure": 81,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "2:53.6",
+   "text": "Der Wanderer: Ich rufe dich auf: herauf, herauf!",
+   "notes": [
+    "E5",
+    "F#5",
+    "G5",
+    "A5",
+    "Bb4",
+    "A4"
+   ],
+   "durations": [
+    0.17,
+    0.16,
+    0.17,
+    0.17,
+    3.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 417.1666666666667,
+   "pos1": 417.5833333333333,
+   "measure": 417,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "20:36.1",
+   "text": "Hagen: Starke Waffen! Scharf zum Streit!",
+   "notes": [
+    "A2",
+    "B2",
+    "C3",
+    "D3",
+    "Eb2",
+    "D2"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.75
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1153.375,
+   "pos1": 1153.5830078125,
+   "measure": 1153,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "56:56.6",
+   "text": "~ Hagen: Des Alben Erbe fordert so sein Sohn.",
+   "notes": [
+    "E3",
+    "F#3",
+    "G3",
+    "A3",
+    "Bb2",
+    "A2"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.33
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.6,
+ "strength": "weak",
+ "meets_criteria": true
+}

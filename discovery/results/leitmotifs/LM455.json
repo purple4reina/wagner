@@ -1,0 +1,134 @@
+{
+ "id": "LM455",
+ "n_notes": 6,
+ "pattern_notes": [
+  "E5",
+  "G4",
+  "C5",
+  "E5",
+  "G4",
+  "C5"
+ ],
+ "pattern_durations": [
+  0.75,
+  0.25,
+  3.5,
+  0.75,
+  0.25
+ ],
+ "pattern_intervals": [
+  -5,
+  3,
+  2,
+  -5,
+  3
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Hojotoho, Valkyrie battle cry",
+ "member_candidates": [
+  1815
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 151.11111111111111,
+   "pos1": 152.33333333333334,
+   "measure": 151,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "4:56.6",
+   "text": "Helmwige und Ortlinde: Hojotoho! Hojotoho! Hojotoho! Hojotoho! Heaha!; Gerhilde, Waltraute, Siegrune und Schwertleite: Heiaha! Heiaha! Heiaha! Heiaha! Heiaha! Heiaha!",
+   "notes": [
+    "E5",
+    "G4",
+    "C5",
+    "E5",
+    "G4",
+    "C5"
+   ],
+   "durations": [
+    0.75,
+    0.25,
+    3.5,
+    0.75,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 207.11111111111111,
+   "pos1": 208.33333333333334,
+   "measure": 207,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "6:43.8",
+   "text": "Siegrune: Hojotoho! Hojotoho!; Siegrune: Hieher! Hieher!",
+   "notes": [
+    "E#5",
+    "G#4",
+    "C#5",
+    "E#5",
+    "G#4",
+    "C#5"
+   ],
+   "durations": [
+    0.75,
+    0.25,
+    3.5,
+    0.75,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 1176.0830078125,
+   "pos1": 1177.25,
+   "measure": 1176,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "46:15.8",
+   "text": "Siegfried: brach ich dem Bruder den Eid.",
+   "notes": [
+    "G5",
+    "B4",
+    "Eb5",
+    "G5",
+    "B4",
+    "Eb5",
+    "G5",
+    "B4",
+    "Eb5"
+   ],
+   "durations": [
+    0.5,
+    0.17,
+    1.33,
+    0.5,
+    0.17,
+    1.33,
+    0.5,
+    0.17
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 27.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

@@ -1,0 +1,157 @@
+{
+ "id": "LM517",
+ "n_notes": 6,
+ "pattern_notes": [
+  "Cb4",
+  "Eb4",
+  "Cb4",
+  "Ab3",
+  "Cb4",
+  "Eb3"
+ ],
+ "pattern_durations": [
+  3.0,
+  9.75,
+  1.5,
+  1.75,
+  4.5
+ ],
+ "pattern_intervals": [
+  2,
+  -2,
+  -2,
+  2,
+  -5
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 2,
+ "n_acts": 1,
+ "n_operas": 1,
+ "reviewer_themes": "Brunnhilde calling Waltraute",
+ "member_candidates": [
+  1853
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 937.5,
+   "pos1": 940.9166666666666,
+   "measure": 937,
+   "scene": "2",
+   "streams": [
+    "L111"
+   ],
+   "time": "39:48.2",
+   "text": "",
+   "notes": [
+    "Cb4",
+    "Eb4",
+    "Cb4",
+    "Ab3",
+    "Cb4",
+    "Eb3"
+   ],
+   "durations": [
+    3.0,
+    9.75,
+    1.5,
+    1.75,
+    4.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 945.5,
+   "pos1": 948.9166666666666,
+   "measure": 945,
+   "scene": "2",
+   "streams": [
+    "L111"
+   ],
+   "time": "40:30.4",
+   "text": "",
+   "notes": [
+    "Eb4",
+    "G4",
+    "Eb4",
+    "C4",
+    "Eb4",
+    "G3"
+   ],
+   "durations": [
+    3.0,
+    9.75,
+    1.5,
+    1.75,
+    4.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1074.27734375,
+   "pos1": 1074.8880208333333,
+   "measure": 1074,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "47:41.4",
+   "text": "Brünnhilde: Kommst du, Schwester?",
+   "notes": [
+    "A3",
+    "C4",
+    "A3",
+    "F3",
+    "A3",
+    "C3"
+   ],
+   "durations": [
+    0.17,
+    0.66,
+    0.17,
+    0.17,
+    0.66
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1076.27734375,
+   "pos1": 1076.8880208333333,
+   "measure": 1076,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "47:44.7",
+   "text": "Brünnhilde: Schwingst dich kühn zu mir her?",
+   "notes": [
+    "A3",
+    "C4",
+    "A3",
+    "F3",
+    "A3",
+    "C3"
+   ],
+   "durations": [
+    0.17,
+    0.66,
+    0.17,
+    0.17,
+    0.66
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.8,
+ "strength": "weak",
+ "meets_criteria": true
+}

@@ -1,0 +1,127 @@
+{
+ "id": "LM605",
+ "n_notes": 5,
+ "pattern_notes": [
+  "Ab2",
+  "D2",
+  "Eb2",
+  "Ab1",
+  "Ab2"
+ ],
+ "pattern_durations": [
+  1.0,
+  1.5,
+  0.5,
+  3.0
+ ],
+ "pattern_intervals": [
+  -6,
+  1,
+  -7,
+  12
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 1,
+ "n_operas": 1,
+ "reviewer_themes": "instrumental, Fafner, dragon context",
+ "member_candidates": [
+  1153
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 21.0,
+   "pos1": 23.0,
+   "measure": 21,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "1:06.2",
+   "text": "",
+   "notes": [
+    "Ab2",
+    "D2",
+    "Eb2",
+    "Ab1",
+    "Ab2"
+   ],
+   "durations": [
+    1.0,
+    1.5,
+    0.5,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 523.0,
+   "pos1": 525.0,
+   "measure": 523,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "23:52.2",
+   "text": "",
+   "notes": [
+    "Ab2",
+    "D2",
+    "Eb2",
+    "Ab1",
+    "Ab2"
+   ],
+   "durations": [
+    1.0,
+    1.5,
+    0.5,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 527.0,
+   "pos1": 530.5,
+   "measure": 527,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "24:07.6",
+   "text": "",
+   "notes": [
+    "A2",
+    "D#2",
+    "E2",
+    "A1",
+    "A2",
+    "D#2",
+    "E2",
+    "A1",
+    "A2"
+   ],
+   "durations": [
+    1.0,
+    1.5,
+    0.5,
+    3.0,
+    1.0,
+    1.5,
+    0.5,
+    1.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 27.2,
+ "strength": "weak",
+ "meets_criteria": true
+}

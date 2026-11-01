@@ -1,0 +1,119 @@
+{
+ "id": "LM612",
+ "n_notes": 5,
+ "pattern_notes": [
+  "C3",
+  "A3",
+  "Db3",
+  "Bb3",
+  "Eb3"
+ ],
+ "pattern_durations": [
+  1.0,
+  0.5,
+  1.0,
+  0.5
+ ],
+ "pattern_intervals": [
+  9,
+  -8,
+  9,
+  -7
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1164
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 2109.0,
+   "pos1": 2110.0,
+   "measure": 2109,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "73:30.0",
+   "text": "Mime: Durch des Ringes Gold errät seine Gier,; Mime: wo neuer Schimmer in Schachten sich birgt:",
+   "notes": [
+    "C3",
+    "A3",
+    "Db3",
+    "Bb3",
+    "Eb3"
+   ],
+   "durations": [
+    1.0,
+    0.5,
+    1.0,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 904.0,
+   "pos1": 905.0,
+   "measure": 904,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "20:23.0",
+   "text": "Siegfried: Von dir erst muß ich erfahren,",
+   "notes": [
+    "D3",
+    "B3",
+    "Eb3",
+    "C4",
+    "F3"
+   ],
+   "durations": [
+    1.0,
+    0.5,
+    1.0,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 756.0,
+   "pos1": 757.0,
+   "measure": 756,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "31:28.1",
+   "text": "Siegfried: Grade so garstig, griesig und grau,; Siegfried: klein und krumm, höckrig und hinkend,",
+   "notes": [
+    "Bb2",
+    "G3",
+    "B2",
+    "G#3",
+    "C#3"
+   ],
+   "durations": [
+    1.0,
+    0.5,
+    1.0,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.5,
+ "strength": "weak",
+ "meets_criteria": true
+}

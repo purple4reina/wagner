@@ -1,0 +1,663 @@
+#399 [motif] n=8 occ=3 scenes=3 ops=2 streams=B1/T1
+  notes: E4 F#4 E4 D4 E4 F#4 G4 A4
+  dur:   .25 .75 .25 .75 .25 .75 .25
+  - C2 m1461 sc3: Mime: die Beute dir abgewinnen;
+  - D0 m795 sc0: 
+  - D1 m68 sc1: Gunther: daß uns’rem Ruhm es fromm’?
+#558 [motif] n=7 occ=4 scenes=4 ops=2 streams=B1/T1
+  notes: F#3 A3 C4 E4 E3 C3 G3
+  dur:   1 2 2 2 1.5 .5
+  - C2 m1648 sc3: ~ Siegfried: dazu durft’ ich ihn schmieden
+  - D1 m987 sc2: 
+  - D2 m863 sc4: Brünnhilde: Er ...? Siegfried …?
+  - D3 m1148 sc3: Gunther: schamloser Albensohn?; Hagen: Des Alben Erbe forder
+#1906 [motif] n=6 occ=11 scenes=7 ops=2 streams=B1/B2/T1
+  notes: D5 B4 G4 A4 B4 F#4
+  dur:   .5 .17 .33 .33 .34
+  - C2 m1661 sc3: Siegfried: In der Höhle hier lieg auf dem Hort!
+  - D0 m717 sc0: 
+  - D1 m292 sc1: Hagen: Ein gemächlicher Schlag
+  - D1 m866 sc2: 
+#1879 [motif] n=6 occ=4 scenes=3 ops=2 streams=B2/T2
+  notes: F1 B1 F2 G2 Ab2 Bb2
+  dur:   1 1.5 .12 .12 .12
+  - C2 m1676 sc3: ~ Siegfried: daß er vor Dieben dich deckt.
+  - C2 m1678 sc3: ~ Siegfried: Da lieg’ auch du, dunkler Wurm!
+  - C3 m261 sc1: Der Wanderer: das für sich zu vollbringen, –
+  - D3 m959 sc2: 
+#1728 [motif] n=7 occ=4 scenes=2 ops=2 streams=T1/T2
+  notes: F#4 E4 D4 C#4 E5 D5 C#5
+  dur:   .25 .25 .5 .25 1 .25
+  - C2 m1763 sc3: ~ Siegfried: Freundliches Vöglein, dich frage ich nun.
+  - C2 m1766 sc3: Siegfried: Freundliches Vöglein, dich frage ich nun.
+  - C2 m1786 sc3: Siegfried: Du, mein Trauter, träfst es wohl besser;
+  - D1 m774 sc2: Siegfried: Frisch auf die Fahrt!
+#1858 [motif] n=6 occ=3 scenes=3 ops=2 streams=B1/L212/T1
+  notes: B2 E3 C3 E3 C#3 F#3
+  dur:   1 2 1 2 1
+  - C2 m1780 sc3: Siegfried: Ich lockte so oft, und erlost’ es mir nie.
+  - C3 m547 sc2: Siegfried: Ich weiß allein,; Siegfried: daß die Stücken mir 
+  - D3 m551 sc2: ~ Hagen: Der uns das Wild verscheuchte,
+#1236 [motif] n=5 occ=4 scenes=2 ops=1 streams=T1
+  notes: B5 E6 G#6 F#6 B5
+  dur:   .5 .25 .25 5
+  - C2 m1804 sc3: Der Waldvogel: durchschritt’ er die Brunst,; Der Waldvogel: 
+  - C2 m1826 sc3: Der Waldvogel: Lustig im Leid sing’ ich von Liebe.
+  - C2 m1831 sc3: Der Waldvogel: Wonnig aus Weh’ web’ ich mein Lied:
+  - C3 m583 sc2: Siegfried: Wie siehst du denn aus?
+#694 [motif] n=7 occ=4 scenes=2 ops=1 streams=B1/T1
+  notes: C6 B5 A5 G5 F#5 E5 D#5
+  dur:   .5 .5 .25 .16 .17 1.67
+  - C2 m1810 sc3: Siegfried: O holder Sang! Süßester Hauch!
+  - C2 m1821 sc3: Siegfried: Sag es mir, süßer Freund!
+  - C2 m1838 sc3: Siegfried: Fort jagt mich’s jauchzend von hinnen,
+  - C3 m930 sc3: Siegfried: Brennender Zauber zückt mir in’s Herz;
+#1336 [motif] n=5 occ=4 scenes=2 ops=2 streams=B1/B2/L112
+  notes: B5 E5 C#5 E5 A5
+  dur:   2.17 .33 .33 .34
+  - C2 m1896 sc3: 
+  - D2 m608 sc3: Hagen: Das Trinkhorn nehmt,
+  - D2 m618 sc3: Mannen (T1, T2, B1, B2): Das Trinkhorn zur Hand, –; Mannen (
+  - D2 m622 sc3: Hagen: Rüstig gezecht, bis der Rausch euch zähmt:
+#1386 [motif] n=5 occ=4 scenes=2 ops=2 streams=B1/T1
+  notes: Bb4 G4 D4 Bb4 G4
+  dur:   .16 .34 .5 .16
+  - C3 m6 sc0: 
+  - C3 m14 sc0: 
+  - C3 m19 sc0: 
+  - D1 m1356 sc3: ~ Waltraute: und ritt im Sturme zu dir. –
+#1868 [motif] n=6 occ=4 scenes=3 ops=2 streams=T1/T2
+  notes: Eb4 G4 F4 Eb4 C5 Ab4
+  dur:   2 2.66 .67 .67 3
+  - C3 m95 sc1: Der Wanderer: Aus heimischer Tiefe tauche zur Höh’!; Der Wan
+  - C3 m1110 sc3: Siegfried: Durch das Feuer drang ich,
+  - C3 m1114 sc3: Siegfried: ich erbrach dir den festen Helm:; Siegfried: Sieg
+  - D3 m893 sc2: Siegfried: er küsst dich wach; –
+#621 [motif] n=7 occ=5 scenes=2 ops=2 streams=T1/T2
+  notes: Bb5 Db6 Bb4 C5 Db5 Eb5 E5
+  dur:   .5 1.5 .5 .16 .17 .17
+  - C3 m113 sc1: Der Wanderer: Wache, erwache, du Wala! Erwache!
+  - C3 m115 sc1: Der Wanderer: Wache, erwache, du Wala! Erwache!
+  - C3 m180 sc1: Der Wanderer: Daß ich nun Kunde gewänne,
+  - D2 m1027 sc4: Brünnhilde: dem Manne dort bin ich vermählt.; Frauen: Siegfr
+#1800 [motif] n=7 occ=5 scenes=4 ops=2 streams=T1/T2
+  notes: Db6 G4 A4 Bb4 C5 Db5 Eb5
+  dur:   1.5 .5 .16 .17 .17 .16
+  - C3 m116 sc1: Der Wanderer: Wache, erwache, du Wala! Erwache!
+  - D2 m541 sc3: Mannen (B1): So bestand er die Not?
+  - D2 m1280 sc4: Siegfried: Wen die Minne freut,; Siegfried: meinem frohen Mu
+  - D3 m388 sc1: Siegfried: ich geb’ ihn euch, gönnt ihr mir Gunst.
+#1755 [motif] n=7 occ=4 scenes=3 ops=2 streams=B1/T1
+  notes: G4 Eb4 Bb3 G3 Bb3 Eb4 G4
+  dur:   .5 .5 .5 .5 .5 .83
+  - C3 m163 sc1: Der Wanderer: bekannt ist dir, was die Tiefe birgt,
+  - C3 m808 sc2: 
+  - D0 m7 sc0: 
+  - D0 m15 sc0: 
+#1149 [motif] n=6 occ=4 scenes=4 ops=2 streams=B1/T1
+  notes: F#4 A4 C5 E5 D5 C5
+  dur:   1.5 .25 .25 1.33 .33
+  - C3 m271 sc1: Der Wanderer: erwachen wird die Weihliche nur,
+  - D1 m1334 sc3: Waltraute: gäbe den Ring sie wieder zurück, –
+  - D2 m1253 sc4: Siegfried: Doch Frauengroll friedet sich bald;
+  - D3 m1055 sc3: Hagen: zum Streite nicht mehr,; Hagen: noch wirbt er um wonn
+#935 [motif] n=6 occ=3 scenes=2 ops=2 streams=B2/T2
+  notes: C#3 B2 A2 G#2 F#3 F3
+  dur:   2.5 .5 .75 .25 3
+  - C3 m297 sc1: Erda: Der die Rechte wahrt, der die Eide hütet,
+  - D3 m1323 sc3: Brünnhilde: Meine Klage hör’, du hehrster Gott!; Brünnhilde:
+  - D3 m1329 sc3: Brünnhilde: – dir so tauglich erwünscht, –; Brünnhilde: weih
+#761 [motif] n=7 occ=4 scenes=3 ops=2 streams=B2/L112/L211
+  notes: F2 G2 Ab2 Bb2 Db3 C3 Bb2
+  dur:   .12 .12 .12 1.5 .12 .12
+  - C3 m312 sc1: Der Wanderer: Dich, Mutter lass’ ich nicht ziehn,
+  - C3 m314 sc1: Der Wanderer: da des Zaubers mächtig ich bin. –
+  - D0 m647 sc0: 
+  - D1 m1411 sc3: Brünnhilde: Siegfrieds Liebespfand?
+#955 [motif] n=6 occ=3 scenes=2 ops=2 streams=T2
+  notes: Ab3 Eb3 Bb3 Db4 Bb3 Db4
+  dur:   1 1 .25 .25 .25
+  - C3 m364 sc1: Der Wanderer: seit mein Wunsch es will.
+  - C3 m375 sc1: ~ Der Wanderer: froh und freudig führe frei ich nun aus.
+  - D3 m968 sc2: 
+#697 [motif] n=7 occ=4 scenes=3 ops=2 streams=B2/L112
+  notes: C5 D4 E4 F4 G4 A4 Bb4
+  dur:   4.25 1 .16 .17 .17 .16
+  - C3 m389 sc1: Der Wanderer: ein kühnester Knabe, bar meines Rates,
+  - C3 m1076 sc3: 
+  - D1 m416 sc2: Siegfried: lebend zehr’ ich den auf,
+  - D1 m461 sc2: Gunther: Tand gäb’ ich für dein Geschmeid’,; Gunther: nähm’s
+#756 [motif] n=7 occ=4 scenes=4 ops=2 streams=B1/B2
+  notes: F#2 G#2 A2 B2 C#3 D#3 E2
+  dur:   1.16 .17 .17 .16 .17 .17
+  - C3 m391 sc1: Der Wanderer: errang des Niblungenring.
+  - D0 m174 sc0: Dritte Norn: sehrend den glänzenden Saal,
+  - D2 m277 sc2: Gutrune: Freia grüße dich zu aller Frauen Ehre!
+  - D3 m1595 sc3: 
+#573 [motif] n=7 occ=3 scenes=2 ops=1 streams=B1
+  notes: B4 C5 D4 E4 F#4 G4 A4
+  dur:   .5 .5 1 1 1.5 .5
+  - C3 m409 sc1: Der Wanderer: wachend wirkt dein wissendes Kind
+  - C3 m426 sc1: Der Wanderer: dem ewig Jungen weicht in Wonne der Gott.
+  - C3 m1774 sc3: Brünnhilde: leuchtende Liebe,; Siegfried: leuchtende Liebe,
+#683 [motif] n=7 occ=3 scenes=2 ops=2 streams=L111
+  notes: E5 F#5 G#5 A#5 B5 C#6 F#5
+  dur:   2.25 .12 .12 .12 .12 2
+  - C3 m457 sc2: 
+  - D3 m74 sc1: Woglinde, Wellgunde und Floßhilde: Frau Sonne sendet lichte 
+  - D3 m123 sc1: Woglinde, Wellgunde und Floßhilde: Frau Sonne, sende uns den
+#1734 [motif] n=7 occ=3 scenes=2 ops=2 streams=B1
+  notes: E5 F#5 G#5 A#5 B5 E5 C#5
+  dur:   2.25 .12 .12 .12 .12 .33
+  - C3 m457 sc2: 
+  - C3 m517 sc2: Siegfried: der mir vor Neidhöhl’ erblaßte:; Siegfried: kaum 
+  - D3 m373 sc1: Siegfried: Nothung zerhaut es den Nornen! –
+#1673 [motif] n=8 occ=5 scenes=2 ops=2 streams=B1/T1
+  notes: G4 C4 D4 Eb4 F4 G4 Ab4 Bb4
+  dur:   .5 .75 .25 .75 .25 .33 .33
+  - C3 m521 sc2: Der Wanderer: Erschlugst den Riesen du,; Der Wanderer: wer r
+  - C3 m533 sc2: Der Wanderer: Wer schuf das Schwert so scharf und hart,
+  - C3 m542 sc2: Der Wanderer: Doch, wer schuf die starken Stücken,
+  - D1 m576 sc2: Gunther: die kein Rat mir je gewinnt.; Siegfried: Was wär’ d
+#948 [motif] n=6 occ=3 scenes=2 ops=2 streams=T1/T2
+  notes: G4 Ab4 Bb3 Eb4 F4 G4
+  dur:   .25 .75 .25 .33 .33
+  - C3 m536 sc2: Der Wanderer: daß der stärkste Feind ihm fiel?
+  - D2 m618 sc3: Mannen (T1, T2, B1, B2): Das Trinkhorn zur Hand, –; Mannen (
+  - D2 m622 sc3: Hagen: Rüstig gezecht, bis der Rausch euch zähmt:
+#1270 [motif] n=5 occ=8 scenes=2 ops=1 streams=T1
+  notes: G#5 F#5 F#4 B4 D#5
+  dur:   2 .5 1 .25
+  - C3 m716 sc2: Siegfried: Zurück, du Prahler, mit dir!; Siegfried: Dort, wo
+  - C3 m719 sc2: Siegfried: zu Brünnhilde muß ich dahin!; Der Wanderer: Fürch
+  - C3 m780 sc2: 
+  - C3 m860 sc3: Siegfried: Selige Öde auf sonniger Höh’!
+#1140 [motif] n=6 occ=4 scenes=3 ops=2 streams=B1/T1/T2
+  notes: Bb3 Db4 Bb3 Gb3 Ab3 Bb3
+  dur:   .33 .5 .17 .33 .33
+  - C3 m780 sc2: 
+  - C3 m783 sc2: 
+  - D1 m254 sc1: ~ Gunther: Willkommen hieß’ ich ihn gern.
+  - D3 m534 sc2: Hagen: Hier rasten wir, und rüsten das Mahl!
+#854 [motif] n=6 occ=3 scenes=3 ops=2 streams=B2/T2
+  notes: Db3 Eb4 Cb4 Ab3 Bb3 Cb4
+  dur:   .33 .5 .17 .33 .33
+  - C3 m792 sc2: 
+  - D1 m305 sc1: Hagen: Siegfried ist es, sicher kein And’rer!
+  - D3 m567 sc2: Siegfried: Auf Waldjagd zog ich aus, –
+#673 [motif] n=7 occ=3 scenes=3 ops=2 streams=T1/T2
+  notes: A2 C3 D#3 A3 C4 D#4 E2
+  dur:   .17 .17 .16 .17 .17 1
+  - C3 m798 sc2: 
+  - C3 m826 sc3: 
+  - D1 m1148 sc3: Brünnhilde: So zur Seligsten schuf mich die Strafe:
+#912 [motif] n=6 occ=3 scenes=3 ops=2 streams=B2
+  notes: E4 Ab2 Cb3 D3 D#3 E3
+  dur:   .25 2 2 2 2
+  - C3 m802 sc2: 
+  - D2 m1455 sc5: Brünnhilde: an ihm d’rum spart’ ich den Segen.
+  - D3 m1510 sc3: 
+#821 [motif] n=6 occ=3 scenes=2 ops=1 streams=T1
+  notes: Bb4 Ab4 Ab3 Db4 F4 G4
+  dur:   2 .5 1 .25 .25
+  - C3 m814 sc2: 
+  - C3 m817 sc2: 
+  - C3 m860 sc3: Siegfried: Selige Öde auf sonniger Höh’!
+#623 [motif] n=7 occ=3 scenes=2 ops=2 streams=T1
+  notes: G3 G#3 A3 A#3 B3 E4 G4
+  dur:   12 .33 .33 .34 .5 .5
+  - C3 m831 sc3: 
+  - C3 m853 sc3: ~ Siegfried: Selige Öde auf sonniger Höh’!
+  - D3 m809 sc2: ~ Siegfried: und fand zum Lohn –
+#2090 [motif] n=5 occ=5 scenes=2 ops=2 streams=T1/T2
+  notes: E4 C5 A4 E4 D#4
+  dur:   .5 .75 .25 .33
+  - C3 m967 sc3: ~ Siegfried: Mir schwebt und schwankt
+  - C3 m973 sc3: Siegfried: Sehrendes Sehnen zehrt meine Sinne;
+  - C3 m975 sc3: Siegfried: Sehrendes Sehnen zehrt meine Sinne;; Siegfried: a
+  - D0 m384 sc0: Brünnhilde: Was Götter mich wiesen, gab ich dir:
+#710 [motif] n=7 occ=5 scenes=4 ops=2 streams=B2/T2
+  notes: D2 F2 A2 D3 F3 A3 D2
+  dur:   .12 .12 .12 .12 .12 1.04
+  - C3 m1074 sc3: 
+  - D0 m243 sc0: Dritte Norn: zehrender Brand zündet da auf;
+  - D3 m90 sc1: Woglinde, Wellgunde und Floßhilde: Rheingold, klares Gold,; 
+  - D3 m1065 sc3: Hagen: Siegfried, deinen toten Mann.
+#709 [motif] n=7 occ=3 scenes=3 ops=2 streams=T2
+  notes: F4 G2 D3 F3 B3 D4 F4
+  dur:   1.5 .16 .17 .17 .16 .17
+  - C3 m1082 sc3: ~ Brünnhilde: Heil dir, Sonne!
+  - D3 m86 sc1: Woglinde, Wellgunde und Floßhilde: des Vaters Gold noch in i
+  - D3 m831 sc2: Siegfried: oh! Wie mich brünstig da umschlang; Siegfried: de
+#1290 [motif] n=5 occ=4 scenes=4 ops=2 streams=T2
+  notes: D4 E2 E3 E2 B3
+  dur:   1 .5 .5 1
+  - C3 m1229 sc3: Brünnhilde: und nur empfand, –
+  - D0 m63 sc0: ~ Erste Norn: da sang ich heil’gen Sinn.
+  - D1 m26 sc1: Gunther: Erbt’ ich Erstlings Art,
+  - D3 m1318 sc3: Brünnhilde: erschaut eure ewige Schuld!
+#951 [motif] n=6 occ=4 scenes=2 ops=2 streams=B1/B2/L112
+  notes: Eb4 D4 Eb4 C5 A4 Gb4
+  dur:   1.5 .25 .25 .75 .25
+  - C3 m1257 sc3: Siegfried: staunend versteh’ ich’s nicht.
+  - C3 m1268 sc3: Siegfried: Mit banger Furcht fesselst du mich:
+  - C3 m1299 sc3: Siegfried: daß der Augen Weide sie labe! –
+  - D2 m1226 sc4: Siegfried: Gönnt ihr Weil’ und Ruh’,
+#1397 [motif] n=5 occ=4 scenes=2 ops=2 streams=T1/T2
+  notes: Ab3 G3 E4 Db4 Bb3
+  dur:   .34 .5 .5 .33
+  - C3 m1258 sc3: ~ Siegfried: staunend versteh’ ich’s nicht.
+  - C3 m1533 sc3: Brünnhilde: So berühre mich nicht,
+  - C3 m1651 sc3: ~ Brünnhilde: Ob jetzt ich dein?
+  - D2 m1293 sc4: 
+#1156 [motif] n=5 occ=3 scenes=2 ops=2 streams=T1
+  notes: Cb4 Db4 Cb4 Ab4 Bb3
+  dur:   .08 .09 2 9.75
+  - C3 m1279 sc3: ~ Siegfried: birg meinen Mut mir nicht mehr!
+  - C3 m1303 sc3: ~ Brünnhilde: Dort seh’ ich den Schild,
+  - D2 m765 sc4: ~ Gunther: Brünnhild’, die hehrste Frau,
+#880 [motif] n=6 occ=5 scenes=2 ops=2 streams=B1
+  notes: Cb4 Bb3 Cb4 Db4 Cb4 C4
+  dur:   11.75 .08 .08 .09 2.75
+  - C3 m1279 sc3: ~ Brünnhilde: Dort seh’ ich Grane,
+  - C3 m1303 sc3: ~ Brünnhilde: Dort seh’ ich den Schild,
+  - C3 m1310 sc3: ~ Brünnhilde: Dort seh’ ich den Helm,
+  - D0 m429 sc0: Siegfried: mich unbelehret ließ!
+#1173 [motif] n=5 occ=3 scenes=3 ops=2 streams=L111/T2
+  notes: A2 B2 A3 G#3 A3
+  dur:   .09 1 1 1
+  - C3 m1328 sc3: Brünnhilde: von dem maidlichen Leibe löst’ es die Wehr!
+  - D1 m1313 sc3: Waltraute: Seine Knie’ umwindend liegen wir Walküren, –; Wal
+  - D2 m1043 sc4: Siegfried: Die Zunge, die sie lästert,
+#1000 [motif] n=6 occ=5 scenes=3 ops=2 streams=B1/L211/L212
+  notes: F4 E4 F4 G4 F4 E4
+  dur:   .75 .08 .08 .09 7.75
+  - C3 m1329 sc3: Brünnhilde: von dem maidlichen Leibe löst’ es die Wehr!
+  - D1 m1481 sc3: Brünnhilde: Von meinem Ringe raune ihnen zu:
+  - D1 m1772 sc3: ~ Siegfried: Jetzt bist du mein.
+  - D3 m226 sc1: Siegfried: Verzehrt’ ich an euch mein Gut,; Siegfried: dess’
+#1716 [motif] n=7 occ=3 scenes=2 ops=2 streams=L112/T1/T2
+  notes: F#4 A4 C5 Eb5 F#5 A5 Ab5
+  dur:   .25 .25 .25 .25 .25 1
+  - C3 m1441 sc3: ~ Brünnhilde: und bäumt sich empor!
+  - C3 m1762 sc3: Siegfried: leuchtende Liebe, lachender Tod!; Brünnhilde: leu
+  - D0 m132 sc0: Zweite Norn: Da hieß Wotan Walhall’s Helden; Zweite Norn: de
+#695 [motif] n=7 occ=4 scenes=4 ops=2 streams=B1/B2
+  notes: G2 Ab2 Bb2 C3 D3 Eb2 D2
+  dur:   .1 .1 .1 .1 .1 2
+  - C3 m1644 sc3: Siegfried: was bang du mir warst und wirst:; Siegfried: Dann
+  - D0 m417 sc0: ~ Brünnhilde: die dir nur gönnen nicht geben mehr kann.
+  - D2 m488 sc3: Mannen (B1): Ist Gunther in Not?; Mannen (T1, T2): Welche No
+  - D2 m1665 sc5: Gunther: Wotan! Weise die schrecklich heilige Schar,; Brünnh
+#975 [motif] n=6 occ=4 scenes=3 ops=2 streams=B2/T2
+  notes: E4 G2 C3 E3 G3 C4
+  dur:   1.5 1 .16 .17 .17
+  - C3 m1715 sc3: Brünnhilde: lachend will ich erblinden,
+  - D0 m412 sc0: Brünnhilde: die dir nur gönnen nicht geben mehr kann.
+  - D0 m423 sc0: Siegfried: als ich zu wahren weiß.
+  - D1 m111 sc1: Gutrune: Welche Tat schuf er so tapfer,; Gutrune: daß als he
+#624 [motif] n=7 occ=3 scenes=2 ops=1 streams=T1/T2
+  notes: Cb4 Cb3 Db3 Eb3 Fb3 Gb3 Cb4
+  dur:   .5 2.5 .5 2.5 .5 2.5
+  - D0 m3 sc0: 
+  - D2 m1282 sc4: Siegfried: meinem frohen Mute
+  - D2 m1295 sc4: 
+#860 [motif] n=6 occ=3 scenes=2 ops=1 streams=L111/T1
+  notes: Cb5 Ab4 Bb4 Cb5 Bb4 Eb5
+  dur:   2 .5 .5 9 6.5
+  - D0 m44 sc0: Erste Norn: So gut und schlimm es geh’,; Erste Norn: schling
+  - D1 m49 sc1: Hagen: die der Gibichung noch nicht gewann.
+  - D1 m54 sc1: Hagen: seh’ ich Gibich’s Stamm,
+#977 [motif] n=6 occ=3 scenes=2 ops=1 streams=T1/T2
+  notes: B3 D4 F4 D4 B3 G3
+  dur:   .17 .17 .5 .16 .17
+  - D0 m170 sc0: Dritte Norn: Brennt das Holz; Dritte Norn: heilig brünstig u
+  - D0 m172 sc0: Dritte Norn: sengt die Glut
+  - D2 m381 sc2: Siegfried: Dir zu helfen – ruh’ ich aus.
+#846 [motif] n=6 occ=3 scenes=3 ops=1 streams=B1
+  notes: G3 F#3 G3 A3 G3 D4
+  dur:   1.5 .12 .12 .12 2.12
+  - D0 m335 sc0: 
+  - D2 m852 sc4: ~ Brünnhilde: Siegfried...– kennt mich nicht?
+  - D3 m1082 sc3: Gunther: hebe dein Auge, – schweige mir nicht! –
+#865 [motif] n=6 occ=3 scenes=2 ops=1 streams=T1/T2
+  notes: C#4 D4 Eb4 D4 C5 G4
+  dur:   .12 .12 .12 .12 1.5
+  - D0 m342 sc0: 
+  - D0 m344 sc0: 
+  - D1 m1011 sc2: 
+#1158 [motif] n=5 occ=3 scenes=2 ops=1 streams=B2
+  notes: F2 Bb2 F3 Bb2 D3
+  dur:   .5 .5 .16 .34
+  - D0 m356 sc0: ~ Brünnhilde: Zu neuen Taten, teurer Helde,
+  - D0 m633 sc0: Siegfried und Brünnhilde: Heil! Heil! Heil! Heil!
+  - D1 m820 sc2: 
+#2001 [motif] n=6 occ=4 scenes=4 ops=1 streams=B1/T2
+  notes: Gb2 Bb2 C3 D3 Eb3 Gb3
+  dur:   .5 .16 .17 .17 1
+  - D0 m384 sc0: Brünnhilde: Was Götter mich wiesen, gab ich dir:
+  - D1 m1492 sc3: Brünnhilde: stürzt’ auch in Trümmern
+  - D2 m560 sc3: Hagen: Siegfried der Held, der schuf ihm Heil!
+  - D2 m1091 sc4: Mannen (B1): Wie? Brach er die Treue?; Mannen (T1, T2): Wie 
+#907 [motif] n=6 occ=4 scenes=3 ops=1 streams=B1/T1
+  notes: C5 F5 Eb5 C5 Ab4 F4
+  dur:   .5 1.5 .5 .33 .33
+  - D0 m437 sc0: Siegfried: Brünnhilde’s zu gedenken!
+  - D2 m1088 sc4: Brünnhilde: Nothung, der treue Freund,; Brünnhilde: als die 
+  - D2 m1095 sc4: Frauen: Brach er die Treue?
+  - D2 m1318 sc5: 
+#1186 [motif] n=5 occ=3 scenes=2 ops=1 streams=B1
+  notes: E4 C4 A4 F4 D4
+  dur:   .34 1 2 .5
+  - D0 m441 sc0: ~ Brünnhilde: Willst du mir Minne schenken,
+  - D1 m379 sc2: Siegfried: von edlerer Zucht am Zaume ein Roß.
+  - D1 m455 sc2: Siegfried: Den hütet ein hehres Weib. –
+#1719 [motif] n=7 occ=6 scenes=4 ops=1 streams=B1/T1
+  notes: Cb5 Db5 Cb5 Bb4 Cb5 Eb5 Db5
+  dur:   1.5 .12 .12 .12 .12 1.5
+  - D0 m475 sc0: Brünnhilde: Gedenk’ der Eide, die uns einen;
+  - D1 m459 sc2: Gunther: Nicht, Siegfried, sollst du mir tauschen,
+  - D1 m1152 sc3: Brünnhilde: der herrlichste Held
+  - D3 m1392 sc3: Brünnhilde: was ihr begehrt, ich geb’ es euch:
+#693 [motif] n=7 occ=4 scenes=3 ops=1 streams=L212/T1/T2
+  notes: E4 G4 G2 D3 G3 B3 D4
+  dur:   .5 .5 .16 .17 .17 .16
+  - D0 m479 sc0: Brünnhilde: gedenk’ der Liebe, der wir leben:
+  - D3 m85 sc1: Woglinde, Wellgunde und Floßhilde: des Vaters Gold noch in i
+  - D3 m134 sc1: Woglinde, Wellgunde und Floßhilde: neideten dann wir nicht l
+  - D3 m1536 sc3: 
+#855 [motif] n=6 occ=3 scenes=3 ops=1 streams=T2
+  notes: F#4 B2 E3 B2 E3 G3
+  dur:   .5 .5 .5 .16 .34
+  - D0 m527 sc0: ~ Brünnhilde: Ging sein Lauf mit mir
+  - D1 m85 sc1: Gunther: Vermag das mein Mut zu besteh’n?
+  - D3 m1249 sc3: ~ Brünnhilde: Sein Roß führet daher,
+#1834 [motif] n=6 occ=6 scenes=4 ops=1 streams=T2
+  notes: F#4 B2 E3 B2 E3 G3
+  dur:   .5 .5 .5 .16 .34
+  - D0 m527 sc0: ~ Brünnhilde: Ging sein Lauf mit mir
+  - D1 m85 sc1: Gunther: Vermag das mein Mut zu besteh’n?
+  - D1 m1138 sc3: Brünnhilde: mit zehrendem Feuer umzog er den Fels,
+  - D3 m1249 sc3: ~ Brünnhilde: Sein Roß führet daher,
+#1843 [motif] n=6 occ=3 scenes=3 ops=1 streams=B2/T2
+  notes: A3 D4 A3 D4 F4 F3
+  dur:   .5 .5 .16 .34 1
+  - D0 m564 sc0: Siegfried: Meine Kämpfe kiesest du,
+  - D1 m381 sc2: Siegfried: von edlerer Zucht am Zaume ein Roß.
+  - D1 m1525 sc3: 
+#1828 [motif] n=6 occ=3 scenes=2 ops=1 streams=B2/T2
+  notes: Eb4 G3 Bb3 G3 Bb3 Eb4
+  dur:   .5 .5 .5 .16 .34
+  - D0 m566 sc0: Siegfried: meine Siege kehren zu dir:
+  - D3 m1255 sc3: Brünnhilde: verlangt mein eigener Leib.
+  - D3 m1456 sc3: ~ Brünnhilde: Grane, mein Roß!
+#1859 [motif] n=6 occ=3 scenes=3 ops=1 streams=B2/T2
+  notes: F4 F3 Bb3 F3 Bb3 D4
+  dur:   .5 .5 .5 .16 .34
+  - D0 m568 sc0: Siegfried: auf deines Rosses Rücken,
+  - D1 m85 sc1: Gunther: Vermag das mein Mut zu besteh’n?
+  - D3 m1251 sc3: Brünnhilde: daß mit mir dem Recken es folge:
+#1163 [motif] n=5 occ=4 scenes=2 ops=1 streams=B1/L112/T2
+  notes: Db5 Bb4 Db5 Gb4 F4
+  dur:   2 4 4 11
+  - D0 m587 sc0: Siegfried: Wo ich bin bergen sich beide.; Brünnhilde: So ver
+  - D3 m67 sc1: ~ Woglinde, Wellgunde und Floßhilde: Frau Sonne sendet licht
+  - D3 m111 sc1: Woglinde, Wellgunde und Floßhilde: Weialala, weialala leia l
+  - D3 m452 sc1: Woglinde, Wellgunde und Floßhilde: Weialala weiala la leia l
+#1717 [motif] n=7 occ=3 scenes=2 ops=1 streams=T2
+  notes: Eb3 G3 Bb3 Db4 Eb2 Bb2 Db3
+  dur:   .5 .5 .5 2 .33 .33
+  - D0 m608 sc0: Brünnhilde: Getrennt – wer will es scheiden?
+  - D0 m860 sc0: 
+  - D3 m86 sc1: Woglinde, Wellgunde und Floßhilde: des Vaters Gold noch in i
+#434 [motif] n=8 occ=3 scenes=2 ops=1 streams=T1
+  notes: Ab5 Bb4 C5 Db5 Eb5 F5 G5 Ab5
+  dur:   1 1.33 .33 .34 .33 .33 .34
+  - D0 m609 sc0: Brünnhilde: Getrennt – wer will es scheiden?
+  - D3 m1482 sc3: Brünnhilde: Fühl’ meine Brust auch, wie sie entbrennt,
+  - D3 m1595 sc3: 
+#325 [motif] n=8 occ=3 scenes=2 ops=1 streams=B1
+  notes: C5 F5 E5 D6 C5 F5 E5 D6
+  dur:   1.5 .5 .5 .5 1.5 .5 .5
+  - D0 m757 sc0: 
+  - D1 m604 sc2: Siegfried: Ich fürchte kein Feuer,
+  - D1 m820 sc2: 
+#964 [motif] n=6 occ=3 scenes=3 ops=1 streams=T1/T2
+  notes: G4 Ab4 Bb4 Eb5 G5 F5
+  dur:   2.5 .5 2.5 .5 2.5
+  - D0 m835 sc0: 
+  - D1 m654 sc2: 
+  - D2 m488 sc3: Mannen (B1): Ist Gunther in Not?; Mannen (T1, T2): Welche No
+#643 [motif] n=7 occ=3 scenes=2 ops=1 streams=B1/T1/T2
+  notes: A#3 G#3 A#3 B3 C#4 F#4 A#4
+  dur:   .75 .25 .75 .25 .75 .25
+  - D1 m6 sc1: Gunther: sage mir, Held:
+  - D1 m26 sc1: Gunther: Erbt’ ich Erstlings Art,
+  - D1 m654 sc2: 
+#1710 [motif] n=7 occ=4 scenes=2 ops=1 streams=T1
+  notes: D4 E4 F#4 A4 D5 C#5 B4
+  dur:   .75 .25 .75 .25 .5 .5
+  - D1 m9 sc1: Gunther: sitz’ ich herrlich am Rhein,
+  - D1 m12 sc1: Gunther: Gunther zu Gibich’s Ruhm?
+  - D1 m172 sc1: Gunther: für mich die Braut zu frei’n?; Hagen: Ihn zwänge ba
+  - D1 m1672 sc3: Siegfried: dem, Frau, du folgen sollst.
+#726 [motif] n=7 occ=6 scenes=2 ops=1 streams=B1/T1
+  notes: B3 C#4 D4 E4 F#4 A4 D5
+  dur:   .75 .25 .75 .25 .75 .25
+  - D1 m11 sc1: Gunther: Gunther zu Gibich’s Ruhm?
+  - D1 m30 sc1: Gunther: Weisheit ward dir allein:; Gunther: Halbbrüderzwist
+  - D1 m1622 sc3: ~ Siegfried: Brünnhild’!
+  - D1 m1636 sc3: Siegfried: du folge willig mir!
+#780 [motif] n=7 occ=4 scenes=2 ops=1 streams=T1/T2
+  notes: F#3 E3 D3 E3 F#3 G3 A3
+  dur:   .33 .34 1 .33 .33 .34
+  - D1 m50 sc1: Gunther: Verschwiegest du sie,; Gunther: so schelt’ auch ich
+  - D1 m55 sc1: Hagen: dich, Gunther, unbeweibt, –
+  - D1 m681 sc2: Gunther: Froh und frei entblühe dem Bund; Siegfried: Froh un
+  - D1 m683 sc2: Gunther: Froh und frei entblühe dem Bund; Siegfried: Froh un
+#656 [motif] n=7 occ=4 scenes=3 ops=1 streams=B1/L112/T1
+  notes: F#4 D4 F#4 D4 B3 C#4 D4
+  dur:   1 .33 .5 .17 .33 .33
+  - D1 m250 sc1: Hagen: auch zu Gibichs Strand an den Rhein. –; Gunther: Will
+  - D2 m555 sc3: Hagen: Siegfried der Held, der schuf ihm Heil!
+  - D2 m1612 sc5: Hagen: verhehlt sei ihr die Tat.; Hagen: Auf munt’res Jagen 
+  - D2 m1614 sc5: Hagen: Auf munt’res Jagen ziehen wir morgen;; Hagen: der Edl
+#940 [motif] n=6 occ=4 scenes=3 ops=1 streams=L111/T1
+  notes: Eb6 Fb6 Eb6 F6 G6 F6
+  dur:   1.75 .25 .83 .17 1
+  - D1 m439 sc2: Siegfried: Dies Gewirk, unkund seiner Kraft.; Hagen: Den Tar
+  - D3 m800 sc2: Siegfried: Bis den feurigen Fels ich traf: –; Siegfried: die
+  - D3 m1243 sc3: Brünnhilde: Hoch und hell lod’re die Glut,; Brünnhilde: die 
+  - D3 m1251 sc3: Brünnhilde: daß mit mir dem Recken es folge:; Brünnhilde: de
+#2022 [motif] n=5 occ=5 scenes=2 ops=1 streams=T1
+  notes: G4 A4 Bb4 B4 D#4
+  dur:   .5 .5 .25 .75
+  - D1 m481 sc2: ~ Siegfried: Vergäß’ ich Alles, was du mir gabst,
+  - D1 m504 sc2: ~ Siegfried: Die so mit dem Blitz den Blick du mir seng’st,
+  - D1 m511 sc2: ~ Siegfried: Ha, schönstes Weib!
+  - D3 m271 sc1: Siegfried: He! Hehe! Ihr munt’ren Wasserminnen!
+#1848 [motif] n=6 occ=4 scenes=3 ops=1 streams=L211/T1/T2
+  notes: F2 F#2 D#3 E3 F#3 G3
+  dur:   3 1.5 .16 .17 .17
+  - D1 m682 sc2: Gunther: Froh und frei entblühe dem Bund; Siegfried: Froh un
+  - D2 m1566 sc5: Brünnhilde: Siegfried falle, zur Sühne für sich und euch!; H
+  - D3 m1076 sc3: Gunther: Gutrun’, holde Schwester,
+  - D3 m1095 sc3: Gutrune: O Hilfe! Hilfe! Wehe! Wehe!
+#1725 [motif] n=7 occ=3 scenes=3 ops=1 streams=B2/T1/T2
+  notes: C4 A4 Bb4 C5 D5 Eb5 D5
+  dur:   1 .25 .25 .25 .25 1
+  - D1 m682 sc2: Gunther: Froh und frei entblühe dem Bund; Siegfried: Froh un
+  - D2 m1263 sc4: Siegfried: Folgt mir zum Mahl! –
+  - D3 m363 sc1: Woglinde, Wellgunde und Floßhilde: in des Urgesetzes Seil!
+#1736 [motif] n=7 occ=3 scenes=2 ops=1 streams=B1
+  notes: Bb4 C5 D5 Eb5 F5 Gb4 Ab3
+  dur:   .25 .25 .25 .25 .25 4
+  - D1 m684 sc2: Siegfried: Froh und frei entblühe dem Bund; Siegfried und Gu
+  - D1 m703 sc2: Siegfried und Gunther: in Strahlen ström’ es dahin, –
+  - D3 m1596 sc3: 
+#924 [motif] n=6 occ=8 scenes=3 ops=1 streams=B1/L211/T2
+  notes: F2 Eb3 Cb3 Ab2 Bb2 Cb3
+  dur:   .5 .75 .25 .5 .5
+  - D1 m870 sc2: ~ Hagen: Hier sitz’ ich zur Wacht, wahre den Hof,
+  - D1 m872 sc2: ~ Hagen: Hier sitz’ ich zur Wacht, wahre den Hof,
+  - D3 m567 sc2: Siegfried: Auf Waldjagd zog ich aus, –; Siegfried: doch Wass
+  - D3 m1104 sc3: Gunther: Er ist der verfluchte Eber,
+#1853 [motif] n=6 occ=4 scenes=2 ops=1 streams=B2/L111
+  notes: Cb4 Eb4 Cb4 Ab3 Cb4 Eb3
+  dur:   3 9.75 1.5 1.75 4.5
+  - D1 m937 sc2: 
+  - D1 m945 sc2: 
+  - D1 m1074 sc3: Brünnhilde: Kommst du, Schwester?
+  - D1 m1076 sc3: Brünnhilde: Schwingst dich kühn zu mir her?
+#1251 [motif] n=5 occ=4 scenes=2 ops=1 streams=L211/T1
+  notes: Cb3 Ab2 Bb2 Cb3 Eb3
+  dur:   .25 .5 .5 3.5
+  - D1 m938 sc2: 
+  - D1 m946 sc2: 
+  - D2 m1612 sc5: Hagen: verhehlt sei ihr die Tat.; Hagen: Auf munt’res Jagen 
+  - D2 m1614 sc5: Hagen: Auf munt’res Jagen ziehen wir morgen;; Hagen: der Edl
+#903 [motif] n=6 occ=3 scenes=2 ops=1 streams=T2
+  notes: Eb4 Bb2 Eb3 Bb2 Eb3 G3
+  dur:   .5 .5 .5 .16 .34
+  - D1 m1138 sc3: Brünnhilde: mit zehrendem Feuer umzog er den Fels,
+  - D3 m1252 sc3: Brünnhilde: daß mit mir dem Recken es folge:
+  - D3 m1254 sc3: Brünnhilde: denn des Helden heiligste Ehre zu teilen
+#1138 [motif] n=6 occ=4 scenes=2 ops=1 streams=L112/L211/T2
+  notes: B2 C3 D3 C3 B2 Bb2
+  dur:   .16 .17 .17 2 1.5
+  - D1 m1389 sc3: Brünnhilde: in deinem Aug’, so übermüde,
+  - D1 m1395 sc3: Brünnhilde: Mit blasser Wange, du bleiche Schwester,
+  - D1 m1473 sc3: Brünnhilde: Sie wahrt mir der Reif. –
+  - D3 m556 sc2: Hagen: Der uns das Wild verscheuchte,
+#836 [motif] n=6 occ=3 scenes=3 ops=1 streams=B1/L211
+  notes: D#2 D#3 E3 F#3 E3 D#3
+  dur:   .5 .16 .17 .17 2
+  - D1 m1394 sc3: Brünnhilde: glänzt flackernde Glut.; Brünnhilde: Mit blasser
+  - D2 m152 sc1: Alberich: Zwar – stark nicht genug den Wurm zu besteh’n,
+  - D2 m763 sc4: ~ Gunther: Brünnhild’, die hehrste Frau,
+#936 [motif] n=6 occ=4 scenes=3 ops=1 streams=T1
+  notes: A5 F5 D5 B4 G#4 D4
+  dur:   .5 1 1 .5 .66
+  - D1 m1400 sc3: Brünnhilde: was willst du Wilde von mir?
+  - D2 m860 sc4: Brünnhilde: Ha! ... Der Ring …
+  - D3 m1138 sc3: Hagen: D’rum fordr’ ich hier diesen Ring.
+  - D3 m1142 sc3: Gunther: sollst nimmer du empfah’n!; Hagen: Ihr Mannen, rich
+#2060 [motif] n=5 occ=4 scenes=3 ops=1 streams=T1
+  notes: Gb4 C6 A5 F5 D5
+  dur:   1 .5 1 1
+  - D1 m1713 sc3: ~ Brünnhilde: Zur Schande zwingst du mich nicht,
+  - D1 m1715 sc3: Brünnhilde: Zur Schande zwingst du mich nicht,
+  - D2 m859 sc4: Siegfried: Hier steht dein Gatte.; Brünnhilde: Ha! ... Der R
+  - D3 m1141 sc3: Gunther: sollst nimmer du empfah’n!
+#1227 [motif] n=5 occ=4 scenes=3 ops=1 streams=T1
+  notes: D#4 B5 E5 F#5 G#5
+  dur:   .5 1 2 1
+  - D1 m1821 sc3: Siegfried: Die Treue wahrend dem Bruder,
+  - D2 m790 sc4: ~ Gunther: Gegrüßt sei, teurer Held;
+  - D2 m834 sc4: Siegfried: Was müht Brünnhildes Blick?
+  - D3 m1042 sc3: Hagen: Hoiho! Hoiho!
+#1162 [motif] n=5 occ=3 scenes=2 ops=1 streams=B1/T1
+  notes: C5 C4 Db4 C4 C5
+  dur:   .92 .75 2 .33
+  - D2 m15 sc1: 
+  - D2 m19 sc1: 
+  - D2 m432 sc3: ~ Hagen: Hoiho! Hoihohoho!
+#1121 [motif] n=6 occ=4 scenes=4 ops=1 streams=B2/L112/T2
+  notes: F#2 G#2 A2 Bb2 B2 D3
+  dur:   5.62 .12 .12 .12 11
+  - D2 m95 sc1: Alberich: fallen muß er mit allen! –; Alberich: Schläfst du,
+  - D2 m520 sc3: Mannen (T1, T2): Drängt ihn der Feind?; Mannen (B1, B2): Drä
+  - D2 m1094 sc4: Mannen (B2): Trübte er Gunthers Ehre?; Mannen (T1, T2, B1): 
+  - D2 m1445 sc5: Brünnhilde: träf’st du im Rücken ihn. –
+#634 [motif] n=7 occ=3 scenes=3 ops=1 streams=T1
+  notes: F#4 G4 A4 Bb4 A4 D4 Eb4
+  dur:   .16 .17 .17 1.5 .5 .5
+  - D2 m133 sc1: Hagen: Zu seinem Verderben dient er mir schon.; Alberich: De
+  - D2 m1418 sc5: Hagen: Wohl kenn’ ich Siegfrieds siegende Kraft,; Hagen: wie
+  - D3 m1110 sc3: Gunther: Angst und Unheil greife dich immer!
+#1231 [motif] n=5 occ=7 scenes=3 ops=1 streams=B1/T1
+  notes: B5 C6 F5 G5 A5
+  dur:   .17 .5 1 .5
+  - D2 m277 sc2: Siegfried: Frei und hold sei nun mir Frohem!
+  - D2 m292 sc2: Siegfried: doch ich durchschritt es für ihn, –
+  - D2 m838 sc4: Brünnhilde: Siegfried ... hier? Gutrune …?; Siegfried: Gunth
+  - D2 m1696 sc5: 
+#1675 [motif] n=7 occ=4 scenes=3 ops=1 streams=B2/T2
+  notes: F2 F3 Ab3 C3 Ab2 F2 Db2
+  dur:   2 .5 .5 1 1 1
+  - D2 m278 sc2: Siegfried: Frei und hold sei nun mir Frohem!
+  - D2 m603 sc3: 2 Mannen (B2): Schlugen wir Tiere,; 2 Mannen (B1): Schlugen 
+  - D3 m78 sc1: Woglinde, Wellgunde und Floßhilde: Nacht liegt in der Tiefe:
+  - D3 m127 sc1: Woglinde, Wellgunde und Floßhilde: der das Gold uns wieder g
+#633 [motif] n=7 occ=3 scenes=2 ops=1 streams=T2
+  notes: F#2 F2 E2 G2 F#2 F2 E2
+  dur:   3 1 1 1 3 1
+  - D2 m393 sc3: Hagen: Hoiho! Hoihohoho!
+  - D2 m427 sc3: Hagen: Hoiho! Hoihohoho!
+  - D3 m323 sc1: Woglinde, Wellgunde und Floßhilde: So heißen wir’s dir,
+#862 [motif] n=6 occ=3 scenes=2 ops=1 streams=L111/T1
+  notes: C4 G4 C4 D4 E4 G4
+  dur:   10 1 1.5 .5 .75
+  - D2 m404 sc3: Hagen: Wehe! Waffen! Waffen!; Hagen: Waffen durch’s Land!
+  - D3 m7 sc1: 
+  - D3 m11 sc1: 
+#1985 [motif] n=6 occ=4 scenes=2 ops=1 streams=T1/T2
+  notes: D4 Eb4 E4 F4 A4 C4
+  dur:   .16 .17 .17 .5 .5
+  - D2 m450 sc3: 3 Mannen (B1): Was tos’t das Horn?; 2 Mannen (T2): Wir komme
+  - D2 m527 sc3: Hagen: Ein freisliches Weib führet er heim.; Mannen (B1, B2)
+  - D2 m544 sc3: Mannen (T1, B2): So bestand er die Not?
+  - D2 m1091 sc4: Brünnhilde: als die Traute sein Herr sich gewann.; Mannen (B
+#1830 [motif] n=6 occ=3 scenes=2 ops=1 streams=T1
+  notes: G5 C5 D5 E5 G5 C6
+  dur:   1 1.5 .5 .75 2.75
+  - D2 m659 sc3: Mannen (T1, T2): zum Hochzeitsrufer ward er bestellt.; Manne
+  - D2 m718 sc3: Hagen: rasch seid zur Rache!; 1 Manne (B): Heil!; Mannen (T1
+  - D3 m1024 sc3: Gutrune: War das sein Horn?
+#1182 [motif] n=5 occ=4 scenes=3 ops=1 streams=B1/T1
+  notes: D4 Db4 Ab4 Db4 Eb4
+  dur:   .34 4 1 2
+  - D2 m837 sc4: Brünnhilde: Siegfried ... hier? Gutrune …?; Siegfried: Gunth
+  - D2 m1668 sc5: Brünnhilde: hieher zu horchen dem Racheschwur!; Hagen: dir z
+  - D3 m7 sc1: 
+  - D3 m11 sc1: 
+#1701 [motif] n=7 occ=4 scenes=2 ops=1 streams=T1
+  notes: F5 Bb4 Cb5 Ab4 G4 Gb4 F4
+  dur:   1 1 1 3 .33 .33
+  - D2 m1198 sc4: Brünnhilde: Ich weihe deine Wucht,; Brünnhilde: daß sie ihn 
+  - D2 m1203 sc4: Brünnhilde: Seine Schärfe segne ich,; Brünnhilde: daß sie ih
+  - D2 m1335 sc5: ~ Brünnhilde: Welches Unholds List liegt hier verhohlen?
+  - D2 m1556 sc5: Brünnhilde: Doch des einen Tod taugt mir für alle:
+#798 [motif] n=7 occ=4 scenes=2 ops=1 streams=B1/T1
+  notes: D#5 F#5 E5 D#5 D5 C#5 C5
+  dur:   .25 .25 .5 .5 .5 .5
+  - D2 m1213 sc4: Mannen (B2): Hilf, Donner!
+  - D2 m1215 sc4: Mannen (B1, B2): Tose dein Wetter!
+  - D2 m1217 sc4: Mannen (T1, T2, B1, B2): Hilf, Donner! Tose dein Wetter,
+  - D3 m402 sc1: Siegfried: so werf’ ich sie weit von mir!; Woglinde, Wellgun
+#1169 [motif] n=5 occ=3 scenes=2 ops=1 streams=T1
+  notes: G6 G5 C5 D5 E5
+  dur:   2.5 1 2 1
+  - D2 m1673 sc5: ~ Hagen: dir zu gehorchen, des Reifes Herrn!
+  - D3 m593 sc2: ~ Siegfried: Seit lange acht’ ich des Lallens nicht mehr.
+  - D3 m596 sc2: Siegfried: Trink, Gunther, trink’:
+#1174 [motif] n=5 occ=3 scenes=2 ops=1 streams=L211/T2
+  notes: E4 A4 Bb4 G4 F#4
+  dur:   2.5 .25 .25 1
+  - D3 m41 sc1: 
+  - D3 m184 sc1: Woglinde, Wellgunde und Floßhilde: Sag’ es, Siegfried, sag’ 
+  - D3 m1404 sc3: Brünnhilde: Ihr in der Flut, löset ihn auf,
+#1063 [motif] n=6 occ=4 scenes=2 ops=1 streams=T1/T2
+  notes: F3 E3 F3 Gb3 F3 E3
+  dur:   1 .25 .25 1.25 .25
+  - D3 m48 sc1: 
+  - D3 m1485 sc3: Brünnhilde: helles Feuer das Herz mir erfaßt,
+  - D3 m1487 sc3: Brünnhilde: ihn zu umschlingen, umschlossen von ihm
+  - D3 m1491 sc3: Brünnhilde: in mächtigster Minne, vermählt ihm zu sein!
+#1312 [motif] n=5 occ=7 scenes=2 ops=1 streams=B1/L111/T1
+  notes: Eb5 Db5 C5 Db5 Eb4
+  dur:   1.33 .33 .34 2.5
+  - D3 m525 sc2: Siegfried: Hier ist frisch und kühl!
+  - D3 m1468 sc3: Brünnhilde: Im Feuer leuchtend liegt dort dein Herr,
+  - D3 m1481 sc3: Brünnhilde: Fühl’ meine Brust auch, wie sie entbrennt,
+  - D3 m1496 sc3: Brünnhilde: Siegfried! Siegfried! Sieh!

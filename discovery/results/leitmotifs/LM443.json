@@ -1,0 +1,159 @@
+{
+ "id": "LM443",
+ "n_notes": 6,
+ "pattern_notes": [
+  "D#2",
+  "D#3",
+  "E3",
+  "F#3",
+  "E3",
+  "D#3"
+ ],
+ "pattern_durations": [
+  0.5,
+  0.16,
+  0.17,
+  0.17,
+  2.0
+ ],
+ "pattern_intervals": [
+  12,
+  1,
+  2,
+  -2,
+  -1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 2,
+ "n_operas": 1,
+ "reviewer_themes": "Brunnhilde and Gunther, Alberich",
+ "member_candidates": [
+  836
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1393.3125,
+   "pos1": 1395.0,
+   "measure": 1393,
+   "scene": "3",
+   "streams": [
+    "B1",
+    "L112",
+    "L211"
+   ],
+   "time": "65:53.4",
+   "text": "Brünnhilde: glänzt flackernde Glut.; Brünnhilde: Mit blasser Wange, du bleiche Schwester,",
+   "notes": [
+    "D#3",
+    "D#4",
+    "E4",
+    "F#4",
+    "E4",
+    "D#4"
+   ],
+   "durations": [
+    0.25,
+    0.16,
+    0.17,
+    0.17,
+    1.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1481.0,
+   "pos1": 1482.25,
+   "measure": 1481,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "69:54.2",
+   "text": "Brünnhilde: Von meinem Ringe raune ihnen zu:",
+   "notes": [
+    "Ab2",
+    "G3",
+    "Ab3",
+    "Bb3",
+    "Ab3",
+    "G3"
+   ],
+   "durations": [
+    1.5,
+    0.16,
+    0.17,
+    0.17,
+    3.0
+   ],
+   "match": "approximate (distance 0.5)"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 152.875,
+   "pos1": 153.6875,
+   "measure": 152,
+   "scene": "1",
+   "streams": [
+    "L211"
+   ],
+   "time": "9:40.5",
+   "text": "Alberich: Zwar – stark nicht genug den Wurm zu besteh’n,",
+   "notes": [
+    "F2",
+    "F3",
+    "Gb3",
+    "Ab3",
+    "Gb3",
+    "F3"
+   ],
+   "durations": [
+    2.0,
+    0.08,
+    0.08,
+    0.09,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 763.6875,
+   "pos1": 767.25,
+   "measure": 763,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "29:26.8",
+   "text": "~ Gunther: Brünnhild’, die hehrste Frau,",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "Cb4",
+    "Db4",
+    "Cb4",
+    "Bb3"
+   ],
+   "durations": [
+    6.0,
+    0.08,
+    0.08,
+    0.09,
+    8.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 28.8,
+ "strength": "medium",
+ "meets_criteria": true
+}

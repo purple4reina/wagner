@@ -1,0 +1,186 @@
+{
+ "id": "LM531",
+ "n_notes": 6,
+ "pattern_notes": [
+  "Eb4",
+  "Bb3",
+  "Eb4",
+  "G4",
+  "Bb4",
+  "Ab4"
+ ],
+ "pattern_durations": [
+  1.5,
+  0.5,
+  0.5,
+  0.5,
+  1.5
+ ],
+ "pattern_intervals": [
+  -5,
+  5,
+  4,
+  3,
+  -2
+ ],
+ "n_occurrences": 5,
+ "n_exact": 5,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "Rhine, gold, Rhinemaidens",
+ "member_candidates": [
+  954
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3425.25,
+   "pos1": 3426.375,
+   "measure": 3425,
+   "scene": "4",
+   "streams": [
+    "L111"
+   ],
+   "time": "120:46.6",
+   "text": "Wotan: ohne Bangen wahr’ ich’s für mich!; Loge: Schlimm dann steht’s um mein Versprechen,",
+   "notes": [
+    "Eb4",
+    "Bb3",
+    "Eb4",
+    "G4",
+    "Bb4",
+    "Ab4"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 877.0,
+   "pos1": 879.0,
+   "measure": 877,
+   "scene": "0",
+   "streams": [
+    "B1"
+   ],
+   "time": "39:29.8",
+   "text": "",
+   "notes": [
+    "Bb2",
+    "F2",
+    "Bb2",
+    "D3",
+    "F3",
+    "D#3"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 35.0,
+   "pos1": 37.0,
+   "measure": 35,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "1:25.5",
+   "text": "",
+   "notes": [
+    "C4",
+    "G3",
+    "C4",
+    "E4",
+    "G4",
+    "F4"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 85.0,
+   "pos1": 86.5546875,
+   "measure": 85,
+   "scene": "1",
+   "streams": [
+    "T1"
+   ],
+   "time": "3:29.7",
+   "text": "Woglinde, Wellgunde und Floßhilde: des Vaters Gold noch in ihr glänzte!",
+   "notes": [
+    "C5",
+    "G4",
+    "C5",
+    "E5",
+    "G5",
+    "F5"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5,
+    1.66
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 134.0,
+   "pos1": 135.5546875,
+   "measure": 134,
+   "scene": "1",
+   "streams": [
+    "T1"
+   ],
+   "time": "5:37.0",
+   "text": "Woglinde, Wellgunde und Floßhilde: neideten dann wir nicht länger!",
+   "notes": [
+    "C5",
+    "G4",
+    "C5",
+    "E5",
+    "G5",
+    "F5"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5,
+    1.66
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

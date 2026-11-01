@@ -1,0 +1,168 @@
+{
+ "id": "LM406",
+ "n_notes": 7,
+ "pattern_notes": [
+  "F#2",
+  "G1",
+  "A1",
+  "B1",
+  "C2",
+  "D2",
+  "Eb2"
+ ],
+ "pattern_durations": [
+  1.0,
+  0.16,
+  0.17,
+  0.17,
+  0.16,
+  0.17
+ ],
+ "pattern_intervals": [
+  -11,
+  2,
+  2,
+  1,
+  2,
+  1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 4,
+ "n_acts": 4,
+ "n_operas": 3,
+ "reviewer_themes": "",
+ "member_candidates": [
+  753
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3366.75,
+   "pos1": 3367.2080078125,
+   "measure": 3366,
+   "scene": "4",
+   "streams": [
+    "B2"
+   ],
+   "time": "118:17.1",
+   "text": "Donner: Nicht dich Schmähl’chen zu zerschmettern?",
+   "notes": [
+    "F#2",
+    "G1",
+    "A1",
+    "B1",
+    "C2",
+    "D2",
+    "Eb2"
+   ],
+   "durations": [
+    1.0,
+    0.16,
+    0.17,
+    0.17,
+    0.16,
+    0.17
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 1776.0,
+   "pos1": 1777.416015625,
+   "measure": 1776,
+   "scene": "4",
+   "streams": [
+    "B2"
+   ],
+   "time": "84:47.8",
+   "text": "Siegmund: nimm sie mit einem Streich!; Brünnhilde: Halt ein! Wälsung!",
+   "notes": [
+    "F#2",
+    "G1",
+    "A1",
+    "B1",
+    "C2",
+    "D2",
+    "Eb2"
+   ],
+   "durations": [
+    4.0,
+    0.33,
+    0.33,
+    0.34,
+    0.33,
+    0.33
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 937.0,
+   "pos1": 938.2777777777778,
+   "measure": 937,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "29:22.2",
+   "text": "Wotan: sonst erharrt Jammer euch hier!; Helmwige, Ortlinde, Gerhilde, Waltraute, Siegrune, Rossweisse, Grimgerde und Schwertleite: Weh’!",
+   "notes": [
+    "E#3",
+    "F#2",
+    "G#2",
+    "A#2",
+    "B2",
+    "C#3",
+    "D3"
+   ],
+   "durations": [
+    4.0,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1434.5,
+   "pos1": 1434.8330078125,
+   "measure": 1434,
+   "scene": "3",
+   "streams": [
+    "T1"
+   ],
+   "time": "74:11.5",
+   "text": "Brünnhilde: weiset Loge nach Walhall!",
+   "notes": [
+    "G5",
+    "Ab4",
+    "Bb4",
+    "C5",
+    "Db5",
+    "Eb5",
+    "E5"
+   ],
+   "durations": [
+    0.5,
+    0.16,
+    0.17,
+    0.17,
+    0.16,
+    0.17
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.9,
+ "strength": "weak",
+ "meets_criteria": true
+}

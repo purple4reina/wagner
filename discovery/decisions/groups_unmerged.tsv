@@ -1,382 +1,855 @@
 lm	rep	members	reviewer_themes
-LM001	3	3,162,553,1400,1461,1475,1561	Ring, Fafner, gods in crisis; the Ring, Alberich, curse, freedom
-LM002	10	10,92,334,1688	Rhine, Rhinemaidens, the ring; Rhine, Rhinemaidens, water; Rhinemaidens' calls
-LM003	11	11,128,129,155,157,159,161,203,209,258,609,1677	Siegfried's horn call, Hoiho
-LM004	25	25	Valkyrie call, Hojotoho
-LM005	26	26	oaths, bonds, betrayal
-LM006	1407	346,363,404,1407,1584	
-LM007	32	32	horses, riding, flight, pursuit
-LM008	34	34,575	Siegfried horn call, hunting
-LM009	43	43	Siegfried's free exuberance, laughing
-LM010	44	44	Mime's complaint and nursing care
-LM011	47	47,550,825	Valhalla, Wotan, gods' hall; Valhalla, the hall of the gods
-LM012	48	48	Erda, Wanderer, ancient wisdom
-LM013	50	50,158,339,401	Forest Bird
-LM014	51	51,259,398,412,1521	Mime's complaint and nursing care; Siegfried forging, descending song
-LM015	52	52,71,72,213,361,369,374,387,400,402,407,427,430,447,822,1469,1471,1472,1508,1511,1513	Nibelung toil, servitude, Mime and Alberich
-LM016	61	61	Brünnhilde awakening, greeting sun
-LM017	62	62,326,336,533,565,580,603	betrayal, deception, treachery; betrayal, revenge, Siegfried's death; revenge, Siegfried must fall; revenge, Siegfried's murder
-LM018	63	63	fire, flames, Loge
-LM019	67	67	love, longing, Siegfried and Mime
-LM020	68	68	Erda, Wanderer, fate and wisdom
-LM021	70	70	sword Nothung, Mime's riddles
-LM022	1419	107,1419	Rheingold, gold
-LM023	81	81,241,548	Siegfried, hero, redemption; Siegfried, hero, sword
-LM024	82	82,264,572	Erda, Wotan's fate, Valhalla; Erda, Wotan's fate, Valhalla's end
-LM025	89	89	Wotan, rainbow bridge, grey old man
-LM026	90	90	Valkyrie call, Hojotoho
-LM027	91	91	love, longing, Siegfried and Mime
-LM028	93	93,254	woodbird, Siegfried's wandering
-LM029	94	94	spring, love, Siegmund's song
-LM030	97	97,280	Wotan's spear, world's end, logs
-LM031	102	102,134,138,224,269,275	treaties, Wotan bound by contract; treaties, spear, Wotan's law
-LM032	1422	120,381,579,1422	forging the ring, power; world rule, the ring's power
-LM033	117	117	Hagen's call to vassals
-LM034	119	119	woodbird, Siegfried gains ring
-LM035	121	121,154,196,246	Brünnhilde and Siegfried, love, farewell
-LM036	122	122	wisdom, knowledge, Brünnhilde
-LM037	126	126	Wanderer speaking, riddle contest
-LM038	1433	1433	Brünnhilde, love, tenderness
-LM039	147	147,532,539,834	Siegmund, kinship, resemblance; compassion, Siegmund and Sieglinde, Walsung love
-LM040	149	149	Rhine, Rhinegold, Rhinemaidens
-LM041	150	150	Brünnhilde, Siegfried devotion
-LM042	151	151	Rhinemaidens praising the gold
-LM043	152	152	Siegfried's name, identity
-LM044	153	153	grief, farewell, fate of gods
-LM045	156	156	Siegfried the hero, deeds
-LM046	168	168,1451	treaties, spear, oaths
-LM047	1442	1442	Wotan's dilemma, fate
-LM048	1444	1444	Erda/Wala awakening, summoning
-LM049	1459	1459	Wotan, spear, battle, arming
-LM050	191	191	
-LM051	192	192	Freia, golden apples, youth
-LM052	194	194	Wotan's farewell, fire, Brünnhilde asleep
-LM053	195	195	Wotan's farewell, fire, Brünnhilde asleep
-LM054	197	197	Brünnhilde's devotion to Siegfried
-LM055	198	198,272,379,414,415,417,439,458,605	Wotan's anger, doom of gods; Wotan's despair, doom of gods
-LM056	199	199	Brünnhilde and Siegfried, love
-LM057	202	202,578	horn call, vassals summoned
-LM058	205	205	Rhinemaidens exulting in gold
-LM059	217	217	Wotan, spear, power
-LM060	1473	618,676,1473,1794	Brünnhilde, Wälsung, wise woman
-LM061	1476	1476,1478	Hagen, Alberich, curse; curse, gold, Hagen's watch
-LM062	1483	1483	treaties, Wotan bound by contract
-LM063	237	237	Rhine, Rhinegold, Rhinemaidens
-LM064	238	238	love, renunciation, farewell
-LM065	239	239	Erda, ending, downfall
-LM066	240	240	compassion, Siegmund and Sieglinde, Walsung love
-LM067	243	243	Mime's plight, Nibelungen
-LM068	244	244	Hagen scheming, cunning
-LM069	245	245	noble dwelling, bliss, refuge
-LM070	247	247	giants, Fasolt and Fafner
-LM071	249	249	Sieglinde's death, Siegfried's mother
-LM072	250	250	Alberich approaching, Nibelheim
-LM073	251	251,255	Valhalla's burning logs, end of gods
-LM074	252	252,1597	Fafner, dragon, hoard
-LM075	253	253	Siegfried, the hero, desire
-LM076	256	256	Wotan, spear, treaties, command
-LM077	257	257	marriage, oaths, hearth, vows
-LM078	262	262	fear, dragon's cave
-LM079	267	267	Wotan approaching, storm
-LM080	274	274	spear, Wotan's power
-LM081	277	277	spear, oaths, Wotan's power
-LM082	278	278	Hoho forging song, Siegfried
-LM083	295	295	Valhalla's burning logs, end of gods
-LM084	301	301	Wotan, spear, power
-LM085	1506	1506	gods' decline, Freia, gold
-LM086	1509	1509	Siegfried's sword, oath, deeds
-LM087	1510	1510	Siegfried's horn call, Hoiho
-LM088	1512	1512	Siegfried's sword, oath, deeds
-LM089	1514	1514	summoning, riding, Hagen's call
-LM090	1516	1516	Mime's complaint and nursing care
-LM091	1518	1518	Siegfried's sword, oath, deeds
-LM092	1525	1525	Wotan, spear's power
-LM093	1528	1528	anger, violence, vengeance
-LM094	1534	1534,1670	Wotan's spear, treaties, authority; Wotan's spear, treaties, power
-LM095	327	327,540,554,555,561,832	Valhalla, Wotan, gods' hall; Wotan musing on power and toil; ring, gold, power; ring, love renounced, power; ring, power, greed
-LM096	328	328	Ring, hoard, power
-LM097	329	329	revenge, betrayal, Siegfried's death
-LM098	330	330	festivity, Siegfried's call
-LM099	331	331,344	Sieglinde, Siegmund, pity, birth; Sieglinde, birth, sorrow, compassion
-LM100	332	332,850,852	Valkyrie ride, horses
-LM101	333	333,549	Rhinemaidens, Rhine, ring returned
-LM102	335	335	twins, father, kinship
-LM103	337	337	fire, Loge, Brünnhilde's rock
-LM104	338	338	knowledge, life and weaving
-LM105	342	342	Gibichung hospitality, courtesy
-LM106	343	343	Mime's complaint and nursing care
-LM107	345	345	revenge, betrayal, Siegfried's death
-LM108	347	347,1567	Hoho forging song, Siegfried
-LM109	348	348	curse, distress, doom
-LM110	349	349,356,543,577,833	death annunciation, Brünnhilde, fate; death annunciation, Siegmund, Walhall; death annunciation, Walhall
-LM111	350	350	world rule, Ring power
-LM112	352	352,557,567	oaths, betrayal, fate
-LM113	353	353,598	woman's worth, love, wisdom sought
-LM114	354	354	Erda/Wala, fate, Norns
-LM115	355	355,362,365,366,385,388,588	sword, Notung, Siegmund's heroism
-LM116	358	358	Alberich commanding the Nibelungs
-LM117	359	359,368	sword, Siegmund, Wälsung heroes
-LM118	360	360	Siegfried's sword, Nothung
-LM119	364	364,562,602	woman's worth, love, wisdom sought
-LM120	367	367	Erda, Wanderer, ancient wisdom
-LM121	370	370	Siegfried's sword, Nothung
-LM122	371	371	Wotan's farewell, fire, Brünnhilde asleep
-LM123	375	375	Erda, fate, ancient wisdom
-LM124	377	377	Wotan's spear, power, command
-LM125	383	383	Mime's plight, Nibelungen
-LM126	394	394	Siegfried's arrival, hunting
-LM127	395	395	interrogation, accusation, guilt
-LM128	397	397	Valhalla's burning logs, end of gods
-LM129	399	399	Gibichung hall, Gunther's renown
-LM130	426	426	Gunther, Gibichungs
-LM131	434	434	Brünnhilde, love, union
-LM132	437	437	Brünnhilde and Siegfried, farewell
-LM133	444	444	Valhalla's burning logs, end of gods
-LM134	462	462	Wotan's spear, Alberich, power
-LM135	479	479	flight, pursuit, driven by fear
-LM136	494	494	Hojotoho, Valkyrie battle cry
-LM137	1563	594,1563	Wotan, the Wanderer, authority
-LM138	1559	1559	Siegfried's deeds, hunting arrival
-LM139	1560	1560	love, longing, greeting
-LM140	1564	1564	Hagen's call to vassals
-LM141	1565	1565	Wotan's farewell, fire, Brünnhilde asleep
-LM142	1569	1569	trust, loyalty, protection
-LM143	1573	1573	Wotan's farewell, fire, Brünnhilde asleep
-LM144	1575	1575	Gibichung hospitality, courtesy
-LM145	1576	1576	Brünnhilde, eternity, love
-LM146	1578	1578	dragon Fafner, the Wurm
-LM147	1579	1579	Siegfried, Sieglinde's child, redemption
-LM148	1589	1589	Erda, Wotan's downfall, death
-LM149	1591	1591	anger, violence, vengeance
-LM150	1593	1593	Wanderer, Siegfried, Brünnhilde, hailing
-LM151	1596	1596,1608	spear, oaths, Wotan's power
-LM152	1610	1610	Wotan, spear, world ash
-LM153	1621	1621	blood-brotherhood oath
-LM154	1673	1673	Wanderer's riddle questions, sword
-LM155	529	529	curse, doom, the Ring
-LM156	530	530	Brünnhilde and Siegfried, bliss
-LM157	531	531	names, identity, questions
-LM158	534	534,873,877,1394,1831	Hojotoho, Valkyrie call
-LM159	535	535	Siegfried questions Mime, mother
-LM160	536	536	Siegmund, rest, mercy
-LM161	537	537	fearless hero, Brünnhilde
-LM162	538	538	the Ring, Wotan's guilt and bargain
-LM163	541	541,581,589	marriage, betrothal, oaths
-LM164	542	542	Sieglinde, ecstasy, love
-LM165	544	544	Siegfried, mother, awakening Brünnhilde
-LM166	545	545,815	Wotan, power, Walhall, the Ring
-LM167	546	546,1683	Valhalla, Wotan, gods' hall
-LM168	547	547	Siegfried's horse Grane, heroic ride
-LM169	551	551	night, darkness, Alberich
-LM170	552	552	Alberich and Hagen, inheriting world
-LM171	558	558	Alberich's son, doubt, Hagen
-LM172	560	560,568	Hoho forging song, Siegfried
-LM173	563	563	Gutrune's welcome, hospitality
-LM174	564	564	Nibelungs, hoard, gold, Alberich
-LM175	571	571	love, spring, fate
-LM176	573	573	Brünnhilde, love, Wotan yielding
-LM177	582	582	oaths, Brünnhilde's pledge
-LM178	583	583	Brünnhilde and Siegfried, love
-LM179	584	584	Siegfried's path to Brünnhilde
-LM180	585	585	betrayal, deception, treachery
-LM181	586	586,999	giants, Fafner, Nibelung wrath; giants, Fafner, hoard
-LM182	590	590	Brünnhilde's appeals
-LM183	591	591	
-LM184	592	592	Gibichungs, Gunther
-LM185	597	597	Wotan's counsel, heed and obey
-LM186	599	599	Hoho forging song, Siegfried
-LM187	600	600	Sieglinde's death, Siegfried's mother
-LM188	601	601	eternity, Brünnhilde, Wälsung
-LM189	606	606	dread, Hagen, Norns' vision
-LM190	607	607	Hagen's plotting
-LM191	608	608	Siegfried's horn call, Hoiho
-LM192	612	612	fate, the world, curse
-LM193	615	615,868,937,943,1956	women, Sieglinde, pursuit
-LM194	617	617,970	Rhinemaidens, gold, awakening; smiling, gold, glory
-LM195	627	627	Wotan, farewell, Brünnhilde's sleep
-LM196	629	629,659,1989	Nothung, the sword, Siegmund
-LM197	634	634	Hagen scheming, Siegfried's downfall
-LM198	636	636	fate, offering, binding
-LM199	643	643	Gunther, Gibichung hall
-LM200	653	653	curse, fate, doom
-LM201	656	656	Hagen, Gibichung hall, hunt
-LM202	669	669	Siegfried forging, bellows
-LM203	677	677,963	the sword, Nothung
-LM204	680	680	Mime, smithing the sword
-LM205	696	696	Wanderer's wisdom, love, depths
-LM206	708	708	Fafner, the dragon
-LM207	1710	726,1710	Gunther, Gibichung hall
-LM208	747	747	flight, pursuit, storm
-LM209	780	780	Gunther, Hagen, Gibichung hall
-LM210	783	783	hero, Wotan's will, awakening Brünnhilde
-LM211	809	809,1142	Wanderer, Siegfried, Brünnhilde, hailing
-LM212	1781	945,1781	weakness, outcast, humiliated
-LM213	1740	1150,1740	longing, gazing at the beloved
-LM214	1676	1676	Ring, Walhall, Wotan
-LM215	1678	1678	the Ring, Wotan's guilt and bargain
-LM216	1681	1681	Freia, beauty
-LM217	1686	1686	blood-brotherhood oath
-LM218	1691	1691	Wanderer, Siegfried, spear, turning back
-LM219	1694	1694	Siegfried, wonder, questioning
-LM220	1698	1698	Siegfried, heroic call
-LM221	1701	1701	Brünnhilde's vengeance oath
-LM222	1704	1704	laughing, love, wending
-LM223	1705	1705	greeting, strangers, Rhine
-LM224	1708	1708,1729	the Ring, possession, claim
-LM225	1714	1714	lament, supplication, pity
-LM226	1718	1718	contracts, treaties, Wotan's spear
-LM227	1719	1719	Brünnhilde, oaths, hero praise
-LM228	1720	1720	Wotan/Wanderer, wit and wisdom
-LM229	1725	1725	bond, brotherhood, covenant
-LM230	1731	1731	Mime, upbringing, taunting
-LM231	1732	1732	
-LM232	1739	1739	Alberich, plotting, ring desire
-LM233	1777	1777	toil, care, ring's curse
-LM234	1793	1793	Walhall, heroes, farewell
-LM235	810	810	Hagen's alarm, weapons
-LM236	811	811	swords, oaths, Nothung
-LM237	812	812	riding, horse, Wotan
-LM238	814	814	Valkyrie ride, horses
-LM239	816	816	Wotan, world's fate, ruin
-LM240	817	817	Siegfried's horse Grane
-LM241	819	819	Sieglinde, ecstasy, love
-LM242	821	821,1270	Siegfried reaches Brünnhilde's rock
-LM243	823	823	riding, horse, Wotan
-LM244	824	824	Wotan, power, the Ring
-LM245	826	826	Mime's toil, Siegfried's haste
-LM246	827	827,1248	Nibelheim, Tarnhelm, shame; Tarnhelm, Nibelheim
-LM247	828	828	Alberich's lair, dread
-LM248	829	829	Wotan's ravens
-LM249	830	830	foreboding, misfortune, dread
-LM250	831	831,837	the Ring, Mime and Alberich scheming
-LM251	835	835	Wallala call, Rhinemaidens, heroes
-LM252	838	838	Siegfried, questioning, awakening
-LM253	839	839	Hunding, Hagen, hostile men, weapons
-LM254	840	840	Walhall, glory, ring
-LM255	842	842	Rhinemaidens, Rhine water
-LM256	843	843	Siegmund, Wälsung lineage, name
-LM257	847	847,869	Brünnhilde, battle, ride; Valkyrie ride, horses
-LM258	853	853,897,1280	longing, sorrow, Walsung fate; love, tenderness, Walsung bond
-LM259	854	854	Hagen, Siegfried arrives
-LM260	1812	856,1812	fate, death announcement, prophecy
-LM261	858	858	Wotan's authority, Walhall
-LM262	861	861	horse, riding, Grane
-LM263	862	862,1169	horn call, drinking; horn call, summons to arms
-LM264	875	875	Siegfried, the one who wakes Brünnhilde
-LM265	878	878,927,1103,1884,1890	fear, Mime, Wanderer's wisdom; fear, Wotan's spear, fearing
-LM266	879	879	Siegfried's name, Rhinemaidens
-LM267	880	880,1156	Brünnhilde recalls lost past
-LM268	881	881	Wotan's anger, Brünnhilde's guilt
-LM269	887	887	Hunding, threats, commands
-LM270	891	891	mother, women, obedience
-LM271	895	895	love, longing
-LM272	904	904	Valkyrie ride, horses, battle
-LM273	905	905,916,995,1841,1867,1892,1912,1964	Hunding, Hagen, hostile men, weapons
-LM274	906	906	fire, Loge, flames
-LM275	907	907	fidelity, oath, betrayal
-LM276	909	909	Lust, Wotan and Brünnhilde
-LM277	910	910,2009	Valkyrie ride, horses
-LM278	913	913	fear, Wotan's spear, fearing
-LM279	918	918	Wanderer, Valhalla, wandering
-LM280	923	923	Wotan's weariness, resignation
-LM281	924	924,1251	Hagen's watch, hunt; Hagen's watch, hunt, menace
-LM282	932	932	sorrow, parting
-LM283	935	935	oaths, treaties, Wotan's law
-LM284	936	936,2060	the Ring, Brünnhilde confronts
-LM285	1845	939,1256,1264,1845	heroes, Wotan's commands
-LM286	940	940	fire, flames, Brünnhilde
-LM287	947	947	Rhinemaidens' Weialala
-LM288	948	948	questions, drinking, Wanderer
-LM289	949	949,1008	the sword, father's promise
-LM290	951	951,1397	Siegfried's awe, bewilderment, fear; awe, fear, bewilderment
-LM291	953	953	Rhine gleam, offering drink
-LM292	954	954	Rhine, gold, Rhinemaidens
-LM293	956	956	Brünnhilde, fire, love
-LM294	960	960	Mime and Hagen scheming against Siegfried
-LM295	972	972	Siegfried's mother, longing
-LM296	974	974,1146	rescue, women, Norns
-LM297	980	980	rainbow bridge to Valhalla
-LM298	986	986	Gibichung hall, the Rhine
-LM299	998	998	Siegfried, hunting, restless energy
-LM300	1013	1013	nature, Rhine, ancestry
-LM301	1018	1018	Mannen, wedding, welcome
-LM302	1041	1041,1355	Heiajaheia, gold, farewell; Wallala call, Walhall, heroes
-LM303	1065	1065	nature, Rhine, natural order
-LM304	1111	1111	spear, Wotan's power
-LM305	1117	1117	Nibelung toil, command, hoard
-LM306	1128	1128	rainbow bridge to Valhalla
-LM307	1137	1137	Hunding, threats, commands
-LM308	1140	1140	Hagen, Gunther, Siegfried arrives
-LM309	1149	1149	the Ring, returning it
-LM310	1908	1191,1908	horse, riding, Grane
-LM311	1810	1810	Siegfried's deeds, hunting arrival
-LM312	1811	1811	Hunding, Hagen, hosts, guarding
-LM313	1813	1813	Siegfried's heroic ride
-LM314	1814	1814,1821,1839	Siegfried, fearless hero, Wotan's spear; Wanderer, Erda, Siegfried awakening
-LM315	1815	1815	Hojotoho, Valkyrie battle cry
-LM316	1816	1816	fear, learning to fear
-LM317	1817	1817	Valkyrie ride, horses, battle
-LM318	1822	1822	Hunding, Hagen, hostile men, weapons
-LM319	1823	1823	sword, Siegfried
-LM320	1825	1825	bringing, Wotan's messengers
-LM321	1826	1826	Hunding, challenge, resolve
-LM322	1829	1829	
-LM323	1830	1830	horn call, summons, Siegfried's horn
-LM324	1833	1833	love, memory, counsel
-LM325	1836	1836	greeting light, sun, love
-LM326	1837	1837	rescue, Rhine, Gibichungs
-LM327	1838	1838	Siegfried, fire, awakening
-LM328	1840	1840	Rhinemaidens, gold, counsel
-LM329	1842	1842	Mime, smithing the sword
-LM330	1846	1846	Wanderer, warning, defiance of heroes
-LM331	1847	1847	Siegfried mocking Mime the bungler
-LM332	1855	1855	Brünnhilde, warning, punishment
-LM333	1860	1860	Walhall, the castle, gods' fate
-LM334	1862	1862	fear, Norns, counsel
-LM335	1865	1865	Sieglinde's tender narration
-LM336	1868	1868	awakening, waking the sleeper
-LM337	1869	1869	the sword, father's promise
-LM338	1876	1876	Brunnhilde's eternal love
-LM339	1877	1877,1878	Siegfried forging the sword
-LM340	1880	1880	fate, need, Norns
-LM341	1883	1883	friendship, marriage, loyalty
-LM342	1891	1891	fate, Norns, Wotan's wisdom
-LM343	1900	1900	urging, invitation to follow
-LM344	1906	1906	hoard, guarding, Hagen
-LM345	1909	1909	heroes, Wotan's commands
-LM346	1922	1922	Hojotoho, Valkyrie battle cry
-LM347	1927	1927	Siegfried, hunting, restless energy
-LM348	1940	1940	Siegmund, love, Wälsung fate
-LM349	1944	1944	Brünnhilde's wrath, fear, love
-LM350	1947	1947	
-LM351	1972	1972	heroes, Wotan's commands
-LM352	1982	1982	asking, telling, speaking
-LM353	1994	1994	Brünnhilde, remembrance, warning
-LM354	1997	1997	gods' burden, doom, resignation
-LM355	1153	1153	instrumental, Fafner, dragon context
-LM356	1157	1157	Wanderer, riddles, wisdom contest
-LM357	1163	1163	Rhinemaidens, Weialala, sun
-LM358	1165	1165	Freia, Brünnhilde, devotion
-LM359	1176	1176	child, Siegfried, rescue
-LM360	1180	1180	the sword, Nothung
-LM361	1186	1186	Brünnhilde, love offered
-LM362	1192	1192	Siegmund, love, Wälsung fate
-LM363	1198	1198	Wotan's punishment of Brünnhilde
-LM364	1236	1236	forest bird song
-LM365	1255	1255	Hojotoho, calls, Rhine origin
-LM366	1281	1281	Fricka, marriage, reproach
-LM367	1288	1288	Nibelungs, Mime, wandering
-LM368	1294	1294	death, woe, doom
-LM369	1309	1309	ring, fate, giants' fall
-LM370	1312	1312	Brünnhilde's immolation, Siegfried
-LM371	1315	1315	Siegfried's forging song, hammer
-LM372	1382	1382	Heiajaheia, Rhinemaidens' call
-LM373	1389	1389	Siegfried's forging song, hammer
-LM374	2014	2014	love, marriage, blessing
-LM375	2015	2015	blissful greeting, love
-LM376	2037	2037	Siegfried, fire, radiance
-LM377	2090	2090	Siegfried's longing, yearning
-LM378	2093	2093	Sieglinde's care, hospitality
-LM379	2098	2098	Siegfried forging, bellows
-LM380	2100	2100	Wanderer, Erda, mother
-LM381	2104	2104	Rhinemaidens' Weialala
+LM001	0	0,284	Rhinemaidens teasing; Siegmund spring; Rhinemaidens, Siegmund's spring, Loge, Donner
+LM002	2127	2127	(accepted by rule: pitch variety is not a criterion)
+LM003	2128	2128	(accepted by rule: pitch variety is not a criterion)
+LM004	2129	2129	(accepted by rule: pitch variety is not a criterion)
+LM005	2130	2130	(accepted by rule: pitch variety is not a criterion)
+LM006	2131	2131	(accepted by rule: pitch variety is not a criterion)
+LM007	2132	2132	(accepted by rule: pitch variety is not a criterion)
+LM008	3	3,162,553,1400,1461,1475,1561	Ring, Fafner, gods in crisis; the Ring, Alberich, curse, freedom
+LM009	2133	2133	(accepted by rule: pitch variety is not a criterion)
+LM010	2136	2136	(accepted by rule: pitch variety is not a criterion)
+LM011	2137	2137	(accepted by rule: pitch variety is not a criterion)
+LM012	5	5	
+LM013	6	6	Rhinemaidens; Nothung; Brünnhilde greets sun
+LM014	2138	2138	(accepted by rule: pitch variety is not a criterion)
+LM015	2139	2139	(accepted by rule: pitch variety is not a criterion)
+LM016	2140	2140	(accepted by rule: pitch variety is not a criterion)
+LM017	2141	2141	(accepted by rule: pitch variety is not a criterion)
+LM018	1401	1401	storytelling; forest bird; Siegmund recounts
+LM019	2142	2142	(accepted by rule: pitch variety is not a criterion)
+LM020	1402	1402,1437	Loge; Rhinemaidens sunlight; Loge; Waltraute; Rhinemaidens; Hagen
+LM021	2143	2143	(accepted by rule: pitch variety is not a criterion)
+LM022	10	10,92,334,1688	Rhine, Rhinemaidens, the ring; Rhine, Rhinemaidens, water; Rhinemaidens' calls
+LM023	11	11,128,129,155,157,159,161,203,209,258,609,1677	Siegfried's horn call, Hoiho
+LM024	13	13,1403	
+LM025	15	15,454	Rhinemaidens' promise; Rhinemaidens; Loge; Donner; Siegmund spring
+LM026	2144	2144	(accepted by rule: pitch variety is not a criterion)
+LM027	2145	2145	(accepted by rule: pitch variety is not a criterion)
+LM028	18	18	fire around the rock
+LM029	2146	2146	(accepted by rule: pitch variety is not a criterion)
+LM030	2149	2149	(accepted by rule: pitch variety is not a criterion)
+LM031	2222	2222	(accepted by rule: pitch variety is not a criterion)
+LM032	19	19	Rhinemaidens; Siegmund and Sieglinde; Siegfried
+LM033	2150	2150	(accepted by rule: pitch variety is not a criterion)
+LM034	22	22	Siegfried wooing in disguise
+LM035	1405	1405	fire and fear
+LM036	2223	2223	(accepted by rule: pitch variety is not a criterion)
+LM037	23	23	
+LM038	24	24,29	Rhinemaidens' gold; Siegfried longing; Rhinemaidens; Siegmund spring; Siegfried longing
+LM039	25	25	Valkyrie call, Hojotoho
+LM040	2152	2152	(accepted by rule: pitch variety is not a criterion)
+LM041	2153	2153	(accepted by rule: pitch variety is not a criterion)
+LM042	2154	2154	(accepted by rule: pitch variety is not a criterion)
+LM043	2224	2224	(accepted by rule: pitch variety is not a criterion)
+LM044	26	26	oaths, bonds, betrayal
+LM045	28	28	Rhinemaidens; Wotan; forest bird
+LM046	30	30	
+LM047	31	31	fire, forge, calls
+LM048	1407	346,363,404,1407,1584	
+LM049	2155	2155	(accepted by rule: pitch variety is not a criterion)
+LM050	32	32	horses, riding, flight, pursuit
+LM051	34	34,575	Siegfried horn call, hunting
+LM052	36	36,41,682	Rhinemaiden; Siegmund spring; Siegfried longing; Rhinemaidens; Siegmund spring; Valkyries; Siegfried; Rhinemaidens; Siegmund; Siegfried and bird
+LM053	37	37,777	Rhinemaiden play; Siegfried and bird; Rhinemaidens; Siegmund; Valkyries' pleas; Wotan
+LM054	39	39	
+LM055	40	40	Rhinemaidens; Donner; Siegmund spring
+LM056	42	42,183	flickering fire, Loge
+LM057	1410	176,1410,1447,1626	Loge; Fricka; Norn; Loge; Wotan commands fire; Norn; Wotan, Loge, Norns; fire; Wotan, Loge; fire
+LM058	1408	1408	gold glorified; Wotan renounces; instrumental
+LM059	1411	1411	Rhinemaidens teasing Siegfried
+LM060	2159	2159	(accepted by rule: pitch variety is not a criterion)
+LM061	2160	2160	(accepted by rule: pitch variety is not a criterion)
+LM062	2161	2161	(accepted by rule: pitch variety is not a criterion)
+LM063	2162	2162	(accepted by rule: pitch variety is not a criterion)
+LM064	2163	2163	(accepted by rule: pitch variety is not a criterion)
+LM065	2225	2225	(accepted by rule: pitch variety is not a criterion)
+LM066	2226	2226	(accepted by rule: pitch variety is not a criterion)
+LM067	2227	2227	(accepted by rule: pitch variety is not a criterion)
+LM068	2228	2228	(accepted by rule: pitch variety is not a criterion)
+LM069	43	43	Siegfried's free exuberance, laughing
+LM070	44	44	Mime's complaint and nursing care
+LM071	45	45	Norns, Gutrune, Rhinemaidens
+LM072	1412	1412	Rhinemaidens; Alberich; Mime's forest longing
+LM073	2164	2164	(accepted by rule: pitch variety is not a criterion)
+LM074	2165	2165	(accepted by rule: pitch variety is not a criterion)
+LM075	2166	2166	(accepted by rule: pitch variety is not a criterion)
+LM076	2167	2167	(accepted by rule: pitch variety is not a criterion)
+LM077	2168	2168	(accepted by rule: pitch variety is not a criterion)
+LM078	2169	2169	(accepted by rule: pitch variety is not a criterion)
+LM079	2229	2229	(accepted by rule: pitch variety is not a criterion)
+LM080	2230	2230	(accepted by rule: pitch variety is not a criterion)
+LM081	47	47,550,825	Valhalla, Wotan, gods' hall; Valhalla, the hall of the gods
+LM082	48	48	Erda, Wanderer, ancient wisdom
+LM083	49	49	farewell, radiant glow
+LM084	50	50,158,339,401	Forest Bird
+LM085	51	51,259,398,412,1521	Mime's complaint and nursing care; Siegfried forging, descending song
+LM086	52	52,71,72,213,361,369,374,387,400,402,407,427,430,447,822,1469,1471,1472,1508,1511,1513	Nibelung toil, servitude, Mime and Alberich
+LM087	53	53	Loge; Wotan; Norn; Alberich
+LM088	55	55	Siegfried scorns Mime's smithing
+LM089	56	56	shouts, rallying calls
+LM090	1416	231,1416	
+LM091	1415	522,1415	fire around the rock; shimmering fire, flicker
+LM092	1414	1414	forest bird; mostly instrumental
+LM093	2171	2171	(accepted by rule: pitch variety is not a criterion)
+LM094	2172	2172	(accepted by rule: pitch variety is not a criterion)
+LM095	2173	2173	(accepted by rule: pitch variety is not a criterion)
+LM096	2174	2174	(accepted by rule: pitch variety is not a criterion)
+LM097	2175	2175	(accepted by rule: pitch variety is not a criterion)
+LM098	2232	2232	(accepted by rule: pitch variety is not a criterion)
+LM099	2233	2233	(accepted by rule: pitch variety is not a criterion)
+LM100	61	61	Brünnhilde awakening, greeting sun
+LM101	62	62,326,336,533,565,580,603	betrayal, deception, treachery; betrayal, revenge, Siegfried's death; revenge, Siegfried must fall; revenge, Siegfried's murder
+LM102	63	63	fire, flames, Loge
+LM103	65	65	Siegfried welding the sword
+LM104	67	67	love, longing, Siegfried and Mime
+LM105	68	68	Erda, Wanderer, fate and wisdom
+LM106	69	69,422	spells, sleep, magic
+LM107	70	70	sword Nothung, Mime's riddles
+LM108	74	74	summoning, calling to arms
+LM109	75	75,96	
+LM110	76	76,1418	mostly instrumental
+LM111	1419	107,1419	Rheingold, gold
+LM112	2176	2176	(accepted by rule: pitch variety is not a criterion)
+LM113	2178	2178	(accepted by rule: pitch variety is not a criterion)
+LM114	81	81,241,548	Siegfried, hero, redemption; Siegfried, hero, sword
+LM115	82	82,264,572	Erda, Wotan's fate, Valhalla; Erda, Wotan's fate, Valhalla's end
+LM116	86	86	wrath, vengeance, combat
+LM117	87	87	Rhinemaidens; Alberich; Sieglinde farewell; Brünnhilde
+LM118	1421	225,1421,1487	summoning, calling to arms
+LM119	1420	1420	Minne, love, spring
+LM120	2180	2180	(accepted by rule: pitch variety is not a criterion)
+LM121	2181	2181	(accepted by rule: pitch variety is not a criterion)
+LM122	2235	2235	(accepted by rule: pitch variety is not a criterion)
+LM123	89	89	Wotan, rainbow bridge, grey old man
+LM124	90	90	Valkyrie call, Hojotoho
+LM125	91	91	love, longing, Siegfried and Mime
+LM126	93	93,254	woodbird, Siegfried's wandering
+LM127	94	94	spring, love, Siegmund's song
+LM128	95	95	
+LM129	97	97,280	Wotan's spear, world's end, logs
+LM130	98	98	Rhinemaidens; Siegmund spring; Siegfried bird
+LM131	102	102,134,138,224,269,275	treaties, Wotan bound by contract; treaties, spear, Wotan's law
+LM132	104	104,798	vassals calling Donner; vassals calling Donner, Siegfried and Rhinemaidens
+LM133	1426	105,1426	Loge's cunning persuasion
+LM134	106	106	Rhine water, mostly instrumental
+LM135	108	108,143	
+LM136	1422	120,381,579,1422	forging the ring, power; world rule, the ring's power
+LM137	1428	139,1428	love declaration, mostly instrumental; love, spring, union
+LM138	1425	1425	
+LM139	2184	2184	(accepted by rule: pitch variety is not a criterion)
+LM140	2185	2185	(accepted by rule: pitch variety is not a criterion)
+LM141	2186	2186	(accepted by rule: pitch variety is not a criterion)
+LM142	2236	2236	(accepted by rule: pitch variety is not a criterion)
+LM143	117	117	Hagen's call to vassals
+LM144	119	119	woodbird, Siegfried gains ring
+LM145	121	121,154,196,246	Brünnhilde and Siegfried, love, farewell
+LM146	122	122	wisdom, knowledge, Brünnhilde
+LM147	125	125	calls to arms and summons
+LM148	126	126	Wanderer speaking, riddle contest
+LM149	127	127	Alberich slipping; Wotan on divine law
+LM150	130	130,671,714	Rhinemaiden guarding; Siegmund's spring love; Rhinemaiden mockery; Siegmund's spring song; Rhinemaiden taunt; Siegmund's spring love
+LM151	131	131	Rhinemaiden play; Siegfried's fish simile
+LM152	132	132	
+LM153	133	133	Siegfried refuses Rhinemaidens, Hagen
+LM154	135	135	Wotan commands; Brünnhilde
+LM155	144	144	Alberich; Fricka; Hagen sees Siegfried
+LM156	1438	285,1438	
+LM157	1433	1433	Brünnhilde, love, tenderness
+LM158	1434	1434	Rhinemaidens; Fricka wakes Wotan; Siegmund
+LM159	1436	1436	
+LM160	1439	1439	
+LM161	2238	2238	(accepted by rule: pitch variety is not a criterion)
+LM162	2239	2239	(accepted by rule: pitch variety is not a criterion)
+LM163	2240	2240	(accepted by rule: pitch variety is not a criterion)
+LM164	145	145	
+LM165	146	146	
+LM166	147	147,532,539,834	Siegmund, kinship, resemblance; compassion, Siegmund and Sieglinde, Walsung love
+LM167	149	149	Rhine, Rhinegold, Rhinemaidens
+LM168	150	150	Brünnhilde, Siegfried devotion
+LM169	151	151	Rhinemaidens praising the gold
+LM170	152	152	Siegfried's name, identity
+LM171	153	153	grief, farewell, fate of gods
+LM172	156	156	Siegfried the hero, deeds
+LM173	163	163	Gutrune and Siegfried, joy
+LM174	165	165	summoning, calling to arms
+LM175	166	166	Rhinemaidens; Alberich; Siegfried's mother
+LM176	168	168,1451	treaties, spear, oaths
+LM177	170	170	fire around the rock
+LM178	171	171	Fafner; Siegfried; Alberich; Rhinemaidens
+LM179	173	173,296,491	
+LM180	174	174	summoning, calling to arms
+LM181	175	175	
+LM182	1442	1442	Wotan's dilemma, fate
+LM183	1443	1443	flames, flickering fire
+LM184	1444	1444	Erda/Wala awakening, summoning
+LM185	1445	1445	pursuit, reproach, betrayal
+LM186	1446	1446	Rhinemaidens; Siegmund; Siegfried; Norn
+LM187	1448	1448	Rhinemaidens; Siegfried; Norn; Brünnhilde dusk
+LM188	1452	1452	
+LM189	1455	1455	Alberich; Fafner; Mime's forest longing
+LM190	1457	1457	Alberich's army, Nibelung host
+LM191	1458	1458	Wanderer, Siegfried, Brunnhilde confrontation
+LM192	1459	1459	Wotan, spear, battle, arming
+LM193	1460	1460	Wanderer and Norn, fate and knowledge
+LM194	2243	2243	(accepted by rule: pitch variety is not a criterion)
+LM195	191	191	
+LM196	192	192	Freia, golden apples, youth
+LM197	194	194	Wotan's farewell, fire, Brünnhilde asleep
+LM198	195	195	Wotan's farewell, fire, Brünnhilde asleep
+LM199	197	197	Brünnhilde's devotion to Siegfried
+LM200	198	198,272,379,414,415,417,439,458,605	Wotan's anger, doom of gods; Wotan's despair, doom of gods
+LM201	199	199	Brünnhilde and Siegfried, love
+LM202	201	201	
+LM203	202	202,578	horn call, vassals summoned
+LM204	204	204,957,1477	Alberich struggle, threats
+LM205	205	205	Rhinemaidens exulting in gold
+LM206	206	206	Rhinemaidens teasing Siegfried
+LM207	212	212	Alberich pursuing the Rhinemaidens
+LM208	214	214	
+LM209	215	215	
+LM210	216	216	Alberich's desire; Rhinemaidens' gold cry
+LM211	217	217	Wotan, spear, power
+LM212	227	227,657	Mime pain, mockery; cries and calls
+LM213	1501	289,1501	Wanderer pointing out the dragon
+LM214	1505	298,1505	Rhinemaiden; Brünnhilde greets Siegfried; Rhinemaiden; Gunther
+LM215	1473	618,676,1473,1794	Brünnhilde, Wälsung, wise woman
+LM216	1474	1474	
+LM217	1476	1476,1478	Hagen, Alberich, curse; curse, gold, Hagen's watch
+LM218	1480	1480	
+LM219	1481	1481	Freia's cry for help
+LM220	1483	1483	treaties, Wotan bound by contract
+LM221	1484	1484	
+LM222	1485	1485	
+LM223	1488	1488	
+LM224	1489	1489	Wotan questioning, commanding
+LM225	1498	1498	
+LM226	1500	1500	
+LM227	1502	1502	
+LM228	2198	2198	(accepted by rule: pitch variety is not a criterion)
+LM229	2199	2199	(accepted by rule: pitch variety is not a criterion)
+LM230	2200	2200	(accepted by rule: pitch variety is not a criterion)
+LM231	237	237	Rhine, Rhinegold, Rhinemaidens
+LM232	238	238	love, renunciation, farewell
+LM233	239	239	Erda, ending, downfall
+LM234	240	240	compassion, Siegmund and Sieglinde, Walsung love
+LM235	242	242	mocking Mime's craft
+LM236	243	243	Mime's plight, Nibelungen
+LM237	244	244	Hagen scheming, cunning
+LM238	245	245	noble dwelling, bliss, refuge
+LM239	247	247	giants, Fasolt and Fafner
+LM240	249	249	Sieglinde's death, Siegfried's mother
+LM241	250	250	Alberich approaching, Nibelheim
+LM242	251	251,255	Valhalla's burning logs, end of gods
+LM243	252	252,1597	Fafner, dragon, hoard
+LM244	253	253	Siegfried, the hero, desire
+LM245	256	256	Wotan, spear, treaties, command
+LM246	257	257	marriage, oaths, hearth, vows
+LM247	262	262	fear, dragon's cave
+LM248	265	265	Siegfried scorns Mime's smithing
+LM249	267	267	Wotan approaching, storm
+LM250	268	268	
+LM251	274	274	spear, Wotan's power
+LM252	277	277	spear, oaths, Wotan's power
+LM253	278	278	Hoho forging song, Siegfried
+LM254	279	279,1015	
+LM255	281	281	Rhinemaidens catch the suitor
+LM256	282	282	
+LM257	283	283	
+LM258	288	288	
+LM259	291	291	
+LM260	292	292	
+LM261	293	293	Siegfried-Mime quarrel
+LM262	295	295	Valhalla's burning logs, end of gods
+LM263	297	297	
+LM264	301	301	Wotan, spear, power
+LM265	304	304,765	Wotan; Alberich; Donner; Siegfried's song; Wotan; Loge; Donner; Siegfried
+LM266	308	308	Brunnhilde plotting Siegfried's death
+LM267	309	309	
+LM268	311	311	Rhine at beginning and end
+LM269	314	314	Hagen and Brunnhilde vengeance oath
+LM270	321	321	Brunnhilde's rock and fire
+LM271	1506	1506	gods' decline, Freia, gold
+LM272	1507	1507	greetings, summoning calls
+LM273	1509	1509	Siegfried's sword, oath, deeds
+LM274	1510	1510	Siegfried's horn call, Hoiho
+LM275	1512	1512	Siegfried's sword, oath, deeds
+LM276	1514	1514	summoning, riding, Hagen's call
+LM277	1515	1515	Alberich; Loge; Valkyries' departure
+LM278	1516	1516	Mime's complaint and nursing care
+LM279	1517	1517	Rhinemaidens' song; Siegfried's tale
+LM280	1518	1518	Siegfried's sword, oath, deeds
+LM281	1519	1519	recalled past suffering
+LM282	1522	1522	
+LM283	1523	1523	Rhinemaiden taunts; Alberich's desire
+LM284	1524	1524	
+LM285	1525	1525	Wotan, spear's power
+LM286	1528	1528	anger, violence, vengeance
+LM287	1530	1530	
+LM288	1531	1531	
+LM289	1534	1534,1670	Wotan's spear, treaties, authority; Wotan's spear, treaties, power
+LM290	1538	1538	
+LM291	1546	1546	Donner's threats; Sieglinde hears horns
+LM292	1548	1548	
+LM293	1549	1549,1736	Siegfried and Gunther blood-brotherhood; Wanderer, Waltraute, Siegfried at Gibichung scenes
+LM294	1556	1556	
+LM295	325	325	Siegfried fire
+LM296	327	327,540,554,555,561,832	Valhalla, Wotan, gods' hall; Wotan musing on power and toil; ring, gold, power; ring, love renounced, power; ring, power, greed
+LM297	328	328	Ring, hoard, power
+LM298	329	329	revenge, betrayal, Siegfried's death
+LM299	330	330	festivity, Siegfried's call
+LM300	331	331,344	Sieglinde, Siegmund, pity, birth; Sieglinde, birth, sorrow, compassion
+LM301	332	332,850,852	Valkyrie ride, horses
+LM302	333	333,549	Rhinemaidens, Rhine, ring returned
+LM303	335	335	twins, father, kinship
+LM304	337	337	fire, Loge, Brünnhilde's rock
+LM305	338	338	knowledge, life and weaving
+LM306	342	342	Gibichung hospitality, courtesy
+LM307	343	343	Mime's complaint and nursing care
+LM308	345	345	revenge, betrayal, Siegfried's death
+LM309	347	347,1567	Hoho forging song, Siegfried
+LM310	348	348	curse, distress, doom
+LM311	349	349,356,543,577,833	death annunciation, Brünnhilde, fate; death annunciation, Siegmund, Walhall; death annunciation, Walhall
+LM312	350	350	world rule, Ring power
+LM313	351	351	Freia's cries for help
+LM314	352	352,557,567	oaths, betrayal, fate
+LM315	353	353,598	woman's worth, love, wisdom sought
+LM316	354	354	Erda/Wala, fate, Norns
+LM317	355	355,362,365,366,385,388,588	sword, Notung, Siegmund's heroism
+LM318	358	358	Alberich commanding the Nibelungs
+LM319	359	359,368	sword, Siegmund, Wälsung heroes
+LM320	360	360	Siegfried's sword, Nothung
+LM321	364	364,562,602	woman's worth, love, wisdom sought
+LM322	367	367	Erda, Wanderer, ancient wisdom
+LM323	370	370	Siegfried's sword, Nothung
+LM324	371	371	Wotan's farewell, fire, Brünnhilde asleep
+LM325	372	372	
+LM326	373	373	Siegfried, birdsong, Rhinemaidens
+LM327	375	375	Erda, fate, ancient wisdom
+LM328	377	377	Wotan's spear, power, command
+LM329	380	380	
+LM330	382	382	forge, sword work
+LM331	383	383	Mime's plight, Nibelungen
+LM332	386	386	
+LM333	393	393	
+LM334	394	394	Siegfried's arrival, hunting
+LM335	395	395	interrogation, accusation, guilt
+LM336	397	397	Valhalla's burning logs, end of gods
+LM337	399	399	Gibichung hall, Gunther's renown
+LM338	403	403	Siegfried, birdsong, Rhinemaidens
+LM339	408	408	bargaining, payment, Loge
+LM340	409	409	Fricka; Fafner; Sieglinde
+LM341	410	410	Wotan in distress; Brünnhilde Walhall
+LM342	411	411,687	summoning, calling to arms
+LM343	413	413	
+LM344	416	416	
+LM345	419	419,864	Brünnhilde foretelling death
+LM346	420	420	Brunnhilde and Siegfried devotion
+LM347	426	426	Gunther, Gibichungs
+LM348	428	428	
+LM349	431	431	
+LM350	432	432	
+LM351	433	433	Rhinemaidens; Norn; Brünnhilde dusk
+LM352	434	434	Brünnhilde, love, union
+LM353	435	435	sword broken, fear
+LM354	437	437	Brünnhilde and Siegfried, farewell
+LM355	441	441	
+LM356	442	442	Hagen calling, vassals
+LM357	444	444	Valhalla's burning logs, end of gods
+LM358	445	445	Wotan; Loge; Brünnhilde fire
+LM359	448	448	Siegmund recounts being hunted
+LM360	455	455	
+LM361	456	456,807	
+LM362	460	460	Freia; Hagen; Mannen; Brünnhilde
+LM363	462	462	Wotan's spear, Alberich, power
+LM364	466	466	
+LM365	468	468	warning against approaching the rock
+LM366	473	473	dragon, serpent
+LM367	479	479	flight, pursuit, driven by fear
+LM368	482	482	Loge; Sieglinde; Wotan summons Loge
+LM369	483	483	
+LM370	487	487	
+LM371	1607	493,1607	fire and Loge's power
+LM372	494	494	Hojotoho, Valkyrie battle cry
+LM373	499	499	Siegfried and Brunnhilde love, Rhinemaidens
+LM374	514	514	fire around the rock
+LM375	1563	594,1563	Wotan, the Wanderer, authority
+LM376	1559	1559	Siegfried's deeds, hunting arrival
+LM377	1560	1560	love, longing, greeting
+LM378	1564	1564	Hagen's call to vassals
+LM379	1565	1565	Wotan's farewell, fire, Brünnhilde asleep
+LM380	1566	1566	Siegfried scorns Mime's smithing
+LM381	1568	1568	
+LM382	1569	1569	trust, loyalty, protection
+LM383	1570	1570	
+LM384	1571	1571	
+LM385	1572	1572	Rhinemaidens' lament for gold
+LM386	1573	1573	Wotan's farewell, fire, Brünnhilde asleep
+LM387	1575	1575	Gibichung hospitality, courtesy
+LM388	1576	1576	Brünnhilde, eternity, love
+LM389	1577	1577	(accepted by rule: pitch variety is not a criterion)
+LM390	1578	1578	dragon Fafner, the Wurm
+LM391	1579	1579	Siegfried, Sieglinde's child, redemption
+LM392	1580	1580	
+LM393	1581	1581	fire guarding the rock
+LM394	1583	1583	Fricka; Gibichung hall
+LM395	1585	1585	Loge and Donner calls; instrumental
+LM396	1586	1586	
+LM397	1587	1587	
+LM398	1589	1589	Erda, Wotan's downfall, death
+LM399	1591	1591	anger, violence, vengeance
+LM400	1592	1592	(accepted by rule: pitch variety is not a criterion)
+LM401	1593	1593	Wanderer, Siegfried, Brünnhilde, hailing
+LM402	1594	1594	Siegfried, Hagen, Rhinemaidens scheming
+LM403	1595	1595	
+LM404	1596	1596,1608	spear, oaths, Wotan's power
+LM405	1598	1598	summoning, calling to arms
+LM406	1599	1599	
+LM407	1601	1601	
+LM408	1602	1602	summoning, calling to arms
+LM409	1605	1605	seizure, coercion, forcing
+LM410	1606	1606	(accepted by rule: pitch variety is not a criterion)
+LM411	1610	1610	Wotan, spear, world ash
+LM412	1612	1612	alarm, fear of approaching danger
+LM413	1613	1613	
+LM414	1614	1614	
+LM415	1615	1615	shame, fear
+LM416	1616	1616	
+LM417	1618	1618	Siegfried impatient with Mime
+LM418	1619	1619	
+LM419	1620	1620	Wotan warning, fire barrier
+LM420	1621	1621	blood-brotherhood oath
+LM421	1628	1628	
+LM422	1629	1629	Siegfried disgust with Mime
+LM423	1632	1632	longing, wishing; Siegfried and Mime
+LM424	1634	1634	glimmer and glitter, fire
+LM425	1635	1635	storm, ruin, rest
+LM426	1642	1642	
+LM427	1651	1651	Rhinemaidens; Valkyrie Brünnhilde
+LM428	1655	1655	
+LM429	1661	1661	fighting, enemies scattered
+LM430	1673	1673	Wanderer's riddle questions, sword
+LM431	1674	1674	summoning, calling to arms
+LM432	2206	2206	(accepted by rule: pitch variety is not a criterion)
+LM433	2209	2209	(accepted by rule: pitch variety is not a criterion)
+LM434	528	528	
+LM435	529	529	curse, doom, the Ring
+LM436	530	530	Brünnhilde and Siegfried, bliss
+LM437	531	531	names, identity, questions
+LM438	534	534,873,877,1394,1831	Hojotoho, Valkyrie call
+LM439	535	535	Siegfried questions Mime, mother
+LM440	536	536	Siegmund, rest, mercy
+LM441	537	537	fearless hero, Brünnhilde
+LM442	538	538	the Ring, Wotan's guilt and bargain
+LM443	541	541,581,589	marriage, betrothal, oaths
+LM444	542	542	Sieglinde, ecstasy, love
+LM445	544	544	Siegfried, mother, awakening Brünnhilde
+LM446	545	545,815	Wotan, power, Walhall, the Ring
+LM447	546	546,1683	Valhalla, Wotan, gods' hall
+LM448	547	547	Siegfried's horse Grane, heroic ride
+LM449	551	551	night, darkness, Alberich
+LM450	552	552	Alberich and Hagen, inheriting world
+LM451	558	558	Alberich's son, doubt, Hagen
+LM452	560	560,568	Hoho forging song, Siegfried
+LM453	563	563	Gutrune's welcome, hospitality
+LM454	564	564	Nibelungs, hoard, gold, Alberich
+LM455	571	571	love, spring, fate
+LM456	573	573	Brünnhilde, love, Wotan yielding
+LM457	574	574	
+LM458	576	576	
+LM459	582	582	oaths, Brünnhilde's pledge
+LM460	583	583	Brünnhilde and Siegfried, love
+LM461	584	584	Siegfried's path to Brünnhilde
+LM462	585	585	betrayal, deception, treachery
+LM463	586	586,999	giants, Fafner, Nibelung wrath; giants, Fafner, hoard
+LM464	587	587	
+LM465	590	590	Brünnhilde's appeals
+LM466	591	591	
+LM467	592	592	Gibichungs, Gunther
+LM468	597	597	Wotan's counsel, heed and obey
+LM469	599	599	Hoho forging song, Siegfried
+LM470	600	600	Sieglinde's death, Siegfried's mother
+LM471	601	601	eternity, Brünnhilde, Wälsung
+LM472	604	604	
+LM473	606	606	dread, Hagen, Norns' vision
+LM474	607	607	Hagen's plotting
+LM475	608	608	Siegfried's horn call, Hoiho
+LM476	611	611	
+LM477	612	612	fate, the world, curse
+LM478	615	615,868,937,943,1956	women, Sieglinde, pursuit
+LM479	617	617,970	Rhinemaidens, gold, awakening; smiling, gold, glory
+LM480	620	620	(accepted by rule: pitch variety is not a criterion)
+LM481	621	621,1800	
+LM482	623	623	Siegfried at Brunnhilde's rock
+LM483	624	624	
+LM484	626	626	Wotan commands Loge; Brünnhilde battle
+LM485	627	627	Wotan, farewell, Brünnhilde's sleep
+LM486	629	629,659,1989	Nothung, the sword, Siegmund
+LM487	633	633	Hagen's call, Rhinemaidens
+LM488	634	634	Hagen scheming, Siegfried's downfall
+LM489	636	636	fate, offering, binding
+LM490	637	637	Valkyries gathering, horses
+LM491	638	638	
+LM492	640	640	alarm, calling to a sibling or Brünnhilde
+LM493	641	641	Wotan; Sieglinde tends Siegmund
+LM494	642	642	
+LM495	643	643	Gunther, Gibichung hall
+LM496	644	644	
+LM497	646	646	
+LM498	648	648	
+LM499	651	651	Rhinemaiden warning; instrumental
+LM500	653	653	curse, fate, doom
+LM501	656	656	Hagen, Gibichung hall, hunt
+LM502	661	661	
+LM503	663	663	Rhinemaidens; Norn; Brünnhilde awakening
+LM504	664	664	
+LM505	669	669	Siegfried forging, bellows
+LM506	672	672	
+LM507	674	674	loyalty, farewell
+LM508	675	675	
+LM509	677	677,963	the sword, Nothung
+LM510	679	679	
+LM511	680	680	Mime, smithing the sword
+LM512	681	681	
+LM513	683	683	Rhinemaidens sun greeting
+LM514	685	685	Alberich cursing, striking
+LM515	689	689	
+LM516	692	692	
+LM517	695	695	
+LM518	696	696	Wanderer's wisdom, love, depths
+LM519	701	701	
+LM520	703	703	
+LM521	704	704	Alberich's desire; Hagen demands ring
+LM522	705	705	
+LM523	706	706	storm, fear, flight
+LM524	708	708	Fafner, the dragon
+LM525	711	711	
+LM526	713	713	
+LM527	716	716	
+LM528	719	719	
+LM529	721	721	(accepted by rule: pitch variety is not a criterion)
+LM530	724	724	longing for something out of reach
+LM531	725	725	
+LM532	1710	726,1710	Gunther, Gibichung hall
+LM533	747	747	flight, pursuit, storm
+LM534	752	752	Wotan; Alberich; Hunding; Siegfried
+LM535	753	753	
+LM536	758	758	
+LM537	760	760	
+LM538	761	761	
+LM539	763	763	identifying a person
+LM540	780	780	Gunther, Hagen, Gibichung hall
+LM541	783	783	hero, Wotan's will, awakening Brünnhilde
+LM542	785	785	
+LM543	793	793	
+LM544	801	801	Alberich's lust; Siegfried's mother
+LM545	804	804	
+LM546	806	806	farewell and greeting
+LM547	809	809,1142	Wanderer, Siegfried, Brünnhilde, hailing
+LM548	1781	945,1781	weakness, outcast, humiliated
+LM549	1740	1150,1740	longing, gazing at the beloved
+LM550	1675	1675	Siegfried, vassals, Rhinemaidens
+LM551	1676	1676	Ring, Walhall, Wotan
+LM552	1678	1678	the Ring, Wotan's guilt and bargain
+LM553	1680	1680	Freia; Loge; Brünnhilde's oath
+LM554	1681	1681	Freia, beauty
+LM555	1682	1682	
+LM556	1684	1684	
+LM557	1686	1686	blood-brotherhood oath
+LM558	1690	1690	
+LM559	1691	1691	Wanderer, Siegfried, spear, turning back
+LM560	1694	1694	Siegfried, wonder, questioning
+LM561	1697	1697	
+LM562	1698	1698	Siegfried, heroic call
+LM563	1699	1699,1709	
+LM564	1701	1701	Brünnhilde's vengeance oath
+LM565	1702	1702	
+LM566	1703	1703	
+LM567	1704	1704	laughing, love, wending
+LM568	1705	1705	greeting, strangers, Rhine
+LM569	1708	1708,1729	the Ring, possession, claim
+LM570	1714	1714	lament, supplication, pity
+LM571	1715	1715	
+LM572	1718	1718	contracts, treaties, Wotan's spear
+LM573	1719	1719	Brünnhilde, oaths, hero praise
+LM574	1720	1720	Wotan/Wanderer, wit and wisdom
+LM575	1722	1722	
+LM576	1723	1723	Fasolt; Alberich loses ring
+LM577	1724	1724	
+LM578	1725	1725	bond, brotherhood, covenant
+LM579	1726	1726	
+LM580	1730	1730	Fasolt; Loge; Siegmund; Alberich's curse
+LM581	1731	1731	Mime, upbringing, taunting
+LM582	1732	1732	
+LM583	1734	1734	Siegfried defiance, Rhinemaidens
+LM584	1739	1739	Alberich, plotting, ring desire
+LM585	1760	1760	
+LM586	1767	1767	
+LM587	1777	1777	toil, care, ring's curse
+LM588	1783	1783	
+LM589	1793	1793	Walhall, heroes, farewell
+LM590	1797	1797	instrumental; Siegfried recounts killing Fafner
+LM591	1807	1807	
+LM592	1808	1808	Fricka; Donner; Wanderer wakes Erda
+LM593	2214	2214	(accepted by rule: pitch variety is not a criterion)
+LM594	2215	2215	(accepted by rule: pitch variety is not a criterion)
+LM595	2216	2216	(accepted by rule: pitch variety is not a criterion)
+LM596	2217	2217	(accepted by rule: pitch variety is not a criterion)
+LM597	810	810	Hagen's alarm, weapons
+LM598	811	811	swords, oaths, Nothung
+LM599	812	812	riding, horse, Wotan
+LM600	814	814	Valkyrie ride, horses
+LM601	816	816	Wotan, world's fate, ruin
+LM602	817	817	Siegfried's horse Grane
+LM603	818	818	
+LM604	819	819	Sieglinde, ecstasy, love
+LM605	820	820	Froh; Fasolt; Sieglinde
+LM606	821	821,1270	Siegfried reaches Brünnhilde's rock
+LM607	823	823	riding, horse, Wotan
+LM608	824	824	Wotan, power, the Ring
+LM609	826	826	Mime's toil, Siegfried's haste
+LM610	827	827,1248	Nibelheim, Tarnhelm, shame; Tarnhelm, Nibelheim
+LM611	828	828	Alberich's lair, dread
+LM612	829	829	Wotan's ravens
+LM613	830	830	foreboding, misfortune, dread
+LM614	831	831,837	the Ring, Mime and Alberich scheming
+LM615	835	835	Wallala call, Rhinemaidens, heroes
+LM616	836	836	Brunnhilde and Gunther, Alberich
+LM617	838	838	Siegfried, questioning, awakening
+LM618	839	839	Hunding, Hagen, hostile men, weapons
+LM619	840	840	Walhall, glory, ring
+LM620	841	841	Wotan and Loge; Siegfried through fire
+LM621	842	842	Rhinemaidens, Rhine water
+LM622	843	843	Siegmund, Wälsung lineage, name
+LM623	844	844	
+LM624	846	846	
+LM625	847	847,869	Brünnhilde, battle, ride; Valkyrie ride, horses
+LM626	853	853,897,1280	longing, sorrow, Walsung fate; love, tenderness, Walsung bond
+LM627	854	854	Hagen, Siegfried arrives
+LM628	1812	856,1812	fate, death announcement, prophecy
+LM629	857	857	
+LM630	858	858	Wotan's authority, Walhall
+LM631	861	861	horse, riding, Grane
+LM632	862	862,1169	horn call, drinking; horn call, summons to arms
+LM633	865	865	
+LM634	872	872	exultant calls and shouts
+LM635	875	875	Siegfried, the one who wakes Brünnhilde
+LM636	878	878,927,1103,1884,1890	fear, Mime, Wanderer's wisdom; fear, Wotan's spear, fearing
+LM637	879	879	Siegfried's name, Rhinemaidens
+LM638	880	880,1156	Brünnhilde recalls lost past
+LM639	881	881	Wotan's anger, Brünnhilde's guilt
+LM640	887	887	Hunding, threats, commands
+LM641	891	891	mother, women, obedience
+LM642	893	893	
+LM643	894	894	
+LM644	895	895	love, longing
+LM645	900	900	
+LM646	901	901	
+LM647	902	902	
+LM648	904	904	Valkyrie ride, horses, battle
+LM649	905	905,916,995,1841,1867,1892,1912,1964	Hunding, Hagen, hostile men, weapons
+LM650	906	906	fire, Loge, flames
+LM651	907	907	fidelity, oath, betrayal
+LM652	909	909	Lust, Wotan and Brünnhilde
+LM653	910	910,2009	Valkyrie ride, horses
+LM654	911	911	
+LM655	912	912	
+LM656	913	913	fear, Wotan's spear, fearing
+LM657	918	918	Wanderer, Valhalla, wandering
+LM658	923	923	Wotan's weariness, resignation
+LM659	924	924,1251	Hagen's watch, hunt; Hagen's watch, hunt, menace
+LM660	925	925	
+LM661	929	929	Fafner; Siegfried; mockery
+LM662	932	932	sorrow, parting
+LM663	935	935	oaths, treaties, Wotan's law
+LM664	936	936,2060	the Ring, Brünnhilde confronts
+LM665	1845	939,1256,1264,1845	heroes, Wotan's commands
+LM666	940	940	fire, flames, Brünnhilde
+LM667	944	944	
+LM668	947	947	Rhinemaidens' Weialala
+LM669	948	948	questions, drinking, Wanderer
+LM670	949	949,1008	the sword, father's promise
+LM671	951	951,1397	Siegfried's awe, bewilderment, fear; awe, fear, bewilderment
+LM672	953	953	Rhine gleam, offering drink
+LM673	954	954	Rhine, gold, Rhinemaidens
+LM674	955	955	Wanderer confident resolve
+LM675	956	956	Brünnhilde, fire, love
+LM676	959	959	
+LM677	960	960	Mime and Hagen scheming against Siegfried
+LM678	965	965	
+LM679	967	967	pleading, awe
+LM680	971	971	
+LM681	972	972	Siegfried's mother, longing
+LM682	973	973	
+LM683	974	974,1146	rescue, women, Norns
+LM684	977	977	Norns fire and rest
+LM685	980	980	rainbow bridge to Valhalla
+LM686	986	986	Gibichung hall, the Rhine
+LM687	992	992	
+LM688	998	998	Siegfried, hunting, restless energy
+LM689	1000	1000	Brunnhilde and Siegfried union
+LM690	1012	1012	fire, bridal
+LM691	1013	1013	nature, Rhine, ancestry
+LM692	1016	1016	fire around the rock
+LM693	1018	1018	Mannen, wedding, welcome
+LM694	1022	1022	
+LM695	1041	1041,1355	Heiajaheia, gold, farewell; Wallala call, Walhall, heroes
+LM696	1046	1046	
+LM697	1054	1054	fear, trembling
+LM698	1063	1063	Brunnhilde's immolation
+LM699	1065	1065	nature, Rhine, natural order
+LM700	1078	1078	weapons, calls to arms
+LM701	1086	1086	
+LM702	1089	1089	
+LM703	1096	1096,1147	
+LM704	1098	1098	Rhinemaiden cries; Mime's reward
+LM705	1108	1108	
+LM706	1111	1111	spear, Wotan's power
+LM707	1117	1117	Nibelung toil, command, hoard
+LM708	1125	1125	
+LM709	1126	1126	
+LM710	1128	1128	rainbow bridge to Valhalla
+LM711	1137	1137	Hunding, threats, commands
+LM712	1138	1138	Brunnhilde to Waltraute, hunting
+LM713	1140	1140	Hagen, Gunther, Siegfried arrives
+LM714	1149	1149	the Ring, returning it
+LM715	1151	1151	Alberich, Rhinemaidens lament
+LM716	1908	1191,1908	horse, riding, Grane
+LM717	1810	1810	Siegfried's deeds, hunting arrival
+LM718	1811	1811	Hunding, Hagen, hosts, guarding
+LM719	1813	1813	Siegfried's heroic ride
+LM720	1814	1814,1821,1839	Siegfried, fearless hero, Wotan's spear; Wanderer, Erda, Siegfried awakening
+LM721	1815	1815	Hojotoho, Valkyrie battle cry
+LM722	1816	1816	fear, learning to fear
+LM723	1817	1817	Valkyrie ride, horses, battle
+LM724	1822	1822	Hunding, Hagen, hostile men, weapons
+LM725	1823	1823	sword, Siegfried
+LM726	1824	1824	
+LM727	1825	1825	bringing, Wotan's messengers
+LM728	1826	1826	Hunding, challenge, resolve
+LM729	1827	1827	Mime smithing, hoard
+LM730	1828	1828	Siegfried, Brunnhilde and horse
+LM731	1829	1829	
+LM732	1830	1830	horn call, summons, Siegfried's horn
+LM733	1833	1833	love, memory, counsel
+LM734	1836	1836	greeting light, sun, love
+LM735	1837	1837	rescue, Rhine, Gibichungs
+LM736	1838	1838	Siegfried, fire, awakening
+LM737	1840	1840	Rhinemaidens, gold, counsel
+LM738	1842	1842	Mime, smithing the sword
+LM739	1843	1843	Siegfried boasting
+LM740	1844	1844	Alberich's world; Brünnhilde; Mime
+LM741	1846	1846	Wanderer, warning, defiance of heroes
+LM742	1847	1847	Siegfried mocking Mime the bungler
+LM743	1848	1848	Gunther and Siegfried bond, oaths
+LM744	1850	1850	
+LM745	1851	1851	
+LM746	1853	1853	Brunnhilde calling Waltraute
+LM747	1855	1855	Brünnhilde, warning, punishment
+LM748	1858	1858	
+LM749	1860	1860	Walhall, the castle, gods' fate
+LM750	1862	1862	fear, Norns, counsel
+LM751	1864	1864	
+LM752	1865	1865	Sieglinde's tender narration
+LM753	1868	1868	awakening, waking the sleeper
+LM754	1869	1869	the sword, father's promise
+LM755	1876	1876	Brunnhilde's eternal love
+LM756	1877	1877,1878	Siegfried forging the sword
+LM757	1879	1879	
+LM758	1880	1880	fate, need, Norns
+LM759	1881	1881	
+LM760	1882	1882	Fricka; Fafner; Siegfried through fire
+LM761	1883	1883	friendship, marriage, loyalty
+LM762	1885	1885	
+LM763	1891	1891	fate, Norns, Wotan's wisdom
+LM764	1900	1900	urging, invitation to follow
+LM765	1906	1906	hoard, guarding, Hagen
+LM766	1909	1909	heroes, Wotan's commands
+LM767	1922	1922	Hojotoho, Valkyrie battle cry
+LM768	1927	1927	Siegfried, hunting, restless energy
+LM769	1935	1935	
+LM770	1936	1936	
+LM771	1940	1940	Siegmund, love, Wälsung fate
+LM772	1941	1941	
+LM773	1944	1944	Brünnhilde's wrath, fear, love
+LM774	1947	1947	
+LM775	1966	1966	
+LM776	1972	1972	heroes, Wotan's commands
+LM777	1974	1974	
+LM778	1976	1976	horn-like shouts
+LM779	1978	1978	Wellgunde; Loge; Alberich renounces love
+LM780	1982	1982	asking, telling, speaking
+LM781	1985	1985	vassals questioning Gunther
+LM782	1990	1990	
+LM783	1994	1994	Brünnhilde, remembrance, warning
+LM784	1997	1997	gods' burden, doom, resignation
+LM785	1999	1999	
+LM786	2001	2001	Brunnhilde farewell and oath
+LM787	1153	1153	instrumental, Fafner, dragon context
+LM788	1154	1154	
+LM789	1157	1157	Wanderer, riddles, wisdom contest
+LM790	1159	1159	
+LM791	1160	1160	
+LM792	1162	1162	Hagen's call
+LM793	1163	1163	Rhinemaidens, Weialala, sun
+LM794	1164	1164	
+LM795	1165	1165	Freia, Brünnhilde, devotion
+LM796	1167	1167	
+LM797	1168	1168	
+LM798	1170	1170	
+LM799	1171	1171	sword, weapon questioned
+LM800	1172	1172	
+LM801	1173	1173	Brunnhilde, Valkyries, Siegfried
+LM802	1174	1174	Rhinemaidens and Brunnhilde to the river
+LM803	1176	1176	child, Siegfried, rescue
+LM804	1177	1177	Siegmund's need; the sword
+LM805	1178	1178	Fafner; Siegfried
+LM806	1179	1179	
+LM807	1180	1180	the sword, Nothung
+LM808	1184	1184	Loge's counsel; Mannen's good fortune
+LM809	1185	1185	
+LM810	1186	1186	Brünnhilde, love offered
+LM811	1188	1188	
+LM812	1189	1189	
+LM813	1192	1192	Siegmund, love, Wälsung fate
+LM814	1196	1196	
+LM815	1197	1197	
+LM816	1198	1198	Wotan's punishment of Brünnhilde
+LM817	1227	1227	Siegfried, Gunther, Hagen greetings
+LM818	1231	1231	Siegfried at the Gibichung hall
+LM819	1236	1236	forest bird song
+LM820	1254	1254	
+LM821	1255	1255	Hojotoho, calls, Rhine origin
+LM822	1277	1277	Siegfried taunts; Wotan on women
+LM823	1281	1281	Fricka, marriage, reproach
+LM824	1288	1288	Nibelungs, Mime, wandering
+LM825	1289	1289	Alberich; Siegfried's pledge; night falls
+LM826	1290	1290	
+LM827	1294	1294	death, woe, doom
+LM828	1309	1309	ring, fate, giants' fall
+LM829	1312	1312	Brünnhilde's immolation, Siegfried
+LM830	1315	1315	Siegfried's forging song, hammer
+LM831	1318	1318	
+LM832	1336	1336	
+LM833	1346	1346	scornful address to someone
+LM834	1364	1364	
+LM835	1374	1374	
+LM836	1382	1382	Heiajaheia, Rhinemaidens' call
+LM837	1389	1389	Siegfried's forging song, hammer
+LM838	2010	2010	
+LM839	2011	2011	
+LM840	2012	2012	
+LM841	2013	2013	
+LM842	2014	2014	love, marriage, blessing
+LM843	2015	2015	blissful greeting, love
+LM844	2016	2016	
+LM845	2017	2017	
+LM846	2022	2022	Siegfried praising Brunnhilde and Rhinemaidens
+LM847	2037	2037	Siegfried, fire, radiance
+LM848	2064	2064	
+LM849	2089	2089	
+LM850	2090	2090	Siegfried's longing, yearning
+LM851	2093	2093	Sieglinde's care, hospitality
+LM852	2098	2098	Siegfried forging, bellows
+LM853	2100	2100	Wanderer, Erda, mother
+LM854	2104	2104	Rhinemaidens' Weialala

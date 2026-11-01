@@ -1,0 +1,137 @@
+{
+ "id": "LM392",
+ "n_notes": 7,
+ "pattern_notes": [
+  "E5",
+  "F#5",
+  "G#5",
+  "A#5",
+  "B5",
+  "E5",
+  "C#5"
+ ],
+ "pattern_durations": [
+  2.25,
+  0.12,
+  0.12,
+  0.12,
+  0.12,
+  0.33
+ ],
+ "pattern_intervals": [
+  1,
+  1,
+  1,
+  1,
+  -4,
+  -2
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Siegfried defiance, Rhinemaidens",
+ "member_candidates": [
+  1734
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 457.6111111111111,
+   "pos1": 458.4440104166667,
+   "measure": 457,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "19:48.0",
+   "text": "",
+   "notes": [
+    "E5",
+    "F#5",
+    "G#5",
+    "A#5",
+    "B5",
+    "E5",
+    "C#5"
+   ],
+   "durations": [
+    2.25,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.33
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 517.0,
+   "pos1": 518.0,
+   "measure": 517,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "21:39.6",
+   "text": "Siegfried: der mir vor Neidhöhl’ erblaßte:; Siegfried: kaum netzt’ es zündend die Zunge mir,",
+   "notes": [
+    "Eb4",
+    "F4",
+    "G4",
+    "A4",
+    "Bb4",
+    "Eb4",
+    "C4"
+   ],
+   "durations": [
+    0.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 373.25,
+   "pos1": 374.5,
+   "measure": 373,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "15:01.9",
+   "text": "Siegfried: Nothung zerhaut es den Nornen! –",
+   "notes": [
+    "G4",
+    "A4",
+    "Bb4",
+    "C5",
+    "D5",
+    "G4",
+    "Eb4"
+   ],
+   "durations": [
+    2.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    2.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

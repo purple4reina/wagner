@@ -1,0 +1,128 @@
+{
+ "id": "LM506",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C3",
+  "D3",
+  "E3",
+  "F#3",
+  "G2",
+  "Eb2"
+ ],
+ "pattern_durations": [
+  0.09,
+  0.08,
+  0.08,
+  0.09,
+  4.0
+ ],
+ "pattern_intervals": [
+  2,
+  2,
+  2,
+  -11,
+  -4
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  925
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 365.916015625,
+   "pos1": 367.0,
+   "measure": 365,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "16:34.6",
+   "text": "Der Wanderer: Ein Helde naht, den Hort zu befrein;",
+   "notes": [
+    "C3",
+    "D3",
+    "E3",
+    "F#3",
+    "G2",
+    "Eb2"
+   ],
+   "durations": [
+    0.09,
+    0.08,
+    0.08,
+    0.09,
+    4.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1490.75,
+   "pos1": 1491.875,
+   "measure": 1490,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "70:26.4",
+   "text": "Brünnhilde: mir nähmen nie sie die Liebe,; Brünnhilde: stürzt’ auch in Trümmern",
+   "notes": [
+    "Db5",
+    "Eb5",
+    "F5",
+    "G5",
+    "G#4",
+    "E4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    3.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 383.875,
+   "pos1": 384.25,
+   "measure": 383,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "15:36.4",
+   "text": "~ Siegfried: Der Welt Erbe gewänne mir ein Ring: –",
+   "notes": [
+    "Ab4",
+    "Bb4",
+    "C5",
+    "D5",
+    "Eb4",
+    "Cb4"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    1.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.2,
+ "strength": "weak",
+ "meets_criteria": true
+}

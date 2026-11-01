@@ -1,4 +1,5 @@
-"""Explore: how many pair+approximate candidates are new (not near ANY earlier candidate) and have contrasting rhythm?"""
+"""Explore: how many pair+approximate candidates are new (not near ANY earlier candidate)?
+The first version also required contrasting rhythm (uniform < 0.85): a mistake, removed. The uniform share is only printed."""
 import os, pickle, sys, collections
 import numpy as np
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -20,9 +21,9 @@ for p in pairs:
     q = np.round(c["ioi"][w:w + n - 1] * 24) / 24
     uniform = collections.Counter(q.tolist()).most_common(1)[0][1] / len(q)
     p["f"]["uniform"] = float(uniform)
-    if hit / len(occ) < 0.5 and uniform < 0.85:
+    if hit / len(occ) < 0.5:
         new.append(p)
-print(len(pairs), "pair candidates;", len(new), "new (<50% near any earlier candidate) with contrasting rhythm")
+print(len(pairs), "pair candidates;", len(new), "new (<50% near any earlier candidate) (any rhythm)")
 print("n dist", sorted(collections.Counter(min(p['f']['n'], 14) for p in new).items()))
 print("extra statements dist", sorted(collections.Counter(len(p['fam']['occ']) - 2 for p in new).items()))
 pickle.dump(new, open(os.path.join(WORK, "pairs_new.pkl"), "wb"))

@@ -32,9 +32,14 @@ def read_groups():
 
 
 def shape(members, cands):
-    """"scalar" if most of the merged patterns are stepwise runs (>= 85 % of intervals within 2 semitones), else "melodic"."""
-    sw = [cands[m]["f"]["stepwise"] >= 0.85 for m in members]
-    return "scalar" if sum(sw) >= 0.6 * len(sw) else "melodic"
+    """Descriptive label, used only to arrange INDEX.md (nothing is excluded by it):
+    "scalar" if most merged patterns are stepwise runs (>= 85 % of intervals within 2 semitones);
+    "cell" if most are low in pitch variety (found only without the old pitch-variety rules, or >= 7 notes on < 4 pitches);
+    else "melodic"."""
+    if sum(cands[m]["f"]["stepwise"] >= 0.85 for m in members) >= 0.6 * len(members):
+        return "scalar"
+    low = [cands[m]["kind"].endswith("_simple") or (cands[m]["f"]["n"] >= 7 and cands[m]["f"]["pitches"] < 4) for m in members]
+    return "cell" if sum(low) >= 0.6 * len(members) else "melodic"
 
 
 def strength(ic, n_scenes, n_occ):
@@ -100,7 +105,7 @@ def main():
         ops = {OPERA[a] for a in acts}
         n_exact = sum(1 for o in occs if o["exact"])
         data = dict(id=lm, n_notes=rep["f"]["n"], pattern_notes=names, pattern_durations=ioi,
-                    pattern_intervals=[int(x) - (9 if rep["kind"] == "dint" else 15) for x in rep["seed"]["tokens"][0]],
+                    pattern_intervals=[int(x) - (9 if rep["kind"].startswith("dint") else 15) for x in rep["seed"]["tokens"][0]],
                     n_occurrences=len(rows), n_exact=n_exact, n_scenes=len(scenes), n_acts=len(acts), n_operas=len(ops),
                     reviewer_themes=g["themes"], member_candidates=g["members"], occurrences=rows,
                     shape=shape(g["members"], cands), ic_bits=round(rep["f"]["ic"], 1), strength=strength(rep["f"]["ic"], len(scenes), len(rows)),
@@ -129,8 +134,10 @@ def main():
         fh.write("# Leitmotifs found\n\nops: A Rheingold, B Walkure, C Siegfried, D Gotterdammerung. "
                  "Themes are hints from the reviewers, not names. Sorted by statistical strength, then by id (= pattern "
                  "length, longer first); `weak` ones are still far above chance but short or rare.\n")
-        for sh, title in (("melodic", "Melodic patterns"), ("scalar", "Scale-like patterns (mostly stepwise runs; "
-                                                                      "listed apart because a scale is a shared idiom)")):
+        for sh, title in (("melodic", "Melodic patterns"),
+                          ("scalar", "Scale-like patterns (mostly stepwise runs; listed apart because a scale is a shared idiom)"),
+                          ("cell", "Repeated-cell patterns (few distinct pitches: tremolos, ostinati, trills; included because the "
+                                   "criteria do not require different pitches)")):
             rows = sorted((t for t in index if t[0] == sh), key=lambda t: (rank[t[1]], t[2]))
             fh.write(f"\n## {title}: {len(rows)}\n\n{head}" + "\n".join(t[3] for t in rows) + "\n")
     with open(os.path.join(RESULTS, "occurrences.csv"), "w", encoding="utf-8", newline="") as fh:

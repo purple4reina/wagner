@@ -1,0 +1,157 @@
+{
+ "id": "LM421",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C4",
+  "C3",
+  "C4",
+  "E4",
+  "A3",
+  "B3"
+ ],
+ "pattern_durations": [
+  0.25,
+  0.25,
+  0.5,
+  1.0,
+  1.5
+ ],
+ "pattern_intervals": [
+  -12,
+  12,
+  4,
+  -7,
+  2
+ ],
+ "n_occurrences": 4,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 1,
+ "n_operas": 1,
+ "reviewer_themes": "Hagen's alarm, weapons",
+ "member_candidates": [
+  810
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 406.75,
+   "pos1": 407.8333333333333,
+   "measure": 406,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "20:16.0",
+   "text": "Hagen: Wehe! Waffen! Waffen!",
+   "notes": [
+    "C4",
+    "C3",
+    "C4",
+    "E4",
+    "A3",
+    "B3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.5,
+    1.0,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 410.75,
+   "pos1": 411.8333333333333,
+   "measure": 410,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "20:24.4",
+   "text": "Hagen: Waffen durch’s Land!",
+   "notes": [
+    "C4",
+    "C3",
+    "C4",
+    "E4",
+    "A3",
+    "B3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.5,
+    1.0,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 507.75,
+   "pos1": 508.8333333333333,
+   "measure": 507,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "22:23.5",
+   "text": "Hagen: Rüstet euch wohl, und rastet nicht!",
+   "notes": [
+    "C4",
+    "C3",
+    "C4",
+    "E4",
+    "A3",
+    "B3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    1.0,
+    1.5
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 1584.75,
+   "pos1": 1585.75,
+   "measure": 1584,
+   "scene": "5",
+   "streams": [
+    "B1"
+   ],
+   "time": "64:32.7",
+   "text": "Hagen: Uns allen frommt sein Tod.",
+   "notes": [
+    "Db4",
+    "Db3",
+    "Db4",
+    "F4",
+    "Bb3",
+    "C4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 35.2,
+ "strength": "medium",
+ "meets_criteria": true
+}

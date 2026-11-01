@@ -1,3 +1,2 @@
-candidates 2127; folded as fragments 51; roots 2076; pool after thresholds 1411
-pool by tier: {'figuration': 335, 'motif': 1076}
-pool by n: [(5, 136), (6, 354), (7, 301), (8, 250), (9, 104), (10, 69), (11, 56), (12, 28), (13, 24), (14, 6), (15, 19), (16, 13), (17, 3), (18, 13), (19, 7), (20, 28)]
+candidates 2252; folded as fragments 51; roots 2201; pool after thresholds 1575
+pool by n: [(5, 136), (6, 354), (7, 315), (8, 265), (9, 110), (10, 78), (11, 68), (12, 41), (13, 39), (14, 12), (15, 25), (16, 25), (17, 14), (18, 22), (19, 9), (20, 62)]

@@ -2,11 +2,14 @@
 
 Task (from the user, 2026-11-01): discover leitmotifs in the Wagner Ring Dataset *on our own* from the piano-reduction
 score. Criteria for each leitmotif: >= 3 occurrences, **in >= 2 separate scenes**; >= 5 distinct notes; similar
-rhythm (same notes long, same notes short); any transposition. Favour long motifs; merge patterns that always occur
+rhythm between the occurrences of a match (same notes long, same notes short); any transposition. Favour long motifs; merge patterns that always occur
 together. Per leitmotif record every occurrence and the sung text. Naming the motifs is a LATER task, not this one.
 Expected effort 12-24 h. Keep METHODOLOGY.md current (decisions, what was learned).
 
 ## Hard rules from the user
+- **Rhythm criterion = consistency BETWEEN occurrences, not variety INSIDE a motif.** A uniform-rhythm pattern (all notes
+  equal) is as valid as a dotted one. Never filter, tier, rank, tag or show reviewers anything derived from rhythmic
+  variety/uniformity (descriptive columns are fine). I got this wrong once (METHODOLOGY section 9); the user corrected it.
 - **Never open anything in `leitmotifs/`** (the old explorer: definitions, motifs, README, DATA-SPEC). Not even to peek.
   (Disclosure: before this rule was given, one `ls` showed the 33 file names in `leitmotifs/definitions/` and
   `leitmotifs/README.md` was read. No melodies were seen. Recorded in METHODOLOGY.md.)
@@ -50,10 +53,23 @@ Expected effort 12-24 h. Keep METHODOLOGY.md current (decisions, what was learne
 - [done] docs: README.md (how to reproduce), METHODOLOGY.md (all decisions, funnel, limits, naming notes), results/FORMAT.md,
   explore/README.md (index of probes).
 
-## STATUS: first complete pass finished (2026-11-01). 313 leitmotifs in results/INDEX.md.
-Nothing is committed to git (the user has not asked for a commit): discovery/, the CLAUDE.md pointer are untracked/modified.
+- [done 2026-11-01, after the user's correction] rhythm-variety assumptions removed (METHODOLOGY section 9): tier, contrast
+  clause, reviewer tag/durations, round-2 skip, figuration list. s06c_select_round3.py -> decisions/round3_ids.txt (544);
+  5 blind sonnet agents -> decisions/triage_batch_12..16.tsv (labels M include / S stock figure; 438 M, 106 S). Chain rerun.
+  explore/e17 (audit), e18 (IC threshold is rhythm-neutral), e20 (pitch-variety filters), e16 rerun.
+
+- [done 2026-11-01, second correction] pitch-variety rules removed at the user's request ("not necessarily different pitches"):
+  s03 kinds semi_simple/dint_simple (+ s04, s05 appends 125 candidates with ids >= 2127, earlier ids unchanged), s05b pitch
+  clause gone, s06d_accept_pitch_variety.py -> decisions/rule_pitch_variety.tsv (78 accepted by rule), s08 adds a "cell" INDEX
+  section (presentation only). run_all.sh extended; results rebuilt and reproduced identically (1 min 12 s).
+
+## STATUS: complete pass finished (2026-11-01). 670 leitmotifs (568 melodic + 67 scalar + 35 repeated-cell), 5327 occurrences.
+`tools/run_all.sh` rebuilds results/ and decisions/groups_* identically. Committed in git (see `git log`).
 
 ## If you continue (optional, in order of expected value)
+0. Remaining judgement calls the user may want to flip: (a) the 115 stock-figure/generic exclusions (results/excluded_stock.tsv;
+   treat S/G as M in s07b_group.py to include them), (b) repeated pitches are merged into one note in s02 (the one remaining
+   pitch-variety assumption; changing it renumbers every candidate id, so decisions/ would have to be re-keyed).
 1. Naming step (user's next task): see METHODOLOGY section 7. Several entries share dramatic hints (e.g. 3 entries mention
    the Valkyrie call, 2 Wotan's farewell, 2 Rhine) and may be merged by a human once named.
 2. Harmonic / chordal motifs (METHODOLOGY section 6: the biggest known hole) need a new representation (chord roots +

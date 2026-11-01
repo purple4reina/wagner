@@ -1,0 +1,116 @@
+candidate	label	reviewer_reason	notes	n	occurrences	scenes	operas	first_locations
+1	S	chromatic scale run	D#4 E4 F4 F#4 G4 G#4 A4 Bb4 B4 C5 C#5 D5 Eb5 E5	48	6	3	3	A:1187, A:1199, A:1282, A:1294, B3:1671, D0:219
+2	S	trill followed by scale run	D6 C#6 D6 C#6 D6 C#6 D6 C#6 D6 C#6 D6 C#6 D6 C#6	41	21	12	4	A:3594, A:3691, B1:66, B2:93, B2:131, B2:539
+17	S	bare descending scale run	Db3 Cb3 Bb2 Ab2 Gb2 F2 Eb2 Db2 Gb2 F2 Eb2 Db2 Gb2 F2	24	5	4	2	C3:1070, D1:1266, D3:870, D3:1582, D3:1587
+35	S	bare one-chord arpeggio	B3 E#4 G#4 C#5 G#4 E#4 B3 E#4 G#4 C#5 G#4 E#4 B3 E#4	18	5	4	2	C2:933, C2:1208, D0:237, D3:87, D3:1240
+57	S	bare descending scale run	B5 A#5 G#5 F#5 E5 D#5 C#5 B4 A#4 G#4 F#4 E4 D#4 C#4	16	10	6	4	A:1446, B2:110, B2:147, B3:77, B3:154, B3:182
+59	S	bare scale run	Eb2 F2 G2 Ab2 Bb2 C3 D3 Eb3 F3 G3 Ab3 Bb3 C4 D4	16	14	11	4	A:129, A:1576, A:2642, B1:615, B2:939, B2:1089
+60	S	bare scale run	F5 Eb5 D5 C5 Bb4 Ab4 G4 F4 Eb4 D4 C4 Bb3 Ab3 G3	16	7	3	2	A:705, A:708, A:712, A:728, A:734, A:1418
+77	S	bare scale run	B5 A#5 G#5 F#5 E5 D#5 C#5 B4 A#4 G#4 F#4 E4 D#4 C#4	15	8	5	3	A:592, A:705, B2:110, B2:146, B2:1990, B3:183
+78	S	bare scale run	A2 B2 C3 D3 Eb3 F3 G3 A3 B3 C4 D4 Eb4 F4 F#4	15	11	8	4	A:1041, A:2440, A:2497, A:3366, B3:937, C1:341
+79	S	bare scale run	Bb2 C3 D3 Eb3 F3 G3 Ab3 Bb3 C4 D4 Eb4 F4 G4 Ab4	15	10	9	4	A:129, A:2468, B3:343, C1:1182, C1:2583, C2:1809
+80	S	bare scale run	B5 A5 G5 F5 E5 D5 C5 B4 A4 G4 F4 E4 D4 C4	15	24	11	4	A:592, A:660, A:705, A:708, A:712, A:724
+85	S	bare scale run	Ab4 Bb4 B4 C5 D5 Eb5 F5 G5 Ab5 Bb5 B5 C6 D6 Eb6	14	7	5	3	A:329, A:707, A:735, A:1033, A:3363, B2:2049
+109	S	bare scale run	D4 Eb4 F4 Gb4 G4 Ab4 Bb4 Cb5 Db5 D5 Eb5 F5 Gb5	13	5	5	3	A:419, A:2739, A:3702, B3:938, D2:1561
+111	S	bare rising scale run	A4 Bb4 C5 Db5 Eb5 E5 F5 G5 A5 Bb5 C6 Db6 D6	13	5	3	2	C3:116, C3:183, D2:1643, D2:1647, D3:934
+112	S	bare scale run	G4 Ab4 Bb4 B4 C5 D5 Eb5 F5 G5 Ab5 Bb5 B5 C6	13	7	4	4	A:329, A:707, B2:2049, C3:114, C3:179, C3:181
+113	S	bare rising scale run	C#4 D#4 E4 F#4 G#4 A4 B4 C#5 D#5 E5 F#5 G#5 A5	13	4	3	2	C3:169, C3:332, D1:771, D3:1448
+140	S	bare scale run	D2 E2 F2 G2 A2 Bb2 D2 E2 F2 G2 A2 Bb2	12	3	2	2	B1:11, B1:120, D3:568
+141	S	bare scale run	C3 Db3 Eb3 F3 Gb3 Ab3 A3 Bb3 C4 Db4 D4 Eb4	12	5	3	2	A:373, A:419, A:3703, B2:1941, B2:2049
+177	S	bare scale run	B2 C#3 D3 E3 F#3 G#3 A#3 B3 C#4 D4 E4	11	4	3	3	A:2522, A:2530, B2:1991, D1:1827
+181	S	bare scale run	D5 Bb4 C5 D5 E5 F5 G5 A5 Bb5 C6 D6	11	3	3	2	B2:939, C3:381, C3:1353
+184	S	bare scale run	A2 B2 C#3 D3 E3 F#3 G#3 A3 B3 C#4 D4	11	5	3	2	A:2362, A:2414, A:2731, D2:786, D3:28
+185	S	bare descending scale run	Ab6 G6 F6 Eb6 Db6 C6 Bb5 Ab5 G5 F5 Eb5	11	4	3	2	A:3574, D1:1183, D1:1267, D3:847
+187	S	bare scale run	D4 Eb4 F4 G4 A4 B4 C5 D5 Eb5 F5 G5	11	4	3	3	B2:1991, C3:358, D1:1216, D1:1829
+189	S	bare chromatic descent	A4 Ab4 G4 F#4 F4 E4 Eb4 Db4 C4 B3 Bb3	11	4	3	3	B3:353, C2:1583, C2:1593, D0:348
+218	S	bare scale run	A1 B2 C#3 D3 E3 F#3 G#3 A3 B3 C#4	10	4	2	2	A:2354, A:2362, A:2468, D2:786
+223	S	bare one-chord arpeggio	A2 E3 A3 C#4 E4 C#4 A3 E3 A2 E3	10	7	3	3	B3:641, B3:648, C3:1117, D0:593, D0:596, D0:796
+260	G	-	G2 G3 Ab3 G3 F#3 G3 Bb3 Ab3 G3	9	4	2	1	B2:1644, B2:1659, B2:2002, B2:2004
+273	S	bare broken chord	B5 G5 D5 B4 G4 G5 D5 B4 G4	9	3	3	2	C3:1683, D0:530, D1:1140
+276	S	repeated broken seventh chord	Eb3 G3 Bb3 Db4 Eb3 G3 Bb3 Db4 Fb2	9	3	2	2	B2:264, C1:2931, C1:2937
+286	S	bare one-chord arpeggio	B3 E2 B2 E3 G#3 B3 E4 G#4 E4	9	4	3	2	C2:833, C2:835, C3:800, D3:1536
+287	S	bare scale run	Gb4 Ab4 Bb4 Cb5 Db5 D5 Eb5 F5 Gb4	9	4	4	3	A:407, B3:780, D0:715, D3:953
+376	S	bare broken diminished chord	C4 C6 A5 F#5 Eb5 C5 A4 F#4	8	3	2	1	D2:953, D3:433, D3:441
+391	S	bare broken diminished chord	C5 A4 F#4 Eb5 C5 A4 F#4 D#4	8	4	2	1	D2:296, D2:352, D2:1290, D2:1292
+418	S	bare single-chord arpeggio	D6 D4 F4 A4 D5 F5 A5 D6	8	10	7	4	A:2701, B2:448, B3:747, C3:1074, C3:1091, D0:49
+424	S	bare descending broken chord	G5 F5 D5 B4 G4 F4 D4 B3	8	4	4	2	C3:174, D0:51, D1:469, D3:86
+425	G	-	B#2 C#3 E3 D3 C#3 D3 C#3 B#2	8	5	2	1	B2:1622, B2:1634, B2:1640, B2:1648, B3:1020
+443	S	repeated broken seventh chord	G3 Bb3 Db4 Eb3 G3 Bb3 Db4 Eb3	8	9	6	3	B2:264, B2:1838, C1:2842, C1:2905, C1:2929, C1:2937
+446	S	broken diminished seventh descending	F6 B5 G#5 F5 D5 B4 G#4 F4	8	5	3	2	B2:934, B2:940, B3:620, D3:1064, D3:1445
+451	S	broken diminished seventh descending	E5 Db5 Bb4 G4 E4 Db4 Bb3 Db5	8	4	4	2	B1:1090, B2:1095, D0:42, D3:1064
+452	S	bare broken chord up	D3 F3 A3 D4 D3 F3 A3 D4	8	4	3	3	B3:310, C1:2845, C1:2932, D3:875
+457	S	broken dominant seventh rising	Gb4 Bb4 Db5 Fb5 Gb5 Bb5 Db6 Fb6	8	4	3	3	B1:1098, C3:825, D0:56, D0:63
+463	S	bare broken chord of one chord	D#4 E2 G#2 B2 E3 G#3 B3 E4	8	7	6	4	A:330, B2:444, C3:798, C3:1068, C3:1089, D3:868
+464	S	broken diminished seventh rising	F#3 A3 C4 E4 F#3 A3 C4 E4	8	4	3	3	B2:1407, B2:1409, C3:1076, D3:876
+469	S	chromatic scale run	D#4 E4 F4 F#4 G#4 A4 Bb4 B4	8	4	3	3	A:1188, C1:2194, C1:2792, D3:1420
+475	S	broken minor triad rising	G3 C4 Eb4 G4 G3 C4 Eb4 G4	8	5	3	1	B2:1413, B2:1415, B2:1956, B2:1958, B3:618
+485	S	bare scale run	Db5 E4 F4 G4 Ab4 Bb4 C5 Db5	8	4	3	2	A:403, C2:1263, C3:217, C3:432
+490	S	bare broken chord up	C#3 E3 A3 C#4 C#3 E3 A3 C#4	8	5	4	2	C1:2923, C1:2926, C3:1069, D0:597, D3:869
+518	S	bare one-chord arpeggio	F2 C3 F3 A3 C4 A3 F3 C3	8	9	5	3	B3:642, B3:649, C3:1117, D0:593, D0:596, D0:796
+593	G	-	B3 C#4 D4 F4 E4 D4 Bb4	7	4	4	3	B1:270, C2:1115, D1:369, D3:844
+632	S	bare descending scale	G3 F3 E3 D#3 D3 C3 B2	7	3	3	2	C1:1458, D1:150, D3:1417
+639	S	bare single-chord arpeggio	F4 F2 C3 F3 Ab3 C4 F3	7	3	2	2	A:2830, D0:623, D0:625
+645	S	broken diminished triad rising	E4 C#3 E3 G3 C#4 E4 G4	7	4	4	2	B1:235, B1:1088, B2:1417, D1:1412
+667	S	bare descending scale	C5 B4 Bb4 A4 G4 F4 E4	7	3	2	1	C1:2090, C2:1819, C2:1845
+673	S	bare broken diminished chord	A2 C3 D#3 A3 C4 D#4 E2	7	3	3	2	C3:798, C3:826, D1:1148
+684	S	bare chromatic descent, repeated	Bb3 A3 Ab3 G3 Bb3 A3 Ab3	7	3	2	2	B2:1401, B2:1418, C1:1257
+694	S	bare descending scale	C6 B5 A5 G5 F#5 E5 D#5	7	4	2	1	C2:1810, C2:1821, C2:1838, C3:930
+697	S	bare scale run	C5 D4 E4 F4 G4 A4 Bb4	7	4	3	2	C3:389, C3:1076, D1:416, D1:461
+702	S	broken minor triad rising	B3 F#2 C#3 F#3 A3 C#4 F#4	7	3	3	3	B2:1759, C3:1074, D0:165
+707	S	bare broken chord	G2 A2 C#3 E3 G3 A3 C#4	7	3	3	2	C3:1762, D0:353, D1:469
+710	S	bare broken chord	D2 F2 A2 D3 F3 A3 D2	7	5	4	2	C3:1074, D0:243, D3:90, D3:139, D3:1065
+749	G	hammer, forging, battle	G3 F#3 G3 A3 B3 C4 A3	7	5	4	3	A:1159, B2:1973, C1:2742, C1:2746, C3:264
+756	S	bare scale run	F#2 G#2 A2 B2 C#3 D#3 E2	7	4	4	2	C3:391, D0:174, D2:277, D3:1595
+764	S	bare chromatic run	E2 F2 Gb2 Ab2 A2 Bb2 B2	7	4	4	4	A:1740, B2:1356, C1:2792, D3:1421
+778	S	bare broken chord	G2 D3 F3 B3 D4 F4 G3	7	6	3	2	C3:1083, C3:1100, D3:57, D3:101, D3:451, D3:883
+781	S	broken diminished seventh descending	A5 F#5 E5 C5 A4 F#4 E4	7	4	3	2	B1:1368, B1:1481, C2:94, C3:792
+796	S	bare broken chord of one chord	D#5 F#5 A5 C6 D#6 F#6 B4	7	4	4	3	A:309, B1:1300, C3:800, C3:1318
+882	S	bare single-chord arpeggio cell	Eb5 Bb5 Gb5 Eb5 Bb5 Gb5	6	6	4	3	A:1847, C1:260, C3:787, C3:789, C3:794, D1:247
+889	G	-	C3 B2 C3 Ab3 F3 Db3	6	3	2	2	B1:654, C3:733, C3:752
+899	S	broken diminished triad, repeated	F3 D3 B2 F3 D3 B2	6	3	2	1	B1:133, B1:1261, B1:1265
+950	S	broken minor triad descending	G4 Eb4 C4 C5 G4 Eb4	6	3	3	2	B2:990, D0:528, D2:602
+985	G	-	G3 F#3 E3 G3 A3 G3	6	4	3	2	B1:893, B3:1588, B3:1596, D3:669
+990	S	bare single-chord arpeggio	F2 Ab2 C3 F3 C3 Ab2	6	4	3	3	A:3453, B3:878, D0:12, D0:14
+1132	S	bare single-chord arpeggio	F4 F2 C3 F3 Ab3 C4	6	7	4	4	A:2830, B2:1759, C3:1074, D0:165, D0:619, D0:623
+1269	G	-	Ab3 Eb5 Ab4 Bb4 C5	5	4	4	2	A:3822, D2:789, D3:495, D3:593
+1404	S	chromatic scale run	Eb3 E3 F3 F#3 G3 Ab3 A3 Bb3 B3 C4 C#4 D4 Eb4 E4	24	38	16	4	A:198, A:1188, A:1199, A:1239, A:1282, A:1291
+1406	S	bare chromatic descending run	C#4 C4 B3 Bb3 A3 G#3 G3 F#3 F3 E3 Eb3 D3 C#3 C3	20	20	9	4	A:1731, A:1788, A:1800, B3:165, B3:171, B3:179
+1409	S	bare broken chord of one chord	C2 G2 C3 E3 G3 C4 E4 C3 E3 G3 C4 E4 E3 G3	18	10	5	3	A:441, A:1551, C3:1069, C3:1075, D0:55, D0:62
+1413	S	bare chromatic scale run	C#3 D3 D#3 E3 E#3 F#3 G3 G#3 A3 A#3 B3 B#3 C#4 D4	17	4	4	2	A:1787, A:2640, D3:836, D3:1421
+1417	S	bare chromatic scale run	A2 A#2 B2 C3 C#3 D3 D#3 E3 E#3 F#3 G3 G#3 A3 A#3	16	3	2	2	A:1787, A:1799, D0:225
+1427	S	bare single-chord arpeggio	A#4 C#5 E5 C#5 A#4 E4 A#4 C#5 E5 C#5 A#4 C#5 E5	13	6	5	4	A:1389, B3:473, B3:1487, C2:852, C2:1182, D3:1518
+1429	S	bare chromatic scale run	C3 Db3 D3 Eb3 E3 F3 Gb3 G3 Ab3 A3 Bb3 Cb4 Bb3	13	3	3	2	A:2300, A:3816, B2:1939
+1430	S	chromatic scale run	D#4 E4 F4 F#4 G4 G#4 A4 Bb4 B4 C5 C#5 D5 Eb5	13	4	3	2	A:1187, A:2300, A:2634, D2:949
+1435	S	bare chromatic descent	Eb6 D6 C#6 C6 B5 Bb5 A5 Ab5 G5 F#5 F5 E5	12	3	3	2	C1:2775, C2:633, D3:405
+1441	S	bare chromatic scale run	E3 F3 F#3 G3 G#3 A3 A#3 B3 C4 C#4 D4 E4	12	6	4	3	A:1282, A:1327, C2:1582, D0:219, D2:943, D2:945
+1454	S	bare one-chord arpeggio	E4 B3 G#3 E3 B2 E2 B2 E3 G#3 B3 E4	11	7	4	2	C2:834, C2:1182, C2:1190, C3:796, D0:165, D0:816
+1462	S	bare chromatic scale run	G#2 A2 A#2 B2 B#2 C#3 D3 D#3 E3 E#3 F#3	11	4	3	2	A:1274, A:1316, A:2846, D3:405
+1464	S	chromatic scale run	Cb3 Bb2 B2 C3 C#3 D3 Eb3 E3 F3 F#3 G3	11	4	4	2	A:1184, A:2211, C1:1939, C2:1224
+1465	S	bare stepwise run	C#4 D4 D#4 E4 E#4 F#4 G4 G#4 A4 B4 B#4	11	4	3	2	C2:1583, C2:1594, D0:219, D2:1019
+1467	S	bare chromatic descent	C5 B4 Bb4 A4 Ab4 Gb4 F4 E4 Eb4 D4 Db4	11	4	4	2	B3:352, B3:939, C1:2583, C2:1583
+1479	S	bare chromatic scale run	B5 C6 C#6 D6 Eb6 E6 F6 F#6 G6 Gb4	10	3	3	2	A:3819, C2:478, C2:757
+1490	S	chromatic scale run	G#3 A3 A#3 B3 B#3 C#4 D4 D#4 E4 E#4	10	4	4	3	A:1200, C2:1542, D3:839, D3:1453
+1492	S	bare ascending scale fragment	G2 A2 Bb2 C#3 D3 G2 A2 Bb2 C#3 D3	10	5	5	3	B1:48, B2:1753, C1:1033, D2:620, D3:627
+1493	S	bare chromatic scale run	D#4 E4 E#4 F#4 Fx4 G#4 A4 A#4 B4 A#4	10	4	4	2	B1:1203, B2:1357, D2:1136, D3:837
+1495	S	bare scale run	Bb2 Ab2 Gb2 Fb2 Eb2 Db2 Cb2 Bb1 A2 Bb2	10	3	3	3	A:1028, C1:350, D2:679
+1545	S	bare scale runs	F5 G5 A5 Bb5 E3 F3 G3 A3 Bb3	9	11	6	2	B1:62, B1:64, B1:66, B1:68, B1:70, B2:93
+1582	S	broken diminished seventh chord	G3 Bb3 C#4 E3 G3 Bb3 C#4 E3	8	7	6	3	B1:1060, B2:1955, C1:2935, C3:1076, D0:132, D0:361
+1588	S	bare rising dim7 arpeggio	Bb2 C#3 E3 G2 Bb2 C#3 E3 G2	8	5	4	3	B3:620, C3:1075, D3:871, D3:875, D3:1398
+1609	S	bare single-chord arpeggio	F3 Db4 Ab3 F4 Db4 Ab4 F4 Db5	8	3	3	2	A:1669, A:2517, D2:696
+1617	S	broken diminished triad rising	G6 G3 Bb3 Db4 G4 Bb4 Db5 G5	8	9	5	3	B1:1088, C3:798, C3:1068, C3:1074, C3:1089, C3:1091
+1622	S	bare broken chord of one chord	B3 E2 B2 E3 G#3 B3 E4 G#4	8	12	8	4	A:786, B2:1759, C2:833, C2:835, C2:837, C3:796
+1624	S	broken diminished triad rising	G4 G3 Bb3 Db4 G4 Bb4 Db5 G5	8	6	4	3	B1:1087, C3:1089, C3:1093, D0:50, D3:868, D3:874
+1630	S	repeated broken seventh chord	Bb3 Db4 Eb3 G3 Bb3 Db4 Eb3 G3	8	15	11	3	B2:264, B2:1407, B2:1409, B2:1838, B2:1957, C1:1931
+1652	S	broken diminished seventh arpeggio	Bb3 Db4 E4 G4 Bb4 Db5 E5 G5	8	5	3	2	B1:1090, B1:1300, B2:1302, C3:1441, C3:1762
+1653	S	broken minor triad rising	C4 Eb4 G4 G3 C4 Eb4 G4 G3	8	6	5	2	B2:1413, B2:1836, B2:1839, B2:1957, B3:618, D2:1086
+1672	S	bare broken chord up	F3 A3 D4 D3 F3 A3 D4 D3	8	6	4	3	B3:310, C1:2836, C1:2845, C1:2933, C3:427, D1:881
+1687	G	betrayal, trickery	G3 B3 D4 D3 B2 F#3 F#4	7	4	4	3	A:3624, B2:919, D1:1504, D3:1356
+1716	S	bare broken diminished chord	F#4 A4 C5 Eb5 F#5 A5 Ab5	7	3	2	2	C3:1441, C3:1762, D0:132
+1738	S	bare diminished-seventh arpeggio	Bb3 G3 E3 Db3 Bb2 G2 E2	7	4	3	3	A:3069, A:3608, B2:1783, D0:244
+1755	S	bare one-chord arpeggio	G4 Eb4 Bb3 G3 Bb3 Eb4 G4	7	4	3	2	C3:163, C3:808, D0:7, D0:15
+1802	S	bare broken chord of one chord	F#2 A2 D3 F#3 A3 D4 D2	7	9	6	3	A:191, A:2701, C3:799, C3:1068, C3:1074, C3:1090
+1804	G	-	D2 Eb2 F2 Gb2 Ab2 A2 C3	7	4	3	1	B2:994, B3:283, B3:583, B3:1233
+1809	S	bare diminished-seventh arpeggio	A3 C4 Eb4 F#4 A4 C5 Eb5	7	5	4	4	A:3041, B1:1089, C3:824, C3:1440, D2:7
+1820	S	alternation between two pitches	E4 G3 E3 G3 E3 E4	6	3	3	3	B2:519, C1:2546, D3:395
+1923	S	bare single-chord arpeggio cell	C5 Gb5 Eb5 C5 Gb5 Eb5	6	4	3	3	A:1847, B3:253, C3:7, C3:11
+1988	S	broken augmented triad rising	B3 D#4 G2 B2 D#3 G3	6	4	4	2	B1:1032, B3:1155, C1:2835, C3:1073

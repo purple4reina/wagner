@@ -1,0 +1,288 @@
+{
+ "id": "LM618",
+ "n_notes": 5,
+ "pattern_notes": [
+  "F#4",
+  "B4",
+  "D#4",
+  "B3",
+  "D#4"
+ ],
+ "pattern_durations": [
+  0.5,
+  2.25,
+  1.08,
+  0.17
+ ],
+ "pattern_intervals": [
+  5,
+  -8,
+  -4,
+  4
+ ],
+ "n_occurrences": 6,
+ "n_exact": 3,
+ "n_scenes": 5,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1170
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 314.875,
+   "pos1": 315.875,
+   "measure": 314,
+   "scene": "1",
+   "streams": [
+    "T1"
+   ],
+   "time": "11:42.1",
+   "text": "Fricka: Doch jetzt, da dir neue",
+   "notes": [
+    "F#4",
+    "B4",
+    "D#4",
+    "B3",
+    "D#4"
+   ],
+   "durations": [
+    0.5,
+    2.25,
+    1.08,
+    0.17
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 1573.125,
+   "pos1": 1573.666015625,
+   "measure": 1573,
+   "scene": "4",
+   "streams": [
+    "L111",
+    "T1"
+   ],
+   "time": "74:24.8",
+   "text": "~ Brünnhilde: Wotans Tochter reicht dir traulich den Trank!",
+   "notes": [
+    "Eb5",
+    "Ab5",
+    "C5",
+    "Ab4",
+    "C5"
+   ],
+   "durations": [
+    0.5,
+    1.0,
+    0.5,
+    0.16
+   ],
+   "match": "approximate (distance 0.5)"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 36.22222222222222,
+   "pos1": 36.888888888888886,
+   "measure": 36,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "1:08.0",
+   "text": "",
+   "notes": [
+    "F#4",
+    "B4",
+    "D#4",
+    "B3",
+    "D#4"
+   ],
+   "durations": [
+    0.5,
+    1.5,
+    0.75,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 140.88888888888889,
+   "pos1": 141.55555555555554,
+   "measure": 140,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "4:35.3",
+   "text": "Helmwige, Ortlinde, Gerhilde, Waltraute, Siegrune und Schwertleite: Hojotoho! Hojotoho! Heiaha! Heiaha! Hojotoho! Hojotoho! Heiaha! Heiaha!",
+   "notes": [
+    "F#3",
+    "B3",
+    "D#3",
+    "B2",
+    "D#3",
+    "G3",
+    "B3",
+    "D#3",
+    "B2",
+    "D#3",
+    "G3",
+    "E3",
+    "E2",
+    "E3",
+    "E2",
+    "E3",
+    "A3",
+    "C4",
+    "G2",
+    "C3",
+    "E3",
+    "A3",
+    "C4",
+    "G2",
+    "C3",
+    "E3",
+    "F#3",
+    "F#1",
+    "F#2",
+    "F#1",
+    "F#3",
+    "B3",
+    "D#4",
+    "B3",
+    "D#4",
+    "G4",
+    "G3",
+    "B3",
+    "D#4",
+    "B3",
+    "D#4",
+    "G4",
+    "G3",
+    "C4",
+    "E4",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "durations": [
+    0.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.5,
+    4.5,
+    1.5,
+    1.5,
+    1.0,
+    0.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.5,
+    4.5,
+    1.5,
+    1.5,
+    1.0,
+    0.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.0,
+    0.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5,
+    1.0,
+    0.5,
+    1.5,
+    0.75,
+    0.25,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 215.88802083333334,
+   "pos1": 216.5,
+   "measure": 215,
+   "scene": "1",
+   "streams": [
+    "T1"
+   ],
+   "time": "7:20.8",
+   "text": "Mime: ein Schwert taugt zu der Tat,",
+   "notes": [
+    "Bb4",
+    "Eb5",
+    "G4",
+    "Eb4",
+    "G4"
+   ],
+   "durations": [
+    0.34,
+    1.0,
+    0.38,
+    0.12
+   ],
+   "match": "approximate (distance 0.5)"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2950.6666666666665,
+   "pos1": 2953.0,
+   "measure": 2950,
+   "scene": "3",
+   "streams": [
+    "L111",
+    "T1"
+   ],
+   "time": "82:08.6",
+   "text": "Siegfried: So schneidet Siegfrieds Schwert!",
+   "notes": [
+    "E5",
+    "A5",
+    "C#5",
+    "A4",
+    "D5"
+   ],
+   "durations": [
+    1.0,
+    3.0,
+    2.0,
+    1.0
+   ],
+   "match": "approximate (distance 1.0)"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.1,
+ "strength": "weak",
+ "meets_criteria": true
+}

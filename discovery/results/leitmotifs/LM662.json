@@ -1,0 +1,146 @@
+{
+ "id": "LM662",
+ "n_notes": 5,
+ "pattern_notes": [
+  "B5",
+  "E5",
+  "C#5",
+  "E5",
+  "A5"
+ ],
+ "pattern_durations": [
+  2.17,
+  0.33,
+  0.33,
+  0.34
+ ],
+ "pattern_intervals": [
+  -7,
+  -3,
+  3,
+  5
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1336
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1896.9580078125,
+   "pos1": 1897.75,
+   "measure": 1896,
+   "scene": "3",
+   "streams": [
+    "L112"
+   ],
+   "time": "73:37.2",
+   "text": "",
+   "notes": [
+    "B5",
+    "E5",
+    "C#5",
+    "E5",
+    "A5"
+   ],
+   "durations": [
+    2.17,
+    0.33,
+    0.33,
+    0.34
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 608.6666666666666,
+   "pos1": 609.6666666666666,
+   "measure": 608,
+   "scene": "3",
+   "streams": [
+    "L112"
+   ],
+   "time": "24:44.7",
+   "text": "Hagen: Das Trinkhorn nehmt,",
+   "notes": [
+    "C#4",
+    "F#3",
+    "D#3",
+    "F#3",
+    "B3"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 618.6666666666666,
+   "pos1": 619.6666666666666,
+   "measure": 618,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "25:00.2",
+   "text": "Mannen (T1, T2, B1, B2): Das Trinkhorn zur Hand, –; Mannen (B1): wie halten wir es dann?",
+   "notes": [
+    "C#4",
+    "F#3",
+    "D#3",
+    "F#3",
+    "B3"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 622.6666666666666,
+   "pos1": 623.6666666666666,
+   "measure": 622,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "25:05.9",
+   "text": "Hagen: Rüstig gezecht, bis der Rausch euch zähmt:",
+   "notes": [
+    "D3",
+    "G2",
+    "E2",
+    "G2",
+    "C3"
+   ],
+   "durations": [
+    1.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

@@ -12,7 +12,12 @@ Not part of the pipeline; kept so the reasoning can be checked. Run from the pro
 | `e07_show_group.py`, `e08_group_overlaps.py` | Inspect a group; find groups that are really one | 108 overlapping pairs before merging; led to `s07c_merge_groups.py`. |
 | `e09_next_tier.py`, `e11_tier2_cover.py` | How many candidates did the first pool leave out; how many are already covered by accepted leitmotifs | 1458 left out; of the 742 added by the calibrated thresholds, 203 are covered. |
 | `e10_null_by_ic.py` | Real vs chance seeds by IC bin, short patterns | IC >= 24, or >= 22 with >= 4 occurrences, is far above chance: the pool thresholds in `s05b_reduce.py`. |
-| `e12_label_predictability.py` | Are the reviewers' M/F labels predictable from numbers? | Yes (AUC 0.96), almost only from rhythm uniformity: figuration by rule. |
+| `e12_label_predictability.py` | Are the reviewers' M/F labels predictable from numbers? | Yes (AUC 0.96), almost only from rhythm uniformity. **Misread at the time** as a reason for a rule; it measured the "[figuration]" tag in my own dossiers (METHODOLOGY section 9). |
 | `e13_nr_new_material.py` | Does rhythm-agnostic mining find new long motifs? | No: 0 of 147 long families lie outside existing candidates. |
 | `e14_inner_voice_probe.sh`, `e15_inner_voice_coverage.py` | Are there recurring melodies inside the chords (second voice of each hand)? | Practically no: 1 of 102 families is new (5 notes, 3 occurrences in one opera). |
+| `e16_pairs_novelty.py` | (rerun without the mistaken rhythm filter) | Still 1 new of 852. |
+| `e17_rhythm_assumption_audit.py` | What did the rhythm-variety rules exclude? | 330 uniform-rhythm pool candidates (225 labelled F with the tag showing, 105 never reviewed) and 57 stepwise ones via the contrast clause. |
+| `e18_null_by_rhythm_uniformity.py` | Is the IC threshold biased against / for uniform rhythm? | No: at equal IC, surrogate music gives fewer uniform seeds than varied ones. |
+| `e19_round2_selection_HISTORICAL.py`, `e21_figuration_list_HISTORICAL.py` | Old selection / list scripts that used the uniform-rhythm tier | Moved out of `tools/`; kept for the record only. |
+| `e20_pitch_variety_filters.py` | What do the pitch-variety filters of `s03_seeds.too_simple` remove? | About 3,650 extra seeds above the thresholds (mostly n >= 14 runs of a short repeated cell) if they are switched off. The user chose to include them (METHODOLOGY section 9). |
 | `ids_test.txt` | Test input for `s07_expand.py` | |

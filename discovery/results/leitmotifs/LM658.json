@@ -1,0 +1,146 @@
+{
+ "id": "LM658",
+ "n_notes": 5,
+ "pattern_notes": [
+  "G5",
+  "A5",
+  "Bb5",
+  "C5",
+  "G3"
+ ],
+ "pattern_durations": [
+  0.25,
+  0.25,
+  0.25,
+  2.5
+ ],
+ "pattern_intervals": [
+  2,
+  1,
+  -10,
+  -15
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 3,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1318
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 65.70833333333333,
+   "pos1": 66.25,
+   "measure": 65,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "1:32.7",
+   "text": "",
+   "notes": [
+    "G5",
+    "A5",
+    "Bb5",
+    "C5",
+    "G3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    2.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 67.70833333333333,
+   "pos1": 68.25,
+   "measure": 67,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "1:35.5",
+   "text": "",
+   "notes": [
+    "G5",
+    "A5",
+    "Bb5",
+    "C5",
+    "G3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    2.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 365.875,
+   "pos1": 366.3333333333333,
+   "measure": 365,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "18:55.7",
+   "text": "Gutrune: Du, Hagen, minnig rufe die Mannen",
+   "notes": [
+    "D6",
+    "E6",
+    "F6",
+    "G5",
+    "C4"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 814.892578125,
+   "pos1": 815.125,
+   "measure": 814,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "32:37.3",
+   "text": "Gunther: Gutrun’ und Siegfried! –",
+   "notes": [
+    "Db6",
+    "Eb6",
+    "Fb6",
+    "Gb5",
+    "Gb3"
+   ],
+   "durations": [
+    0.14,
+    0.14,
+    0.14,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.5,
+ "strength": "weak",
+ "meets_criteria": true
+}

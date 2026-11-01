@@ -1,157 +1,190 @@
 {
  "id": "LM170",
- "n_notes": 6,
+ "n_notes": 9,
  "pattern_notes": [
-  "C4",
   "C3",
-  "C4",
-  "E4",
-  "A3",
-  "B3"
+  "Ab2",
+  "C3",
+  "Ab2",
+  "C3",
+  "Gb2",
+  "E2",
+  "F2",
+  "G2"
  ],
  "pattern_durations": [
   0.25,
   0.25,
-  0.5,
-  1.0,
-  1.5
+  0.25,
+  0.25,
+  0.25,
+  2.0,
+  2.0,
+  2.0
  ],
  "pattern_intervals": [
-  -12,
-  12,
+  -4,
   4,
-  -7,
+  -4,
+  4,
+  -6,
+  -2,
+  1,
   2
  ],
  "n_occurrences": 4,
- "n_exact": 3,
- "n_scenes": 2,
- "n_acts": 1,
- "n_operas": 1,
- "reviewer_themes": "Hagen's alarm, weapons",
+ "n_exact": 4,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "fear, dragon's cave",
  "member_candidates": [
-  810
+  262
  ],
  "occurrences": [
   {
-   "act": "WWV086D-2",
-   "act_short": "D2",
-   "pos0": 406.75,
-   "pos1": 407.8333333333333,
-   "measure": 406,
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2044.6875,
+   "pos1": 2046.5,
+   "measure": 2044,
    "scene": "3",
    "streams": [
-    "B1"
+    "B2"
    ],
-   "time": "20:16.0",
-   "text": "Hagen: Wehe! Waffen! Waffen!",
+   "time": "58:02.9",
+   "text": "Mime: Wie bring’ ich das Fürchten ihm bei?; Siegfried: He! Muß ich helfen?",
    "notes": [
-    "C4",
     "C3",
-    "C4",
-    "E4",
-    "A3",
-    "B3"
+    "Ab2",
+    "C3",
+    "Ab2",
+    "C3",
+    "Gb2",
+    "E2",
+    "F2",
+    "G2"
    ],
    "durations": [
     0.25,
     0.25,
-    0.5,
+    0.25,
+    0.25,
+    0.25,
+    2.0,
+    2.0,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 567.34375,
+   "pos1": 568.25,
+   "measure": 567,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "25:47.3",
+   "text": "~ Mime: schwerlich erfährst du’s je. –",
+   "notes": [
+    "C3",
+    "Ab2",
+    "C3",
+    "Ab2",
+    "C3",
+    "Gb2",
+    "E2",
+    "F2",
+    "G2"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
     1.0,
-    1.5
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 569.34375,
+   "pos1": 570.25,
+   "measure": 569,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "25:52.0",
+   "text": "Mime: Siehst du dort den dunklen Höhlenschlund?",
+   "notes": [
+    "C#3",
+    "A2",
+    "C#3",
+    "A2",
+    "C#3",
+    "G2",
+    "E#2",
+    "F#2",
+    "G#2"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    1.0,
+    1.0,
+    1.0
    ],
    "match": "exact"
   },
   {
    "act": "WWV086D-2",
    "act_short": "D2",
-   "pos0": 410.75,
-   "pos1": 411.8333333333333,
-   "measure": 410,
-   "scene": "3",
-   "streams": [
-    "B1"
-   ],
-   "time": "20:24.4",
-   "text": "Hagen: Waffen durch’s Land!",
-   "notes": [
-    "C4",
-    "C3",
-    "C4",
-    "E4",
-    "A3",
-    "B3"
-   ],
-   "durations": [
-    0.25,
-    0.25,
-    0.5,
-    1.0,
-    1.5
-   ],
-   "match": "exact"
-  },
-  {
-   "act": "WWV086D-2",
-   "act_short": "D2",
-   "pos0": 507.75,
-   "pos1": 508.8333333333333,
-   "measure": 507,
-   "scene": "3",
-   "streams": [
-    "B1"
-   ],
-   "time": "22:23.5",
-   "text": "Hagen: Rüstet euch wohl, und rastet nicht!",
-   "notes": [
-    "C4",
-    "C3",
-    "C4",
-    "E4",
-    "A3",
-    "B3"
-   ],
-   "durations": [
-    0.25,
-    0.25,
-    0.25,
-    1.0,
-    1.5
-   ],
-   "match": "approximate (distance 1.0)"
-  },
-  {
-   "act": "WWV086D-2",
-   "act_short": "D2",
-   "pos0": 1584.75,
-   "pos1": 1585.75,
-   "measure": 1584,
+   "pos0": 1452.6875,
+   "pos1": 1454.5,
+   "measure": 1452,
    "scene": "5",
    "streams": [
-    "B1"
+    "B2"
    ],
-   "time": "64:32.7",
-   "text": "Hagen: Uns allen frommt sein Tod.",
+   "time": "59:02.0",
+   "text": "Brünnhilde: wich’ er dem Feind,; Brünnhilde: nie reicht’ er fliehend ihm den Rücken:",
    "notes": [
-    "Db4",
-    "Db3",
-    "Db4",
-    "F4",
-    "Bb3",
-    "C4"
+    "C3",
+    "Ab2",
+    "C3",
+    "Ab2",
+    "C3",
+    "Gb2",
+    "E2",
+    "F2",
+    "G2"
    ],
    "durations": [
     0.25,
     0.25,
-    0.5,
-    1.0,
+    0.25,
+    0.25,
+    0.25,
+    2.0,
+    2.0,
     2.0
    ],
    "match": "exact"
   }
  ],
  "shape": "melodic",
- "ic_bits": 35.2,
+ "ic_bits": 34.2,
  "strength": "medium",
  "meets_criteria": true
 }

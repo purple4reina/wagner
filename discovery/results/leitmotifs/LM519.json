@@ -1,0 +1,295 @@
+{
+ "id": "LM519",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C5",
+  "D5",
+  "Eb5",
+  "D5",
+  "A4",
+  "Bb4"
+ ],
+ "pattern_durations": [
+  0.25,
+  0.25,
+  2.0,
+  1.0,
+  0.25
+ ],
+ "pattern_intervals": [
+  1,
+  1,
+  -1,
+  -3,
+  1
+ ],
+ "n_occurrences": 6,
+ "n_exact": 6,
+ "n_scenes": 5,
+ "n_acts": 4,
+ "n_operas": 2,
+ "reviewer_themes": "Brünnhilde, warning, punishment",
+ "member_candidates": [
+  1855
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 125.6875,
+   "pos1": 126.1875,
+   "measure": 125,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "3:48.0",
+   "text": "Brünnhilde: In solchem Strauße streit’ ich nicht gern,",
+   "notes": [
+    "G4",
+    "F5",
+    "G#4",
+    "A4",
+    "B4"
+   ],
+   "durations": [
+    1.25,
+    0.5,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 335.875,
+   "pos1": 336.8125,
+   "measure": 335,
+   "scene": "1",
+   "streams": [
+    "L111"
+   ],
+   "time": "10:04.7",
+   "text": "Helmwige, Siegrune und Grimgerde: Wehe! Brünnhilde, wehe!; Schwertleite: Wehe! Wehe! Brünnhilde, wehe!; Rossweisse: Wehe! Brünnhilde, wehe!; Grimgerde: Wehe! Brünnhilde, wehe!",
+   "notes": [
+    "C5",
+    "D5",
+    "Eb5",
+    "D5",
+    "A4",
+    "Bb4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    2.0,
+    1.0,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 732.0,
+   "pos1": 734.3330078125,
+   "measure": 732,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "22:48.4",
+   "text": "Brünnhilde: Hier bin ich, Vater gebiete die Strafe!",
+   "notes": [
+    "C3",
+    "Gb3",
+    "A2",
+    "Bb2",
+    "C3"
+   ],
+   "durations": [
+    6.0,
+    2.0,
+    0.66,
+    0.67
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 517.9583333333334,
+   "pos1": 520.8333333333334,
+   "measure": 517,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "23:35.1",
+   "text": "~ Alberich: trügen wird euch sein Trotz!",
+   "notes": [
+    "B1",
+    "C2",
+    "G2",
+    "Ab1",
+    "Bb1"
+   ],
+   "durations": [
+    0.12,
+    6.0,
+    2.0,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1189.5546875,
+   "pos1": 1191.27734375,
+   "measure": 1189,
+   "scene": "3",
+   "streams": [
+    "B1",
+    "L112"
+   ],
+   "time": "57:52.7",
+   "text": "Brünnhilde: Du selbst bin ich,; Brünnhilde: wenn du mich Selige liebst.",
+   "notes": [
+    "C#4",
+    "D4",
+    "Eb4",
+    "D4",
+    "A3",
+    "Bb3",
+    "F4",
+    "C#4",
+    "D4",
+    "Eb4",
+    "D4",
+    "A3",
+    "Bb3",
+    "F4",
+    "C#4",
+    "D4",
+    "Eb4",
+    "Bb4",
+    "A4",
+    "G#4",
+    "G4",
+    "F#4",
+    "C5",
+    "A4",
+    "E5",
+    "D5",
+    "G4",
+    "F#4",
+    "A4",
+    "B4",
+    "C5",
+    "C4",
+    "E4",
+    "C4",
+    "E4",
+    "D4",
+    "E4",
+    "F4",
+    "G4",
+    "A4",
+    "Bb4",
+    "E4",
+    "G4",
+    "Bb4",
+    "E5",
+    "G5",
+    "Bb5",
+    "A5"
+   ],
+   "durations": [
+    0.17,
+    0.17,
+    1.0,
+    0.66,
+    0.17,
+    0.17,
+    0.66,
+    0.17,
+    0.17,
+    1.0,
+    0.66,
+    0.17,
+    0.17,
+    0.66,
+    0.17,
+    0.17,
+    1.0,
+    0.83,
+    0.83,
+    0.17,
+    1.0,
+    0.17,
+    2.0,
+    0.66,
+    0.17,
+    0.17,
+    6.75,
+    0.25,
+    1.0,
+    0.5,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    0.5,
+    1.75,
+    0.25,
+    0.33,
+    0.33,
+    0.34,
+    0.5,
+    0.75,
+    0.5,
+    0.41,
+    0.5,
+    0.17,
+    0.83
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1206.5546875,
+   "pos1": 1207.6666666666667,
+   "measure": 1206,
+   "scene": "3",
+   "streams": [
+    "B1",
+    "L112"
+   ],
+   "time": "58:49.4",
+   "text": "Brünnhilde: Dich liebt’ ich immer,",
+   "notes": [
+    "D#4",
+    "E4",
+    "F4",
+    "E4",
+    "B3",
+    "C4"
+   ],
+   "durations": [
+    0.17,
+    0.17,
+    1.0,
+    0.66,
+    0.17
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.7,
+ "strength": "weak",
+ "meets_criteria": true
+}

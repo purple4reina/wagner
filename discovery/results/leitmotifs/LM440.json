@@ -1,0 +1,307 @@
+{
+ "id": "LM440",
+ "n_notes": 6,
+ "pattern_notes": [
+  "F4",
+  "D5",
+  "Eb5",
+  "F4",
+  "D5",
+  "Eb5"
+ ],
+ "pattern_durations": [
+  0.25,
+  1.5,
+  1.25,
+  0.25,
+  1.5
+ ],
+ "pattern_intervals": [
+  9,
+  1,
+  -10,
+  9,
+  1
+ ],
+ "n_occurrences": 6,
+ "n_exact": 3,
+ "n_scenes": 5,
+ "n_acts": 4,
+ "n_operas": 3,
+ "reviewer_themes": "Wotan's ravens",
+ "member_candidates": [
+  829
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 1234.25,
+   "pos1": 1237.8333333333333,
+   "measure": 1234,
+   "scene": "3",
+   "streams": [
+    "T1"
+   ],
+   "time": "56:55.6",
+   "text": "Sieglinde: daß hell ich schaue den hehren Schein,; Sieglinde: der dir aus Aug’ und Antlitz bricht,",
+   "notes": [
+    "F4",
+    "D5",
+    "Eb5",
+    "F4",
+    "D5",
+    "Eb5",
+    "F4",
+    "D5",
+    "Eb5",
+    "F4",
+    "D5",
+    "Eb5",
+    "E5",
+    "F5",
+    "C5",
+    "Eb5",
+    "Db5",
+    "D5",
+    "Eb5",
+    "Ab4",
+    "Cb5",
+    "Bb4",
+    "A4",
+    "F5",
+    "D4",
+    "B4",
+    "C5",
+    "C6",
+    "Ab5",
+    "F5",
+    "C5",
+    "Ab4",
+    "F5",
+    "D4",
+    "B4",
+    "C5",
+    "C6",
+    "Ab5",
+    "F5",
+    "C5",
+    "Ab4",
+    "Eb5",
+    "Eb4",
+    "A4",
+    "Bb4",
+    "E5",
+    "E4",
+    "B4"
+   ],
+   "durations": [
+    0.25,
+    1.5,
+    1.25,
+    0.25,
+    1.5,
+    1.25,
+    0.25,
+    1.5,
+    1.25,
+    0.25,
+    1.5,
+    2.0,
+    0.5,
+    0.75,
+    0.25,
+    1.0,
+    0.5,
+    0.5,
+    0.75,
+    0.25,
+    1.5,
+    0.5,
+    0.5,
+    1.25,
+    0.25,
+    1.5,
+    1.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.75,
+    0.25,
+    1.5,
+    1.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.75,
+    0.25,
+    1.5,
+    0.5,
+    0.75,
+    0.25
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1130.9166666666667,
+   "pos1": 1135.0,
+   "measure": 1130,
+   "scene": "3",
+   "streams": [
+    "T1"
+   ],
+   "time": "54:25.4",
+   "text": "Brünnhilde: Siegfried ist es, der mich erweckt.; Siegfried: O Heil der Mutter, die mich gebar!; Brünnhilde: O Heil der Mutter, die dich gebar!; Siegfried: Heil der Erde, die mich genährt!",
+   "notes": [
+    "A4",
+    "F#5",
+    "G5",
+    "A4",
+    "F#5",
+    "G5"
+   ],
+   "durations": [
+    0.25,
+    3.0,
+    4.75,
+    0.25,
+    4.0
+   ],
+   "match": "approximate (distance 0.5)"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 878.0833333333334,
+   "pos1": 879.75,
+   "measure": 878,
+   "scene": "2",
+   "streams": [
+    "T2"
+   ],
+   "time": "35:29.1",
+   "text": "~ Hagen: wehre die Halle dem Feind: –",
+   "notes": [
+    "Eb2",
+    "C3",
+    "Db3",
+    "Eb2",
+    "C3",
+    "Db3"
+   ],
+   "durations": [
+    1.0,
+    3.0,
+    2.0,
+    1.0,
+    3.0
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 894.0,
+   "pos1": 895.75,
+   "measure": 894,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "36:44.6",
+   "text": "~ Hagen: Gefahr ihm will er besteh’n:",
+   "notes": [
+    "E2",
+    "C#3",
+    "D3",
+    "E2",
+    "C#3",
+    "D3"
+   ],
+   "durations": [
+    0.5,
+    4.0,
+    1.5,
+    0.5,
+    4.0
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 1296.0,
+   "pos1": 1301.0,
+   "measure": 1296,
+   "scene": "3",
+   "streams": [
+    "T2"
+   ],
+   "time": "59:41.8",
+   "text": "Waltraute: Seine Raben beide sandt’ er auf Reise;; Waltraute: kehrten die einst mit guter Kunde zurück; –",
+   "notes": [
+    "D#3",
+    "E3",
+    "F#2",
+    "D#3",
+    "E3",
+    "F#2",
+    "D#3",
+    "E3"
+   ],
+   "durations": [
+    4.0,
+    3.5,
+    0.5,
+    4.0,
+    3.5,
+    0.5,
+    4.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1347.0,
+   "pos1": 1352.0,
+   "measure": 1347,
+   "scene": "3",
+   "streams": [
+    "T2"
+   ],
+   "time": "68:50.0",
+   "text": "Brünnhilde: Auch deine Raben hör’ ich rauschen;; Brünnhilde: mit bang ersehnter Botschaft",
+   "notes": [
+    "D#3",
+    "E3",
+    "F#2",
+    "D#3",
+    "E3",
+    "F#2",
+    "D#3",
+    "E3"
+   ],
+   "durations": [
+    4.0,
+    3.5,
+    0.5,
+    4.0,
+    3.5,
+    0.5,
+    4.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 29.1,
+ "strength": "medium",
+ "meets_criteria": true
+}

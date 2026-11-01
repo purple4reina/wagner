@@ -1,0 +1,137 @@
+{
+ "id": "LM375",
+ "n_notes": 7,
+ "pattern_notes": [
+  "E5",
+  "F#5",
+  "G#5",
+  "A#5",
+  "B5",
+  "C#6",
+  "F#5"
+ ],
+ "pattern_durations": [
+  2.25,
+  0.12,
+  0.12,
+  0.12,
+  0.12,
+  2.0
+ ],
+ "pattern_intervals": [
+  2,
+  2,
+  2,
+  1,
+  2,
+  -7
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Rhinemaidens sun greeting",
+ "member_candidates": [
+  683
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 457.6111111111111,
+   "pos1": 459.0,
+   "measure": 457,
+   "scene": "2",
+   "streams": [
+    "L111"
+   ],
+   "time": "19:48.0",
+   "text": "",
+   "notes": [
+    "E5",
+    "F#5",
+    "G#5",
+    "A#5",
+    "B5",
+    "C#6",
+    "F#5"
+   ],
+   "durations": [
+    2.25,
+    0.12,
+    0.12,
+    0.12,
+    0.12,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 74.0,
+   "pos1": 76.0,
+   "measure": 74,
+   "scene": "1",
+   "streams": [
+    "L111"
+   ],
+   "time": "3:03.5",
+   "text": "Woglinde, Wellgunde und Floßhilde: Frau Sonne sendet lichte Strahlen;",
+   "notes": [
+    "Bb4",
+    "C5",
+    "D5",
+    "E5",
+    "F5",
+    "G5",
+    "C5"
+   ],
+   "durations": [
+    2.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    4.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 123.0,
+   "pos1": 125.33333333333333,
+   "measure": 123,
+   "scene": "1",
+   "streams": [
+    "L111"
+   ],
+   "time": "5:11.4",
+   "text": "Woglinde, Wellgunde und Floßhilde: Frau Sonne, sende uns den Helden,; Woglinde, Wellgunde und Floßhilde: der das Gold uns wieder gebe!",
+   "notes": [
+    "Bb4",
+    "C5",
+    "D5",
+    "E5",
+    "F5",
+    "G5",
+    "C5"
+   ],
+   "durations": [
+    2.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    6.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.2,
+ "strength": "weak",
+ "meets_criteria": true
+}

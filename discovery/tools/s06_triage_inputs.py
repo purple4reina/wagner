@@ -2,12 +2,14 @@
 
 Candidates are ordered by where their first occurrence lies in the score (act, time), so that candidates that
 overlap in the score land in the same batch and a reviewer can notice that two are the same motif.
-Each block: id, tier, length, occurrences/scenes/operas, the notes of one occurrence, the durations (quarter notes
-to the next note), and up to 4 occurrences chosen from different scenes with the text sung there ("~" = nearest text).
+Each block: id, length, occurrences/scenes/operas, the notes of one occurrence, and up to 4 occurrences chosen from
+different scenes with the text sung there ("~" = nearest text). Durations and any rhythm-derived label are NOT shown:
+the miner already guarantees that the occurrences of a pattern have similar rhythm, and reviewers must not judge a
+pattern by how varied its durations are. (Review rounds 1 and 2 used an older format with a "[figuration]/[motif]" tag
+and a durations line; those dossiers are archived in decisions/archive_round1_2_dossiers/.)
 Result: work/triage/batch_NN.txt.  Run: discovery/.venv/bin/python -I discovery/tools/s06_triage_inputs.py [batch size [ids file [first batch number [samples]]]]
-With an ids file only those candidates are written, numbered from the first batch number (round 2 starts at 7).
-Round 1 showed 5 sample occurrences per candidate, round 2 showed 4: `s06 112 decisions/round1_ids.txt 1 5` and
-`s06 110 decisions/round2_ids.txt 7 4`.
+With an ids file only those candidates are written, numbered from the first batch number 
+Round 3 (blind): `s06 120 decisions/round3_ids.txt 12 4`.
 """
 import os
 import pickle
@@ -24,7 +26,6 @@ PER_BATCH = 112
 def block(c, x, samples=4):
     f = x["f"]
     names, ioi = dossier.pattern_notes(c, x["seed"], x["seed"]["stm"][0][0])
-    short = lambda v: f"{v:g}".lstrip("0") if v < 1 else f"{v:g}"
     seen, picks = set(), []
     for o in x["fam"]["occ"]:  # prefer occurrences in scenes not yet shown
         sc = (o["act"], int(c["scene"][o["parts"][0][0]]))
@@ -32,10 +33,9 @@ def block(c, x, samples=4):
             seen.add(sc)
             picks.append(o)
     picks = (picks + [o for o in x["fam"]["occ"] if o not in picks])[:samples]
-    lines = [f"#{x['id']} [{x['tier']}] n={f['n']} occ={f['n_occ']} scenes={f['n_scenes']} ops={f['n_operas']} "
+    lines = [f"#{x['id']} n={f['n']} occ={f['n_occ']} scenes={f['n_scenes']} ops={f['n_operas']} "
              f"streams={'/'.join(sorted({s for o in x['fam']['occ'] for s in dossier.occurrence_row(c, o)['streams']})[:3])}",
-             "  notes: " + " ".join(names[:16]) + (" ..." if len(names) > 16 else ""),
-             "  dur:   " + " ".join(short(v) for v in ioi[:15]) + (" ..." if len(ioi) > 15 else "")]
+             "  notes: " + " ".join(names[:16]) + (" ..." if len(names) > 16 else "")]
     for o in sorted(picks, key=lambda o: (o["act"], o["t0"])):
         r = dossier.occurrence_row(c, o)
         lines.append(f"  - {r['act_short']} m{r['measure']} sc{r['scene']}: {r['text'][:60]}")

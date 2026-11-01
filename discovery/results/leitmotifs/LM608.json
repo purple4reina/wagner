@@ -1,0 +1,119 @@
+{
+ "id": "LM608",
+ "n_notes": 5,
+ "pattern_notes": [
+  "G#3",
+  "G3",
+  "G2",
+  "A2",
+  "G#2"
+ ],
+ "pattern_durations": [
+  1.0,
+  1.0,
+  10.0,
+  1.0
+ ],
+ "pattern_intervals": [
+  -1,
+  -12,
+  2,
+  -1
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1159
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 2842.6666666666665,
+   "pos1": 2844.8333333333335,
+   "measure": 2842,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "94:42.9",
+   "text": "",
+   "notes": [
+    "G#3",
+    "G3",
+    "G2",
+    "A2",
+    "G#2"
+   ],
+   "durations": [
+    1.0,
+    1.0,
+    10.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1157.25,
+   "pos1": 1157.625,
+   "measure": 1157,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "56:04.5",
+   "text": "Brünnhilde: du Wecker des Lebens, siegendes Licht!",
+   "notes": [
+    "F5",
+    "E5",
+    "E4",
+    "F#4",
+    "F4"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.75,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1159.25,
+   "pos1": 1159.625,
+   "measure": 1159,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "56:12.1",
+   "text": "~ Brünnhilde: O wüßtest du, Lust der Welt,",
+   "notes": [
+    "F5",
+    "E5",
+    "E4",
+    "F#4",
+    "F4"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.75,
+    0.12
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 26.3,
+ "strength": "weak",
+ "meets_criteria": true
+}

@@ -1,0 +1,173 @@
+{
+ "id": "LM663",
+ "n_notes": 5,
+ "pattern_notes": [
+  "Bb5",
+  "C6",
+  "D6",
+  "Eb5",
+  "Eb3"
+ ],
+ "pattern_durations": [
+  0.16,
+  0.17,
+  0.17,
+  3.0
+ ],
+ "pattern_intervals": [
+  2,
+  2,
+  -11,
+  -15
+ ],
+ "n_occurrences": 5,
+ "n_exact": 5,
+ "n_scenes": 4,
+ "n_acts": 4,
+ "n_operas": 4,
+ "reviewer_themes": "scornful address to someone",
+ "member_candidates": [
+  1346
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 414.8333333333333,
+   "pos1": 416.0,
+   "measure": 414,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "11:53.5",
+   "text": "Alberich: Ihr schmählich schlaues, liederlich schlechtes Gelichter!",
+   "notes": [
+    "Bb5",
+    "C6",
+    "D6",
+    "Eb5",
+    "Eb3"
+   ],
+   "durations": [
+    0.16,
+    0.17,
+    0.17,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 61.708333333333336,
+   "pos1": 62.25,
+   "measure": 61,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "1:27.1",
+   "text": "",
+   "notes": [
+    "F5",
+    "G5",
+    "A5",
+    "Bb4",
+    "F3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    2.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 63.708333333333336,
+   "pos1": 64.25,
+   "measure": 63,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "1:29.9",
+   "text": "",
+   "notes": [
+    "F5",
+    "G5",
+    "A5",
+    "Bb4",
+    "F3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    2.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 1875.875,
+   "pos1": 1876.75,
+   "measure": 1875,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "53:24.1",
+   "text": "Der Wanderer: Jetzt, Fafners kühner Bezwinger,; Der Wanderer: hör’, verfall’ner Zwerg!",
+   "notes": [
+    "C6",
+    "D6",
+    "E6",
+    "F5",
+    "C4"
+   ],
+   "durations": [
+    0.16,
+    0.17,
+    0.17,
+    3.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 607.875,
+   "pos1": 608.3333333333334,
+   "measure": 607,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "24:43.4",
+   "text": "Hagen: Das Trinkhorn nehmt,",
+   "notes": [
+    "Cb6",
+    "Db6",
+    "Eb6",
+    "E5",
+    "F#3"
+   ],
+   "durations": [
+    0.12,
+    0.12,
+    0.12,
+    1.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.3,
+ "strength": "weak",
+ "meets_criteria": true
+}

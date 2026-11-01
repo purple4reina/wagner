@@ -1,0 +1,157 @@
+{
+ "id": "LM477",
+ "n_notes": 6,
+ "pattern_notes": [
+  "Bb2",
+  "Eb2",
+  "Fb2",
+  "Eb2",
+  "Gb2",
+  "F2"
+ ],
+ "pattern_durations": [
+  3.0,
+  2.0,
+  2.0,
+  2.0,
+  2.0
+ ],
+ "pattern_intervals": [
+  -7,
+  1,
+  -1,
+  3,
+  -1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  894
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 1716.25,
+   "pos1": 1719.0,
+   "measure": 1716,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "49:44.3",
+   "text": "Der Wanderer: Ein weiser Niblung wahret Siegfried;; Der Wanderer: Fafner soll er ihm fällen,",
+   "notes": [
+    "Bb2",
+    "Eb2",
+    "Fb2",
+    "Eb2",
+    "Gb2",
+    "F2"
+   ],
+   "durations": [
+    3.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 372.5,
+   "pos1": 374.3333333333333,
+   "measure": 372,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "16:51.8",
+   "text": "Der Wanderer: wer ihn rafft, hat ihn gewonnen. –; Der Wanderer: Willst du noch mehr?",
+   "notes": [
+    "C3",
+    "F2",
+    "Gb2",
+    "F2",
+    "Ab2",
+    "G2"
+   ],
+   "durations": [
+    2.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 381.3333333333333,
+   "pos1": 383.3333333333333,
+   "measure": 381,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "17:12.4",
+   "text": "Der Wanderer: ich selber weck’ ihn dir auf.",
+   "notes": [
+    "A2",
+    "D2",
+    "Eb2",
+    "D2",
+    "F2",
+    "E2"
+   ],
+   "durations": [
+    2.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 431.5,
+   "pos1": 433.0,
+   "measure": 431,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "18:19.5",
+   "text": "Siegfried: In einer Höhle ließ ich’s liegen,",
+   "notes": [
+    "C2",
+    "F1",
+    "Gb1",
+    "F1",
+    "Ab1",
+    "G1"
+   ],
+   "durations": [
+    2.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 26.2,
+ "strength": "weak",
+ "meets_criteria": true
+}

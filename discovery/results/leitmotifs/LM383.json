@@ -1,0 +1,166 @@
+{
+ "id": "LM383",
+ "n_notes": 7,
+ "pattern_notes": [
+  "G2",
+  "Ab2",
+  "Bb2",
+  "C3",
+  "D3",
+  "Eb2",
+  "D2"
+ ],
+ "pattern_durations": [
+  0.1,
+  0.1,
+  0.1,
+  0.1,
+  0.1,
+  2.0
+ ],
+ "pattern_intervals": [
+  1,
+  2,
+  2,
+  2,
+  -11,
+  -1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 4,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  695
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1644.75,
+   "pos1": 1645.375,
+   "measure": 1644,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "78:11.0",
+   "text": "Siegfried: was bang du mir warst und wirst:; Siegfried: Dann brach sich die brennende Sorge,",
+   "notes": [
+    "F5",
+    "G5",
+    "A5",
+    "B5",
+    "C5",
+    "B4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 417.375,
+   "pos1": 418.0,
+   "measure": 417,
+   "scene": "0",
+   "streams": [
+    "B2"
+   ],
+   "time": "25:19.3",
+   "text": "~ Brünnhilde: die dir nur gönnen nicht geben mehr kann.",
+   "notes": [
+    "G2",
+    "Ab2",
+    "Bb2",
+    "C3",
+    "D3",
+    "Eb2",
+    "D2"
+   ],
+   "durations": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 488.58203125,
+   "pos1": 489.25,
+   "measure": 488,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "22:02.4",
+   "text": "Mannen (B1): Ist Gunther in Not?; Mannen (T1, T2): Welche Not ist da?",
+   "notes": [
+    "G3",
+    "Ab3",
+    "Bb3",
+    "C4",
+    "D4",
+    "Eb3",
+    "D3"
+   ],
+   "durations": [
+    0.17,
+    0.17,
+    0.16,
+    0.17,
+    0.17,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 1665.6875,
+   "pos1": 1666.5,
+   "measure": 1665,
+   "scene": "5",
+   "streams": [
+    "B1"
+   ],
+   "time": "67:23.9",
+   "text": "Gunther: Wotan! Weise die schrecklich heilige Schar,; Brünnhilde: Weise die schrecklich heilige Schar,; Hagen: Weise von Neuem der Niblungen Schar,; Brünnhilde: hieher zu horchen dem Racheschwur!",
+   "notes": [
+    "F4",
+    "Gb4",
+    "Ab4",
+    "Bb4",
+    "C5",
+    "Db4",
+    "C4"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    2.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.9,
+ "strength": "weak",
+ "meets_criteria": true
+}

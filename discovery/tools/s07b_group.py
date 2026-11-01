@@ -1,13 +1,13 @@
 """Step 7b. Read the reviewers' verdicts and group candidates that are the same leitmotif.
 
 Inputs: work/pool.pkl, work/candidates.pkl, decisions/triage_batch_*.tsv (and optionally decisions/review2_*.tsv with
-the same columns, which override earlier verdicts for the same id).
-Accepted = label M. Two accepted candidates are joined when a reviewer said `same_as` (either direction) AND the data
+the same columns, which override earlier verdicts for the same id) and decisions/rule_*.tsv (acceptances made by rule).
+Accepted = label M (later batch files override earlier verdicts for the same id; round 3, batches 12+, is blind to
+rhythm and supersedes the F/G/U labels of rounds 1-2). Two accepted candidates are joined when a reviewer said `same_as` (either direction) AND the data
 agree: at least SHARE of the smaller one's occurrences overlap occurrences of the other (within 1 quarter note), or the
 longest common run of intervals covers >= SEQ of the shorter pattern. Joined candidates form a group (connected
 components); the group's pattern is that of its longest member.
-Also lists the candidates that need a second look: label U, and label F with a wide spread (>= 3 operas and >= 6 passages).
-Outputs: decisions/groups_unmerged.tsv (s07c merges them further into groups_auto.tsv), work/second_look.txt, work/accepted_ids.txt (ids for s07_expand).
+Outputs: decisions/groups_unmerged.tsv (s07c merges them further into groups_auto.tsv), work/accepted_ids.txt (ids for s07_expand).
 Run: discovery/.venv/bin/python -I discovery/tools/s07b_group.py
 """
 import glob
@@ -24,10 +24,13 @@ SEQ = 0.75
 SLACK = 1.0
 
 
-def load_verdicts():
+def load_verdicts(rules=True):
+    """Reviewer verdicts (decisions/triage_batch_*.tsv), then, if `rules`, the acceptances made by rule (rule_*.tsv).
+    Later files override earlier ones for the same id."""
     v = {}
     files = sorted(glob.glob(os.path.join(DECISIONS, "triage_batch_*.tsv"))) + \
-        sorted(glob.glob(os.path.join(DECISIONS, "review2_*.tsv")))
+        sorted(glob.glob(os.path.join(DECISIONS, "review2_*.tsv"))) + \
+        (sorted(glob.glob(os.path.join(DECISIONS, "rule_*.tsv"))) if rules else [])
     for fn in files:
         for line in open(fn, encoding="utf-8").read().splitlines()[1:]:
             p = line.split("\t")
@@ -87,14 +90,11 @@ def main():
         for lm, rep, members, th in rows:
             fh.write(f"{lm}\t{rep}\t{','.join(map(str, members))}\t{th}\n")
     open(os.path.join(WORK, "accepted_ids.txt"), "w").write(" ".join(str(r[1]) for r in rows) + "\n")
-    second = [i for i, v in verdicts.items() if i in cands and (v["label"] == "U" or (
-        v["label"] == "F" and cands[i]["f"]["n_operas"] >= 3 and cands[i]["f"]["passages"] >= 6))]
-    open(os.path.join(WORK, "second_look.txt"), "w").write(" ".join(map(str, sorted(second))) + "\n")
     import shutil
     shutil.copy(os.path.join(DECISIONS, 'groups_unmerged.tsv'), os.path.join(DECISIONS, 'groups_auto.tsv'))
     sizes = sorted((len(r[2]) for r in rows), reverse=True)
     print(f"verdicts {len(verdicts)}; accepted M {len(accepted)} -> {len(rows)} groups (largest {sizes[:6]}); "
-          f"second look {len(second)}; labels:", {l: sum(1 for v in verdicts.values() if v['label'] == l) for l in 'MFGU'})
+          f"labels:", {l: sum(1 for v in verdicts.values() if v['label'] == l) for l in 'MFGU'})
 
 
 if __name__ == "__main__":

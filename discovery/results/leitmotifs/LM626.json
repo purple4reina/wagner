@@ -1,0 +1,119 @@
+{
+ "id": "LM626",
+ "n_notes": 5,
+ "pattern_notes": [
+  "G3",
+  "B3",
+  "F#3",
+  "E3",
+  "D3"
+ ],
+ "pattern_durations": [
+  0.75,
+  0.25,
+  1.0,
+  1.0
+ ],
+ "pattern_intervals": [
+  4,
+  -5,
+  -2,
+  -2
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Fafner; Siegfried",
+ "member_candidates": [
+  1178
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 1108.0,
+   "pos1": 1108.75,
+   "measure": 1108,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "40:27.5",
+   "text": "Fafner: Freias Haft hilft wenig;",
+   "notes": [
+    "G3",
+    "B3",
+    "F#3",
+    "E3",
+    "D3"
+   ],
+   "durations": [
+    0.75,
+    0.25,
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3329.0,
+   "pos1": 3329.75,
+   "measure": 3329,
+   "scene": "4",
+   "streams": [
+    "B2"
+   ],
+   "time": "116:37.8",
+   "text": "~ Fafner: Nicht so leicht und locker gefügt!",
+   "notes": [
+    "Eb2",
+    "G2",
+    "D2",
+    "C2",
+    "Bb1"
+   ],
+   "durations": [
+    0.75,
+    0.25,
+    1.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1262.0,
+   "pos1": 1263.3333333333333,
+   "measure": 1262,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "61:35.5",
+   "text": "Siegfried: wenn alle Sinne dich nur sehen und fühlen! –",
+   "notes": [
+    "Ab4",
+    "C5",
+    "G4",
+    "F4",
+    "Eb4"
+   ],
+   "durations": [
+    0.75,
+    0.25,
+    1.5,
+    1.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.7,
+ "strength": "weak",
+ "meets_criteria": true
+}

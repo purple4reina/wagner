@@ -1,0 +1,157 @@
+{
+ "id": "LM589",
+ "n_notes": 6,
+ "pattern_notes": [
+  "E4",
+  "D5",
+  "E5",
+  "F5",
+  "G5",
+  "Ab5"
+ ],
+ "pattern_durations": [
+  1.0,
+  0.16,
+  0.17,
+  0.17,
+  0.16
+ ],
+ "pattern_intervals": [
+  10,
+  2,
+  1,
+  2,
+  1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1108
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 238.5,
+   "pos1": 238.916015625,
+   "measure": 238,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "10:51.2",
+   "text": "Alberich: der starke, zerstiebte wie Spreu!",
+   "notes": [
+    "E4",
+    "D5",
+    "E5",
+    "F5",
+    "G5",
+    "Ab5"
+   ],
+   "durations": [
+    1.0,
+    0.16,
+    0.17,
+    0.17,
+    0.16
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 550.8880208333334,
+   "pos1": 551.3333333333334,
+   "measure": 550,
+   "scene": "2",
+   "streams": [
+    "T1"
+   ],
+   "time": "22:48.6",
+   "text": "Siegfried: schuf ich das Schwert mir nicht neu.",
+   "notes": [
+    "D3",
+    "C4",
+    "D4",
+    "Eb4",
+    "F4",
+    "F#4"
+   ],
+   "durations": [
+    0.84,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1073.0,
+   "pos1": 1073.25,
+   "measure": 1073,
+   "scene": "3",
+   "streams": [
+    "T2"
+   ],
+   "time": "53:40.4",
+   "text": "~ Gunther: Gutrun’, holde Schwester,",
+   "notes": [
+    "C2",
+    "Bb2",
+    "C3",
+    "Db3",
+    "Eb3",
+    "E3"
+   ],
+   "durations": [
+    0.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1093.0,
+   "pos1": 1093.25,
+   "measure": 1093,
+   "scene": "3",
+   "streams": [
+    "T2"
+   ],
+   "time": "54:42.6",
+   "text": "Gutrune: O Hilfe! Hilfe! Wehe! Wehe!",
+   "notes": [
+    "G2",
+    "F3",
+    "G3",
+    "Ab3",
+    "Bb3",
+    "B3"
+   ],
+   "durations": [
+    0.5,
+    0.12,
+    0.12,
+    0.12,
+    0.12
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.3,
+ "strength": "weak",
+ "meets_criteria": true
+}
