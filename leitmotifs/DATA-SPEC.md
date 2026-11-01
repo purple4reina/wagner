@@ -8,6 +8,8 @@
 - `motifs/<id>.full.json` holds the whole piano score of each passage. The page loads it when the viewer presses "Full score" (see below).
   `tools/find_motif.py` writes it next to `motifs/<id>.json`. A motif without the file works, but its "Full score" button does nothing.
 - `motifs/sample.json` is a test file. Its sections come from the dataset. Every occurrence in it is made up.
+- `tools/find_motif.py` joins the passages that overlap, or lie within one measure of each other, into one occurrence. The occurrence has the
+  closest `level` of the passages that it joins, and its `label` and `note` say that it joins others.
 - `motifs/index.json` is the list of motifs, `{ "motifs": [{ "id": "gold", "name": "Gold" }] }`. The page shows it as links down
   its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
   one entry for each definition that has a motif file, in the order of the names.
@@ -129,6 +131,7 @@ Sources:
 - The notes are copies of the notes in `01_RawData/score_musicxml`. The clef, key signature, time signature, octave, rhythm, accidentals, stems, beams and ties are the ones of the score. A clef change inside the excerpt stays where the score has it.
 - The file contains only the measures that the motif spans. The page breaks a long excerpt into lines.
 - The file contains only the notes of the motif, in one staff, and the rests of that staff and voice between its first and its last note. It leaves out the other notes. The builder removes a beam, slur or tuplet bracket when the cut leaves it without a start or an end.
+  An occurrence that joins passages of two staves or voices has one part for each staff (with a brace), one voice for each voice, and every measure from the first to the last, with a rest in a measure where a staff has no note.
 
 The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an internet connection.
 

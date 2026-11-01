@@ -3,7 +3,7 @@
  "motif": {
   "id": "valkyries-warcry",
   "name": "Walküre Warcry",
-  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.",
+  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note. Passages that overlap, or lie within 1 measure of each other, are joined into one; the level is that of the closest.",
   "source": {
    "author": "Stewart Spencer and Barry Millington (eds.)",
    "title": "Wagner's Ring of the Nibelung: A Companion",

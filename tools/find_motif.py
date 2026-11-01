@@ -17,6 +17,8 @@ note of the same staff and voice, or they begin and end at the same moments.
 The notation excerpt of a passage is copied from the score (see excerpt()). It carries the tempo of one recording
 (see PERFORMANCE), so that the sound of the page plays at the speed of a performance. The whole piano score of the same
 measures goes to a second file, <id>.full.json (see full_excerpt()).
+The passages of one act that overlap, or lie within MERGE_GAP measures of each other, are written as one example, also if they are
+in different staves or voices (see join_overlapping() and join_runs()).
 
 usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
@@ -32,6 +34,7 @@ MAX_CHAINS = 64  # the most ways to match one start that find_core() compares
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEFINITIONS = ROOT / "leitmotifs" / "definitions"
 ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not part of the score
+MERGE_GAP = 1  # passages that overlap, or lie within this many measures of each other, are one example
 PERFORMANCE = "Karajan1966"  # the recording whose measure times set the tempo of the sound (one of the three with hand-made times)
 
 
@@ -484,6 +487,47 @@ def trim_spans(notes):
                 parent.remove(s)
 
 
+def write_attributes(m, p, last):
+    """Append to measure `m` the attributes (divisions, key, time, clef) of the note `p` that differ from `last`, the ones before it,
+    and return the ones of `p`."""
+    now = dict(divisions=p.div, key=p.fifths, time=p.ts, clef=p.clef)
+    changed = {k for k in now if last is None or now[k] != last[k]}
+    if changed:
+        a = ET.SubElement(m, "attributes")
+        if "divisions" in changed:
+            ET.SubElement(a, "divisions").text = str(p.div)
+        if "key" in changed:
+            ET.SubElement(ET.SubElement(a, "key"), "fifths").text = str(p.fifths)
+        if "time" in changed:
+            t = ET.SubElement(a, "time")
+            for tag, value in zip(("beats", "beat-type"), p.ts):
+                ET.SubElement(t, tag).text = str(value)
+        if "clef" in changed:
+            c = ET.SubElement(a, "clef")
+            ET.SubElement(c, "sign").text = p.clef[0]
+            if p.clef[1]:
+                ET.SubElement(c, "line").text = str(p.clef[1])
+            if p.clef[2]:
+                ET.SubElement(c, "clef-octave-change").text = p.clef[2]
+    return now
+
+
+def move(tag, quarters, div):
+    """Return a <backup> or <forward> of `quarters` quarter notes, in divisions of `div`."""
+    e = ET.Element(tag)
+    ET.SubElement(e, "duration").text = str(round(quarters * div))
+    return e
+
+
+def set_voice(n, voice):
+    """Give the note or rest `n` the voice number `voice`."""
+    tag = n.find("voice")
+    if tag is None:
+        tag = ET.Element("voice")
+        n.insert(1 + max(i for i, c in enumerate(n) if c.tag in ("duration", "tie")), tag)
+    tag.text = voice
+
+
 def excerpt(chain, measures, rests=(), tempo=None):
     """Return a MusicXML score of the source notes of one match.
 
@@ -492,8 +536,14 @@ def excerpt(chain, measures, rests=(), tempo=None):
     staff and voice between the first and the last note are copied too, so that a melody with rests shows them. A rest
     that a chosen note sounds through (a chord with a shorter tone) is left out, because the notes follow each other.
     `tempo` is in quarter notes per minute. It sets the speed of the sound and shows nothing in the engraving.
+
+    The notes of one line (a staff and voice) follow each other, and the measures that have none are left out. If `chain` has
+    more than one line (see join_runs()), each staff of the score is a part, each voice of it a voice, and every measure from the
+    first to the last is there, so that the lines keep their places in time. The first measure starts where the first note is.
     """
     pieces = sorted((p for g in chain for p in g.pieces), key=lambda p: p.onset)
+    lines_of = {id(p): g.line for g in chain for p in g.pieces}  # a tie may go on in another voice number: the piece stays in the line of its note
+    line = lambda p: lines_of.get(id(p), (p.part, p.voice))
     notes = []
     for p in pieces:
         n = copy.deepcopy(p.el)
@@ -502,13 +552,18 @@ def excerpt(chain, measures, rests=(), tempo=None):
             for x in n.findall(tag):
                 n.remove(x)
         notes.append(n)
-    trim_spans(notes)
+    lines = sorted({line(p) for p in pieces})
+    for l in lines:
+        trim_spans([n for p, n in zip(pieces, notes) if line(p) == l])  # a beam, slur or tuplet never runs from one line to another
 
-    start, end = pieces[0].onset, max(p.onset + p.dur for p in pieces)
     items = list(zip(pieces, notes))
     for r in rests:
-        gap = all(r.onset + r.dur <= p.onset + TIE_GAP or r.onset >= p.onset + p.dur - TIE_GAP for p in pieces)  # a chord of the voice may sound through a rest
-        if (r.part, r.voice) == chain[0].line and r.onset >= start - TIE_GAP and r.onset + r.dur <= end + TIE_GAP and gap:
+        mine = [p for p in pieces if line(p) == (r.part, r.voice)]
+        if not mine:
+            continue
+        start, end = mine[0].onset, max(p.onset + p.dur for p in mine)
+        gap = all(r.onset + r.dur <= p.onset + TIE_GAP or r.onset >= p.onset + p.dur - TIE_GAP for p in mine)  # a chord of the voice may sound through a rest
+        if r.onset >= start - TIE_GAP and r.onset + r.dur <= end + TIE_GAP and gap:
             n = copy.deepcopy(r.el)
             n.attrib.clear()
             for tag in ("instrument", "notations"):  # a tuplet mark may lose its other end in the cut
@@ -517,44 +572,65 @@ def excerpt(chain, measures, rests=(), tempo=None):
             items.append((r, n))
     items.sort(key=lambda item: item[0].onset)
 
-    part, last, mi = ET.Element("part", id="P1"), None, None
-    for p, n in items:
-        if p.mi != mi:
-            mi = p.mi
-            m = ET.SubElement(part, "measure", number=str(measures[mi]["number"]))
-            if last is None and p.pos > 0:
-                m.set("implicit", "yes")  # the match starts with a pickup
-        now = dict(divisions=p.div, key=p.fifths, time=p.ts, clef=p.clef)
-        changed = {k for k in now if last is None or now[k] != last[k]}
-        if changed:
-            a = ET.SubElement(m, "attributes")
-            if "divisions" in changed:
-                ET.SubElement(a, "divisions").text = str(p.div)
-            if "key" in changed:
-                ET.SubElement(ET.SubElement(a, "key"), "fifths").text = str(p.fifths)
-            if "time" in changed:
-                t = ET.SubElement(a, "time")
-                for tag, value in zip(("beats", "beat-type"), p.ts):
-                    ET.SubElement(t, tag).text = str(value)
-            if "clef" in changed:
-                c = ET.SubElement(a, "clef")
-                ET.SubElement(c, "sign").text = p.clef[0]
-                if p.clef[1]:
-                    ET.SubElement(c, "line").text = str(p.clef[1])
-                if p.clef[2]:
-                    ET.SubElement(c, "clef-octave-change").text = p.clef[2]
-        m.append(n)
-        last = now
-
-    if tempo:
-        direction = ET.Element("direction")  # Verovio prints an empty tempo mark as nothing
-        ET.SubElement(ET.SubElement(direction, "direction-type"), "words")
-        ET.SubElement(direction, "sound", tempo=str(tempo))
-        part[0].insert(1, direction)  # after the attributes of the first measure
-
+    aligned = len(lines) > 1
+    first, last_mi = min(p.mi for p, _ in items), max(p.mi for p, _ in items)
+    shift = min(p.pos for p, _ in items if p.mi == first)  # the first measure starts at the first note, so that a pickup shows as one
     root = ET.Element("score-partwise", version="3.0")
-    ET.SubElement(ET.SubElement(ET.SubElement(root, "part-list"), "score-part", id="P1"), "part-name")
-    root.append(part)
+    names = ET.SubElement(root, "part-list")
+    parts = sorted({p.part for p, _ in items})
+    if len(parts) > 1:
+        brace = ET.SubElement(names, "part-group", type="start", number="1")
+        ET.SubElement(brace, "group-symbol").text = "brace"
+        ET.SubElement(brace, "group-barline").text = "yes"
+    for k, part_index in enumerate(parts, start=1):
+        ET.SubElement(ET.SubElement(names, "score-part", id=f"P{k}"), "part-name")
+        part, state = ET.SubElement(root, "part", id=f"P{k}"), None
+        mine = [(p, n) for p, n in items if p.part == part_index]
+        numbered = len({line(p)[1] for p, _ in mine}) > 1  # the voices of a staff need a number of their own
+        for mi in range(first, last_mi + 1) if aligned else sorted({p.mi for p, _ in mine}):
+            m = ET.SubElement(part, "measure", number=str(measures[mi]["number"]))
+            here = [(p, n) for p, n in mine if p.mi == mi]
+            if state is None:  # before anything that has a duration; a staff that starts after the first measure has its clef there too
+                state = write_attributes(m, mine[0][0], None)
+            if mi == first and shift > 0:
+                m.set("implicit", "yes")  # the match starts with a pickup
+            if not here:  # a measure in which this staff has no note, but the key and the meter of the score may change in it
+                key, time = measures[mi]["fifths"], measures[mi]["ts"]
+                if (state["key"], state["time"]) != (key, time):
+                    a = ET.SubElement(m, "attributes")
+                    if state["key"] != key:
+                        ET.SubElement(ET.SubElement(a, "key"), "fifths").text = str(key)
+                    if state["time"] != time:
+                        t = ET.SubElement(a, "time")
+                        for tag, value in zip(("beats", "beat-type"), time):
+                            ET.SubElement(t, tag).text = str(value)
+                    state = dict(state, key=key, time=time)
+                rest = ET.SubElement(m, "note")
+                ET.SubElement(rest, "rest", measure="yes")
+                ET.SubElement(rest, "duration").text = str(round(measures[mi]["nominal"] * state["divisions"]))
+                continue
+            origin = shift if mi == first else Fraction(0)  # the position in the measure that the first note of a voice is measured from
+            voices = sorted({line(p)[1] for p, _ in here})
+            for v in voices:
+                at = origin  # where the voice is, in quarter notes from the start of the measure
+                for p, n in (h for h in here if line(h[0])[1] == v):
+                    if aligned and p.pos > at + TIE_GAP:  # a voice that starts late in the measure
+                        m.append(move("forward", p.pos - at, p.div))
+                        at = p.pos
+                    state = write_attributes(m, p, state)
+                    if numbered:
+                        set_voice(n, v)
+                    m.append(n)
+                    at += Fraction(int(n.findtext("duration")), p.div)  # the written length: the export may give a chord note another length than its start tells
+                if v != voices[-1]:
+                    m.append(move("backup", at - origin, p.div))
+        if part_index == parts[0] and tempo:
+            direction = ET.Element("direction")  # Verovio prints an empty tempo mark as nothing
+            ET.SubElement(ET.SubElement(direction, "direction-type"), "words")
+            ET.SubElement(direction, "sound", tempo=str(tempo))
+            part[0].insert(1, direction)  # after the attributes of the first measure
+    if len(parts) > 1:
+        ET.SubElement(names, "part-group", type="stop", number="1")
     for e in root.iter():  # drop the indentation that the copied notes carry
         e.tail = None
         if e.text and not e.text.strip():
@@ -585,7 +661,7 @@ def full_excerpt(run, measures, tempo=None):
     passage (`run.run`) carry an id that starts with "motif-", so that the page can draw them in color. The directions
     (dynamics, words and tempo marks) are left out, as in excerpt(). `tempo` is as in excerpt().
     """
-    pieces = [p for g in run.shown for p in g.pieces]
+    pieces = [p for g in run.shown + run.run for p in g.pieces]
     first, last = min(p.mi for p in pieces), max(p.mi for p in pieces)
     mine = {id(p.el) for g in run.run for p in g.pieces}
     root = ET.Element("score-partwise", version="3.0")
@@ -625,6 +701,57 @@ def full_excerpt(run, measures, tempo=None):
         if e.text and not e.text.strip():
             e.text = None
     return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root, encoding="unicode")
+
+
+def locate(act, t):
+    """Return the score position (a measure number with a fraction) of the time `t`, in quarter notes from the start of `act`."""
+    mi = bisect_right(act.offsets, t) - 1
+    return act.measures[mi]["number"] + round(float((t - act.offsets[mi]) / act.measures[mi]["nominal"]), 3)
+
+
+def span(run, act):
+    """Return the score positions where the notes that `run` shows start and end."""
+    return locate(act, min(n.onset for n in run.shown)), locate(act, max(n.onset + n.dur for n in run.shown))
+
+
+def join_overlapping(entries, gap):
+    """Return `entries` ((level, run, act) for each passage) in lists: the passages of one act that overlap, or lie within
+    `gap` measures of each other, are in one list, so a chain of such passages is one list. The passages may be in different
+    staves and voices (see excerpt())."""
+    joined = []
+    for entry in sorted(entries, key=lambda e: (e[2].work, span(e[1], e[2])[0])):
+        if joined and entry[2] is joined[-1][0][2] and span(entry[1], entry[2])[0] <= max(span(e[1], e[2])[1] for e in joined[-1]) + gap:
+            joined[-1].append(entry)
+        else:
+            joined.append([entry])
+    return joined
+
+
+def join_runs(runs, by):
+    """Return one passage, with the `run` and `shown` of make_run(), from `runs`, the closest first: the notes that any of them
+    shows, in time order. The passages may be in different lines (a staff and voice). A voice of the score may hold two strands, and
+    two passages may read them differently, so a note that would sound with one already taken in its line is left out of `shown`: the
+    notes that a passage matched come first, in the order of `runs`, then the notes around them. Where two passages of a line leave a
+    gap, the passage follows the line across it, as make_run() does for the notes around a passage. `run` has every note that any
+    passage matched, also one that `shown` leaves out, because the full score marks them all."""
+    mine = {id(n): n for r in runs for n in r.run}
+    taken = []
+    for n in [n for r in runs for n in r.run] + [n for r in runs for n in r.shown]:
+        if all(t.line != n.line or n.onset >= t.onset + t.dur - TIE_GAP or n.onset + n.dur <= t.onset + TIE_GAP for t in taken):
+            taken.append(n)
+    shown = []
+    for line in sorted({n.line for n in taken}):
+        so_far = []
+        for n in sorted((n for n in taken if n.line == line), key=lambda n: n.onset):
+            while so_far and so_far[-1].onset + so_far[-1].dur < n.onset - TIE_GAP:
+                ahead = [c for c in by.get((line, so_far[-1].onset + so_far[-1].dur), ()) if c.onset + c.dur <= n.onset + TIE_GAP]
+                if not ahead:
+                    break
+                so_far.append(min(ahead, key=lambda c: abs(c.midi - so_far[-1].midi)))
+            so_far.append(n)
+        shown += so_far
+    shown.sort(key=lambda n: n.onset)
+    return SimpleNamespace(run=sorted(mine.values(), key=lambda n: n.onset), shown=shown)
 
 
 def original_musicxml():
@@ -754,7 +881,8 @@ def motif_block():
     """Return the "motif" part of a motif file: the id, the name, a description, and the source of the melody. The
     definition names its source by a key of leitmotifs/sources.json, so that one citation serves every leitmotif."""
     block = dict(id=DEF["id"], name=DEF["name"],
-                 description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.")
+                 description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."
+                 f" Passages that overlap, or lie within {MERGE_GAP} measure{'' if MERGE_GAP == 1 else 's'} of each other, are joined into one; the level is that of the closest.")
     if "source" in DEF:
         block["source"] = json.loads((ROOT / "leitmotifs" / "sources.json").read_text(encoding="utf-8"))[DEF["source"]]
     return block
@@ -822,7 +950,7 @@ def main():
             merged, measures, offsets, rests = read_act(score / f"Wagner_{work}.xml")
             singing = [(float(r["measure_start"]), float(r["measure_end"]), r["person"], r["text"])
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
-            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests,
+            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests, by=index(merged)[0],
                                   seconds=seconds_at(f"{ann}/ann_audio_measure/Wagner_{work}_{PERFORMANCE}.csv"))
             top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
@@ -858,16 +986,16 @@ def main():
     translations = json.loads(translations_path.read_text(encoding="utf-8")) if translations_path.exists() else {}
     untranslated = set()
 
-    occurrences, wholes = [], {}
-    for level, found in sorted(found_at.items()):
-        for run, act in found:
-            def locate(t):
-                mi = bisect_right(act.offsets, t) - 1
-                return act.measures[mi]["number"] + round(float((t - act.offsets[mi]) / act.measures[mi]["nominal"]), 3)
-
-            a, b = locate(run.shown[0].onset), locate(run.shown[-1].onset + run.shown[-1].dur)
+    def build(groups):
+        """Return the occurrences of `groups`, and their full scores by id. A group is a list of passages (level, run, act)
+        that make one example: the closest of them names it."""
+        occurrences, wholes = [], {}
+        for members in groups:
+            level, run, act = min(members, key=lambda m: m[0])
+            whole = join_runs([m[1] for m in sorted(members, key=lambda m: m[0])], act.by) if len(members) > 1 else run  # what the excerpt shows
+            a, b = span(whole, act)
             t0, t1 = act.seconds(a), act.seconds(b)
-            quarters = run.shown[-1].onset + run.shown[-1].dur - run.shown[0].onset
+            quarters = max(n.onset + n.dur for n in whole.shown) - min(n.onset for n in whole.shown)
             tempo = round(60 * float(quarters) / (t1 - t0), 1) if t0 is not None and t1 is not None and t1 > t0 else None
             same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:])) and all(
                 nxt[0].onset - (g[-1].onset + g[-1].dur) == m[5] for g, nxt, m in zip(run.groups, run.groups[1:], MOTIF[run.start:]))  # the rests too
@@ -888,6 +1016,10 @@ def main():
                 first, last = numbers(run.start, run.length)
                 label = f"First {last - first + 1} notes, another key"
                 note = key_difference(run, same_rhythm)
+            if len(members) > 1:
+                levels_of = ", ".join(str(m[0]) for m in sorted(members, key=lambda m: m[0]))
+                label += f", joined with {len(members) - 1} more"
+                note = " ".join(filter(None, [note, f"This joins {len(members)} passages (levels {levels_of}) that overlap, or lie within {MERGE_GAP} measure{'' if MERGE_GAP == 1 else 's'} of each other."]))
             unique = f"{act.work[6:]}-{a:.3f}"
             while unique in {o["id"] for o in occurrences}:  # overlapping passages may begin at the same note
                 unique += f"-L{level}"
@@ -896,27 +1028,31 @@ def main():
                 scene=next((sc for s, e, sc in act.scenes if s <= a <= e + 0.001), None), label=label, note=note,
                 libretto=[dict(kind="sung", person=p, text=x, **({"translation": translations[x]} if x in translations else {}))
                           for s, e, p, x in act.singing if s < b and e >= a],
-                notation=dict(musicxml=excerpt(run.shown, act.measures, act.rests, tempo)), **{"from": a, "to": b}))
-            wholes[unique] = dict(musicxml=full_excerpt(run, act.measures, tempo))
-            untranslated |= {l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l}
+                notation=dict(musicxml=excerpt(whole.shown, act.measures, act.rests, tempo)), **{"from": a, "to": b}))
+            wholes[unique] = dict(musicxml=full_excerpt(whole, act.measures, tempo))
+            untranslated.update(l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l)
             print(f"level {level}  {act.work:10s} measure {a:9.3f}  {label}")
-    # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
+        # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
+        occurrences.append(original_occurrence(width / 2))
+        order = {s["act"]: i for i, s in enumerate(sections)}
+        occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
+        return occurrences, wholes
+
     width = round(sum(s["to"] - s["from"] for s in sections) * 0.04)
     sections.insert(0, dict(id="original", opera="", act=ORIGINAL_ACT, label="Original", short="Orig", original=True, **{"from": 0, "to": width}))
-    occurrences.append(original_occurrence(width / 2))
-    order = {s["act"]: i for i, s in enumerate(sections)}
-    occurrences.sort(key=lambda o: (order[o["act"]], o["from"]))
-
+    entries = [(level, run, act) for level, found in sorted(found_at.items()) for run, act in found]
+    groups = join_overlapping(entries, MERGE_GAP)
+    occurrences, wholes = build(groups)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(dict(format=1, motif=motif_block(), levels=levels(), sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
     with open(args.out.with_suffix(".full.json"), "w", encoding="utf-8") as f:  # the page loads it when the viewer asks for the full score
         json.dump(dict(format=1, occurrences=wholes), f, ensure_ascii=False, separators=(",", ":"))
-    print(f"{len(occurrences)} occurrences written to {args.out}")
-    for text in sorted(untranslated):
-        print(f"no English in {translations_path.name} for: {text}")
+    print(f"{len(occurrences)} occurrences written to {args.out} ({len(entries)} passages joined into {len(groups)} examples)")
     if listed:
         write_index()
+    for text in sorted(untranslated):
+        print(f"no English in {translations_path.name} for: {text}")
 
 
 if __name__ == "__main__":

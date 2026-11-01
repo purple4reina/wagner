@@ -3,7 +3,7 @@
  "motif": {
   "id": "erda",
   "name": "Erda",
-  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.",
+  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note. Passages that overlap, or lie within 1 measure of each other, are joined into one; the level is that of the closest.",
   "source": {
    "author": "Stewart Spencer and Barry Millington (eds.)",
    "title": "Wagner's Ring of the Nibelung: A Companion",
@@ -198,8 +198,8 @@
    "act": "WWV086A",
    "level": 1,
    "scene": 4,
-   "label": "Exact match",
-   "note": null,
+   "label": "Exact match, joined with 1 more",
+   "note": "This joins 2 passages (levels 1, 1) that overlap, or lie within 1 measure of each other.",
    "libretto": [
     {
      "kind": "sung",
@@ -215,30 +215,9 @@
     }
    ],
    "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"3472\"><attributes><divisions>256</divisions><key><fifths>4</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"50.2\" /></direction><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"3473\"><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>512</duration><type>half</type><staff>1</staff><notations /></note></measure><measure number=\"3474\"><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note></measure></part></score-partwise>"
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"3472\"><attributes><divisions>256</divisions><key><fifths>4</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"49.2\" /></direction><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"3473\"><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>512</duration><type>half</type><staff>1</staff><notations /></note></measure><measure number=\"3474\"><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"3475\"><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>512</duration><type>half</type><staff>1</staff><notations /></note></measure><measure number=\"3476\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>512</duration><voice>1</voice><type>half</type><stem>up</stem><staff>1</staff><notations /></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>up</stem><staff>1</staff></note></measure></part></score-partwise>"
    },
    "from": 3472.0,
-   "to": 3474.875
-  },
-  {
-   "id": "A-3474.000",
-   "act": "WWV086A",
-   "level": 1,
-   "scene": 4,
-   "label": "Exact match",
-   "note": null,
-   "libretto": [
-    {
-     "kind": "sung",
-     "person": "Erda",
-     "text": "wie alles wird, wie alles sein wird –",
-     "translation": "how everything will be, how everything will come to be –"
-    }
-   ],
-   "notation": {
-    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"3474\"><attributes><divisions>256</divisions><key><fifths>4</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"48.6\" /></direction><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"3475\"><note><pitch><step>G</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>512</duration><type>half</type><staff>1</staff><notations /></note></measure><measure number=\"3476\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>512</duration><voice>1</voice><type>half</type><stem>up</stem><staff>1</staff><notations /></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>up</stem><staff>1</staff></note></measure></part></score-partwise>"
-   },
-   "from": 3474.0,
    "to": 3476.75
   },
   {
