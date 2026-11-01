@@ -118,7 +118,7 @@ Sources:
 
 - The notes are copies of the notes in `01_RawData/score_musicxml`. The clef, key signature, time signature, octave, rhythm, accidentals, stems, beams and ties are the ones of the score. A clef change inside the excerpt stays where the score has it.
 - The file contains only the measures that the motif spans. The page breaks a long excerpt into lines.
-- The file contains only the notes of the motif, in one staff. It leaves out the other notes and the rests. The builder removes a beam, slur or tuplet bracket when the cut leaves it without a start or an end.
+- The file contains only the notes of the motif, in one staff, and the rests of that staff and voice between its first and its last note. It leaves out the other notes. The builder removes a beam, slur or tuplet bracket when the cut leaves it without a start or an end.
 
 The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an internet connection.
 

@@ -31,7 +31,7 @@ def load(data, motif):
             existing.setdefault(o["act"], []).append((o["from"], o["to"]))
     acts = {}
     for work in [w for _, ws in fm.OPERAS for w in ws]:
-        merged, measures, offsets = fm.read_act(data / "01_RawData" / "score_musicxml" / f"Wagner_{work}.xml")
+        merged, measures, offsets, _ = fm.read_act(data / "01_RawData" / "score_musicxml" / f"Wagner_{work}.xml")
         acts[work] = (fm.index(merged)[0], measures, offsets)
     return acts, existing
 

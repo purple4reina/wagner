@@ -160,8 +160,8 @@ def numbers(start, length):
 
 
 def read_act(path):
-    """Return (tied-note-merged notes of both staves, per-measure info, measure start times)."""
-    raw, measures = [], []
+    """Return (tied-note-merged notes of both staves, per-measure info, measure start times, rests)."""
+    raw, rests, measures = [], [], []
     for pi, part in enumerate(ET.parse(path).getroot().findall("part")):
         div, fifths, ts, clef = 1, 0, (4, 4), ("G", 2, None)
         for mi, m in enumerate(part.findall("measure")):
@@ -192,6 +192,9 @@ def read_act(path):
                             type=e.findtext("type"), dots=len(e.findall("dot")),
                             tie_start="start" in ties, tie_stop="stop" in ties,
                             el=e, div=div, fifths=fifths, ts=ts, clef=clef))
+                    elif e.find("rest") is not None:  # not part of any search, but a passage shows the rests between its notes
+                        rests.append(SimpleNamespace(part=pi, voice=e.findtext("voice") or "1", mi=mi, pos=start, dur=dur,
+                                                     el=e, div=div, fifths=fifths, ts=ts, clef=clef))
                 top = max(top, pos)
             if pi == 0:
                 measures.append(dict(number=int(m.get("number")), nominal=Fraction(ts[0] * 4, ts[1]), fifths=fifths, ts=ts, len=top))
@@ -201,7 +204,7 @@ def read_act(path):
     for m in measures:
         offsets.append(t)
         t += m["len"]
-    for p in raw:
+    for p in raw + rests:
         p.onset = offsets[p.mi] + p.pos
 
     merged, open_ties = [], defaultdict(list)
@@ -220,7 +223,7 @@ def read_act(path):
             if p.tie_start:
                 waiting.append(g)
 
-    return merged, measures, offsets
+    return merged, measures, offsets, rests
 
 
 def index(merged):
@@ -477,11 +480,13 @@ def trim_spans(notes):
                 parent.remove(s)
 
 
-def excerpt(chain, measures):
+def excerpt(chain, measures, rests=()):
     """Return a MusicXML score of the source notes of one match.
 
     The notes are copies of the notes in the score, so the clef, key, time signature, octave, rhythm,
-    accidentals, stems, beams and ties are the ones of the score. Other notes and rests are left out.
+    accidentals, stems, beams and ties are the ones of the score. Other notes are left out. The rests of the same
+    staff and voice between the first and the last note are copied too, so that a melody with rests shows them. A rest
+    that a chosen note sounds through (a chord with a shorter tone) is left out, because the notes follow each other.
     """
     pieces = sorted((p for g in chain for p in g.pieces), key=lambda p: p.onset)
     notes = []
@@ -494,8 +499,21 @@ def excerpt(chain, measures):
         notes.append(n)
     trim_spans(notes)
 
+    start, end = pieces[0].onset, max(p.onset + p.dur for p in pieces)
+    items = list(zip(pieces, notes))
+    for r in rests:
+        gap = all(r.onset + r.dur <= p.onset + TIE_GAP or r.onset >= p.onset + p.dur - TIE_GAP for p in pieces)  # a chord of the voice may sound through a rest
+        if (r.part, r.voice) == chain[0].line and r.onset >= start - TIE_GAP and r.onset + r.dur <= end + TIE_GAP and gap:
+            n = copy.deepcopy(r.el)
+            n.attrib.clear()
+            for tag in ("instrument", "notations"):  # a tuplet mark may lose its other end in the cut
+                for x in n.findall(tag):
+                    n.remove(x)
+            items.append((r, n))
+    items.sort(key=lambda item: item[0].onset)
+
     part, last, mi = ET.Element("part", id="P1"), None, None
-    for p, n in zip(pieces, notes):
+    for p, n in items:
         if p.mi != mi:
             mi = p.mi
             m = ET.SubElement(part, "measure", number=str(measures[mi]["number"]))
@@ -696,10 +714,10 @@ def main():
                 sections.append(dict(id=work[6:], opera=opera, act=work, label="Prologue" if work == "WWV086D-0" else f"Act {work[-1]}",
                                      **({"short": "Pro"} if work == "WWV086D-0" else {}), **{"from": scenes[0][0], "to": end}))
 
-            merged, measures, offsets = read_act(score / f"Wagner_{work}.xml")
+            merged, measures, offsets, rests = read_act(score / f"Wagner_{work}.xml")
             singing = [(float(r["measure_start"]), float(r["measure_end"]), r["person"], r["text"])
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
-            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets)
+            act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests)
             top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
             if top >= 2:
@@ -769,7 +787,7 @@ def main():
                 scene=next((sc for s, e, sc in act.scenes if s <= a <= e + 0.001), None), label=label, note=note,
                 libretto=[dict(kind="sung", person=p, text=x, **({"translation": translations[x]} if x in translations else {}))
                           for s, e, p, x in act.singing if s < b and e >= a],
-                notation=dict(musicxml=excerpt(run.shown, act.measures)), **{"from": a, "to": b}))
+                notation=dict(musicxml=excerpt(run.shown, act.measures, act.rests)), **{"from": a, "to": b}))
             untranslated |= {l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l}
             print(f"level {level}  {act.work:10s} measure {a:9.3f}  {label}")
     # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
