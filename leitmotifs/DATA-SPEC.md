@@ -37,11 +37,10 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 }
 ```
 
-`motif.name` appears in the page title. `motif.description` appears under the title.
+`motif.name` appears in the page title. The page does not show `motif.description`.
 
-`motif.source` is where the melody comes from. The page writes it at the bottom of the detail of the original melody (the
-occurrence with `level` 0) as "Source of the melody: author, *title* (publication)." A passage of the score does not
-show it. The page shows no such line if the field is missing. `tools/find_motif.py` copies it from
+`motif.source` is where the melody comes from. The page writes it in the footer, above the credit for the dataset, as
+"Source of the melody: author, *title* (publication)." The page shows no such line if the field is missing. `tools/find_motif.py` copies it from
 `sources.json`, which holds one citation for each key that a definition names in its `source` field.
 
 ## `levels`
@@ -94,7 +93,7 @@ One entry for each use of the motif. The page draws a mark at `from`.
 |---|---|---|
 | `id` | string | Unique and stable. The page puts it in the URL hash. |
 | `level` | integer, optional | The level of the occurrence. The default is 1. |
-| `act` | string | WorkID. A section with this `act` must contain `from`. The page skips an occurrence that fits no section and reports the count. |
+| `act` | string | WorkID. A section with this `act` must contain `from`. The page skips an occurrence that fits no section. |
 | `from`, `to` | number | Range of the motif in the act. |
 | `scene` | integer or null | Scene number from `ann_score_scenes` at `from`. The page shows nothing for `0` and null. It also shows nothing when the number repeats the section label, as in *Das Rheingold*. |
 | `label` | string, optional | The form of the motif, for example `Horn call, second version`. The page shows it in italics and in the tooltip. |

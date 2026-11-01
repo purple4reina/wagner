@@ -47,8 +47,6 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px
   #motifs a[aria-current] { border-color: var(--motif); }
 }
 h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.015em; margin: clamp(28px, 6vw, 64px) 0 12px; }
-.lede { max-width: 62ch; margin: 0; color: var(--muted); }
-#source { max-width: 56ch; margin: 28px 0 0; color: var(--muted); font-size: .85rem; }
 #status p { margin: 24px 0 0; max-width: 62ch; }
 #status .detail { color: var(--muted); }
 
@@ -108,8 +106,9 @@ h2 { margin: 0; font: 500 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--serif); }
 .stage { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid var(--rule); color: var(--muted); }
 .stage .words { font: italic 1rem/1.5 var(--serif); }
 .quiet { margin: 0; color: var(--muted); }
-footer { max-width: 70ch; margin-top: 56px; color: var(--muted); font-size: .8rem; }
+footer { margin-top: 56px; color: var(--muted); font-size: .8rem; }
 footer a { color: inherit; }
+footer p { margin: 0 0 .8em; }
 </style>
 </head>
 <body>
@@ -121,7 +120,6 @@ footer a { color: inherit; }
 <main>
   <header>
     <h1 id="title">Leitmotif timeline</h1>
-    <p id="lede" class="lede"></p>
   </header>
 
   <div id="status" role="status"></div>
@@ -151,14 +149,16 @@ footer a { color: inherit; }
       <p id="form"></p>
       <p id="note"></p>
       <div id="libretto"></div>
-      <p id="source" hidden></p>
     </div>
   </article>
 
   <footer>
-    Measure positions, sung text, scene boundaries and the piano score come from the Wagner Ring Dataset
-    (Weiß et al., <i>TISMIR</i> 6(1), 2023, <a href="https://doi.org/10.5334/tismir.161">doi:10.5334/tismir.161</a>, CC BY 3.0).
-    The English lines are literal translations that Claude wrote for this page. They are not from a published edition.
+    <p id="source" hidden></p>
+    <p>
+      Measure positions, sung text, scene boundaries and the piano score come from the Wagner Ring Dataset
+      (Weiß et al., <i>TISMIR</i> 6(1), 2023, <a href="https://doi.org/10.5334/tismir.161">doi:10.5334/tismir.161</a>, CC BY 3.0).
+      The English lines are literal translations that Claude wrote for this page. They are not from a published edition.
+    </p>
   </footer>
 </main>
 </div>
@@ -176,7 +176,7 @@ const el = (tag, cls, text) => {
 
 const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
 let motifId = idInUrl(), loadSeq = 0;
-let sections, occs, marks, levelInfo, levelCount, motifSource, current = -1;
+let sections, occs, marks, levelInfo, levelCount, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
 const levelButtons = new Map();
 let fullScore = false, fullData; // whether the viewer wants the whole piano score, and the open motif's full scores by occurrence id (fetched on the first need)
@@ -207,7 +207,7 @@ function clear() {
   stopPlayback();
   seq++; // an engraving that is still being made belongs to the old motif
   tip(-1);
-  sections = []; occs = []; marks = []; motifSource = undefined; fullData = undefined;
+  sections = []; occs = []; marks = []; fullData = undefined;
   current = -1;
   hidden.clear();
   levelButtons.clear();
@@ -275,7 +275,6 @@ function init(data) {
     .map(o => ({ ...o, level: o.level ?? 1, s: sections.findIndex(s => s.act === o.act && o.from >= s.from && o.from < s.to) }))
     .filter(o => o.s >= 0);
   occs = placed.sort((a, b) => a.s - b.s || a.from - b.from);
-  const skipped = data.occurrences.length - occs.length;
   levelInfo = new Map((data.levels || []).map(l => [l.level, l]));
   levelCount = new Set(occs.map(o => o.level)).size;
   freeLevels = [...new Set(occs.filter(o => !sections[o.s].original).map(o => o.level))];
@@ -283,13 +282,9 @@ function init(data) {
   const name = data.motif?.name || motifId;
   document.title = `The ${name} motif`;
   $('title').textContent = document.title;
-  const inScore = occs.filter(o => !sections[o.s].original).length; // the original melody is not an appearance
-  $('lede').textContent = [
-    data.motif?.description,
-    `${inScore} ${inScore === 1 ? 'appearance' : 'appearances'} across the cycle.`,
-    skipped && `${skipped} more fall outside every section and are not shown.`,
-  ].filter(Boolean).join(' ');
-  motifSource = data.motif?.source; // where the melody comes from
+  const cite = data.motif?.source; // where the melody comes from
+  $('source').hidden = !cite;
+  if (cite) $('source').replaceChildren('Source of the melody: ', cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
 
   // A level that the data marks "hidden_by_default" starts switched off, unless the link points into it.
   const linked = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
@@ -503,11 +498,6 @@ function show(o) {
     lib.append(d);
   }
   if (o.libretto !== null && !lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
-
-  // The source is the source of the melody, so only the original shows it. A passage of the score does not come from the book.
-  const cite = s.original && motifSource;
-  $('source').hidden = !cite;
-  if (cite) $('source').replaceChildren('Source of the melody: ', cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
 
   $('full').disabled = !!s.original; // the original melody is not a passage of the score
   $('full').title = s.original ? 'The original melody has no piano score.' : FULL_HINT;
