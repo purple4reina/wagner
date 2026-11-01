@@ -38,7 +38,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px
 #motifs a { display: block; margin-left: -12px; padding: 6px 12px; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; color: var(--ink); text-decoration: none; font: 500 1.1rem/1.3 var(--serif); }
 #motifs a:hover { color: var(--motif); }
 #motifs a[aria-current] { border-left-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); }
-#motifs a:focus-visible { outline: 2px solid var(--motif); outline-offset: 2px; }
+#motifs a:focus { outline: none; } /* no box around a name that was clicked: the open one is marked by its color */
 @media (max-width: 900px) {
   .layout { display: block; }
   #motifs { position: static; max-height: none; overflow: visible; padding: 16px clamp(16px, 4vw, 48px) 0; }
