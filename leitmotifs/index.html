@@ -560,12 +560,12 @@ async function showNotation({ musicxml, svg } = {}, id) {
     }
     const tk = await loadEngine();
     if (mine !== seq) return;
-    if (!tk.loadData(musicxml)) throw new Error('The notation for this appearance could not be read.');
-    if (!svg) box.innerHTML = tk.renderToSVG(1);
-    // The sound comes from the notation. With a Verovio engraving the two always agree, and the notes light up
     // A page as wide as the box (less its border and padding) makes Verovio break a long excerpt into lines
     // that fill the box, and keeps the notes the same size at any width.
     tk.setOptions({ pageWidth: Math.round((box.clientWidth - 42) * 100 / SCALE) });
+    if (!tk.loadData(musicxml)) throw new Error('The notation for this appearance could not be read.');
+    if (!svg) box.innerHTML = tk.renderToSVG(1);
+    // The sound comes from the notation. With a Verovio engraving the two always agree, and the notes light up
     // as they sound. An image has no note ids, so it gets no highlight.
     heard = parseMidi(tk.renderToMIDI());
     timemap = svg ? [] : tk.renderToTimemap();
