@@ -2,7 +2,7 @@
  "format": 1,
  "motif": {
   "id": "valhalla",
-  "name": "Valhalla",
+  "name": "Valhalla (A/B)",
   "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."
  },
  "levels": [

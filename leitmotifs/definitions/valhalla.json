@@ -1,6 +1,6 @@
 {
  "id": "valhalla",
- "name": "Valhalla",
+ "name": "Valhalla (A/B)",
  "lilypond": "aes4 f4. des8 bes,8. des16 des8 es8 f8",
  "core_notes": [1, 8],
  "max_level": 2,

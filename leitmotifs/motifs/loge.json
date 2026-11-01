@@ -2,7 +2,7 @@
  "format": 1,
  "motif": {
   "id": "loge",
-  "name": "Loge",
+  "name": "Loge (B)",
   "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."
  },
  "levels": [
