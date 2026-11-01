@@ -1,0 +1,113 @@
+id	label	theme	same_as
+1407	M	-	363,404,1584,346
+363	M	-	1407,404,1584
+1460	F	-	-
+1585	F	-	15
+591	M	-	-
+404	M	-	1407,363,1584
+1414	F	-	-
+431	F	-	-
+1584	M	-	1407,363,404
+10	M	Rhine, Rhinemaidens, water	92,334,1688
+92	M	Rhine, Rhinemaidens, water	10,334
+0	F	-	1517,284,14,29
+1688	M	Rhinemaidens' calls	10,92
+1517	F	-	0,284
+8	F	-	1401
+1401	F	-	8
+1560	U	world rule, power	-
+15	F	-	454,1585
+284	F	-	0,1517
+101	F	-	-
+19	F	-	-
+131	F	-	-
+130	F	-	-
+1424	F	-	-
+1420	F	-	-
+426	M	Gunther, Gibichungs	-
+1408	F	-	-
+125	F	-	-
+1434	F	-	-
+1523	F	-	-
+37	F	-	-
+212	F	-	-
+1445	F	-	-
+216	F	-	-
+1446	F	-	-
+6	F	-	-
+68	M	Erda, Wanderer, fate and wisdom	-
+346	M	-	1407
+40	F	-	-
+275	M	treaties, spear, Wotan's law	269,102,224,1483,134,138
+287	F	-	-
+1515	F	-	-
+41	F	-	-
+36	F	-	-
+454	F	-	15
+118	F	-	-
+1569	M	trust, loyalty, protection	-
+281	F	-	-
+98	F	-	-
+28	F	-	-
+1572	F	-	-
+14	F	-	29,0
+29	F	-	14,0
+1409	F	-	-
+835	U	-	-
+1419	M	Rheingold, gold	107
+151	M	Rhinemaidens praising the gold	-
+107	M	Rheingold, gold	1419
+1448	F	-	-
+166	F	-	-
+433	F	-	-
+24	F	-	-
+334	M	Rhine, Rhinemaidens, the ring	10,92
+77	F	-	-
+1422	M	world rule, the ring's power	120,579,381
+120	M	world rule, the ring's power	1422
+579	M	forging the ring, power	1422,381
+135	F	-	-
+205	M	Rhinemaidens exulting in gold	-
+142	F	-	-
+381	M	world rule, the ring's power	1422,120,579
+561	M	ring, gold, power	554,555,832
+554	M	ring, love renounced, power	555,561,832
+555	M	ring, love renounced, power	554,561,832
+238	M	love, renunciation, farewell	-
+239	U	-	-
+1481	F	-	-
+832	M	ring, power, greed	554,555,561
+327	M	Wotan musing on power and toil	832,540
+47	M	Valhalla, Wotan, gods' hall	550,546,1683,825
+338	M	knowledge, life and weaving	-
+540	M	Valhalla, Wotan, gods' hall	832,327
+550	M	Valhalla, Wotan, gods' hall	47,546,1683
+1622	F	-	-
+546	M	Valhalla, Wotan, gods' hall	550,1683,47
+1683	M	Valhalla, Wotan, gods' hall	546,550
+825	M	Valhalla, the hall of the gods	47,550
+102	M	treaties, spear, Wotan's law	275,269,224,1483,134,138
+269	M	treaties, spear, Wotan's law	275,102,224,1483,134,138
+224	M	treaties, Wotan bound by contract	269,1483
+1483	M	treaties, Wotan bound by contract	224,269
+1563	M	Wotan, the Wanderer, authority	594
+594	M	Wotan, the Wanderer, authority	1563
+245	U	dwelling, home, blessing	-
+351	F	-	-
+1680	U	oaths, treaties	-
+1583	F	-	-
+409	F	-	-
+247	M	giants, Fasolt and Fafner	-
+134	M	treaties, spear, Wotan's law	275,138,269
+138	M	treaties, spear, Wotan's law	134,275,269
+1450	U	oath, refusal, bargaining	-
+304	F	-	-
+1495	F	-	-
+9	U	-	-
+168	M	treaties, spear, oaths	1451
+1451	M	treaties, spear, oaths	168
+192	M	Freia, golden apples, youth	-
+26	M	oaths, bonds, betrayal	-
+1506	U	-	-
+171	F	-	-
+460	U	distress, calls for help	-

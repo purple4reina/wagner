@@ -1,0 +1,111 @@
+id	label	theme	same_as
+1065	M	nature, Rhine, natural order	1013,1255,1797
+1255	M	Hojotoho, calls, Rhine origin	1065
+1013	M	nature, Rhine, ancestry	1065,1797
+1797	F	-	1065,1013
+1560	M	love, longing, greeting	-
+651	F	-	796,1802
+959	G	-	-
+1632	F	Wälsungen, Siegfried's love	-
+1802	F	-	651,796
+1177	G	Siegmund, weapons, warning	-
+1891	M	fate, Norns, Wotan's wisdom	636,1309
+796	F	-	1802,651
+626	F	-	83,657
+1289	F	laughter, night, Alberich	-
+1346	F	-	-
+1840	M	Rhinemaidens, gold, counsel	-
+1184	U	Loge, power, fortune	-
+617	M	Rhinemaidens, gold, awakening	1704,970,953
+1704	M	laughing, love, wending	617,970,953,1705
+970	M	smiling, gold, glory	617,1704,953
+953	M	Rhine gleam, offering drink	617,1704,970
+1382	M	Heiajaheia, Rhinemaidens' call	835,1355
+835	M	Wallala call, Rhinemaidens, heroes	1355,1041,1382
+1355	M	Wallala call, Walhall, heroes	835,1041
+1041	M	Heiajaheia, gold, farewell	835,1355
+1309	M	ring, fate, giants' fall	636,1891
+1978	F	-	-
+1705	M	greeting, strangers, Rhine	1704
+1844	F	-	-
+1098	F	-	2038
+2038	F	-	1098
+1837	M	rescue, Rhine, Gibichungs	-
+239	M	Erda, ending, downfall	-
+1860	M	Walhall, the castle, gods' fate	-
+1718	M	contracts, treaties, Wotan's spear	641
+1777	M	toil, care, ring's curse	1808
+1808	F	Wanderer calls, compulsion	672,1600,1680,1777
+245	M	noble dwelling, bliss, refuge	-
+1882	G	-	-
+1277	G	Siegfried, freedom, taunting	-
+752	G	-	641
+1680	F	oaths, Freia	1808,672,1600
+1281	M	Fricka, marriage, reproach	-
+641	G	-	1450,765,1718
+1450	F	-	641,765
+765	F	-	641,1450
+9	F	treaty, vassals, oaths	-
+1730	F	-	957,83
+1723	U	giants, ring	-
+929	U	hoard, Tarnhelm, guarding	-
+1178	G	giants, Fafner	-
+1165	M	Freia, Brünnhilde, devotion	-
+1506	M	gods' decline, Freia, gold	-
+460	F	-	-
+1793	M	Walhall, heroes, farewell	-
+820	G	-	-
+749	G	hammer, forging, battle	-
+858	M	Wotan's authority, Walhall	-
+841	G	-	-
+906	M	fire, Loge, flames	-
+1883	M	friendship, marriage, loyalty	-
+1944	M	Brünnhilde's wrath, fear, love	-
+696	M	Wanderer's wisdom, love, depths	-
+1254	G	Mime's grumbling, magic	-
+672	F	-	1600,1808
+1600	F	-	672,1808
+646	G	Froh, Norns, visions	-
+965	G	-	-
+357	F	Wanderer, wandering	-
+461	F	Valkyries laughing	-
+1539	F	forging, Mime	-
+882	F	fire	1923,1326
+1923	F	fire, Valkyries' call	882,1326
+636	M	fate, offering, binding	1309,1891
+1117	M	Nibelung toil, command, hoard	827,1248,1288
+827	M	Nibelheim, Tarnhelm, shame	1117,1248
+1248	M	Tarnhelm, Nibelheim	1117,827
+148	F	-	-
+1288	M	Nibelungs, Mime, wandering	1117
+1326	F	fire, Brünnhilde	882,1923
+1827	F	smelting, servitude	-
+1894	F	Brünnhilde, Walstatt, rescue	-
+1731	M	Mime, upbringing, taunting	-
+1137	M	Hunding, threats, commands	887,1826,1811
+887	M	Hunding, threats, commands	1137,1826
+1826	M	Hunding, challenge, resolve	1137,887
+1722	F	-	685,221,83,657
+685	F	-	1722,221,83,657,957
+221	F	-	1722,685
+957	F	-	685,1730
+83	F	-	657,685,626
+657	F	-	83,685
+1714	M	lament, supplication, pity	-
+1164	G	-	-
+309	G	-	-
+1811	M	Hunding, Hagen, hosts, guarding	1137
+1727	F	-	-
+292	F	-	-
+145	F	wandering, journey	-
+1171	F	-	-
+1833	M	love, memory, counsel	-
+900	F	dwarfs, commands	-
+692	G	-	-
+528	F	-	-
+1739	M	Alberich, plotting, ring desire	-
+713	F	-	-
+1364	F	-	-
+1168	G	Loge, caution	-
+840	M	Walhall, glory, ring	-
+1570	F	-	-

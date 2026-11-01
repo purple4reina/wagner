@@ -1,0 +1,119 @@
+{
+ "id": "LM295",
+ "n_notes": 5,
+ "pattern_notes": [
+  "E4",
+  "C4",
+  "A4",
+  "F4",
+  "D4"
+ ],
+ "pattern_durations": [
+  0.34,
+  1.0,
+  2.0,
+  0.5
+ ],
+ "pattern_intervals": [
+  -4,
+  9,
+  -4,
+  -3
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 1,
+ "reviewer_themes": "Brünnhilde, love offered",
+ "member_candidates": [
+  1186
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 441.916015625,
+   "pos1": 442.875,
+   "measure": 441,
+   "scene": "0",
+   "streams": [
+    "B1"
+   ],
+   "time": "26:23.8",
+   "text": "~ Brünnhilde: Willst du mir Minne schenken,",
+   "notes": [
+    "E4",
+    "C4",
+    "A4",
+    "F4",
+    "D4"
+   ],
+   "durations": [
+    0.34,
+    1.0,
+    2.0,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 379.916015625,
+   "pos1": 380.9375,
+   "measure": 379,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "15:47.0",
+   "text": "Siegfried: von edlerer Zucht am Zaume ein Roß.",
+   "notes": [
+    "F4",
+    "Db4",
+    "Bb4",
+    "Gb4",
+    "Eb4"
+   ],
+   "durations": [
+    0.34,
+    1.0,
+    2.0,
+    0.75
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 455.916015625,
+   "pos1": 456.9375,
+   "measure": 455,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "19:32.3",
+   "text": "Siegfried: Den hütet ein hehres Weib. –",
+   "notes": [
+    "G#4",
+    "E4",
+    "C#5",
+    "A4",
+    "F#4"
+   ],
+   "durations": [
+    0.34,
+    1.0,
+    2.0,
+    0.75
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.4,
+ "strength": "weak",
+ "meets_criteria": true
+}

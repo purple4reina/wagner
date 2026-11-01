@@ -1,0 +1,128 @@
+{
+ "id": "LM190",
+ "n_notes": 6,
+ "pattern_notes": [
+  "C#4",
+  "B3",
+  "G3",
+  "B3",
+  "A3",
+  "G3"
+ ],
+ "pattern_durations": [
+  0.25,
+  0.25,
+  2.0,
+  1.0,
+  0.75
+ ],
+ "pattern_intervals": [
+  -2,
+  -4,
+  4,
+  -2,
+  -2
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Siegfried, questioning, awakening",
+ "member_candidates": [
+  838
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1113.875,
+   "pos1": 1114.9375,
+   "measure": 1113,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "45:57.7",
+   "text": "Siegfried: Viel weiß ich noch nicht,",
+   "notes": [
+    "C#4",
+    "B3",
+    "G3",
+    "B3",
+    "A3",
+    "G3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    2.0,
+    1.0,
+    0.75
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1847.875,
+   "pos1": 1848.9375,
+   "measure": 1847,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "72:01.1",
+   "text": "Siegfried: Kann ich erwecken die Braut? –",
+   "notes": [
+    "F#5",
+    "E5",
+    "C5",
+    "E5",
+    "D5",
+    "C5"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    2.0,
+    1.0,
+    0.75
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 370.875,
+   "pos1": 371.9375,
+   "measure": 370,
+   "scene": "2",
+   "streams": [
+    "B1"
+   ],
+   "time": "15:19.5",
+   "text": "Hagen: Ich kannte dich nur an deiner Kraft.",
+   "notes": [
+    "C4",
+    "Bb3",
+    "Gb3",
+    "Bb3",
+    "Ab3",
+    "Gb3"
+   ],
+   "durations": [
+    0.25,
+    0.25,
+    2.0,
+    1.0,
+    0.75
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 28.5,
+ "strength": "medium",
+ "meets_criteria": true
+}

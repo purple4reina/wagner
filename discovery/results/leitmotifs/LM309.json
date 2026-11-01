@@ -1,0 +1,173 @@
+{
+ "id": "LM309",
+ "n_notes": 5,
+ "pattern_notes": [
+  "A3",
+  "G2",
+  "A3",
+  "G3",
+  "F3"
+ ],
+ "pattern_durations": [
+  0.17,
+  3.0,
+  0.5,
+  0.5
+ ],
+ "pattern_intervals": [
+  -8,
+  8,
+  -1,
+  -1
+ ],
+ "n_occurrences": 5,
+ "n_exact": 5,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "Siegfried forging, bellows",
+ "member_candidates": [
+  2098
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2452.9440104166665,
+   "pos1": 2454.3333333333335,
+   "measure": 2452,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "68:43.8",
+   "text": "Siegfried: Blase, Balg! Blase die Glut!",
+   "notes": [
+    "A3",
+    "G2",
+    "A3",
+    "G3",
+    "F3"
+   ],
+   "durations": [
+    0.17,
+    3.0,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2459.8333333333335,
+   "pos1": 2460.8333333333335,
+   "measure": 2459,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "68:59.7",
+   "text": "~ Siegfried: Wild im Walde wuchs ein Baum,",
+   "notes": [
+    "Bb2",
+    "A1",
+    "Bb2",
+    "A2",
+    "G2"
+   ],
+   "durations": [
+    0.5,
+    1.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2480.9440104166665,
+   "pos1": 2482.3333333333335,
+   "measure": 2480,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "69:47.1",
+   "text": "Siegfried: Blase, Balg! Blase die Glut!",
+   "notes": [
+    "A3",
+    "G2",
+    "A3",
+    "G3",
+    "F3"
+   ],
+   "durations": [
+    0.17,
+    3.0,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-1",
+   "act_short": "C1",
+   "pos0": 2508.9440104166665,
+   "pos1": 2510.3333333333335,
+   "measure": 2508,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "70:49.9",
+   "text": "Siegfried: Blase, Balg! Blase die Glut!",
+   "notes": [
+    "A3",
+    "G2",
+    "A3",
+    "G3",
+    "F3"
+   ],
+   "durations": [
+    0.17,
+    3.0,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-2",
+   "act_short": "D2",
+   "pos0": 651.9166666666666,
+   "pos1": 653.0,
+   "measure": 651,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "25:52.4",
+   "text": "Mannen (T1, T2, B1, B2): da Hagen, der Grimme, so lustig mag sein!",
+   "notes": [
+    "A2",
+    "G#1",
+    "A2",
+    "G2",
+    "F2"
+   ],
+   "durations": [
+    0.25,
+    2.0,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 22.3,
+ "strength": "weak",
+ "meets_criteria": true
+}

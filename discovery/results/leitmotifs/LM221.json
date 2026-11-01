@@ -1,0 +1,128 @@
+{
+ "id": "LM221",
+ "n_notes": 6,
+ "pattern_notes": [
+  "E#4",
+  "C#4",
+  "B#3",
+  "C#4",
+  "A#3",
+  "C#4"
+ ],
+ "pattern_durations": [
+  0.12,
+  1.5,
+  0.5,
+  1.5,
+  0.5
+ ],
+ "pattern_intervals": [
+  -4,
+  -1,
+  1,
+  -3,
+  3
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "fire, Loge, flames",
+ "member_candidates": [
+  906
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 1202.9375,
+   "pos1": 1205.0,
+   "measure": 1202,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "43:29.6",
+   "text": "Loge: Wohl was mit den Riesen dort im Rate du dangst? –",
+   "notes": [
+    "E#4",
+    "C#4",
+    "B#3",
+    "C#4",
+    "A#3",
+    "C#4"
+   ],
+   "durations": [
+    0.12,
+    1.5,
+    0.5,
+    1.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1428.875,
+   "pos1": 1430.0,
+   "measure": 1428,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "73:58.6",
+   "text": "Brünnhilde: An Brünnhildes Felsen fahrt vorbei:",
+   "notes": [
+    "C#4",
+    "A3",
+    "G#3",
+    "A3",
+    "F#3",
+    "A3"
+   ],
+   "durations": [
+    0.5,
+    1.5,
+    0.5,
+    1.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1478.9583333333333,
+   "pos1": 1480.0,
+   "measure": 1478,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "76:05.9",
+   "text": "Brünnhilde: Lockt dich zu ihm die lachende Lohe?",
+   "notes": [
+    "G#4",
+    "E4",
+    "D#4",
+    "E4",
+    "C#4",
+    "E4"
+   ],
+   "durations": [
+    0.25,
+    1.75,
+    0.25,
+    1.75,
+    0.25
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.9,
+ "strength": "weak",
+ "meets_criteria": true
+}

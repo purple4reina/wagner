@@ -1,0 +1,113 @@
+id	label	theme	same_as
+195	M	Wotan's farewell, fire, Brünnhilde asleep	194,1565,371,1573
+63	M	fire, flames, Loge	-
+1814	U	-	-
+1473	U	-	-
+194	M	Wotan's farewell, fire, Brünnhilde asleep	195,1565,371,1573
+1565	M	Wotan's farewell, fire, Brünnhilde asleep	195,194,371,1573
+146	F	-	-
+422	F	-	-
+371	M	Wotan's farewell, fire, Brünnhilde asleep	195,194,1565,1573
+1573	M	Wotan's farewell, fire, Brünnhilde asleep	195,194,1565,371
+277	M	spear, oaths, Wotan's power	1596,1608
+1603	F	fire, glimmering flames	1443,160
+456	F	-	-
+290	F	-	-
+831	M	the Ring, Mime and Alberich scheming	837
+837	M	the Ring, Mime and Alberich scheming	831
+828	M	Alberich's lair, dread	-
+370	M	Siegfried's sword, Nothung	360
+826	M	Mime's toil, Siegfried's haste	-
+1608	M	spear, oaths, Wotan's power	277,1596
+157	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,159,11,608,1510,1677,27,20,7,16
+27	F	Siegfried's horn call, extended sequence	128,258,209,129,203,161,155,609,159,11,157,608,1510,1677,20,7,16
+128	M	Siegfried's horn call, Hoiho	258,209,129,203,161,155,609,159,11,157,608,1510,1677,27,20,7,16
+258	M	Siegfried's horn call, Hoiho	128,209,129,203,161,155,609,159,11,157,608,1510,1677,27,20,7,16
+209	M	Siegfried's horn call, Hoiho	128,258,129,203,161,155,609,159,11,157,608,1510,1677,27,20,7,16
+129	M	Siegfried's horn call, Hoiho	128,258,209,203,161,155,609,159,11,157,608,1510,1677,27,20,7,16
+608	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,159,11,157,1510,1677,27,20,7,16
+203	M	Siegfried's horn call, Hoiho	128,258,209,129,161,155,609,159,11,157,608,1510,1677,27,20,7,16
+161	M	Siegfried's horn call, Hoiho	128,258,209,129,203,155,609,159,11,157,608,1510,1677,27,20,7,16
+155	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,609,159,11,157,608,1510,1677,27,20,7,16
+242	F	-	-
+1566	F	-	-
+1618	F	-	-
+265	F	-	-
+55	F	-	-
+609	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,159,11,157,608,1510,1677,27,20,7,16
+343	M	Mime's complaint and nursing care	-
+259	M	Mime's complaint and nursing care	44,1516,51
+51	M	Mime's complaint and nursing care	44,259,1516,412,1521,13,398
+44	M	Mime's complaint and nursing care	259,1516,51
+1521	M	Mime's complaint and nursing care	412,13,398,51
+383	M	Mime's plight, Nibelungen	243
+393	F	-	-
+91	M	love, longing, Siegfried and Mime	67
+67	M	love, longing, Siegfried and Mime	91
+386	F	-	-
+1516	M	Mime's complaint and nursing care	44,259,51
+600	M	Sieglinde's death, Siegfried's mother	249
+249	M	Sieglinde's death, Siegfried's mother	600
+243	M	Mime's plight, Nibelungen	383
+156	M	Siegfried the hero, deeds	-
+20	F	Siegfried's horn call, extended sequence	128,258,209,129,203,161,155,609,159,11,157,608,1510,1677,27,7,16
+382	F	-	-
+43	M	Siegfried's free exuberance, laughing	-
+398	M	Siegfried forging, descending song	412,1521,13,51
+126	M	Wanderer speaking, riddle contest	-
+39	F	-	-
+278	M	Hoho forging song, Siegfried	347,1567,560,568,599
+347	M	Hoho forging song, Siegfried	278,1567,560,568,599
+97	M	Wotan's spear, world's end, logs	280
+280	M	Wotan's spear, world's end, logs	97
+1596	M	spear, oaths, Wotan's power	277,1608
+601	U	-	-
+70	M	sword Nothung, Mime's riddles	-
+1512	M	Siegfried's sword, oath, deeds	1509,1518
+1567	M	Hoho forging song, Siegfried	278,347,560,568,599
+435	F	-	-
+1691	U	-	-
+1443	F	fire, glimmering flames	1603,160
+268	F	-	-
+262	M	fear, dragon's cave	-
+1526	F	-	-
+360	M	Siegfried's sword, Nothung	370
+65	F	-	-
+248	F	-	-
+7	F	Siegfried's horn call, extended sequence	128,258,209,129,203,161,155,609,159,11,157,608,1510,1677,27,20,16
+1677	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,159,11,157,608,1510,27,20,7,16
+16	F	Siegfried's horn call, extended sequence	128,258,209,129,203,161,155,609,159,11,157,608,1510,1677,27,20,7
+11	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,159,157,608,1510,1677,27,20,7,16
+412	M	Siegfried forging, descending song	1521,13,398,51
+13	F	Siegfried forging, descending sequence	412,1521,398,51
+1518	M	Siegfried's sword, oath, deeds	1509,1512
+279	F	-	-
+108	F	-	-
+560	M	Hoho forging song, Siegfried	278,347,1567,568,599
+568	M	Hoho forging song, Siegfried	278,347,1567,560,599
+599	M	Hoho forging song, Siegfried	278,347,1567,560,568
+1531	F	-	-
+252	M	Fafner, dragon, hoard	1597,595,576
+1597	M	Fafner, dragon, hoard	252,595,576
+551	M	night, darkness, Alberich	-
+73	U	-	-
+1593	U	-	-
+1613	U	-	-
+576	U	dragon, monster, lurking danger	252,1597,595
+214	F	-	-
+160	F	fire, glimmering flames	1603,1443
+595	U	dragon, monster, lurking danger	252,1597,576
+1509	M	Siegfried's sword, oath, deeds	1518,1512
+286	F	forest murmurs, nature	1454
+1454	F	forest murmurs, nature	286
+544	U	-	-
+158	M	Forest Bird	401,50,339
+401	M	Forest Bird	158,50,339
+50	M	Forest Bird	158,401,339
+339	M	Forest Bird	158,401,50
+373	F	Forest Bird accompaniment	403
+403	F	Forest Bird accompaniment	373
+35	F	-	-
+159	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,11,157,608,1510,1677,27,20,7,16
+1510	M	Siegfried's horn call, Hoiho	128,258,209,129,203,161,155,609,159,11,157,608,1677,27,20,7,16
+297	F	-	-

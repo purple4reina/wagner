@@ -1,0 +1,232 @@
+{
+ "id": "LM289",
+ "n_notes": 5,
+ "pattern_notes": [
+  "Db5",
+  "Bb4",
+  "Db5",
+  "Gb4",
+  "F4"
+ ],
+ "pattern_durations": [
+  2.0,
+  4.0,
+  4.0,
+  11.0
+ ],
+ "pattern_intervals": [
+  -3,
+  3,
+  -7,
+  -1
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 1,
+ "reviewer_themes": "Rhinemaidens, Weialala, sun",
+ "member_candidates": [
+  1163
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 587.5,
+   "pos1": 592.75,
+   "measure": 587,
+   "scene": "0",
+   "streams": [
+    "L112"
+   ],
+   "time": "32:13.6",
+   "text": "Siegfried: Wo ich bin bergen sich beide.; Brünnhilde: So verödet mein Felsensaal?; Siegfried: Vereint faßt er uns zwei!",
+   "notes": [
+    "Db5",
+    "Bb4",
+    "Db5",
+    "Gb4",
+    "F4"
+   ],
+   "durations": [
+    2.0,
+    4.0,
+    4.0,
+    11.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 67.18489583333333,
+   "pos1": 67.55555555555556,
+   "measure": 67,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "2:45.9",
+   "text": "~ Woglinde, Wellgunde und Floßhilde: Frau Sonne sendet lichte Strahlen;",
+   "notes": [
+    "C6",
+    "A5",
+    "C6",
+    "F5",
+    "E5"
+   ],
+   "durations": [
+    0.17,
+    0.25,
+    0.25,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 111.18489583333333,
+   "pos1": 111.55555555555556,
+   "measure": 111,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "4:38.7",
+   "text": "Woglinde, Wellgunde und Floßhilde: Weialala, weialala leia leia wallalalaleilalala leilalala la la la lei, walalalala weiala walala weiala lala walala lala leia leia leia leila la la la!",
+   "notes": [
+    "C6",
+    "A5",
+    "C6",
+    "F5",
+    "E5"
+   ],
+   "durations": [
+    0.17,
+    0.25,
+    0.25,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 452.1848958333333,
+   "pos1": 452.55555555555554,
+   "measure": 452,
+   "scene": "1",
+   "streams": [
+    "T2"
+   ],
+   "time": "18:28.3",
+   "text": "Woglinde, Wellgunde und Floßhilde: Weialala weiala la leia leia walla la la lei la la la lei la la la la, la la la la lei, wallalalala weia la wallala weiala la lei wallala la la leia leia leia leia la la la la la la la la",
+   "notes": [
+    "F5",
+    "D5",
+    "F5",
+    "Bb4",
+    "A4",
+    "Bb4",
+    "G4",
+    "A4",
+    "Bb4",
+    "G4",
+    "F4",
+    "E4",
+    "Bb4",
+    "G#4",
+    "A4",
+    "G4",
+    "F4",
+    "E4",
+    "C3",
+    "F3",
+    "A3",
+    "D4",
+    "C4",
+    "A3",
+    "C4",
+    "F3",
+    "A3",
+    "Bb3",
+    "C4",
+    "D4",
+    "E4",
+    "C3",
+    "F3",
+    "A3",
+    "C4",
+    "G4",
+    "F4",
+    "D4",
+    "F4",
+    "A3",
+    "F3",
+    "F4",
+    "E4",
+    "C4",
+    "Bb3",
+    "E4",
+    "G4",
+    "A4"
+   ],
+   "durations": [
+    0.17,
+    0.25,
+    0.25,
+    1.0,
+    0.25,
+    0.25,
+    1.25,
+    0.25,
+    1.0,
+    0.5,
+    1.0,
+    0.5,
+    1.0,
+    0.25,
+    0.25,
+    1.5,
+    1.5,
+    1.5,
+    0.25,
+    0.25,
+    0.16,
+    0.17,
+    0.17,
+    0.25,
+    0.25,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.16,
+    0.17,
+    0.17,
+    0.16,
+    0.17,
+    0.17,
+    0.25,
+    0.25,
+    3.0,
+    1.0,
+    0.5,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.7,
+ "strength": "weak",
+ "meets_criteria": true
+}

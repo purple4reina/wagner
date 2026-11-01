@@ -1,0 +1,128 @@
+{
+ "id": "LM225",
+ "n_notes": 6,
+ "pattern_notes": [
+  "B#2",
+  "B3",
+  "A#3",
+  "G#3",
+  "F#3",
+  "E#3"
+ ],
+ "pattern_durations": [
+  0.62,
+  0.5,
+  0.25,
+  0.25,
+  0.38
+ ],
+ "pattern_intervals": [
+  11,
+  -1,
+  -2,
+  -2,
+  -1
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 2,
+ "n_acts": 2,
+ "n_operas": 2,
+ "reviewer_themes": "fear, Wotan's spear, fearing",
+ "member_candidates": [
+  913
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 1633.96875,
+   "pos1": 1634.46875,
+   "measure": 1633,
+   "scene": "3",
+   "streams": [
+    "L211"
+   ],
+   "time": "65:59.9",
+   "text": "",
+   "notes": [
+    "B#2",
+    "B3",
+    "A#3",
+    "G#3",
+    "F#3",
+    "E#3"
+   ],
+   "durations": [
+    0.62,
+    0.5,
+    0.25,
+    0.25,
+    0.38
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 1637.46875,
+   "pos1": 1637.96875,
+   "measure": 1637,
+   "scene": "3",
+   "streams": [
+    "L211"
+   ],
+   "time": "66:23.5",
+   "text": "",
+   "notes": [
+    "G#2",
+    "G3",
+    "F#3",
+    "E3",
+    "D3",
+    "C#3"
+   ],
+   "durations": [
+    0.62,
+    0.5,
+    0.25,
+    0.25,
+    0.38
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-1",
+   "act_short": "D1",
+   "pos0": 400.5,
+   "pos1": 402.375,
+   "measure": 400,
+   "scene": "2",
+   "streams": [
+    "B2"
+   ],
+   "time": "16:50.1",
+   "text": "Gunther: dein ist mein Erbe, Land und Leut’:; Gunther: hilf, mein Leib, meinem Eide!",
+   "notes": [
+    "E2",
+    "Eb3",
+    "D3",
+    "C3",
+    "Bb2",
+    "A2"
+   ],
+   "durations": [
+    2.0,
+    2.0,
+    1.0,
+    1.0,
+    1.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.6,
+ "strength": "weak",
+ "meets_criteria": true
+}

@@ -1,0 +1,195 @@
+{
+ "id": "LM172",
+ "n_notes": 6,
+ "pattern_notes": [
+  "Eb2",
+  "Fb3",
+  "Eb3",
+  "Db3",
+  "Eb2",
+  "Fb3"
+ ],
+ "pattern_durations": [
+  1.0,
+  0.33,
+  0.33,
+  0.34,
+  1.0
+ ],
+ "pattern_intervals": [
+  8,
+  -1,
+  -1,
+  -6,
+  8
+ ],
+ "n_occurrences": 4,
+ "n_exact": 4,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "Siegfried's deeds, hunting arrival",
+ "member_candidates": [
+  1810
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086C-2",
+   "act_short": "C2",
+   "pos0": 1842.416015625,
+   "pos1": 1843.3125,
+   "measure": 1842,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "71:50.2",
+   "text": "Siegfried: Noch einmal sage mir, holder Sänger:",
+   "notes": [
+    "E#6",
+    "D#6",
+    "E#5",
+    "F#6",
+    "E6",
+    "D6"
+   ],
+   "durations": [
+    0.17,
+    0.17,
+    2.25,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1582.9375,
+   "pos1": 1585.0,
+   "measure": 1582,
+   "scene": "3",
+   "streams": [
+    "B2"
+   ],
+   "time": "75:54.2",
+   "text": "Siegfried: Brach sie mein Bild, so brenn’ ich nun selbst,; Siegfried: sengende Glut in der Flut zu kühlen!",
+   "notes": [
+    "Db3",
+    "Eb2",
+    "Fb3",
+    "Eb3",
+    "Db3",
+    "Eb2",
+    "Fb3",
+    "Eb3",
+    "Db3",
+    "Eb2",
+    "Fb3",
+    "Eb3",
+    "Db3",
+    "Eb2",
+    "Fb3",
+    "Eb3",
+    "D3",
+    "Eb2"
+   ],
+   "durations": [
+    0.25,
+    1.0,
+    0.33,
+    0.33,
+    0.34,
+    1.0,
+    0.33,
+    0.33,
+    0.34,
+    1.0,
+    0.33,
+    0.33,
+    0.34,
+    1.0,
+    0.33,
+    0.33,
+    0.34
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 228.33333333333334,
+   "pos1": 232.0,
+   "measure": 228,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "9:10.6",
+   "text": "Siegfried: dess’ zürnte mir wohl mein Weib.; Floßhilde: Sie ist wohl schlimm?; Wellgunde: Sie schlägt dich wohl?; Woglinde: Ihre Hand fühlt schon der Held!",
+   "notes": [
+    "B2",
+    "C4",
+    "Bb3",
+    "A3",
+    "B2",
+    "C4",
+    "Bb3",
+    "A3",
+    "B2",
+    "C4"
+   ],
+   "durations": [
+    6.0,
+    0.5,
+    0.5,
+    0.5,
+    3.0,
+    0.5,
+    0.5,
+    0.5,
+    4.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 266.0,
+   "pos1": 268.0,
+   "measure": 266,
+   "scene": "1",
+   "streams": [
+    "B2"
+   ],
+   "time": "10:40.0",
+   "text": "Siegfried: Lass’ ich so mich schmäh’n?; Siegfried: Kämen sie wieder zum Wasserrand,",
+   "notes": [
+    "G2",
+    "Ab3",
+    "Gb3",
+    "F3",
+    "G2",
+    "Ab3",
+    "Gb3",
+    "F3",
+    "G2"
+   ],
+   "durations": [
+    3.0,
+    0.5,
+    0.5,
+    0.5,
+    3.0,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 33.0,
+ "strength": "medium",
+ "meets_criteria": true
+}

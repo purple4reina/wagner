@@ -1,0 +1,113 @@
+id	label	theme	same_as
+820	U	Freia, beauty	-
+445	F	-	-
+410	F	-	-
+841	U	-	-
+1410	F	-	1402,1437,1447,176,1607,408
+1402	F	-	1410,1437,1447,176,1607,408
+1437	F	-	1410,1402,1447,176,1607,408
+1447	F	-	1410,1402,1437,176,1607,408
+176	F	-	1410,1402,1437,1447,1607,408
+53	F	-	-
+545	M	Wotan, power, Walhall, the Ring	815,824
+815	M	Wotan, power, Walhall, the Ring	545,824
+1426	F	-	105
+408	F	-	1410,1402,1437,1447,176,1607
+1614	F	-	1591,221,1528,83,227,204,1477,1488,302
+602	M	woman's worth, love, wisdom sought	364,562
+364	M	woman's worth, love, wisdom sought	602,562
+353	M	woman's worth, love, wisdom sought	598
+562	M	woman's worth, love, wisdom sought	602,364
+598	M	woman's worth, love, wisdom sought	353
+1427	F	-	-
+564	M	Nibelungs, hoard, gold, Alberich	-
+1607	F	-	1410,1402,1437,1447,176,408
+57	F	-	-
+1511	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+1605	F	-	-
+1600	U	bellows, forging, coercion	-
+1620	F	-	-
+1484	F	-	-
+1609	F	-	-
+1416	F	-	-
+1485	F	-	178,177,218
+357	U	the Wanderer	-
+461	U	Valkyries laughing and crying out	-
+1457	F	-	-
+827	U	-	-
+148	U	-	-
+361	M	Nibelung toil, servitude, Mime and Alberich	400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+400	M	Nibelung toil, servitude, Mime and Alberich	361,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+72	M	Nibelung toil, servitude, Mime and Alberich	361,400,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+447	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+1591	M	anger, violence, vengeance	221,1528,83,227,204,1477,1488,302,1614
+221	U	anger, violence, vengeance	1591,1528,83,227,204,1477,1488,302,1614
+1528	M	anger, violence, vengeance	1591,221,83,227,204,1477,1488,302,1614
+204	F	-	1591,221,1528,83,227,1477,1488,302,1614
+1477	F	-	1591,221,1528,83,227,204,1488,302,1614
+83	U	anger, violence, vengeance	1591,221,1528,227,204,1477,1488,302,1614
+227	F	-	1591,221,1528,83,204,1477,1488,302,1614
+369	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+1469	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+407	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+1513	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,427,374,822,402,213,387,1508,1472,1471,52,430,71,358
+427	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,374,822,402,213,387,1508,1472,1471,52,430,71,358
+374	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,822,402,213,387,1508,1472,1471,52,430,71,358
+822	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,402,213,387,1508,1472,1471,52,430,71,358
+402	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,213,387,1508,1472,1471,52,430,71,358
+213	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,387,1508,1472,1471,52,430,71,358
+387	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,1508,1472,1471,52,430,71,358
+1508	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1472,1471,52,430,71,358
+1472	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1471,52,430,71,358
+201	F	-	-
+1811	U	-	-
+1578	M	dragon Fafner, the Wurm	-
+1400	M	the Ring, Alberich, curse, freedom	3,1475,553,162,1561,1461
+222	F	-	-
+292	U	-	-
+145	U	-	-
+250	M	Alberich approaching, Nibelheim	-
+302	F	-	1591,221,1528,83,227,204,1477,1488,1614
+1488	F	-	1591,221,1528,83,227,204,1477,302,1614
+358	M	Alberich commanding the Nibelungs	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,71
+428	F	-	-
+528	U	-	-
+42	F	-	183
+183	F	-	42
+105	F	-	1426
+1452	F	-	-
+218	F	-	178,177,1485
+175	F	-	-
+432	F	-	-
+71	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,430,358
+178	F	-	177,218,1485
+1587	F	-	-
+177	F	-	178,218,1485
+840	U	-	-
+430	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,52,71,358
+1471	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,52,430,71,358
+1570	U	-	-
+1690	U	-	-
+1474	F	-	-
+418	F	-	-
+612	U	curse, doom, the Ring	-
+350	M	world rule, Ring power	-
+31	F	-	-
+1616	F	-	-
+170	F	-	-
+1405	F	-	-
+1581	F	-	-
+228	F	-	-
+462	U	-	-
+52	M	Nibelung toil, servitude, Mime and Alberich	361,400,72,447,1511,369,1469,407,1513,427,374,822,402,213,387,1508,1472,1471,430,71,358
+1682	U	-	-
+395	U	-	-
+824	M	Wotan, power, the Ring	545,815
+3	M	the Ring, Alberich, curse, freedom	1400,1475,553,162,1561,1461
+1475	M	the Ring, Alberich, curse, freedom	1400,3,553,162,1561,1461
+553	M	the Ring, Alberich, curse, freedom	1400,3,1475,162,1561,1461
+529	M	curse, doom, the Ring	-
+1561	M	Ring, Fafner, gods in crisis	1400,3,1475,553,162,1461
+162	M	Ring, Fafner, gods in crisis	1400,3,1475,553,1561,1461
+1461	M	Ring, Fafner, gods in crisis	1400,3,1475,553,162,1561
+1681	M	Freia, beauty	-

@@ -1,0 +1,113 @@
+id	label	theme	same_as
+270	F	-	459
+459	F	-	270
+586	U	giants, hoard, Fafner	-
+1530	F	-	-
+375	M	Erda, fate, ancient wisdom	367,82
+82	M	Erda, Wotan's fate, Valhalla	264,1589,572,48,367
+264	M	Erda, Wotan's fate, Valhalla	82,1589,572,48
+1589	M	Erda, Wotan's downfall, death	82,264,572
+572	M	Erda, Wotan's fate, Valhalla's end	82,264,1589
+1514	U	-	-
+48	M	Erda, Wanderer, ancient wisdom	82,367
+559	F	-	1679
+1679	F	-	559
+367	M	Erda, Wanderer, ancient wisdom	375,82,48
+385	M	sword, Notung, Siegmund's heroism	355,388,366,588,362,365
+597	M	Wotan's counsel, heed and obey	-
+283	F	-	-
+2	F	-	-
+215	F	-	123
+123	F	-	215
+1507	F	-	-
+167	F	-	-
+1687	G	betrayal, trickery	-
+219	F	-	-
+132	F	-	-
+1678	M	the Ring, Wotan's guilt and bargain	538
+538	M	the Ring, Wotan's guilt and bargain	1678
+1421	F	-	1487,74,225
+1487	F	-	1421,74,1598,225
+74	F	-	1487,1421,165
+1598	F	-	1487,411
+225	F	-	1421,1487
+165	F	-	74,174
+174	F	-	165,74
+12	F	-	-
+1602	F	-	1428
+411	F	-	1598,1487
+89	M	Wotan, rainbow bridge, grey old man	-
+99	U	riding, glowing horse, flight	54,266
+531	M	names, identity, questions	-
+842	M	Rhinemaidens, Rhine water	149,237
+1479	F	-	-
+149	M	Rhine, Rhinegold, Rhinemaidens	237,842
+237	M	Rhine, Rhinegold, Rhinemaidens	149,842
+106	F	Rhine, water, nature	139
+1418	F	-	76
+76	F	-	1418
+1428	F	-	139,1602
+139	F	-	106,1428
+1520	F	storm, dragon	438
+438	F	storm, dragon	1520
+1491	F	-	-
+440	F	-	-
+1492	F	-	-
+1439	F	-	-
+1580	F	storm	-
+289	F	-	-
+1685	F	-	-
+1568	U	dread, depths, fate	1571
+1571	U	dread, depths, fate	1568
+448	F	storm	1599
+1599	F	storm	448
+587	U	reward, payment, will	-
+147	M	compassion, Siegmund and Sieglinde, Walsung love	834,539,240,536
+834	M	compassion, Siegmund and Sieglinde, Walsung love	147,539,240
+539	M	compassion, Siegmund and Sieglinde, Walsung love	147,834,240
+240	M	compassion, Siegmund and Sieglinde, Walsung love	147,834,539
+1524	U	spring, scattering	94
+266	U	riding, glowing horse, flight	99,54
+54	U	riding, glowing horse, flight	99,266
+172	F	-	294,282
+294	F	-	172,282
+282	F	-	172,294
+593	U	recognition, identity, who am I	-
+536	M	Siegmund, rest, mercy	147,532
+830	M	foreboding, misfortune, dread	-
+416	U	anger, breaking	-
+1579	U	farewell, death, closing eyes	-
+257	M	marriage, oaths, hearth, vows	-
+604	U	Hunding, Hunding's house	-
+532	M	Siegmund, kinship, resemblance	536,147
+839	U	Hunding, Hagen, host authority	-
+285	F	dragon, wounding	1574
+335	M	twins, father, kinship	-
+818	F	-	1574,1590
+1574	F	dragon, wounding, invulnerability	818,285
+1684	U	rest, fate, lot	-
+1494	F	-	-
+1590	F	-	818
+355	M	sword, Notung, Siegmund's heroism	385,388,366,588,362,365
+388	M	sword, Notung, Siegmund's heroism	385,355,366,588,365
+366	M	sword, Notung, Siegmund's heroism	385,355,388,365
+588	M	sword, Notung, Siegmund's heroism	385,365
+362	M	sword, Notung, Siegmund's heroism	385,355
+49	F	-	-
+365	M	sword, Notung, Siegmund's heroism	385,366,388,588
+1619	F	-	-
+86	F	-	-
+23	F	-	-
+1519	F	-	-
+173	F	-	296
+296	F	-	173
+1582	F	-	-
+1436	F	-	1617
+1617	F	-	1436
+451	F	-	-
+457	F	-	-
+380	F	forging, bellows, fire	-
+94	M	spring, love, Siegmund's song	1524
+96	F	-	1586,566
+1586	F	-	96,566
+566	F	-	96

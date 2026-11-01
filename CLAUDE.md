@@ -85,3 +85,9 @@ Every file in `leitmotifs/motifs/` is generated (passages that overlap, or lie w
 The sound of the Play button has the tempo of one recording (`PERFORMANCE` in `tools/find_motif.py`, from its `ann_audio_measure` file), written into each excerpt as a `<sound tempo>`; the original melody plays at 120.
 
 Matching rules, in `tools/find_motif.py`: one staff and voice, tied notes merged, a run of repeated notes counts as one note, octave is ignored, two notes that follow each other cannot start in the same chord (a repeated chord, such as a tremolo, is not a melody), and passages may overlap in time (two are one statement only if they end on the same note of the same line, or start and end together).
+
+## Leitmotif discovery task (`discovery/`)
+
+A long-running task is under way: find leitmotifs in the score without any outside list. **Read `discovery/STATE.md`
+first** (resume point, rules, progress log) and `discovery/METHODOLOGY.md` (decisions). Rule that overrides the section
+above: do not open anything in `leitmotifs/` while working on this task.

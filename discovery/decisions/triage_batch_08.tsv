@@ -1,0 +1,111 @@
+id	label	theme	same_as
+1196	G	-	-
+1690	F	-	-
+1534	M	Wotan's spear, treaties, authority	1670,462
+1974	F	-	-
+612	M	fate, the world, curse	-
+1819	F	-	-
+639	F	greeting, radiant love	1132
+1132	F	-	639
+703	G	-	-
+1159	F	-	-
+1935	F	-	-
+1708	M	the Ring, possession, claim	1729
+1729	M	the Ring, possession, claim	1708
+462	M	Wotan's spear, Alberich, power	1534
+1682	F	binding, bond, fire	-
+2089	G	-	-
+395	M	interrogation, accusation, guilt	-
+928	F	-	1809
+1809	F	-	928,1738
+1738	F	-	1809
+923	M	Wotan's weariness, resignation	-
+1374	G	-	-
+999	M	giants, Fafner, Nibelung wrath	586
+1556	F	-	753
+753	F	-	1556
+586	M	giants, Fafner, hoard	999
+1150	M	longing, gazing at the beloved	1740
+1740	M	longing, gazing at the beloved	1150
+954	M	Rhine, gold, Rhinemaidens	-
+1936	F	-	-
+990	F	-	-
+1514	M	summoning, riding, Hagen's call	-
+1715	F	-	-
+1885	G	-	-
+1698	M	Siegfried, heroic call	-
+1741	F	Siegfried's Heiaho calls	1744
+1744	F	Siegfried's Heiaho calls	1741
+653	M	curse, fate, doom	-
+1999	F	-	-
+2064	G	-	-
+1016	F	-	-
+980	M	rainbow bridge to Valhalla	1128
+1128	M	rainbow bridge to Valhalla	980
+99	F	-	266,54
+963	M	the sword, Nothung	677,1180
+677	M	the sword, Nothung	963,1180
+1180	M	the sword, Nothung	963,677
+1655	F	-	-
+1269	G	-	-
+1824	F	-	-
+479	M	flight, pursuit, driven by fear	747
+747	M	flight, pursuit, storm	479
+763	F	-	724
+724	F	-	763
+1545	F	-	1318
+1318	F	-	1545
+711	F	-	-
+1726	F	-	-
+1568	F	-	1571
+1571	F	dread, primal care	1568
+1661	F	-	-
+719	F	-	-
+899	F	-	-
+1702	F	-	-
+1745	F	-	-
+2093	M	Sieglinde's care, hospitality	-
+902	G	offering a drink	-
+587	G	-	-
+1185	G	-	-
+853	M	love, tenderness, Walsung bond	1280,897
+645	F	-	-
+1524	U	-	-
+1647	F	-	-
+266	F	riding, rush of the Valkyries	54,99
+1670	M	Wotan's spear, treaties, power	1534
+1538	F	-	-
+54	F	riding, rush of the Valkyries	266,99
+593	G	-	-
+1280	M	love, tenderness, Walsung bond	853,897
+725	F	-	-
+1767	F	-	-
+1294	M	death, woe, doom	-
+1125	F	-	-
+1836	M	greeting light, sun, love	-
+1905	F	-	-
+416	F	-	-
+1579	M	Siegfried, Sieglinde's child, redemption	-
+604	F	-	-
+1863	F	-	-
+1758	F	-	-
+1867	M	Hunding, Hagen, hostile men, weapons	1912,839,916,1822,1892,1964,905,995,1841
+1912	M	Hunding, Hagen, hostile men, weapons	1867,839,916,1822,1892,1964,905,995,1841
+839	M	Hunding, Hagen, hostile men, weapons	1867,1912,916,1822,1892,1964,905,995,1841
+897	M	longing, sorrow, Walsung fate	853,1280
+1876	M	Brunnhilde's eternal love	-
+2016	G	-	-
+1154	G	-	-
+889	G	-	-
+901	G	-	-
+916	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,1822,1892,1964,905,995,1841
+1822	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1892,1964,905,995,1841
+1892	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1822,1964,905,995,1841
+1964	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1822,1892,905,995,1841
+1684	G	-	-
+949	M	the sword, father's promise	1008,1869
+1008	M	the sword, father's promise	949,1869
+905	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1822,1892,1964,995,1841
+995	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1822,1892,1964,905,1841
+1841	M	Hunding, Hagen, hostile men, weapons	1867,1912,839,916,1822,1892,1964,905,995
+1869	M	the sword, father's promise	949,1008

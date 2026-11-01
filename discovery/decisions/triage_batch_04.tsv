@@ -1,0 +1,113 @@
+id	label	theme	same_as
+30	F	-	-
+75	F	-	-
+95	F	-	-
+571	M	love, spring, fate	-
+344	M	Sieglinde, Siegmund, pity, birth	331
+1529	F	-	-
+1493	F	-	-
+829	M	Wotan's ravens	-
+413	F	-	-
+1595	U	Brünnhilde's rock, Loge's fire	-
+843	M	Siegmund, Wälsung lineage, name	-
+368	M	sword, Siegmund, Wälsung heroes	359
+191	U	-	-
+372	F	-	-
+1453	F	-	-
+819	M	Sieglinde, ecstasy, love	542
+542	M	Sieglinde, ecstasy, love	819
+90	M	Valkyrie call, Hojotoho	25
+25	M	Valkyrie call, Hojotoho	90
+1459	M	Wotan, spear, battle, arming	-
+288	F	-	-
+32	M	horses, riding, flight, pursuit	812,823
+1438	F	-	-
+1442	U	gods, freedom, heroes	-
+226	F	-	-
+331	M	Sieglinde, birth, sorrow, compassion	344
+443	F	Nothung, sword forging	276
+276	F	Nothung, sword forging	443
+455	F	Rhine maidens, waves	-
+210	U	bonds, service, oaths	-
+816	U	Wotan, world, fate	-
+328	M	Ring, hoard, power	-
+439	M	Wotan's despair, doom of gods	414,458,417,415,272,198,379,605
+414	M	Wotan's despair, doom of gods	439,458,417,415,272,198,379,605
+458	M	Wotan's despair, doom of gods	439,414,417,415,272,198,379,605
+417	M	Wotan's despair, doom of gods	439,414,458,415,272,198,379,605
+1610	M	Wotan, spear, world ash	217,301,274
+352	M	oaths, betrayal, fate	567,557
+153	M	grief, farewell, fate of gods	-
+272	M	Wotan's despair, doom of gods	439,414,458,417,415,198,379,605
+1676	M	Ring, Walhall, Wotan	-
+1476	M	Hagen, Alberich, curse	1478
+1478	U	Wotan, Fafner, Hagen	1476
+301	M	Wotan, spear, power	217,1610,274
+1601	F	-	-
+534	U	Valkyries gathering	-
+377	M	Wotan's spear, power, command	-
+567	M	oaths, betrayal, fate	557,352
+557	M	oaths, betrayal, fate	567,352
+446	G	collapse, destruction, renunciation	-
+181	F	-	180
+180	F	-	181
+267	M	Wotan approaching, storm	1522,1611
+1522	U	summoning, Erda, Wotan	267,1611
+256	M	Wotan, spear, treaties, command	-
+379	M	Wotan's anger, doom of gods	439,414,458,417,415,272,198,605
+590	U	-	-
+436	F	-	-
+349	M	death annunciation, Brünnhilde, fate	356,577,543,833
+1812	U	-	-
+577	M	death annunciation, Siegmund, Walhall	349,356,543,833
+543	M	death annunciation, Walhall	349,356,577,833
+833	M	death annunciation, Walhall	349,356,577,543
+64	F	Valkyrie ride, flying	-
+419	G	-	-
+425	G	-	-
+356	M	death annunciation, Brünnhilde, fate	349,577,543,833
+582	U	Brünnhilde, death, oaths	-
+260	G	-	-
+263	F	-	-
+611	F	-	-
+378	F	-	-
+5	F	-	-
+137	F	-	-
+291	F	-	-
+415	M	Wotan's despair, doom of gods	439,414,458,417,272,198,379,605
+332	U	Valkyrie flight, riding	814
+4	F	Valkyrie ride, flying	66,207,1423
+66	F	Valkyrie ride, flying	4,207,1423
+207	F	Valkyrie ride, flying	4,66,1423
+1423	F	Valkyrie ride, flying	4,66,207
+814	U	Valkyrie flight, riding	332
+823	M	riding, horse, Wotan	812
+812	M	riding, horse, Wotan	823
+274	U	Valkyries riding, Wotan's spear	217,301,1610
+452	F	Nothung, sword forging	-
+1525	U	-	-
+299	F	-	-
+1403	F	-	-
+217	M	Wotan, spear, power	301,1610,274
+1611	U	-	267
+1612	F	-	-
+241	M	Siegfried, hero, sword	81,548
+211	F	-	-
+1588	F	-	-
+220	U	-	-
+198	M	Wotan's despair, doom of gods	439,414,458,417,415,272,379,605
+223	F	-	-
+605	M	Wotan's despair, doom of gods	439,414,458,417,415,272,198,379
+1489	F	-	-
+1615	F	-	-
+1433	M	Brünnhilde, love, tenderness	-
+1604	U	-	-
+81	M	Siegfried, hero, redemption	548,241
+548	M	Siegfried, hero, redemption	81,241
+359	M	sword, Siegmund, Wälsung heroes	368
+69	F	-	-
+537	M	fearless hero, Brünnhilde	-
+253	M	Siegfried, the hero, desire	-
+337	M	fire, Loge, Brünnhilde's rock	-
+1415	F	fire shimmer, magic fire	-
+813	U	Wotan's farewell, Brünnhilde's rock	-

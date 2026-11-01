@@ -1,0 +1,255 @@
+{
+ "id": "LM291",
+ "n_notes": 5,
+ "pattern_notes": [
+  "E3",
+  "C4",
+  "C#4",
+  "D4",
+  "A3"
+ ],
+ "pattern_durations": [
+  0.34,
+  1.5,
+  0.5,
+  0.75
+ ],
+ "pattern_intervals": [
+  5,
+  0,
+  1,
+  -3
+ ],
+ "n_occurrences": 8,
+ "n_exact": 4,
+ "n_scenes": 5,
+ "n_acts": 4,
+ "n_operas": 2,
+ "reviewer_themes": "love, marriage, blessing",
+ "member_candidates": [
+  2014
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 1143.6666666666667,
+   "pos1": 1144.9166666666667,
+   "measure": 1143,
+   "scene": "3",
+   "streams": [
+    "L111",
+    "T1"
+   ],
+   "time": "53:13.0",
+   "text": "Siegmund: die Liebe lockte den Lenz;",
+   "notes": [
+    "F4",
+    "D5",
+    "D#5",
+    "E5",
+    "B4"
+   ],
+   "durations": [
+    1.0,
+    1.5,
+    0.5,
+    0.75
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 1193.6106770833333,
+   "pos1": 1194.8333333333333,
+   "measure": 1193,
+   "scene": "3",
+   "streams": [
+    "T1"
+   ],
+   "time": "55:19.9",
+   "text": "Sieglinde: Doch dich kannt’ ich deutlich und klar;",
+   "notes": [
+    "E4",
+    "C#5",
+    "Cx5",
+    "D#5",
+    "A#4"
+   ],
+   "durations": [
+    0.17,
+    2.5,
+    0.5,
+    0.5
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086B-1",
+   "act_short": "B1",
+   "pos0": 1208.8333333333333,
+   "pos1": 1210.8333333333333,
+   "measure": 1208,
+   "scene": "3",
+   "streams": [
+    "T1"
+   ],
+   "time": "55:53.0",
+   "text": "Sieglinde: hell wie der Tag taucht’ es mir auf;; Sieglinde: wie tönender Schall schlug’s an mein Ohr,",
+   "notes": [
+    "Ab4",
+    "F5",
+    "F#5",
+    "G5",
+    "D5"
+   ],
+   "durations": [
+    0.5,
+    4.5,
+    0.5,
+    0.5
+   ],
+   "match": "approximate (distance 1.0)"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 244.88802083333334,
+   "pos1": 245.91666666666666,
+   "measure": 244,
+   "scene": "1",
+   "streams": [
+    "T1"
+   ],
+   "time": "9:22.4",
+   "text": "Wotan: soll süße Lust deinen Segen dir lohnen,",
+   "notes": [
+    "E3",
+    "C4",
+    "C#4",
+    "D4",
+    "A3"
+   ],
+   "durations": [
+    0.34,
+    1.5,
+    0.5,
+    0.75
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 307.916015625,
+   "pos1": 309.5,
+   "measure": 307,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "11:27.5",
+   "text": "Fricka: denn dein Weib noch scheutest du so,; Fricka: daß der Walküren Schar,; Fricka: und Brünnhilde selbst, deines Wunsches Braut,",
+   "notes": [
+    "A#3",
+    "Fx4",
+    "F4",
+    "G#4",
+    "D#4"
+   ],
+   "durations": [
+    0.34,
+    3.0,
+    1.0,
+    2.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 1629.46875,
+   "pos1": 1630.875,
+   "measure": 1629,
+   "scene": "4",
+   "streams": [
+    "T1"
+   ],
+   "time": "78:05.9",
+   "text": "Siegmund: Wo Sieglinde lebt in Lust und Leid,",
+   "notes": [
+    "E3",
+    "C#4",
+    "Cx4",
+    "D#4",
+    "A#3"
+   ],
+   "durations": [
+    0.12,
+    3.0,
+    1.0,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 550.5,
+   "pos1": 552.875,
+   "measure": 550,
+   "scene": "0",
+   "streams": [
+    "L111"
+   ],
+   "time": "30:46.1",
+   "text": "Brünnhilde: er hört dein Wort:; Brünnhilde: O, bringe Grane oft Brünnhildes Gruß!",
+   "notes": [
+    "F4",
+    "D5",
+    "D#5",
+    "E5",
+    "B4"
+   ],
+   "durations": [
+    2.0,
+    5.0,
+    1.0,
+    1.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-3",
+   "act_short": "D3",
+   "pos0": 1139.5,
+   "pos1": 1141.125,
+   "measure": 1139,
+   "scene": "3",
+   "streams": [
+    "T2"
+   ],
+   "time": "56:28.9",
+   "text": "Gunther: Zurück! Was mir verfiel,; Gunther: sollst nimmer du empfah’n!",
+   "notes": [
+    "Bb2",
+    "F#3",
+    "G3",
+    "Ab3",
+    "Eb3"
+   ],
+   "durations": [
+    0.5,
+    3.0,
+    1.0,
+    2.0
+   ],
+   "match": "approximate (distance 0.0)"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 25.0,
+ "strength": "weak",
+ "meets_criteria": true
+}

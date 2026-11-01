@@ -1,0 +1,197 @@
+{
+ "id": "LM106",
+ "n_notes": 7,
+ "pattern_notes": [
+  "E4",
+  "E3",
+  "C3",
+  "G3",
+  "C3",
+  "B2",
+  "A#2"
+ ],
+ "pattern_durations": [
+  2.0,
+  1.5,
+  0.5,
+  1.0,
+  2.0,
+  1.0
+ ],
+ "pattern_intervals": [
+  -12,
+  -4,
+  7,
+  -7,
+  -1,
+  -1
+ ],
+ "n_occurrences": 5,
+ "n_exact": 5,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 2,
+ "reviewer_themes": "curse, doom, the Ring",
+ "member_candidates": [
+  529
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3129.0,
+   "pos1": 3131.0,
+   "measure": 3129,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "106:56.5",
+   "text": "Alberich: verflucht sei dieser Ring!; Alberich: Gab sein Gold mir Macht ohne Maß,",
+   "notes": [
+    "E4",
+    "E3",
+    "C3",
+    "G3",
+    "C3",
+    "B2",
+    "A#2"
+   ],
+   "durations": [
+    2.0,
+    1.5,
+    0.5,
+    1.0,
+    2.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3619.0,
+   "pos1": 3621.0,
+   "measure": 3619,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "130:55.2",
+   "text": "Wotan: Furchtbar nun erfind’ ich des Fluches Kraft! –",
+   "notes": [
+    "E4",
+    "E3",
+    "C3",
+    "G3",
+    "C3",
+    "B2",
+    "A#2"
+   ],
+   "durations": [
+    2.0,
+    1.5,
+    0.5,
+    1.0,
+    2.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086A",
+   "act_short": "A",
+   "pos0": 3664.25,
+   "pos1": 3666.0,
+   "measure": 3664,
+   "scene": "4",
+   "streams": [
+    "B1"
+   ],
+   "time": "133:47.5",
+   "text": "~ Donner: Schwüles Gedünst schwebt in der Luft; –",
+   "notes": [
+    "Eb3",
+    "Cb3",
+    "Gb3",
+    "Cb3",
+    "Bb2",
+    "A2"
+   ],
+   "durations": [
+    2.5,
+    0.5,
+    1.0,
+    2.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-2",
+   "act_short": "B2",
+   "pos0": 583.0,
+   "pos1": 585.0,
+   "measure": 583,
+   "scene": "1",
+   "streams": [
+    "B1"
+   ],
+   "time": "24:47.7",
+   "text": "~ Fricka: laß ihn dir künden, wie das Los er gekiest.",
+   "notes": [
+    "Db4",
+    "Db3",
+    "Bbb2",
+    "Fb3",
+    "Bbb2",
+    "Ab2",
+    "G2"
+   ],
+   "durations": [
+    2.0,
+    1.5,
+    0.5,
+    1.0,
+    2.0,
+    1.0
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 1243.0,
+   "pos1": 1245.0,
+   "measure": 1243,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "43:18.3",
+   "text": "Wotan: da labte süß dich selige Lust;",
+   "notes": [
+    "Db4",
+    "Db3",
+    "Bbb2",
+    "Fb3",
+    "Bbb2",
+    "Ab2",
+    "G2"
+   ],
+   "durations": [
+    2.0,
+    1.5,
+    0.5,
+    1.0,
+    2.0,
+    1.0
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 38.6,
+ "strength": "medium",
+ "meets_criteria": true
+}

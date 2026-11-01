@@ -1,0 +1,137 @@
+{
+ "id": "LM161",
+ "n_notes": 7,
+ "pattern_notes": [
+  "F#4",
+  "D6",
+  "Bb5",
+  "G5",
+  "E5",
+  "D5",
+  "Bb4"
+ ],
+ "pattern_durations": [
+  6.0,
+  0.5,
+  0.5,
+  0.5,
+  0.5,
+  0.5
+ ],
+ "pattern_intervals": [
+  9,
+  -2,
+  -2,
+  -2,
+  -1,
+  -2
+ ],
+ "n_occurrences": 3,
+ "n_exact": 3,
+ "n_scenes": 3,
+ "n_acts": 3,
+ "n_operas": 3,
+ "reviewer_themes": "",
+ "member_candidates": [
+  1732
+ ],
+ "occurrences": [
+  {
+   "act": "WWV086B-3",
+   "act_short": "B3",
+   "pos0": 624.5,
+   "pos1": 626.625,
+   "measure": 624,
+   "scene": "2",
+   "streams": [
+    "L112"
+   ],
+   "time": "18:44.0",
+   "text": "Gerhilde, Waltraute, Rossweisse und Schwertleite: Wer reizte dich zu rasender Wut?; Grimgerde: daß sie dich reizten zu rasender Wut?; Helmwige, Ortlinde, Siegrune: daß sie dich reizten zu rasender Wut?; Wotan: Wollt ihr mich höhnen? Hütet euch, Freche!",
+   "notes": [
+    "F#4",
+    "D6",
+    "Bb5",
+    "G5",
+    "E5",
+    "D5",
+    "Bb4"
+   ],
+   "durations": [
+    6.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086C-3",
+   "act_short": "C3",
+   "pos0": 1717.6666666666667,
+   "pos1": 1718.27734375,
+   "measure": 1717,
+   "scene": "3",
+   "streams": [
+    "B1"
+   ],
+   "time": "81:05.0",
+   "text": "Brünnhilde: lachend laß uns verderben,; Brünnhilde: lachend zu Grunde gehn!",
+   "notes": [
+    "F4",
+    "A5",
+    "F5",
+    "D5",
+    "B4",
+    "A4",
+    "F4"
+   ],
+   "durations": [
+    1.0,
+    0.16,
+    0.17,
+    0.17,
+    0.16,
+    0.17
+   ],
+   "match": "exact"
+  },
+  {
+   "act": "WWV086D-0",
+   "act_short": "D0",
+   "pos0": 42.0,
+   "pos1": 43.0,
+   "measure": 42,
+   "scene": "0",
+   "streams": [
+    "L212"
+   ],
+   "time": "3:24.9",
+   "text": "~ Zweite Norn: woran spannst du das Seil?",
+   "notes": [
+    "F2",
+    "Cb4",
+    "Ab3",
+    "F3",
+    "D3",
+    "Cb3",
+    "Ab2"
+   ],
+   "durations": [
+    3.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "match": "exact"
+  }
+ ],
+ "shape": "melodic",
+ "ic_bits": 24.5,
+ "strength": "weak",
+ "meets_criteria": true
+}
