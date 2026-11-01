@@ -4,10 +4,13 @@ file that leitmotifs/index.html reads (format: leitmotifs/DATA-SPEC.md).
 The melody comes from a definition file, leitmotifs/definitions/<id>.json, so that the same searches serve
 every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
 and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
-page draws the melody; partial, clef and key_signature are optional, see original_musicxml()).
+page draws the melody; partial, clef and key_signature are optional, see original_musicxml()). It may also set
+openings (see openings()) and max_level, the farthest level to look for. The melody may have rests, tuplets and 32nd
+notes (see ly_tokens()); a note that is not a pitch, a rest or a tuplet is an error.
 
 Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
-passage are in one staff and voice, they follow each other with no gap, and tied notes are merged.
+passage are in one staff and voice, they follow each other with no gap, and tied notes are merged. A rest of the
+melody is a gap of that length: level 1 needs the same rest in the score, the other levels also accept none.
 Two notes that follow each other cannot start in the same chord: a chord that repeats is not a melody.
 Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
 note of the same staff and voice, or they begin and end at the same moments.
@@ -15,7 +18,7 @@ The notation excerpt of a passage is copied from the score (see excerpt()).
 
 usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
-import argparse, copy, csv, json, math, pathlib, re
+import argparse, copy, csv, json, math, pathlib, re, unicodedata
 import xml.etree.ElementTree as ET
 from bisect import bisect_right
 from collections import defaultdict
@@ -32,7 +35,7 @@ ORIGINAL_ACT = "ORIGINAL"  # the act id of the original melody, which is not par
 def openings():
     """Return how many notes the levels after "Other keys" keep: the first notes of the core, longest first.
     The count is in notes of MOTIF, which has repeated notes merged. A definition may set "openings"."""
-    return [k for k in DEF.get("openings", [8, 6]) if k < CORE[1] - CORE[0]]
+    return [k for k in DEF.get("openings", [8, 6]) if k < CORE[1] - CORE[0]] if DEF.get("max_level", 9) >= 5 else []
 
 
 def levels():
@@ -56,7 +59,7 @@ def levels():
         out.append(dict(level=level, name=f"Opening, other keys" if level == 5 else "Shorter opening, other keys",
                         description=f"Only the first notes, {a} to {b} of the phrase, have the same intervals, moved to another key. The rhythm may differ. {chance}",
                         **({"hidden_by_default": True} if level == 4 + len(openings()) else {})))  # the shortest opening is mostly chance
-    return out
+    return [l for l in out if l["level"] <= DEF.get("max_level", 9)]
 
 
 OPERAS = [
@@ -70,40 +73,68 @@ PC_NAME = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭",
 TIE_GAP = Fraction(1, 32)  # Sibelius rounds the durations of tuplets, so tied notes may miss by a little
 
 
-def ly_notes(src):
-    """Return (tie, name, octave marks, denominator, dots) for each note of absolute LilyPond `src`. As in LilyPond,
-    a note without a duration takes the duration of the note before it."""
-    out, last = [], None
-    for tie, name, octave, den, dots in re.findall(r"(~?)([a-g](?:es|is|s)?)([,']*)(\d*)(\.*)", src):
-        if den or last:
-            last = (den, dots) if den else last
+LY_ALTER = {"isis": 2, "is": 1, "s": -1, "es": -1, "ses": -2, "eses": -2}  # the ending of a note name, in semitones
+LY_TOKEN = re.compile(r"\s*(?:\\tuplet\s+(\d+)/(\d+)\s*(\{)|(\})|(~?)([a-g](?:isis|eses|ses|is|es|s)?|r)([,']*)(\d*)(\.*))")
+
+
+def ly_tokens(src):
+    """Return the notes and rests of absolute LilyPond `src`, each as a namespace with: rest, tie, name, octave (the
+    , and ' marks), den, dots, dur (in quarter notes) and tuplet. As in LilyPond, a note without a duration takes the
+    duration of the one before it. In `\\tuplet a/b { ... }` the notes last min(a,b)/max(a,b) of their value, so 2/3 and
+    3/2 both make a triplet; `tuplet` is (start, stop or middle, notes in the tuplet, notes it replaces), else None.
+    Text that is not a note, a rest or a tuplet is an error: a note must never be skipped without a word."""
+    out, last, scale, first, pos, src = [], None, Fraction(1), 0, 0, src.strip()
+    while pos < len(src):
+        m = LY_TOKEN.match(src, pos)
+        if not m:
+            raise ValueError(f"The melody has text that is not a note, a rest or a tuplet: {src[pos:pos + 20]!r}")
+        pos = m.end()
+        a, b, opens, closes, tie, name, octave, den, dots = m.groups()
+        if opens:
+            scale, first = Fraction(min(int(a), int(b)), max(int(a), int(b))), len(out)
+        elif closes:
+            for k, t in enumerate(out[first:]):
+                t.tuplet = ("start" if k == 0 else "stop" if first + k == len(out) - 1 else "middle", scale.denominator, scale.numerator)
+            scale = Fraction(1)
         else:
-            raise ValueError("The first note of the melody needs a duration.")
-        out.append((tie, name, octave, *last))
+            if den and int(den) not in (1, 2, 4, 8, 16, 32, 64):
+                raise ValueError(f"{name}{octave}{den} has a duration that LilyPond does not know.")
+            if den or last:
+                last = (den, dots) if den else last
+            else:
+                raise ValueError("The first note of the melody needs a duration.")
+            den, dots = last
+            out.append(SimpleNamespace(rest=name == "r", tie=bool(tie), name=name, octave=octave, den=int(den), dots=dots, tuplet=None,
+                                       dur=Fraction(4, int(den)) * (2 - Fraction(1, 2 ** len(dots))) * scale))
     return out
 
 
 def parse_ly(src):
-    """Return [(pitch class, duration in quarter notes, MIDI pitch)] for absolute LilyPond notes; ~ merges a tie."""
+    """Return [(pitch class, duration in quarter notes, MIDI pitch, the rest after it in quarter notes)] for the notes of
+    absolute LilyPond `src`. ~ merges a tie. A rest at the start of the melody is dropped."""
     notes = []
-    for tie, name, octave, den, dots in ly_notes(src):
-        midi = 12 * (3 + octave.count("'") - octave.count(",") + 1) + STEP_PC[name[0].upper()] + {"es": -1, "s": -1, "is": 1}.get(name[1:], 0)
-        dur = Fraction(4, int(den)) * (2 - Fraction(1, 2 ** len(dots)))
-        if tie:
-            notes[-1] = (notes[-1][0], notes[-1][1] + dur, notes[-1][2])
+    for t in ly_tokens(src):
+        if t.rest:
+            if notes:
+                notes[-1] = (*notes[-1][:3], notes[-1][3] + t.dur)
+            continue
+        midi = 12 * (3 + t.octave.count("'") - t.octave.count(",") + 1) + STEP_PC[t.name[0].upper()] + LY_ALTER.get(t.name[1:], 0)
+        if t.tie:
+            notes[-1] = (notes[-1][0], notes[-1][1] + t.dur, notes[-1][2], notes[-1][3])
         else:
-            notes.append((midi % 12, dur, midi))
+            notes.append((midi % 12, t.dur, midi, Fraction(0)))
     return notes
 
 
 def collapse(notes):
-    """Merge a run of notes that repeat one pitch into one note, and add the first and last index of its notes."""
+    """Merge a run of notes that repeat one pitch, with no rest between them, into one note. Each result is
+    (pitch class, duration, MIDI pitch, first and last index of its notes, the rest after it)."""
     out = []
-    for i, (pc, dur, midi) in enumerate(notes):
-        if out and out[-1][2] == midi:
-            out[-1] = (pc, out[-1][1] + dur, midi, out[-1][3], i)
+    for i, (pc, dur, midi, gap) in enumerate(notes):
+        if out and out[-1][2] == midi and not out[-1][5]:
+            out[-1] = (pc, out[-1][1] + dur, midi, out[-1][3], i, gap)
         else:
-            out.append((pc, dur, midi, i, i))
+            out.append((pc, dur, midi, i, i, gap))
     return out
 
 
@@ -280,6 +311,7 @@ def find_runs(merged, min_len=6):
     If a chord doubles the line, the run whose intervals are closest to those of the melody wins.
     """
     by, ends = index(merged)
+    min_len = min(min_len, N, CORE[1] - CORE[0])  # a melody, or a core, of fewer notes needs all of them
 
     def extend(line, t, j, prev=None):
         best = []
@@ -290,7 +322,7 @@ def find_runs(merged, min_len=6):
                 if total(group) > MOTIF[j][1]:
                     break
                 if total(group) == MOTIF[j][1]:
-                    c = [group] + (extend(line, t + total(group), j + 1, group[-1]) if j + 1 < N else [])
+                    c = [group] + (extend(line, t + total(group) + MOTIF[j][5], j + 1, group[-1]) if j + 1 < N else [])
                     if not best or (len(c), -shape_error(c, j)) > (len(best), -shape_error(best, j)):
                         best = c
         return best
@@ -304,7 +336,7 @@ def find_runs(merged, min_len=6):
     runs.sort(key=lambda r: (-r[0], shape_error(r[2], r[1])))
     seen, kept = set(), []
     for _, j, c in runs:
-        phrase_start = c[0][0].onset - sum(m[1] for m in MOTIF[:j])  # where MOTIF would begin, if this run were its start
+        phrase_start = c[0][0].onset - sum(m[1] + m[5] for m in MOTIF[:j])  # where MOTIF would begin, if this run were its start
         if phrase_start not in seen:
             seen.add(phrase_start)
             kept.append(make_run(by, ends, c, j))
@@ -333,8 +365,9 @@ def find_core(merged, transposed=False, wrong=0, length=None):
                 if lo + i + 1 == hi:
                     yield [group]
                 else:
-                    for rest in follow(line, group[-1].onset + group[-1].dur, i + 1, group[-1], errors + (not right), allowed):
-                        yield [group] + rest
+                    for gap in sorted({0, MOTIF[lo + i][5]}):  # a rest of the melody may be missing in the score
+                        for rest in follow(line, group[-1].onset + group[-1].dur + gap, i + 1, group[-1], errors + (not right), allowed):
+                            yield [group] + rest
 
     # Passages may overlap. Starts at the repeats of the first note give the same statement, and so does
     # the same statement in two staves, so each statement is kept once, at its earliest start.
@@ -505,32 +538,41 @@ def original_musicxml():
 
     The score has the time and the pickup that the definition gives, and its clef ("clef": "bass", else treble) and
     key signature ("key_signature": the number of sharps, or minus the number of flats, else none). It has one
-    tie for each ~ of the melody. A note that crosses a barline becomes two tied notes. The notes shorter than a
-    quarter note in one beat are beamed.
+    tie for each ~ of the melody. A note or a rest that crosses a barline becomes two (the notes tied). The notes
+    shorter than a quarter note in one beat are beamed. A tuplet gets its bracket.
     """
     original = DEF["original"]
     beats, unit = map(int, original["time"].split("/"))
-    bar = 16 * beats // unit  # sixteenth notes in a bar
-    group = 6 if unit == 8 and beats % 3 == 0 else 16 // unit  # sixteenth notes in a beat; a beam stops at the end of a beat
-    kinds = {16: ("whole", 0), 12: ("half", 1), 8: ("half", 0), 6: ("quarter", 1), 4: ("quarter", 0), 3: ("eighth", 1), 2: ("eighth", 0), 1: ("16th", 0)}
-    sixteenths = lambda den, dots: int(Fraction(16, int(den)) * (2 - Fraction(1, 2 ** len(dots))))
-    pickup = sixteenths(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
-    tokens = ly_notes(DEF["lilypond"])
-    notes, pos = [], (bar - pickup) % bar  # pos counts sixteenth notes from the start of the first bar
-    for i, (tie, name, octave, den, dots) in enumerate(tokens):
-        pitch = (name[0].upper(), {"es": -1, "s": -1, "is": 1}.get(name[1:], 0),
-                 3 + octave.count("'") - octave.count(",") + original["octaves_up"])
-        tied_on = i + 1 < len(tokens) and bool(tokens[i + 1][0])
-        remaining, pieces = sixteenths(den, dots), []
-        while remaining:
-            room = min(remaining, bar - pos % bar)  # up to the next barline
-            while room:
-                part = next(v for v in kinds if v <= room)  # the longest note value that fits
-                pieces.append((part, pos))
-                room, remaining, pos = room - part, remaining - part, pos + part
+    tokens = ly_tokens(DEF["lilypond"])
+    s = (2 if any(t.den == 32 for t in tokens) else 1) * (3 if any(t.tuplet for t in tokens) else 1)  # units in a sixteenth note: 32nd notes and triplets need finer ones
+    bar = 16 * s * beats // unit  # units in a bar
+    group = (6 if unit == 8 and beats % 3 == 0 else 16 // unit) * s  # units in a beat; a beam stops at the end of a beat
+    kinds = {v * s: k for v, k in [(24, ("whole", 1)), (16, ("whole", 0)), (14, ("half", 2)), (12, ("half", 1)), (8, ("half", 0)), (7, ("quarter", 2)),
+                                   (6, ("quarter", 1)), (4, ("quarter", 0)), (3, ("eighth", 1)), (2, ("eighth", 0)), (1, ("16th", 0))]}
+    if s % 2 == 0:
+        kinds[s // 2] = ("32nd", 0)
+    units = lambda den, dots: int(Fraction(16 * s, int(den)) * (2 - Fraction(1, 2 ** len(dots))))  # the written value of a note
+    pickup = units(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
+    notes, pos = [], (bar - pickup) % bar  # pos counts units from the start of the first bar
+    for i, t in enumerate(tokens):
+        pitch = None if t.rest else (t.name[0].upper(), LY_ALTER.get(t.name[1:], 0),
+                                     3 + t.octave.count("'") - t.octave.count(",") + original["octaves_up"])
+        tied_on = i + 1 < len(tokens) and tokens[i + 1].tie
+        written, span = units(t.den, t.dots), int(t.dur * 4 * s)
+        if t.tuplet:  # a note of a tuplet keeps its written value and is never split
+            pieces, pos = [(written, pos)], pos + span
+        else:
+            remaining, pieces = span, []
+            while remaining:
+                room = min(remaining, bar - pos % bar)  # up to the next barline
+                while room:
+                    part = next(v for v in kinds if v <= room)  # the longest note value that fits
+                    pieces.append((part, pos))
+                    room, remaining, pos = room - part, remaining - part, pos + part
         for k, (part, at) in enumerate(pieces):
-            notes.append(dict(pitch=pitch, sixteenths=part, pos=at, measure=at // bar, tie_stop=bool(tie) if k == 0 else True,
-                              tie_start=True if k < len(pieces) - 1 else tied_on))
+            notes.append(dict(pitch=pitch, units=part, span=span if t.tuplet else part, pos=at, measure=at // bar, tuplet=t.tuplet,
+                              tie_stop=pitch is not None and (t.tie if k == 0 else True),
+                              tie_start=pitch is not None and (True if k < len(pieces) - 1 else tied_on)))
 
     run = []
     def beam_run():
@@ -538,9 +580,10 @@ def original_musicxml():
             n["beam"] = "begin" if j == 0 else "end" if j == len(run) - 1 else "continue"
         run.clear()
     for n in notes:
-        if run and not (n["sixteenths"] < 4 and n["pos"] // group == run[-1]["pos"] // group):
+        beamable = n["pitch"] is not None and n["units"] < 4 * s
+        if run and not (beamable and n["pos"] // group == run[-1]["pos"] // group):
             beam_run()
-        if n["sixteenths"] < 4:
+        if beamable:
             run.append(n)
     beam_run()
 
@@ -548,22 +591,26 @@ def original_musicxml():
     signature = {step: 1 if fifths > 0 else -1 for step in ("FCGDAEB"[:fifths] if fifths > 0 else "BEADGCF"[:-fifths])}
     measures, in_effect = defaultdict(str), {}  # in_effect: the accidental of a pitch in the bar, as the reader remembers it
     for n in notes:
-        step, alter, octave = n["pitch"]
-        kind, dots = kinds[n["sixteenths"]]
+        kind, dots = kinds[n["units"]]
         if n["pos"] % bar == 0 or n["pos"] == bar - pickup:
             in_effect = {}
-        accidental = ""
-        if not n["tie_stop"] and in_effect.get((step, octave), signature.get(step, 0)) != alter:  # a note tied from the last bar needs none
-            accidental = f"<accidental>{ {-1: 'flat', 1: 'sharp', 0: 'natural'}[alter] }</accidental>"
-            in_effect[(step, octave)] = alter
-        measures[n["measure"]] += (f"<note><pitch><step>{step}</step>{f'<alter>{alter}</alter>' if alter else ''}<octave>{octave}</octave></pitch>"
-                                   f"<duration>{n['sixteenths']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
+        accidental, what = "", "<rest/>"
+        if n["pitch"] is not None:
+            step, alter, octave = n["pitch"]
+            if not n["tie_stop"] and in_effect.get((step, octave), signature.get(step, 0)) != alter:  # a note tied from the last bar needs none
+                accidental = f"<accidental>{ {-2: 'flat-flat', -1: 'flat', 0: 'natural', 1: 'sharp', 2: 'double-sharp'}[alter] }</accidental>"
+                in_effect[(step, octave)] = alter
+            what = f"<pitch><step>{step}</step>{f'<alter>{alter}</alter>' if alter else ''}<octave>{octave}</octave></pitch>"
+        place, actual, normal = n["tuplet"] or (None, 0, 0)
+        notations = ('<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"]
+                     + {"start": '<tuplet type="start" bracket="yes"/>', "stop": '<tuplet type="stop"/>'}.get(place, ""))
+        measures[n["measure"]] += (f"<note>{what}<duration>{n['span']}</duration>" + '<tie type="stop"/>' * n["tie_stop"] + '<tie type="start"/>' * n["tie_start"]
                                    + f"<voice>1</voice><type>{kind}</type>" + "<dot/>" * dots + accidental
+                                   + (f"<time-modification><actual-notes>{actual}</actual-notes><normal-notes>{normal}</normal-notes></time-modification>" if place else "")
                                    + (f'<beam number="1">{n["beam"]}</beam>' if n.get("beam") else "")
-                                   + ("<notations>" + '<tied type="stop"/>' * n["tie_stop"] + '<tied type="start"/>' * n["tie_start"] + "</notations>"
-                                      if n["tie_stop"] or n["tie_start"] else "") + "</note>")
+                                   + (f"<notations>{notations}</notations>" if notations else "") + "</note>")
     clef = "<sign>F</sign><line>4</line>" if original.get("clef") == "bass" else "<sign>G</sign><line>2</line>"
-    attributes = (f"<attributes><divisions>4</divisions><key><fifths>{fifths}</fifths></key><time><beats>{beats}</beats><beat-type>{unit}</beat-type></time>"
+    attributes = (f"<attributes><divisions>{4 * s}</divisions><key><fifths>{fifths}</fifths></key><time><beats>{beats}</beats><beat-type>{unit}</beat-type></time>"
                   f"<clef>{clef}</clef></attributes>")
     first = 0 if pickup else 1  # the number of the first measure: 0 for a pickup bar
     body = "".join(f'<measure number="{m + first}"{" implicit=" + chr(34) + "yes" + chr(34) if m == 0 and pickup else ""}>{attributes if m == 0 else ""}{xml}</measure>'
@@ -580,7 +627,7 @@ def original_occurrence(at):
     key = f"{words.get(abs(sig), abs(sig))} {'sharp' if sig > 0 else 'flat'}{'' if abs(sig) == 1 else 's'} in the key signature" if sig else "no key signature"
     return dict(
         id="original", act=ORIGINAL_ACT, level=0, scene=None, label="The original",
-        note=(f"The melody as you gave it, {words.get(up, up)} octave{'' if up == 1 else 's'} higher, " if up else "The melody as you gave it, ")
+        note=(f"The melody as you gave it, {words.get(abs(up), abs(up))} octave{'' if abs(up) == 1 else 's'} {'higher' if up > 0 else 'lower'}, " if up else "The melody as you gave it, ")
              + f"engraved from your notes. {f'It starts with a pickup of {pickups.get(partial, partial)}' if partial else 'It has no pickup'}, "
              f"the bars are in {DEF['original']['time']}, and the score has a {DEF['original'].get('clef', 'treble')} clef and {key}. It is not a passage of the score.",
         libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": at, "to": at + 1})
@@ -595,7 +642,8 @@ def write_index():
     """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file."""
     folder = ROOT / "leitmotifs" / "motifs"
     found = [load_definition(p.stem) for p in DEFINITIONS.glob("*.json") if (folder / p.name).exists()]
-    listing = [dict(id=d["id"], name=d["name"]) for d in sorted(found, key=lambda d: d["name"])]
+    plain = lambda name: "".join(c for c in unicodedata.normalize("NFD", name) if not unicodedata.combining(c)).casefold()
+    listing = [dict(id=d["id"], name=d["name"]) for d in sorted(found, key=lambda d: plain(d["name"]))]
     (folder / "index.json").write_text(json.dumps(dict(motifs=listing), ensure_ascii=False, indent=1), encoding="utf-8")
 
 
@@ -652,10 +700,14 @@ def main():
             singing = [(float(r["measure_start"]), float(r["measure_end"]), r["person"], r["text"])
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
             act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets)
+            top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
-            cores += [(run, act) for run in find_core(merged)]
-            wrongs += [(run, act) for run in find_core(merged, wrong=1)]
-            keys += [(run, act) for run in find_core(merged, transposed=True)]
+            if top >= 2:
+                cores += [(run, act) for run in find_core(merged)]
+            if top >= 3:
+                wrongs += [(run, act) for run in find_core(merged, wrong=1)]
+            if top >= 4:
+                keys += [(run, act) for run in find_core(merged, transposed=True)]
             for k in shorts:
                 shorts[k] += [(run, act) for run in find_core(merged, transposed=True, length=k)]
 
@@ -690,7 +742,8 @@ def main():
                 return act.measures[mi]["number"] + round(float((t - act.offsets[mi]) / act.measures[mi]["nominal"]), 3)
 
             a, b = locate(run.shown[0].onset), locate(run.shown[-1].onset + run.shown[-1].dur)
-            same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:]))
+            same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:])) and all(
+                nxt[0].onset - (g[-1].onset + g[-1].dur) == m[5] for g, nxt, m in zip(run.groups, run.groups[1:], MOTIF[run.start:]))  # the rests too
             if level == 1:
                 first, last = numbers(run.start, run.length)
                 label = "Exact match" if run.length == N else f"Closest match: {last - first + 1} of {len(IDEAL)} notes"

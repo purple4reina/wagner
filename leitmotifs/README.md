@@ -35,13 +35,17 @@ The hand-written inputs are `definitions/*.json` and `translations.json`. Nothin
 ## Add a leitmotif
 
 1. Write `definitions/<id>.json`. It holds `id`, `name`, `lilypond` (the melody in absolute LilyPond notes; as in
-   LilyPond, a note without a duration takes the duration of the note before it, but rests are not supported),
+   LilyPond, a note without a duration takes the duration of the note before it; rests, double dots, 32nd notes,
+   double sharps and flats, and `\tuplet 2/3 { ... }` work, and any other text is an error),
    `core_notes` (the first and the last note, counted from 1, that levels 2 and 3 look for) and `original`
    (`octaves_up`, `time` and `partial`: how the page draws the melody; leave out `partial` if there is no pickup; add
    `"clef": "bass"` and `key_signature`, the number of sharps or minus the number of flats, if it does not have a
    treble clef and no key signature). Copy `definitions/siegfried.json`, or `definitions/gold.json` for a bass clef.
    Optional: `openings`, how many notes each "Opening, other keys" level keeps (the default is `[8, 6]`). Use fewer
    for a melody whose first notes are a common figure, such as a scale: `definitions/wotans-spear.json` has `[8]`.
+   Optional: `max_level`, the farthest level to look for. A melody of fewer than about 9 notes finds mostly
+   coincidences at levels 3 and 4 (and the search is slow), so `definitions/erda.json` has `2`.
+   A rest of the melody is a gap in the score: level 1 needs the same rest, the other levels also accept none.
 2. Run `python3 -I tools/find_motif.py <id>`. Open the page with `?motif=<id>`.
 3. The finder lists each sung line that has no English. Add the English to `translations.json`, which all
    leitmotifs share, and run the finder again.

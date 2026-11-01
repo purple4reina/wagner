@@ -118,6 +118,8 @@ def main():
     ap.add_argument("--motif-file", dest="motif_file", type=pathlib.Path, help="default: leitmotifs/motifs/<id>.json")
     args = ap.parse_args()
     fm.use(fm.load_definition(args.motif))
+    if any(m[5] for m in fm.MOTIF):
+        print("note: the melody has rests. This script leaves them out, so its counts are only a rough guide.")
     pcs, durs = [m[0] for m in fm.MOTIF], [m[1] for m in fm.MOTIF]  # the melody with repeated notes collapsed
     lo, hi = fm.CORE
     core = pcs[lo:hi]
