@@ -14,6 +14,9 @@
   its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
   one entry for each definition that has a motif file, in the order of the names.
 
+- `motifs/also.json` tells the page which other leitmotifs are near each example (see below). Without it the page has no "Also present".
+  `tools/link_motifs.py` writes it from all the motif files, so run it after `tools/find_motif.py`.
+
 The page ignores fields that this document does not list.
 
 ## Positions
@@ -159,6 +162,26 @@ The keys are the `id` values of the occurrences. `musicxml` is a standalone Musi
   notes in the accent color (purple) all the time, and not only while they sound.
 - It has the same tempo direction as `notation.musicxml`, so the Play button plays the whole score at the tempo of the recording. The page
   highlights each note while it sounds: a note of the leitmotif is orange inside a purple ring, and any other note is orange.
+
+## Also present
+
+`motifs/also.json` holds, for each example, the other leitmotifs that have an example nearby. The page lists them under the measures of
+the example, as "Also present". Each name opens that example of the other leitmotif.
+
+```json
+{ "format": 1, "also": { "gold": { "A-552.333": [
+  { "motif": "sword", "name": "Sword", "id": "A-554.000", "level": 2, "closeness": "Same core pitches" } ] } } }
+```
+
+`also` maps a motif `id` to an occurrence `id` to a list. An example with no entry has nothing nearby.
+
+- Nearby means: the same act, and an overlap between the measures that the page shows for the two examples (`floor(from)` to
+  `ceil(to) - 1`), where the measures of the first example are widened by one measure on each side (`REACH`).
+- Only an example that the timeline of its own leitmotif shows at the start counts. A level with `hidden_by_default` is left out.
+  The example that is looked at can be of any level.
+- A leitmotif is listed once, with its closest example (the lowest level, then the nearest in time). The list goes from the closest level
+  to the farthest. The original melody has no entry, and it is nobody's neighbor.
+- `closeness` is the `name` of the level of the other example, as its own file gives it.
 
 ## Example
 

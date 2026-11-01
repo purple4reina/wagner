@@ -31,7 +31,8 @@ The script runs these steps in order. You can run each step alone.
 |---|---|---|
 | 1. Fetch the dataset | `python3 -I tools/fetch_from_zenodo.py --only 01_RawData/score_musicxml/ --only 02_Annotations/ann_score_scenes/ --only 02_Annotations/ann_score_singing/ --only 02_Annotations/ann_audio_measure/` | 209 files in `data/` (about 185 MB). The script skips this step if the files are there. |
 | 2. Find the passages | `python3 -I tools/find_motif.py siegfried` | `motifs/siegfried.json` and `motifs/siegfried.full.json` (the whole piano score of each passage). Passages that overlap, or lie within one measure of each other (`MERGE_GAP`), are one example, also across staves and voices. It has the level of the closest of them, and its notes are those of all of them. |
-| 3. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
+| 3. Link the leitmotifs | `python3 -I tools/link_motifs.py` | `motifs/also.json`: for each example, the other leitmotifs that have an example in its measures or the measure before or after (`REACH`). Run it again after any leitmotif changes. The page shows them under "Also present". |
+| 4. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 
 The hand-written inputs are `definitions/*.json` and `translations.json`. Nothing else is typed in.
 

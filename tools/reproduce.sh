@@ -4,7 +4,8 @@
 #
 #   1. fetch the dataset files that the finder reads (209 files, about 185 MB), if they are not on disk
 #   2. find the passages of every leitmotif in leitmotifs/definitions, write leitmotifs/motifs/<id>.json and <id>.full.json
-#   3. write the test file leitmotifs/motifs/sample.json
+#   3. find the leitmotifs that have an example near each example, write leitmotifs/motifs/also.json
+#   4. write the test file leitmotifs/motifs/sample.json
 #
 # Needs python3, and network access for step 1.
 # The hand-written inputs are leitmotifs/definitions/*.json and leitmotifs/translations.json.
@@ -36,6 +37,9 @@ for definition in leitmotifs/definitions/*.json; do
   python3 -I tools/find_motif.py "$(basename "$definition" .json)" --data "$data"
 done
 
-echo "== 3. the test file"
+echo "== 3. the leitmotifs near each example"
+python3 -I tools/link_motifs.py
+
+echo "== 4. the test file"
 python3 -I tools/make_sample.py --data "$data"
 echo "done"

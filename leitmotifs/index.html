@@ -99,6 +99,13 @@ h2 { margin: 0; font: 500 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--serif); }
 .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 4px 0 0; color: var(--muted); }
 .chip { display: inline-flex; align-items: center; gap: 8px; padding: 1px 10px 1px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); font-size: .8rem; }
 .chip .swatch { height: 12px; margin: 0; }
+#also { margin-top: 20px; }
+#also h3 { margin: 0 0 6px; color: var(--muted); font: 600 .75rem/1.4 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+#also ul { margin: 0; padding: 0; list-style: none; }
+#also li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 10px; }
+#also a { color: var(--ink); font: 500 1.1rem/1.5 var(--serif); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+#also a:hover { color: var(--motif); text-decoration-color: currentColor; }
+#also small { color: var(--muted); font-size: .8rem; }
 .what { display: grid; align-content: start; gap: 12px; }
 .what p { margin: 0; }
 #form { color: var(--motif); font: italic 1.1rem/1.4 var(--serif); }
@@ -138,6 +145,10 @@ footer p { margin: 0 0 .8em; }
     <div class="where">
       <h2 id="where"></h2>
       <p class="meta" id="measures"></p>
+      <div id="also" hidden>
+        <h3 title="The leitmotifs that have an example in these measures, or in the measure before or after them">Also present</h3>
+        <ul></ul>
+      </div>
     </div>
     <div class="what">
       <p id="form"></p>
@@ -185,6 +196,7 @@ const el = (tag, cls, text) => {
 const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
 let motifId = idInUrl(), loadSeq = 0;
 let sections, occs, marks, levelInfo, levelCount, cite, current = -1; // cite: where the melody comes from
+let also = {}; // the other leitmotifs near each example, by motif and occurrence id (motifs/also.json; empty until it arrives)
 const hidden = new Set(); // the levels that the viewer switched off
 const levelButtons = new Map();
 let fullScore = false, fullData; // whether the viewer wants the whole piano score, and the open motif's full scores by occurrence id (fetched on the first need)
@@ -231,10 +243,10 @@ const markCurrent = () => document.querySelectorAll('#motifs a').forEach(a => {
   a.scrollIntoView({ block: 'nearest' }); // a long list scrolls inside the sidebar
 });
 
-// Open the motif `id` in place, and add it to the history, so that the back button comes back.
-function openMotif(id) {
+// Open the motif `id` in place, at its example `occ` if there is one, and add it to the history, so that the back button comes back.
+function openMotif(id, occ) {
   if (id === motifId) return;
-  history.pushState(null, '', `?motif=${encodeURIComponent(id)}`);
+  history.pushState(null, '', `?motif=${encodeURIComponent(id)}${occ ? `#${encodeURIComponent(occ)}` : ''}`);
   load(id);
 }
 
@@ -260,12 +272,17 @@ fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; wit
   })
   .catch(() => {});
 
+fetch('motifs/also.json', { cache: 'no-cache' }) // what is near each example; without it the page has no "Also present"
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(data => { also = data.also || {}; if (current >= 0) showAlso(occs[current]); })
+  .catch(() => {});
+
 // A plain click on a name switches in place. A click that opens a new tab or window keeps its normal job.
-$('motifs').addEventListener('click', e => {
+for (const list of [$('motifs'), $('also')]) list.addEventListener('click', e => {
   const link = e.target.closest('a');
   if (!link || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   e.preventDefault();
-  openMotif(link.dataset.id);
+  openMotif(link.dataset.id, link.dataset.occ);
 });
 addEventListener('popstate', () => { if (idInUrl() !== motifId) load(idInUrl()); }); // the back and forward buttons
 
@@ -489,6 +506,7 @@ function show(o) {
     chip.append(swatch, `${levelLabel(o.level)}${info?.name ? `: ${info.name}` : ''}`);
     measures.append(chip);
   }
+  showAlso(o);
   if (s.original && cite) { // the original melody has no passage to describe: it shows where the melody comes from
     $('form').textContent = 'Source';
     $('note').replaceChildren(cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
@@ -512,6 +530,20 @@ function show(o) {
   $('full').disabled = !!s.original; // the original melody is not a passage of the score
   $('full').title = s.original ? 'The original melody has no piano score.' : FULL_HINT;
   showNotation(o.notation ?? undefined, o.id);
+}
+
+// List the other leitmotifs that have an example in the measures of `o`, or next to them. Each name opens that example.
+function showAlso(o) {
+  const found = sections[o.s].original ? [] : also[motifId]?.[o.id] || [];
+  $('also').hidden = !found.length;
+  $('also').querySelector('ul').replaceChildren(...found.map(f => {
+    const item = el('li'), link = el('a', '', f.name);
+    link.href = `?motif=${encodeURIComponent(f.motif)}#${encodeURIComponent(f.id)}`;
+    link.dataset.id = f.motif;
+    link.dataset.occ = f.id;
+    item.append(link, el('small', '', f.closeness));
+    return item;
+  }));
 }
 
 let engine, seq = 0;
