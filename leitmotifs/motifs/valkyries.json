@@ -2,7 +2,7 @@
  "format": 1,
  "motif": {
   "id": "valkyries",
-  "name": "Valkyries",
+  "name": "Walküre",
   "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.",
   "source": {
    "author": "Stewart Spencer and Barry Millington (eds.)",
