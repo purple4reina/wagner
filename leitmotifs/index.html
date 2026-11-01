@@ -109,7 +109,7 @@ footer a { color: inherit; }
 <body>
 <div class="layout">
 <nav id="motifs" aria-label="Leitmotifs" hidden>
-  <p>Leitmotifs</p>
+  <p title="The up and down arrow keys pick the leitmotif above and below">Leitmotifs</p>
   <ul></ul>
 </nav>
 <main>
@@ -205,8 +205,24 @@ function clear() {
 }
 
 const markCurrent = () => document.querySelectorAll('#motifs a').forEach(a => {
-  if (a.dataset.id === motifId) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  if (a.dataset.id !== motifId) return a.removeAttribute('aria-current');
+  a.setAttribute('aria-current', 'page');
+  a.scrollIntoView({ block: 'nearest' }); // a long list scrolls inside the sidebar
 });
+
+// Open the motif `id` in place, and add it to the history, so that the back button comes back.
+function openMotif(id) {
+  if (id === motifId) return;
+  history.pushState(null, '', `?motif=${encodeURIComponent(id)}`);
+  load(id);
+}
+
+// The motif `d` places down the list (up if d is negative). The list ends at the first and the last motif.
+function jump(d) {
+  const ids = [...document.querySelectorAll('#motifs a')].map(a => a.dataset.id);
+  const to = ids[ids.indexOf(motifId) + d];
+  if (to) openMotif(to);
+}
 
 fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; without it the page has no sidebar
   .then(r => r.ok ? r.json() : Promise.reject())
@@ -228,9 +244,7 @@ $('motifs').addEventListener('click', e => {
   const link = e.target.closest('a');
   if (!link || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   e.preventDefault();
-  if (link.dataset.id === motifId) return;
-  history.pushState(null, '', link.getAttribute('href'));
-  load(link.dataset.id);
+  openMotif(link.dataset.id);
 });
 addEventListener('popstate', () => { if (idInUrl() !== motifId) load(idInUrl()); }); // the back and forward buttons
 
@@ -368,6 +382,10 @@ function wire() {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'ArrowLeft') step(-1);
     if (e.key === 'ArrowRight') step(1);
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { // the up and down arrows pick the leitmotif above and below
+      e.preventDefault(); // no page scroll
+      if (!e.repeat) jump(e.key === 'ArrowUp' ? -1 : 1);
+    }
     if (e.key === ' ' && !e.target.closest('input, select, textarea')) { // the space bar starts and stops the sound
       e.preventDefault(); // no page scroll, and no click on a button that has the focus
       if (!e.repeat && !$('play').disabled) $('play').click();
