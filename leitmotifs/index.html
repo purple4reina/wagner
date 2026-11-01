@@ -72,8 +72,10 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 #tip { position: fixed; z-index: 5; transform: translate(-50%, calc(-100% - 10px)); padding: 5px 9px; border-radius: 4px; background: var(--ink); color: var(--paper); font-size: .8rem; line-height: 1.3; white-space: nowrap; pointer-events: none; }
 #tip small { display: block; opacity: .75; }
 
-/* the clicked appearance */
-#detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
+/* the clicked appearance: its text in three columns, above the notation, which runs the full width */
+#detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.25fr); gap: 28px clamp(24px, 3vw, 48px); margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
+#detail > .score { grid-column: 1 / -1; }
+@media (max-width: 1100px) { #detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } #detail > .where { grid-column: 1 / -1; } }
 @media (max-width: 760px) { #detail { grid-template-columns: 1fr; } }
 .notation { display: flex; align-items: center; justify-content: center; min-height: 160px; padding: 20px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
 .notation svg { max-width: 100%; height: auto; fill: currentColor; }
@@ -83,22 +85,23 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 .notation .note[id^="motif-"] { color: var(--motif); } /* a note of the leitmotif in the full score */
 .notation .note.playing { color: var(--sel); }
 .notation .note[id^="motif-"].playing { stroke: var(--motif); stroke-width: 150px; stroke-linejoin: round; paint-order: stroke; } /* sounding, and still part of the leitmotif: orange inside a purple ring */
-.player { display: flex; gap: 8px; margin-top: 14px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 14px; }
+.player { display: flex; gap: 8px; }
 .player button[aria-pressed="true"] { border-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); }
-.stepper { display: flex; align-items: center; gap: 16px; margin-top: 14px; color: var(--muted); font-size: .9rem; }
-.stepper span { flex: 1; text-align: center; }
+.stepper { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: .9rem; }
+.stepper span { min-width: 7ch; text-align: center; }
 button { padding: 6px 14px; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--ink); font: inherit; cursor: pointer; }
 button:hover:not(:disabled) { border-color: var(--motif); color: var(--motif); }
 button:disabled { opacity: .4; cursor: default; }
 button:focus-visible { outline: 2px solid var(--motif); outline-offset: 2px; }
 h2 { margin: 0; font: 500 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--serif); }
-.meta { margin: 4px 0 0; color: var(--muted); }
-.chip { display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; padding: 1px 10px 1px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); font-size: .8rem; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 4px 0 0; color: var(--muted); }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 1px 10px 1px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); font-size: .8rem; }
 .chip .swatch { height: 12px; margin: 0; }
-#form { margin: 18px 0 0; color: var(--motif); font: italic 1.1rem/1.4 var(--serif); }
-#note { max-width: 56ch; margin: 12px 0 0; }
+.what { display: grid; align-content: start; gap: 12px; }
+.what p { margin: 0; }
+#form { color: var(--motif); font: italic 1.1rem/1.4 var(--serif); }
 #form:empty, #note:empty { display: none; }
-#libretto { max-width: 56ch; margin-top: 28px; }
 .who { font-weight: 600; font-size: .85rem; }
 .sung { margin-bottom: 14px; }
 .words { margin: 2px 0 0; font: 1.2rem/1.5 var(--serif); white-space: pre-line; }
@@ -131,24 +134,28 @@ footer p { margin: 0 0 .8em; }
   <div id="tip" hidden></div>
 
   <article id="detail" hidden>
-    <div>
-      <div class="notation" id="notation" aria-live="polite"></div>
-      <div class="player">
-        <button type="button" id="play" disabled aria-label="Play the melody that the notation shows" title="Play or stop (space bar)">Play</button>
-        <button type="button" id="full" aria-pressed="false">Full score</button>
-      </div>
-      <div class="stepper">
-        <button type="button" id="prev">Previous</button>
-        <span id="count"></span>
-        <button type="button" id="next">Next</button>
-      </div>
-    </div>
-    <div>
+    <div class="where">
       <h2 id="where"></h2>
       <p class="meta" id="measures"></p>
+    </div>
+    <div class="what">
       <p id="form"></p>
       <p id="note"></p>
-      <div id="libretto"></div>
+    </div>
+    <div id="libretto"></div>
+    <div class="score">
+      <div class="notation" id="notation" aria-live="polite"></div>
+      <div class="controls">
+        <div class="player">
+          <button type="button" id="play" disabled aria-label="Play the melody that the notation shows" title="Play or stop (space bar)">Play</button>
+          <button type="button" id="full" aria-pressed="false">Full score</button>
+        </div>
+        <div class="stepper">
+          <button type="button" id="prev">Previous</button>
+          <span id="count"></span>
+          <button type="button" id="next">Next</button>
+        </div>
+      </div>
     </div>
   </article>
 
@@ -165,6 +172,7 @@ footer p { margin: 0 0 .8em; }
 
 <script>
 const VEROVIO = 'https://cdn.jsdelivr.net/npm/verovio@4.3.1/dist/verovio-toolkit-wasm.js';
+const SCALE = 60; // the size of the engraving in percent
 const FULL_HINT = 'Show and play the whole piano score of these measures, with the notes of the leitmotif in purple';
 const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => {
@@ -480,7 +488,6 @@ function show(o) {
     const info = levelInfo.get(o.level), chip = el('span', 'chip'), swatch = el('i', 'swatch');
     swatch.style.setProperty('--lv', o.level);
     chip.title = info?.description || '';
-    if (s.original) chip.style.marginLeft = '0'; // no measures text before it
     chip.append(swatch, `${levelLabel(o.level)}${info?.name ? `: ${info.name}` : ''}`);
     measures.append(chip);
   }
@@ -514,9 +521,8 @@ function loadEngine() {
     document.head.append(s);
   }).then(() => {
     const tk = new verovio.toolkit();
-    // A fixed page width makes Verovio break a long excerpt into lines that fit the panel.
-    tk.setOptions({ breaks: 'auto', pageWidth: 760, adjustPageHeight: true, svgViewBox: true,
-      scale: 60, header: 'none', footer: 'none', pageMarginLeft: 20, pageMarginRight: 20, pageMarginTop: 20, pageMarginBottom: 20 });
+    tk.setOptions({ breaks: 'auto', adjustPageHeight: true, svgViewBox: true,
+      scale: SCALE, header: 'none', footer: 'none', pageMarginLeft: 20, pageMarginRight: 20, pageMarginTop: 20, pageMarginBottom: 20 });
     return tk;
   });
   return engine;
@@ -557,6 +563,9 @@ async function showNotation({ musicxml, svg } = {}, id) {
     if (!tk.loadData(musicxml)) throw new Error('The notation for this appearance could not be read.');
     if (!svg) box.innerHTML = tk.renderToSVG(1);
     // The sound comes from the notation. With a Verovio engraving the two always agree, and the notes light up
+    // A page as wide as the box (less its border and padding) makes Verovio break a long excerpt into lines
+    // that fill the box, and keeps the notes the same size at any width.
+    tk.setOptions({ pageWidth: Math.round((box.clientWidth - 42) * 100 / SCALE) });
     // as they sound. An image has no note ids, so it gets no highlight.
     heard = parseMidi(tk.renderToMIDI());
     timemap = svg ? [] : tk.renderToTimemap();
