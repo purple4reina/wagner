@@ -1,6 +1,7 @@
 {
  "id": "blow-bellows",
  "name": "Blow Bellows",
+ "source": "companion",
  "lilypond": "a4. bes8 a8 g8 f4. a8 g8 f8 e4. g8 f8 e8 d4.",
  "core_notes": [1, 13],
  "openings": [8],

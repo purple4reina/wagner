@@ -48,6 +48,8 @@ The hand-written inputs are `definitions/*.json` and `translations.json`. Nothin
    Optional: `max_level`, the farthest level to look for. A melody of fewer than about 9 notes finds mostly
    coincidences at levels 3 and 4 (and the search is slow), so `definitions/erda.json` has `2`.
    A rest of the melody is a gap in the score: level 1 needs the same rest, the other levels also accept none.
+   Also `source`, the key of the book or other place that the melody comes from in `sources.json` (`"companion"`:
+   Spencer and Millington, *Wagner's Ring of the Nibelung: A Companion*). The page shows it in the section of the original melody.
 2. Run `python3 -I tools/find_motif.py <id>`. Open the page with `?motif=<id>`.
 3. The finder lists each sung line that has no English. Add the English to `translations.json`, which all
    leitmotifs share, and run the finder again.

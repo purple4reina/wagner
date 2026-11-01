@@ -3,7 +3,12 @@
  "motif": {
   "id": "woodbird-c",
   "name": "Woodbird (C)",
-  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."
+  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.",
+  "source": {
+   "author": "Stewart Spencer and Barry Millington (eds.)",
+   "title": "Wagner's Ring of the Nibelung: A Companion",
+   "publication": "London: Thames & Hudson, 1993; paperback 2000, ISBN 978-0-500-28194-9"
+  }
  },
  "levels": [
   {

@@ -1,6 +1,7 @@
 {
  "id": "woodbird-c",
  "name": "Woodbird (C)",
+ "source": "companion",
  "lilypond": "cis'4. b8 gis8. fis16 e8 cis8 e8 gis8 e8 gis8 b4.",
  "core_notes": [1, 11],
  "openings": [8],

@@ -1,6 +1,7 @@
 {
  "id": "gutrune",
  "name": "Gutrune",
+ "source": "companion",
  "lilypond": "d'4 g4. a8 b4 e4. fis8 g4. gis8 a8 d'8 ~d'8 g4 a8 bes8 b8 ~b8 dis4 e8 fis8 g16 a16 g8",
  "core_notes": [1, 9],
  "openings": [],

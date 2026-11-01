@@ -25,7 +25,10 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 ```json
 {
   "format": 1,
-  "motif": { "id": "siegfried", "name": "Siegfried", "description": "Optional. One sentence." },
+  "motif": {
+    "id": "siegfried", "name": "Siegfried", "description": "Optional. One sentence.",
+    "source": { "author": "Optional.", "title": "Optional.", "publication": "Place: Publisher, year; ISBN." }
+  },
   "levels": [ ],
   "sections": [ ],
   "occurrences": [ ]
@@ -33,6 +36,11 @@ Every position is a score position in the notation of the dataset's `ann_score_*
 ```
 
 `motif.name` appears in the page title. `motif.description` appears under the title.
+
+`motif.source` is where the melody comes from. The page writes it at the bottom of the detail of the original melody (the
+occurrence with `level` 0) as "Source of the melody: author, *title* (publication)." A passage of the score does not
+show it. The page shows no such line if the field is missing. `tools/find_motif.py` copies it from
+`sources.json`, which holds one citation for each key that a definition names in its `source` field.
 
 ## `levels`
 

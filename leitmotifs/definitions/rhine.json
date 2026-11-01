@@ -1,6 +1,7 @@
 {
  "id": "rhine",
  "name": "Rhine",
+ "source": "companion",
  "lilypond": "es4. ~es4 bes8 es'4. ~es'4 g'8 bes'4. ~bes'4 es''8 g''2.",
  "core_notes": [1, 7],
  "max_level": 2,

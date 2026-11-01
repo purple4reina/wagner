@@ -1,6 +1,7 @@
 {
  "id": "redemption",
  "name": "Redemption",
+ "source": "companion",
  "lilypond": "d4. g4. ~g8 fis8 g8 a4. g4 fis8 g2. a,4 r8 r4 r8 g4. ~g8 fis8 g8 a4. g4 fis8 g2.",
  "core_notes": [1, 8],
  "max_level": 2,

@@ -1,6 +1,7 @@
 {
  "id": "walsungs",
  "name": "Wälsungs",
+ "source": "companion",
  "lilypond": "c2 g,8. g,16 c8. d16 es4. d8 g4 \\tuplet 2/3 { g8 fis8 g8 } bes8. c'16 bes2 aes4",
  "core_notes": [1, 11],
  "openings": [8],

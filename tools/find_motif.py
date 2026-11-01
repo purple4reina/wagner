@@ -5,7 +5,7 @@ The melody comes from a definition file, leitmotifs/definitions/<id>.json, so th
 every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
 and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
 page draws the melody; partial, clef and key_signature are optional, see original_musicxml()). It may also set
-openings (see openings()) and max_level, the farthest level to look for. The melody may have rests, tuplets and 32nd
+openings (see openings()), max_level (the farthest level to look for) and source (a key of leitmotifs/sources.json). The melody may have rests, tuplets and 32nd
 notes (see ly_tokens()); a note that is not a pitch, a rest or a tuplet is an error.
 
 Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
@@ -657,6 +657,16 @@ def read_csv(path):
         return list(csv.DictReader(f, delimiter=";"))
 
 
+def motif_block():
+    """Return the "motif" part of a motif file: the id, the name, a description, and the source of the melody. The
+    definition names its source by a key of leitmotifs/sources.json, so that one citation serves every leitmotif."""
+    block = dict(id=DEF["id"], name=DEF["name"],
+                 description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note.")
+    if "source" in DEF:
+        block["source"] = json.loads((ROOT / "leitmotifs" / "sources.json").read_text(encoding="utf-8"))[DEF["source"]]
+    return block
+
+
 def write_index():
     """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file."""
     folder = ROOT / "leitmotifs" / "motifs"
@@ -690,6 +700,7 @@ def main():
                         line["translation"] = translations[line["text"]]
                     else:
                         missing.add(line["text"])
+        data["motif"] = motif_block()
         data["levels"] = levels()
         data["occurrences"] = [original_occurrence(o["from"]) if o["id"] == "original" else o for o in data["occurrences"]]
         args.out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -800,9 +811,7 @@ def main():
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(dict(format=1, motif=dict(id=DEF["id"], name=DEF["name"],
-                                            description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."),
-                       levels=levels(), sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
+        json.dump(dict(format=1, motif=motif_block(), levels=levels(), sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
     print(f"{len(occurrences)} occurrences written to {args.out}")
     for text in sorted(untranslated):
         print(f"no English in {translations_path.name} for: {text}")

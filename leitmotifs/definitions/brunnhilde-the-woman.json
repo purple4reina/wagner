@@ -1,6 +1,7 @@
 {
  "id": "brunnhilde-the-woman",
  "name": "Brünnhilde the Woman",
+ "source": "companion",
  "lilypond": "es4. d32 es32 f32 es32 c'4. g8 bes4 c2",
  "core_notes": [1, 9],
  "openings": [],

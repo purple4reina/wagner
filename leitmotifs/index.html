@@ -48,6 +48,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px
 }
 h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.015em; margin: clamp(28px, 6vw, 64px) 0 12px; }
 .lede { max-width: 62ch; margin: 0; color: var(--muted); }
+#source { max-width: 56ch; margin: 28px 0 0; color: var(--muted); font-size: .85rem; }
 #status p { margin: 24px 0 0; max-width: 62ch; }
 #status .detail { color: var(--muted); }
 
@@ -145,6 +146,7 @@ footer a { color: inherit; }
       <p id="form"></p>
       <p id="note"></p>
       <div id="libretto"></div>
+      <p id="source" hidden></p>
     </div>
   </article>
 
@@ -168,7 +170,7 @@ const el = (tag, cls, text) => {
 
 const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
 let motifId = idInUrl(), loadSeq = 0;
-let sections, occs, marks, levelInfo, levelCount, current = -1;
+let sections, occs, marks, levelInfo, levelCount, motifSource, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
 const visible = i => !hidden.has(occs[i].level);
 
@@ -196,11 +198,11 @@ function clear() {
   stopPlayback();
   seq++; // an engraving that is still being made belongs to the old motif
   tip(-1);
-  sections = []; occs = []; marks = [];
+  sections = []; occs = []; marks = []; motifSource = undefined;
   current = -1;
   hidden.clear();
   for (const id of ['status', 'levels', 'grid']) $(id).replaceChildren();
-  for (const id of ['levels', 'timeline', 'detail']) $(id).hidden = true;
+  for (const id of ['levels', 'timeline', 'detail', 'source']) $(id).hidden = true;
   $('grid').style.gridTemplateColumns = '';
   scrollTo(0, 0);
 }
@@ -276,6 +278,7 @@ function init(data) {
     `${inScore} ${inScore === 1 ? 'appearance' : 'appearances'} across the cycle.`,
     skipped && `${skipped} more fall outside every section and are not shown.`,
   ].filter(Boolean).join(' ');
+  motifSource = data.motif?.source; // where the melody comes from
 
   // A level that the data marks "hidden_by_default" starts switched off, unless the link points into it.
   const linked = occs.findIndex(o => o.id === decodeURIComponent(location.hash.slice(1)));
@@ -468,6 +471,11 @@ function show(o) {
     lib.append(d);
   }
   if (o.libretto !== null && !lines.some(l => l.kind === 'sung')) lib.append(el('p', 'quiet', 'Nobody sings during this passage.'));
+
+  // The source is the source of the melody, so only the original shows it. A passage of the score does not come from the book.
+  const cite = s.original && motifSource;
+  $('source').hidden = !cite;
+  if (cite) $('source').replaceChildren('Source of the melody: ', cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
 
   showNotation(o.notation ?? undefined);
 }

@@ -1,6 +1,7 @@
 {
  "id": "walsungs-woe",
  "name": "Wälsung's Woe",
+ "source": "companion",
  "lilypond": "c2 b,8. c16 a2 f4 d2. ~d8",
  "core_notes": [1, 6],
  "max_level": 2,
