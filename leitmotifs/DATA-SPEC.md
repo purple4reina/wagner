@@ -5,6 +5,8 @@
 - File: `motifs/<id>.json`
 - URL: `index.html?motif=<id>`. The default `<id>` is `siegfried`.
 - The browser blocks `fetch` on a page that it opens from disk. Serve this folder with `python3 -m http.server`.
+- `motifs/<id>.full.json` holds the whole piano score of each passage. The page loads it when the viewer presses "Full score" (see below).
+  `tools/find_motif.py` writes it next to `motifs/<id>.json`. A motif without the file works, but its "Full score" button does nothing.
 - `motifs/sample.json` is a test file. Its sections come from the dataset. Every occurrence in it is made up.
 - `motifs/index.json` is the list of motifs, `{ "motifs": [{ "id": "gold", "name": "Gold" }] }`. The page shows it as links down
   its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
@@ -133,6 +135,27 @@ The page engraves the file with Verovio 4.3.1 from jsDelivr, so it needs an inte
 `svg` is optional. It is the text of an SVG file, for example an engraving that LilyPond made. If it is present, the page shows it in the notation panel instead of the Verovio engraving. In that case `musicxml` only drives the sound. Use it when the notation must look exactly as someone drew it. The page shows the SVG as an image with a `data:` URL. The code and the styles inside the SVG therefore cannot run or change the page. The image fills the width of the panel and is at most 420 pixels high. LilyPond draws black on a transparent background. In a dark color scheme the page inverts the image (`filter: invert(1)`), so that the notation is white on the dark panel. An SVG with other colors gets inverted colors in that scheme, so draw it in black.
 
 The Play button needs no audio data. The page asks Verovio for a MIDI version of the same file and plays it with Web Audio. The sound plays at the tempo of the file: a `<direction>` in the first measure with `<sound tempo="N"/>` (N quarter notes per minute) sets it, and without one the sound plays at 120. Verovio prints such a direction as nothing. `tools/find_motif.py` writes the tempo of one recording (`PERFORMANCE`): the notated length of the passage in quarter notes, divided by the time between its first and its last note in the `ann_audio_measure` file of that recording. The tempo is constant over a passage. The original melody is not in a recording and plays at 120. The page highlights each note while it sounds. An `svg` image has no note ids, so the page does not highlight a note then. The sound has the printed note values of the `musicxml` staff: a tie sounds as one note, and a repeated note sounds again. Verovio ignores a `time-modification` that has no tuplet bracket, so a note with such a marking sounds as long as its printed value, and not as long as its `<duration>`.
+
+## Full score
+
+`motifs/<id>.full.json` holds, for each occurrence, the whole piano score (both staves) of the measures that its `notation` spans. The
+page fetches it the first time the viewer presses "Full score", so the main file stays small. The original melody has no entry, and the
+button is off for it.
+
+```json
+{ "format": 1, "occurrences": { "A-3472.000": { "musicxml": "<string>" } } }
+```
+
+The keys are the `id` values of the occurrences. `musicxml` is a standalone MusicXML file in `score-partwise` form:
+
+- It has the two parts of the piano score, joined by a brace. The notes, rests, ties and beams are copies of `01_RawData/score_musicxml`.
+  The directions (dynamics, words, tempo marks) and the layout of the Sibelius page are left out, as in `notation.musicxml`. The clef,
+  key signature and time signature that are in effect at the first measure are written there.
+- A note that the search matched, which is a part of the passage, has an `id` that starts with `motif-`. The notes around the passage in
+  `notation.musicxml` are only context and have no such id. Verovio keeps the id on the note in the engraving, so the page draws these
+  notes in the accent color (purple) all the time, and not only while they sound.
+- It has the same tempo direction as `notation.musicxml`, so the Play button plays the whole score at the tempo of the recording. The page
+  highlights each note while it sounds: a note of the leitmotif is orange inside a purple ring, and any other note is orange.
 
 ## Example
 

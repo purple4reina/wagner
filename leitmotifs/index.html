@@ -82,8 +82,11 @@ h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -
 .notation .definition-scale { color: inherit; } /* Verovio hard-codes color="black" here */
 .notation img { display: block; width: 100%; height: auto; max-height: 420px; object-fit: contain; } /* an engraving that comes as an image, black on transparent */
 @media (prefers-color-scheme: dark) { .notation img { filter: invert(1); } }
+.notation .note[id^="motif-"] { color: var(--motif); } /* a note of the leitmotif in the full score */
 .notation .note.playing { color: var(--sel); }
-.player { margin-top: 14px; }
+.notation .note[id^="motif-"].playing { stroke: var(--motif); stroke-width: 150px; stroke-linejoin: round; paint-order: stroke; } /* sounding, and still part of the leitmotif: orange inside a purple ring */
+.player { display: flex; gap: 8px; margin-top: 14px; }
+.player button[aria-pressed="true"] { border-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); }
 .stepper { display: flex; align-items: center; gap: 16px; margin-top: 14px; color: var(--muted); font-size: .9rem; }
 .stepper span { flex: 1; text-align: center; }
 button { padding: 6px 14px; border: 1px solid var(--rule); border-radius: 4px; background: none; color: var(--ink); font: inherit; cursor: pointer; }
@@ -134,6 +137,7 @@ footer a { color: inherit; }
       <div class="notation" id="notation" aria-live="polite"></div>
       <div class="player">
         <button type="button" id="play" disabled aria-label="Play the melody that the notation shows" title="Play or stop (space bar)">Play</button>
+        <button type="button" id="full" aria-pressed="false">Full score</button>
       </div>
       <div class="stepper">
         <button type="button" id="prev">Previous</button>
@@ -161,6 +165,7 @@ footer a { color: inherit; }
 
 <script>
 const VEROVIO = 'https://cdn.jsdelivr.net/npm/verovio@4.3.1/dist/verovio-toolkit-wasm.js';
+const FULL_HINT = 'Show and play the whole piano score of these measures, with the notes of the leitmotif in purple';
 const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => {
   const e = document.createElement(tag);
@@ -174,6 +179,7 @@ let motifId = idInUrl(), loadSeq = 0;
 let sections, occs, marks, levelInfo, levelCount, motifSource, current = -1;
 const hidden = new Set(); // the levels that the viewer switched off
 const levelButtons = new Map();
+let fullScore = false, fullData; // whether the viewer wants the whole piano score, and the open motif's full scores by occurrence id (fetched on the first need)
 let freeLevels, startHidden, soloing; // the levels that the viewer can switch (all but the original), the ones that were off at the start, and whether the viewer has picked a level since
 const visible = i => !hidden.has(occs[i].level);
 
@@ -201,7 +207,7 @@ function clear() {
   stopPlayback();
   seq++; // an engraving that is still being made belongs to the old motif
   tip(-1);
-  sections = []; occs = []; marks = []; motifSource = undefined;
+  sections = []; occs = []; marks = []; motifSource = undefined; fullData = undefined;
   current = -1;
   hidden.clear();
   levelButtons.clear();
@@ -422,6 +428,11 @@ function wire() {
   $('prev').onclick = () => step(-1);
   $('next').onclick = () => step(1);
   $('play').onclick = () => playing ? stopPlayback() : startPlayback();
+  $('full').onclick = () => {
+    fullScore = !fullScore;
+    $('full').setAttribute('aria-pressed', String(fullScore));
+    if (current >= 0) showNotation(occs[current].notation ?? undefined, occs[current].id);
+  };
 }
 
 // Stepping skips the appearances of levels that the viewer switched off.
@@ -498,7 +509,9 @@ function show(o) {
   $('source').hidden = !cite;
   if (cite) $('source').replaceChildren('Source of the melody: ', cite.author, ', ', el('i', '', cite.title), ` (${cite.publication}).`);
 
-  showNotation(o.notation ?? undefined);
+  $('full').disabled = !!s.original; // the original melody is not a passage of the score
+  $('full').title = s.original ? 'The original melody has no piano score.' : FULL_HINT;
+  showNotation(o.notation ?? undefined, o.id);
 }
 
 let engine, seq = 0;
@@ -519,9 +532,15 @@ function loadEngine() {
   return engine;
 }
 
+// The full piano scores of the open motif, by occurrence id. The file is fetched when the viewer first asks for a full score.
+const loadFull = () => fullData ??= fetch(`motifs/${encodeURIComponent(motifId)}.full.json`, { cache: 'no-cache' })
+  .then(r => r.ok ? r.json() : {}).then(d => d.occurrences || {}, () => ({}));
+
 // `notation.svg`, if the occurrence has it, is shown instead of the Verovio engraving. It is an image, so
 // its code cannot run and its styles cannot reach the page. `notation.musicxml` then only drives the sound.
-async function showNotation({ musicxml, svg } = {}) {
+// With the full score on, the engraving and the sound are those of the whole piano score of the occurrence `id`,
+// whose notes of the leitmotif have ids that start with "motif-".
+async function showNotation({ musicxml, svg } = {}, id) {
   const box = $('notation'), mine = ++seq;
   stopPlayback();
   heard = [];
@@ -537,6 +556,12 @@ async function showNotation({ musicxml, svg } = {}) {
   }
   if (!musicxml) return;
   try {
+    if (fullScore && !$('full').disabled) {
+      const whole = (await loadFull())[id]?.musicxml;
+      if (mine !== seq) return;
+      if (whole) [musicxml, svg] = [whole, undefined];
+      else { $('full').disabled = true; $('full').title = 'The data has no full score for this passage.'; }
+    }
     const tk = await loadEngine();
     if (mine !== seq) return;
     if (!tk.loadData(musicxml)) throw new Error('The notation for this appearance could not be read.');

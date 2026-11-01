@@ -14,7 +14,8 @@ cd leitmotifs && python3 -m http.server
 Then open `http://localhost:8000/` for the Siegfried motif, or `http://localhost:8000/?motif=sample` for the test file.
 The list down the left side of the page shows every leitmotif that has been analyzed. Click one to open it, or press
 the up and down arrow keys to go to the one above or below. The left and right arrow keys step through the
-appearances of the open motif, and the space bar plays the notation.
+appearances of the open motif, and the space bar plays the notation. The "Full score" button under the notation shows and plays the whole piano
+score of the same measures, with the notes of the leitmotif in purple.
 
 ## Rebuild all generated files
 
@@ -29,7 +30,7 @@ The script runs these steps in order. You can run each step alone.
 | Step | Command | Result |
 |---|---|---|
 | 1. Fetch the dataset | `python3 -I tools/fetch_from_zenodo.py --only 01_RawData/score_musicxml/ --only 02_Annotations/ann_score_scenes/ --only 02_Annotations/ann_score_singing/ --only 02_Annotations/ann_audio_measure/` | 209 files in `data/` (about 185 MB). The script skips this step if the files are there. |
-| 2. Find the passages | `python3 -I tools/find_motif.py siegfried` | `motifs/siegfried.json` |
+| 2. Find the passages | `python3 -I tools/find_motif.py siegfried` | `motifs/siegfried.json` and `motifs/siegfried.full.json` (the whole piano score of each passage) |
 | 3. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 
 The hand-written inputs are `definitions/*.json` and `translations.json`. Nothing else is typed in.

@@ -3,7 +3,7 @@
 # leitmotifs/motifs/*.json (and the dataset files that step 1 lists) and run this script.
 #
 #   1. fetch the dataset files that the finder reads (209 files, about 185 MB), if they are not on disk
-#   2. find the passages of every leitmotif in leitmotifs/definitions, write leitmotifs/motifs/<id>.json
+#   2. find the passages of every leitmotif in leitmotifs/definitions, write leitmotifs/motifs/<id>.json and <id>.full.json
 #   3. write the test file leitmotifs/motifs/sample.json
 #
 # Needs python3, and network access for step 1.

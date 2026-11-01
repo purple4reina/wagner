@@ -15,7 +15,8 @@ Two notes that follow each other cannot start in the same chord: a chord that re
 Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
 note of the same staff and voice, or they begin and end at the same moments.
 The notation excerpt of a passage is copied from the score (see excerpt()). It carries the tempo of one recording
-(see PERFORMANCE), so that the sound of the page plays at the speed of a performance.
+(see PERFORMANCE), so that the sound of the page plays at the speed of a performance. The whole piano score of the same
+measures goes to a second file, <id>.full.json (see full_excerpt()).
 
 usage: python3 -I tools/find_motif.py MOTIF_ID [--data DIR] [--out FILE] [--closest N]
 """
@@ -199,9 +200,10 @@ def read_act(path):
                                                      el=e, div=div, fifths=fifths, ts=ts, clef=clef))
                 top = max(top, pos)
             if pi == 0:
-                measures.append(dict(number=int(m.get("number")), nominal=Fraction(ts[0] * 4, ts[1]), fifths=fifths, ts=ts, len=top))
+                measures.append(dict(number=int(m.get("number")), nominal=Fraction(ts[0] * 4, ts[1]), fifths=fifths, ts=ts, len=top, els=[m]))
             else:
                 measures[mi]["len"] = max(measures[mi]["len"], top)
+                measures[mi]["els"].append(m)  # the <measure> of each part, for full_excerpt()
     offsets, t = [], Fraction(0)
     for m in measures:
         offsets.append(t)
@@ -560,6 +562,71 @@ def excerpt(chain, measures, rests=(), tempo=None):
     return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root, encoding="unicode")
 
 
+STYLE_ATTRS = {"color", "default-x", "default-y", "relative-x", "relative-y", "width", "font-family", "font-size", "font-style",
+               "font-weight", "justify", "valign", "halign"}  # how Sibelius drew the page; the page engraves the music again
+DROPPED = {"print", "direction", "instrument", "lyric", "staff-details", "footnote", "level"}
+
+
+def clean(e):
+    """Remove from the copied element `e` what a full-score excerpt does not need: the page layout, the directions, and the style."""
+    for c in list(e):
+        if c.tag in DROPPED:
+            e.remove(c)
+        else:
+            clean(c)
+    for a in STYLE_ATTRS & set(e.attrib):
+        del e.attrib[a]
+
+
+def full_excerpt(run, measures, tempo=None):
+    """Return a MusicXML score of the whole piano score (both staves) in the measures that the notes of `run.shown` span.
+
+    The measures are copies of the score, so every note, rest, tie and beam is there. The notes that are part of the
+    passage (`run.run`) carry an id that starts with "motif-", so that the page can draw them in color. The directions
+    (dynamics, words and tempo marks) are left out, as in excerpt(). `tempo` is as in excerpt().
+    """
+    pieces = [p for g in run.shown for p in g.pieces]
+    first, last = min(p.mi for p in pieces), max(p.mi for p in pieces)
+    mine = {id(p.el) for g in run.run for p in g.pieces}
+    root = ET.Element("score-partwise", version="3.0")
+    names = ET.SubElement(root, "part-list")
+    brace = ET.SubElement(names, "part-group", type="start", number="1")
+    ET.SubElement(brace, "group-symbol").text = "brace"
+    ET.SubElement(brace, "group-barline").text = "yes"
+    count = 0
+    for k in range(len(measures[0]["els"])):
+        ET.SubElement(ET.SubElement(names, "score-part", id=f"P{k + 1}"), "part-name")
+        part, state = ET.SubElement(root, "part", id=f"P{k + 1}"), {}
+        for mi in range(first):  # the clef, key and time that are in effect where the excerpt starts
+            for a in measures[mi]["els"][k].findall("attributes"):
+                state.update((c.tag, c) for c in a)
+        for mi in range(first, last + 1):
+            src = measures[mi]["els"][k]
+            m = copy.deepcopy(src)
+            for s, d in zip(src.iter("note"), m.iter("note")):
+                if id(s) in mine:
+                    d.set("id", f"motif-{count}")
+                    count += 1
+            clean(m)
+            if mi == first:
+                attributes = ET.Element("attributes")
+                attributes.extend(copy.deepcopy(state[t]) for t in ("divisions", "key", "time", "staves", "clef") if t in state)
+                clean(attributes)
+                m.insert(0, attributes)
+            part.append(m)
+    if tempo:
+        direction = ET.Element("direction")
+        ET.SubElement(ET.SubElement(direction, "direction-type"), "words")
+        ET.SubElement(direction, "sound", tempo=str(tempo))
+        root.find("part")[0].insert(1, direction)
+    ET.SubElement(names, "part-group", type="stop", number="1")
+    for e in root.iter():
+        e.tail = None
+        if e.text and not e.text.strip():
+            e.text = None
+    return '<?xml version="1.0" encoding="UTF-8"?>' + ET.tostring(root, encoding="unicode")
+
+
 def original_musicxml():
     """Return the MusicXML score of the melody, which the page engraves and plays like a passage of the score.
 
@@ -791,7 +858,7 @@ def main():
     translations = json.loads(translations_path.read_text(encoding="utf-8")) if translations_path.exists() else {}
     untranslated = set()
 
-    occurrences = []
+    occurrences, wholes = [], {}
     for level, found in sorted(found_at.items()):
         for run, act in found:
             def locate(t):
@@ -830,6 +897,7 @@ def main():
                 libretto=[dict(kind="sung", person=p, text=x, **({"translation": translations[x]} if x in translations else {}))
                           for s, e, p, x in act.singing if s < b and e >= a],
                 notation=dict(musicxml=excerpt(run.shown, act.measures, act.rests, tempo)), **{"from": a, "to": b}))
+            wholes[unique] = dict(musicxml=full_excerpt(run, act.measures, tempo))
             untranslated |= {l["text"] for l in occurrences[-1]["libretto"] if "translation" not in l}
             print(f"level {level}  {act.work:10s} measure {a:9.3f}  {label}")
     # The original melody comes first. Its short section sits to the left of the start of Das Rheingold.
@@ -842,6 +910,8 @@ def main():
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(dict(format=1, motif=motif_block(), levels=levels(), sections=sections, occurrences=occurrences), f, ensure_ascii=False, indent=1)
+    with open(args.out.with_suffix(".full.json"), "w", encoding="utf-8") as f:  # the page loads it when the viewer asks for the full score
+        json.dump(dict(format=1, occurrences=wholes), f, ensure_ascii=False, separators=(",", ":"))
     print(f"{len(occurrences)} occurrences written to {args.out}")
     for text in sorted(untranslated):
         print(f"no English in {translations_path.name} for: {text}")
