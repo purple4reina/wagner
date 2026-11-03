@@ -1,0 +1,10 @@
+{
+ "id": "love-b",
+ "name": "Love",
+ "variant": "B",
+ "source": "holman",
+ "lilypond": "c'''4 b''8. fis''16 a''4 g''8. dis''16 fis''4 e''8. b'16 d''4 c''8. g'16 c''8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 1 }
+}

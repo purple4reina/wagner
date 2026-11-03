@@ -1,0 +1,9 @@
+{
+ "id": "holdas-golden-apples",
+ "name": "Holda's Golden Apples",
+ "source": "holman",
+ "lilypond": "fis4. e8 d4 a,8 r \\tuplet 3/2 { fis,8. a,16 d8 } \\tuplet 3/2 { e8 d e } fis8. a16 a8 r",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": 2 }
+}

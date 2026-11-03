@@ -1,0 +1,10 @@
+{
+ "id": "valhalla-c",
+ "name": "Valhalla",
+ "variant": "C",
+ "source": "holman",
+ "lilypond": "bes'8 aes' bes' aes' bes' aes' bes' aes' bes' aes' bes'8. c''16 c''2.",
+ "core_notes": [1, 13],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -5 }
+}

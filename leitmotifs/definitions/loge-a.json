@@ -1,0 +1,10 @@
+{
+ "id": "loge-a",
+ "name": "Loge",
+ "variant": "A",
+ "source": "holman",
+ "lilypond": "r16 cis d g gis dis e a ais eis fis b c' g gis cis' d' a ais dis' e' b ais dis' e' b ais dis'",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "2/4", "partial": "4", "clef": "bass", "key_signature": 3 }
+}

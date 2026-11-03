@@ -1,0 +1,351 @@
+{
+ "format": 1,
+ "motif": {
+  "id": "woe",
+  "name": "Woe",
+  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note. Passages that overlap, or lie within 1 measure of each other, are joined into one; the level is that of the closest.",
+  "source": {
+   "author": "J. K. Holman",
+   "title": "Wagner's Ring: A Listener's Companion & Concordance",
+   "publication": "Portland, Oregon: Amadeus Press, 1996; paperback 2003, ISBN 978-1-57467-070-7"
+  }
+ },
+ "levels": [
+  {
+   "level": 0,
+   "label": "Original",
+   "name": "The melody as given",
+   "description": "The melody as you gave it. It is not a passage of the score."
+  },
+  {
+   "level": 1,
+   "name": "Closest to the original",
+   "description": "The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."
+  },
+  {
+   "level": 2,
+   "name": "Same core pitches",
+   "description": "Notes 1 to 5 of the phrase have the same pitches, in any octave, but the rhythm differs."
+  }
+ ],
+ "sections": [
+  {
+   "id": "original",
+   "opera": "",
+   "act": "ORIGINAL",
+   "label": "Original",
+   "short": "Orig",
+   "original": true,
+   "from": 0,
+   "to": 878
+  },
+  {
+   "id": "A-1",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 1",
+   "short": "Sc 1",
+   "from": 1.0,
+   "to": 769.0
+  },
+  {
+   "id": "A-2",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 2",
+   "short": "Sc 2",
+   "from": 769.0,
+   "to": 1894.0
+  },
+  {
+   "id": "A-3",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 3",
+   "short": "Sc 3",
+   "from": 1894.0,
+   "to": 2857.0
+  },
+  {
+   "id": "A-4",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 4",
+   "short": "Sc 4",
+   "from": 2857.0,
+   "to": 3898
+  },
+  {
+   "id": "B-1",
+   "opera": "Die Walküre",
+   "act": "WWV086B-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 1524
+  },
+  {
+   "id": "B-2",
+   "opera": "Die Walküre",
+   "act": "WWV086B-2",
+   "label": "Act 2",
+   "from": 0.888,
+   "to": 2066
+  },
+  {
+   "id": "B-3",
+   "opera": "Die Walküre",
+   "act": "WWV086B-3",
+   "label": "Act 3",
+   "from": 0.888,
+   "to": 1733
+  },
+  {
+   "id": "C-1",
+   "opera": "Siegfried",
+   "act": "WWV086C-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 2984
+  },
+  {
+   "id": "C-2",
+   "opera": "Siegfried",
+   "act": "WWV086C-2",
+   "label": "Act 2",
+   "from": 1.0,
+   "to": 1911
+  },
+  {
+   "id": "C-3",
+   "opera": "Siegfried",
+   "act": "WWV086C-3",
+   "label": "Act 3",
+   "from": 1.0,
+   "to": 1790
+  },
+  {
+   "id": "D-0",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-0",
+   "label": "Prologue",
+   "short": "Pro",
+   "from": 1.0,
+   "to": 893
+  },
+  {
+   "id": "D-1",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 1845
+  },
+  {
+   "id": "D-2",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-2",
+   "label": "Act 2",
+   "from": 1.0,
+   "to": 1705
+  },
+  {
+   "id": "D-3",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-3",
+   "label": "Act 3",
+   "from": 1.0,
+   "to": 1601
+  }
+ ],
+ "occurrences": [
+  {
+   "id": "original",
+   "act": "ORIGINAL",
+   "level": 0,
+   "scene": null,
+   "label": "The original",
+   "note": "The melody as you gave it, engraved from your notes. It has no pickup, the bars are in 6/8, and the score has a bass clef and three flats in the key signature. It is not a passage of the score.",
+   "libretto": null,
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>4</divisions><key><fifths>-3</fifths></key><time><beats>6</beats><beat-type>8</beat-type></time><clef><sign>F</sign><line>4</line></clef></attributes><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>4</duration><voice>1</voice><type>quarter</type></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental></note><note><rest/><duration>4</duration><voice>1</voice><type>quarter</type></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type><accidental>flat</accidental></note></measure><measure number=\"2\"><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>4</duration><voice>1</voice><type>quarter</type><accidental>flat</accidental></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note></measure></part></score-partwise>",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.2\" width=\"52.45mm\" height=\"13.11mm\" viewBox=\"0.0000 0.0300 29.8444 7.4600\">\n<style type=\"text/css\">\n<![CDATA[\ntspan { white-space: pre; }\n]]>\n</style>\n<g transform=\"translate(0.0000, 7.3600)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"29.8444\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 6.3600)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"29.8444\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 5.3600)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"29.8444\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 4.3600)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"29.8444\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 3.3600)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"29.8444\" y2=\"0\"/>\n</g>\n<g transform=\"translate(21.6260, 5.3600)\">\n<rect x=\"0.0000\" y=\"-2.0000\" width=\"0.1900\" height=\"4.0000\" ry=\"0.0000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.3600)\">\n<rect x=\"27.0641\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.3600)\">\n<rect x=\"23.5110\" y=\"-0.1000\" width=\"1.8053\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:17:18\">\n<g transform=\"translate(19.1218, 3.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(19.1868, 5.3600)\">\n<rect x=\"-0.0650\" y=\"-1.3138\" width=\"0.1300\" height=\"3.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(19.2518, 7.3200)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(17.9718, 3.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M27 41l-1 -66v-11c0 -22 1 -44 4 -66c45 38 93 80 93 139c0 33 -14 67 -43 67c-31 0 -52 -30 -53 -63zM-15 -138l-12 595c8 5 18 8 27 8s19 -3 27 -8l-7 -345c25 21 58 34 91 34c52 0 89 -48 89 -102c0 -80 -86 -117 -147 -169c-15 -13 -24 -38 -45 -38\nc-13 0 -23 11 -23 25z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(27.4552, 5.3600)\">\n<rect x=\"-0.0650\" y=\"-2.8138\" width=\"0.1300\" height=\"3.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:28:29\">\n<g transform=\"translate(27.3902, 2.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:22:23\">\n<g transform=\"translate(23.6860, 1.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(23.7510, 5.3600)\">\n<rect x=\"-0.0650\" y=\"-3.3138\" width=\"0.1300\" height=\"3.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(22.5360, 1.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M27 41l-1 -66v-11c0 -22 1 -44 4 -66c45 38 93 80 93 139c0 33 -14 67 -43 67c-31 0 -52 -30 -53 -63zM-15 -138l-12 595c8 5 18 8 27 8s19 -3 27 -8l-7 -345c25 21 58 34 91 34c52 0 89 -48 89 -102c0 -80 -86 -117 -147 -169c-15 -13 -24 -38 -45 -38\nc-13 0 -23 11 -23 25z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:6:7\">\n<g transform=\"translate(9.5634, 2.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(0.8000, 4.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M557 -125c0 28 23 51 51 51s51 -23 51 -51s-23 -51 -51 -51s-51 23 -51 51zM557 125c0 28 23 51 51 51s51 -23 51 -51s-23 -51 -51 -51s-51 23 -51 51zM232 263c172 0 293 -88 293 -251c0 -263 -263 -414 -516 -521c-3 -3 -6 -4 -9 -4c-7 0 -13 6 -13 13c0 3 1 6 4 9\nc202 118 412 265 412 493c0 120 -63 235 -171 235c-74 0 -129 -54 -154 -126c11 5 22 8 34 8c55 0 100 -45 100 -100c0 -58 -44 -106 -100 -106c-60 0 -112 47 -112 106c0 133 102 244 232 244z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:24:6:7\">\n<g transform=\"translate(4.4234, 6.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M27 41l-1 -66v-11c0 -22 1 -44 4 -66c45 38 93 80 93 139c0 33 -14 67 -43 67c-31 0 -52 -30 -53 -63zM-15 -138l-12 595c8 5 18 8 27 8s19 -3 27 -8l-7 -345c25 21 58 34 91 34c52 0 89 -48 89 -102c0 -80 -86 -117 -147 -169c-15 -13 -24 -38 -45 -38\nc-13 0 -23 11 -23 25z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(5.3434, 4.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M27 41l-1 -66v-11c0 -22 1 -44 4 -66c45 38 93 80 93 139c0 33 -14 67 -43 67c-31 0 -52 -30 -53 -63zM-15 -138l-12 595c8 5 18 8 27 8s19 -3 27 -8l-7 -345c25 21 58 34 91 34c52 0 89 -48 89 -102c0 -80 -86 -117 -147 -169c-15 -13 -24 -38 -45 -38\nc-13 0 -23 11 -23 25z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(6.2634, 6.8600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M27 41l-1 -66v-11c0 -22 1 -44 4 -66c45 38 93 80 93 139c0 33 -14 67 -43 67c-31 0 -52 -30 -53 -63zM-15 -138l-12 595c8 5 18 8 27 8s19 -3 27 -8l-7 -345c25 21 58 34 91 34c52 0 89 -48 89 -102c0 -80 -86 -117 -147 -169c-15 -13 -24 -38 -45 -38\nc-13 0 -23 11 -23 25z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(9.6284, 5.3600)\">\n<rect x=\"-0.0650\" y=\"-2.3138\" width=\"0.1300\" height=\"3.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:11:12\">\n<g transform=\"translate(13.2676, 3.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(13.3326, 5.3600)\">\n<rect x=\"-0.0650\" y=\"-1.8138\" width=\"0.1300\" height=\"3.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(13.3976, 6.8200)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(12.2216, 3.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M-7 375c8 4 17 7 25 7s16 -3 24 -7l-2 -183l106 20h3c10 0 18 -7 18 -17l7 -570c-8 -4 -17 -7 -25 -7s-16 3 -24 7l2 183l-106 -20h-3c-10 0 -18 7 -18 17zM131 112l-92 -17l-3 -207l92 17z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(27.5202, 5.8200)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:26:14:15\">\n<g transform=\"translate(15.7718, 5.3600)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M-23 -116c0 28 11 42 40 42c33 0 78 -13 119 -31l-132 158c-7 9 -10 17 -10 25c0 34 50 66 87 99c25 22 37 52 37 83c0 24 -8 49 -25 69l-35 42c-3 3 -4 7 -4 10c0 9 9 15 17 15c4 0 8 -1 11 -5l151 -180c7 -9 10 -17 10 -25c0 -34 -50 -66 -87 -99\nc-25 -22 -37 -52 -37 -83c0 -24 7 -49 24 -69l84 -99c3 -3 4 -7 4 -10c0 -9 -8 -16 -16 -16c-4 0 -9 2 -12 6c-18 21 -63 38 -97 38c-41 0 -53 -26 -53 -67c0 -35 11 -74 28 -94c7 -8 -5 -19 -12 -11c-45 54 -92 148 -92 202z\" fill=\"currentColor\"/>\n</g>\n</a>\n</svg>\n"
+   },
+   "from": 439.0,
+   "to": 440.0
+  },
+  {
+   "id": "B-3-94.111",
+   "act": "WWV086B-3",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Gerhilde,Helmwige und Schwertleite",
+     "text": "Ha ha ha ha ha ha ha ha ha ha!",
+     "translation": "(laughter)"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"94\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>9</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"144.4\" /></direction><note><pitch><step>A</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"95\"><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>up</stem><staff>1</staff><notations /></note><note><pitch><step>G</step><octave>4</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><stem>up</stem><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 94.111,
+   "to": 95.278
+  },
+  {
+   "id": "B-3-164.667",
+   "act": "WWV086B-3",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"164\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>9</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"150.6\" /></direction><note><pitch><step>A</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>down</stem><staff>1</staff></note></measure><measure number=\"165\"><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>C</step><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 164.667,
+   "to": 165.778
+  },
+  {
+   "id": "B-3-170.889",
+   "act": "WWV086B-3",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Waltraute und Schwertleite",
+     "text": "Ha ha ha ha ha ha ha ha ha ha!",
+     "translation": "(laughter)"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"170\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>9</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"142.0\" /></direction><note><pitch><step>A</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note></measure><measure number=\"171\"><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><staff>1</staff></note><note><pitch><step>C</step><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 170.889,
+   "to": 172.0
+  },
+  {
+   "id": "B-3-259.778",
+   "act": "WWV086B-3",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"259\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>9</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"173.5\" /></direction><note><pitch><step>A</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>down</stem><staff>1</staff></note></measure><measure number=\"260\"><note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 259.778,
+   "to": 260.889
+  },
+  {
+   "id": "B-3-944.778",
+   "act": "WWV086B-3",
+   "level": 2,
+   "scene": 2,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"944\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>9</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"164.7\" /></direction><note><pitch><step>A</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>natural</accidental><stem>down</stem><staff>1</staff></note></measure><measure number=\"945\"><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 944.778,
+   "to": 945.889
+  },
+  {
+   "id": "C-1-2130.250",
+   "act": "WWV086C-1",
+   "level": 2,
+   "scene": 3,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 2 2 2 2 2; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Mime",
+     "text": "in der Brust, bebend und bang,",
+     "translation": "in the breast, trembling and anxious,"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"2130\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>1</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>F</sign><line>4</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"97.5\" /></direction><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><accidental>flat</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>down</stem><staff>1</staff></note></measure><measure number=\"2131\"><note><pitch><step>F</step><alter>1</alter><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>down</stem><staff>1</staff><notations /></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><accidental>flat</accidental><stem>down</stem><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>down</stem><staff>1</staff></note><note><pitch><step>B</step><octave>3</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><stem>down</stem><staff>1</staff><beam number=\"1\">begin</beam></note><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><accidental>flat</accidental><stem>down</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">backward hook</beam></note></measure><measure number=\"2132\"><note><pitch><step>A</step><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>quarter</type><stem>down</stem><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 2130.25,
+   "to": 2132.25
+  },
+  {
+   "id": "D-1-1743.750",
+   "act": "WWV086D-1",
+   "level": 2,
+   "scene": 3,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 2 4 4 8 4; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Siegfried",
+     "text": "lehrst du mich nun!",
+     "translation": "you teach me now!"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"1743\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>F</sign><line>4</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"129.2\" /></direction><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>flat</accidental><stem>up</stem><staff>1</staff><beam number=\"1\">begin</beam></note><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff><beam number=\"1\">end</beam></note></measure><measure number=\"1744\"><note><pitch><step>A</step><octave>3</octave></pitch><duration>512</duration><type>half</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>512</duration><voice>1</voice><type>half</type><stem>down</stem><staff>1</staff></note></measure><measure number=\"1745\"><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>512</duration><type>half</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>512</duration><type>half</type><staff>1</staff></note></measure><measure number=\"1746\"><note><pitch><step>C</step><octave>4</octave></pitch><duration>512</duration><type>half</type><staff>1</staff></note><attributes><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><octave>4</octave></pitch><duration>512</duration><voice>1</voice><type>half</type><stem>up</stem><staff>1</staff><notations><articulations><accent /></articulations></notations></note></measure><measure number=\"1747\"><note><pitch><step>A</step><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff><notations><articulations><staccatissimo /></articulations></notations></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>42</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><stem>up</stem><staff>1</staff><notations /></note></measure></part></score-partwise>"
+   },
+   "from": 1743.75,
+   "to": 1747.166
+  },
+  {
+   "id": "D-2-47.875",
+   "act": "WWV086D-2",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1/2 8 15/2 2; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Alberich",
+     "text": "den Ruh’ und Schlaf verriet?",
+     "translation": "whom rest and sleep betrayed?"
+    },
+    {
+     "kind": "sung",
+     "person": "Hagen",
+     "text": "Ich höre dich, schlimmer Albe:",
+     "translation": "I hear you, wicked elf:"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"47\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>-2</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"53.2\" /></direction><note><pitch><step>B</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff><notations /></note></measure><measure number=\"48\"><attributes><clef><sign>F</sign><line>4</line></clef></attributes><note><pitch><step>B</step><alter>-2</alter><octave>3</octave></pitch><duration>64</duration><type>16th</type><accidental>flat-flat</accidental><staff>1</staff></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>64</duration><tie type=\"start\" /><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><notations><tied type=\"start\" /></notations></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>42</duration><tie type=\"stop\" /><voice>1</voice><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">begin</beam><beam number=\"2\">begin</beam><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"below\" /><tied type=\"stop\" /></notations></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>43</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>43</duration><tie type=\"start\" /><voice>1</voice><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">end</beam><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"below\" /><tied type=\"start\" /></notations></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>64</duration><tie type=\"stop\" /><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><beam number=\"1\">begin</beam><beam number=\"2\">forward hook</beam><notations><tied type=\"stop\" /></notations></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam></note><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>64</duration><tie type=\"start\" /><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">backward hook</beam><notations><tied type=\"start\" /></notations></note></measure><measure number=\"49\"><note><pitch><step>G</step><alter>-1</alter><octave>3</octave></pitch><duration>64</duration><tie type=\"stop\" /><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><notations><tied type=\"stop\" /></notations></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><tie type=\"start\" /><type>16th</type><staff>1</staff><notations><tied type=\"start\" /></notations></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><tie type=\"stop\" /><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /><tied type=\"stop\" /></notations></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><tie type=\"start\" /><type>16th</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>16th</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /><tied type=\"start\" /></notations></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><tie type=\"stop\" /><type>16th</type><staff>1</staff><notations><tied type=\"stop\" /></notations></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note></measure><measure number=\"50\"><note><pitch><step>C</step><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>half</type><time-modification><actual-notes>2</actual-notes><normal-notes>1</normal-notes></time-modification><stem>down</stem><staff>1</staff><notations><ornaments><tremolo type=\"start\">3</tremolo></ornaments></notations></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>half</type><time-modification><actual-notes>2</actual-notes><normal-notes>1</normal-notes></time-modification><stem>down</stem><staff>1</staff><notations><ornaments><tremolo type=\"stop\">3</tremolo></ornaments></notations></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>256</duration><voice>1</voice><type>half</type><time-modification><actual-notes>2</actual-notes><normal-notes>1</normal-notes></time-modification><stem>down</stem><staff>1</staff><notations><ornaments><tremolo type=\"start\">3</tremolo></ornaments></notations></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>256</duration><voice>1</voice><type>half</type><time-modification><actual-notes>2</actual-notes><normal-notes>1</normal-notes></time-modification><stem>down</stem><staff>1</staff><notations><ornaments><tremolo type=\"stop\">3</tremolo></ornaments></notations></note></measure></part></score-partwise>"
+   },
+   "from": 47.875,
+   "to": 51.0
+  },
+  {
+   "id": "D-2-1216.333",
+   "act": "WWV086D-2",
+   "level": 2,
+   "scene": 4,
+   "label": "Same pitches, different rhythm",
+   "note": "Your notes 1 to 5 (of 5) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1; yours are 2 1 1 2 1.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Mannen (B1, B2)",
+     "text": "Tose dein Wetter!",
+     "translation": "Let your storm roar!"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"1216\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>12</beats><beat-type>8</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"199.9\" /></direction><note><pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>F</step><alter>1</alter><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><staff>1</staff></note><note><pitch><step>C</step><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>B</step><alter>-1</alter><octave>5</octave></pitch><duration>128</duration><type>eighth</type><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 1216.333,
+   "to": 1217.0
+  }
+ ]
+}

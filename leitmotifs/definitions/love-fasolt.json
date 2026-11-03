@@ -1,0 +1,9 @@
+{
+ "id": "love-fasolt",
+ "name": "Love (Fasolt)",
+ "source": "holman",
+ "lilypond": "fis,4 g,8 gis, a, cis fis a d'2 cis'4. fis8 b2. a8 g a2. g8 fis g2. fis8 e d4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": 2 }
+}

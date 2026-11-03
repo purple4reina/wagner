@@ -1,9 +1,0 @@
-{
- "id": "wotans-spear",
- "name": "Wotan's Spear",
- "source": "companion",
- "lilypond": "a2 ~a8 g8 f8. e16 d4 c4 b,4 a,4 gis,4",
- "core_notes": [1, 9],
- "openings": [8],
- "original": { "octaves_up": 0, "time": "4/4", "clef": "bass" }
-}

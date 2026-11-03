@@ -1,0 +1,9 @@
+{
+ "id": "spear",
+ "name": "Spear",
+ "source": "holman",
+ "lilypond": "\\tuplet 3/2 { g,16 c e } g8 f8 e8. d16 c4 b, a, g, f, e, d, c, b,, a,, g,, f,, e,,1",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass" }
+}

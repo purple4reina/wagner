@@ -1,0 +1,9 @@
+{
+ "id": "renunciation-of-love",
+ "name": "Renunciation of Love",
+ "source": "holman",
+ "lilypond": "r2 g'4 g'8 g' es''4. d''8 c''4 r8 g'8 aes'2 g'4 g'8 g' es''4. d''8 c''4 r8 aes'8 bes'4",
+ "core_notes": [1, 16],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

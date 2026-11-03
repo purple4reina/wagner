@@ -1,0 +1,9 @@
+{
+ "id": "loves-enchantment",
+ "name": "Love's Enchantment",
+ "source": "holman",
+ "lilypond": "e''4 d''8. d''16 d''4 e'8 r e''4 d''8. d''16 c''4 f' a' g'8 f' fis'4 g'8 bes' d''4 c''8 bes' a'4 r",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "2", "key_signature": -1 }
+}

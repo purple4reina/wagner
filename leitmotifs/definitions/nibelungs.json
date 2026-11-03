@@ -1,0 +1,9 @@
+{
+ "id": "nibelungs",
+ "name": "Nibelungs",
+ "source": "holman",
+ "lilypond": "f'8. f'16 f'8 f' des' es' f'8. f'16 f'8 f'8. f'16 f'8 f' des' es' f'8. f'16 f'8",
+ "core_notes": [1, 18],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "9/8", "key_signature": -5 }
+}

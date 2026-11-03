@@ -1,0 +1,10 @@
+{
+ "id": "loge-c",
+ "name": "Loge",
+ "variant": "C",
+ "source": "holman",
+ "lilypond": "cis'''4. d'''8 cis'''4. dis'''8 cis'''8",
+ "core_notes": [1, 5],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "2/4", "key_signature": 3 }
+}

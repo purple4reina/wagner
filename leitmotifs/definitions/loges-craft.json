@@ -1,0 +1,9 @@
+{
+ "id": "loges-craft",
+ "name": "Loge's Craft",
+ "source": "holman",
+ "lilypond": "cis'4. cis'8 dis4 dis8. dis16 a4. a8 bis,2",
+ "core_notes": [1, 8],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "2/4", "clef": "bass", "key_signature": 3 }
+}

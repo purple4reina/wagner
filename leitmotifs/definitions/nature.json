@@ -1,0 +1,9 @@
+{
+ "id": "nature",
+ "name": "Nature",
+ "source": "holman",
+ "lilypond": "es,4. ~es,4 bes,8 es4. ~es4 g8 bes4. ~bes4 es'8 g'2.",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "6/8", "clef": "bass", "key_signature": -3 }
+}

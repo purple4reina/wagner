@@ -12,7 +12,10 @@
   closest `level` of the passages that it joins, and its `label` and `note` say that it joins others.
 - `motifs/index.json` is the list of motifs, `{ "motifs": [{ "id": "gold", "name": "Gold" }] }`. The page shows it as links down
   its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
-  one entry for each definition that has a motif file, in the order of the names.
+  one entry for each definition that has a motif file. The ids in `order.json` (a list of ids, in the order of the book) come first, in
+  that order. The other motifs follow, in the order of the names.
+  A leitmotif with lettered forms has one entry for each form, with `"group"` (the leitmotif) and `"variant"` (the letter) besides
+  the `name` ("Valhalla (A)"). The page shows the `group` once, as a heading, and the `variant` as the link.
 
 - `motifs/also.json` tells the page which other leitmotifs are near each example (see below). Without it the page has no "Also present".
   `tools/link_motifs.py` writes it from all the motif files, so run it after `tools/find_motif.py`.

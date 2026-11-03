@@ -1,0 +1,9 @@
+{
+ "id": "alberich",
+ "name": "Alberich",
+ "source": "holman",
+ "lilypond": "es32 d des c b,16 c es32 d des c b,16 c",
+ "core_notes": [1, 12],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "2/4", "clef": "bass", "key_signature": 1 }
+}

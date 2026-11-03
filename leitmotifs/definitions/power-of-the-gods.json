@@ -1,0 +1,9 @@
+{
+ "id": "power-of-the-gods",
+ "name": "Power of the Gods",
+ "source": "holman",
+ "lilypond": "es4. bes8 bes2 es8. f16 ges2 aes8. bes16 b2 b,4 r8 dis8 e4. c'8 c'4. r8 f8. g16 aes2 bes8. c'16 des'2",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -4 }
+}

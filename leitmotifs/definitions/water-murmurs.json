@@ -1,0 +1,9 @@
+{
+ "id": "water-murmurs",
+ "name": "Water Murmurs",
+ "source": "holman",
+ "lilypond": "d''8 e'' d'' e'' d'' e'' d'' e'' d'' e'' d'' e'' d'' e'' d'' e'' d'' e''",
+ "core_notes": [1, 18],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "9/8" }
+}

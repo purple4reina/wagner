@@ -1,0 +1,9 @@
+{
+ "id": "the-ring",
+ "name": "The Ring",
+ "source": "holman",
+ "lilypond": "e''4. cis''4. ~cis''8 a'8 gis'8 fis'8 gis'8 a'8 b'4",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "9/8" }
+}

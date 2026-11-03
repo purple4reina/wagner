@@ -1,9 +1,9 @@
 {
  "id": "rhine",
  "name": "Rhine",
- "source": "companion",
- "lilypond": "es4. ~es4 bes8 es'4. ~es'4 g'8 bes'4. ~bes'4 es''8 g''2.",
+ "source": "holman",
+ "lilypond": "es4. ~es4 f8 g4. ~g4 aes8 bes4. ~bes4 es'8 g'2.",
  "core_notes": [1, 7],
  "max_level": 2,
- "original": { "octaves_up": -1, "time": "6/8", "clef": "bass", "key_signature": -3 }
+ "original": { "octaves_up": 0, "time": "6/8", "clef": "bass", "key_signature": -3 }
 }

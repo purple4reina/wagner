@@ -1,6 +1,160 @@
 {
  "motifs": [
   {
+   "id": "beginning",
+   "name": "Beginning"
+  },
+  {
+   "id": "nature",
+   "name": "Nature"
+  },
+  {
+   "id": "rhine",
+   "name": "Rhine"
+  },
+  {
+   "id": "rhine-daughters",
+   "name": "Rhine Daughters"
+  },
+  {
+   "id": "warning",
+   "name": "Warning"
+  },
+  {
+   "id": "alberich",
+   "name": "Alberich"
+  },
+  {
+   "id": "woe",
+   "name": "Woe"
+  },
+  {
+   "id": "water-murmurs",
+   "name": "Water Murmurs"
+  },
+  {
+   "id": "gold",
+   "name": "Gold"
+  },
+  {
+   "id": "rhine-daughters-joy-in-the-gold",
+   "name": "Rhine Daughters' Joy in the Gold"
+  },
+  {
+   "id": "rhinegold",
+   "name": "Rhinegold"
+  },
+  {
+   "id": "the-ring",
+   "name": "The Ring"
+  },
+  {
+   "id": "renunciation-of-love",
+   "name": "Renunciation of Love"
+  },
+  {
+   "id": "valhalla-a",
+   "name": "Valhalla (A)",
+   "group": "Valhalla",
+   "variant": "A"
+  },
+  {
+   "id": "valhalla-b",
+   "name": "Valhalla (B)",
+   "group": "Valhalla",
+   "variant": "B"
+  },
+  {
+   "id": "valhalla-c",
+   "name": "Valhalla (C)",
+   "group": "Valhalla",
+   "variant": "C"
+  },
+  {
+   "id": "valhalla-d",
+   "name": "Valhalla (D)",
+   "group": "Valhalla",
+   "variant": "D"
+  },
+  {
+   "id": "loves-enchantment",
+   "name": "Love's Enchantment"
+  },
+  {
+   "id": "love-a",
+   "name": "Love (A)",
+   "group": "Love",
+   "variant": "A"
+  },
+  {
+   "id": "love-b",
+   "name": "Love (B)",
+   "group": "Love",
+   "variant": "B"
+  },
+  {
+   "id": "giants",
+   "name": "Giants"
+  },
+  {
+   "id": "power-of-the-gods",
+   "name": "Power of the Gods"
+  },
+  {
+   "id": "treaty",
+   "name": "Treaty"
+  },
+  {
+   "id": "love-fasolt",
+   "name": "Love (Fasolt)"
+  },
+  {
+   "id": "holdas-golden-apples",
+   "name": "Holda's Golden Apples"
+  },
+  {
+   "id": "froh",
+   "name": "Froh"
+  },
+  {
+   "id": "spear",
+   "name": "Spear"
+  },
+  {
+   "id": "loge-a",
+   "name": "Loge (A)",
+   "group": "Loge",
+   "variant": "A"
+  },
+  {
+   "id": "loge-b",
+   "name": "Loge (B)",
+   "group": "Loge",
+   "variant": "B"
+  },
+  {
+   "id": "loge-c",
+   "name": "Loge (C)",
+   "group": "Loge",
+   "variant": "C"
+  },
+  {
+   "id": "loges-craft",
+   "name": "Loge's Craft"
+  },
+  {
+   "id": "womans-worth",
+   "name": "Woman's Worth"
+  },
+  {
+   "id": "nibelungs",
+   "name": "Nibelungs"
+  },
+  {
+   "id": "tarnhelm",
+   "name": "Tarnhelm"
+  },
+  {
    "id": "blow-bellows",
    "name": "Blow Bellows"
   },
@@ -37,10 +191,6 @@
    "name": "Fafner as Dragon"
   },
   {
-   "id": "gold",
-   "name": "Gold"
-  },
-  {
    "id": "gunther",
    "name": "Gunther"
   },
@@ -57,24 +207,8 @@
    "name": "Loge (B)"
   },
   {
-   "id": "nibelungs-and-mining-of-gold",
-   "name": "Nibelungs and Mining of Gold"
-  },
-  {
    "id": "redemption",
    "name": "Redemption"
-  },
-  {
-   "id": "rhine",
-   "name": "Rhine"
-  },
-  {
-   "id": "rhine-daughters",
-   "name": "Rhine Daughters"
-  },
-  {
-   "id": "rhinegold",
-   "name": "Rhinegold"
   },
   {
    "id": "siegfried",
@@ -95,10 +229,6 @@
   {
    "id": "sword",
    "name": "Sword"
-  },
-  {
-   "id": "valhalla",
-   "name": "Valhalla (A/B)"
   },
   {
    "id": "valkyries",
@@ -127,10 +257,6 @@
   {
    "id": "world-ash",
    "name": "World Ash"
-  },
-  {
-   "id": "wotans-spear",
-   "name": "Wotan's Spear"
   }
  ]
 }

@@ -1,0 +1,9 @@
+{
+ "id": "woe",
+ "name": "Woe",
+ "source": "holman",
+ "lilypond": "bes4 a8 r4 ges8 des'4 c'8",
+ "core_notes": [1, 5],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "6/8", "clef": "bass", "key_signature": -3 }
+}

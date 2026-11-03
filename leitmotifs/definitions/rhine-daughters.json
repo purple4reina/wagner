@@ -1,9 +1,9 @@
 {
  "id": "rhine-daughters",
  "name": "Rhine Daughters",
- "source": "companion",
- "lilypond": "f4 es8 c4 bes,8 aes,8 es,8 aes,8 bes,4 aes,8 c8 aes,8 c es4 c8 f8 es8 c8 aes4 es8 c8. aes,16 es,8 es8. c16 aes,8 f2. es4. ~es4",
+ "source": "holman",
+ "lilypond": "f''4 es''8 c''4 bes'8 aes'8 es' aes' bes'4 aes'8 c''8 aes' c'' es''4 c''8 f''8 es'' c'' aes''4 es''8 c''8. aes'16 es'8 es''8. c''16 aes'8 f''2. es''4. ~es''4 r8",
  "core_notes": [1, 9],
  "openings": [8],
- "original": { "octaves_up": 2, "time": "6/8", "key_signature": -3 }
+ "original": { "octaves_up": 0, "time": "6/8", "key_signature": -3 }
 }

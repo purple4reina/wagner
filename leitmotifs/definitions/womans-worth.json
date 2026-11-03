@@ -1,0 +1,9 @@
+{
+ "id": "womans-worth",
+ "name": "Woman's Worth",
+ "source": "holman",
+ "lilypond": "f''2 e''4 d''2 c''8 bes' a'2.",
+ "core_notes": [1, 6],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": 2 }
+}

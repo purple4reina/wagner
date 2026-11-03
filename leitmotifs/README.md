@@ -34,7 +34,8 @@ The script runs these steps in order. You can run each step alone.
 | 3. Link the leitmotifs | `python3 -I tools/link_motifs.py` | `motifs/also.json`: for each example, the other leitmotifs that have an example in its measures or the measure before or after (`REACH`). Run it again after any leitmotif changes. The page shows them under "Also present". |
 | 4. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 
-The hand-written inputs are `definitions/*.json` and `translations.json`. Nothing else is typed in.
+The hand-written inputs are `definitions/*.json`, `translations.json` and `order.json` (the ids that the sidebar lists first,
+in the order of Holman's book; the other leitmotifs follow in alphabetical order). Nothing else is typed in.
 
 ## Add a leitmotif
 
@@ -46,15 +47,30 @@ The hand-written inputs are `definitions/*.json` and `translations.json`. Nothin
    `"clef": "bass"` and `key_signature`, the number of sharps or minus the number of flats, if it does not have a
    treble clef and no key signature). Copy `definitions/siegfried.json`, or `definitions/gold.json` for a bass clef.
    Optional: `openings`, how many notes each "Opening, other keys" level keeps (the default is `[8, 6]`). Use fewer
-   for a melody whose first notes are a common figure, such as a scale: `definitions/wotans-spear.json` has `[8]`.
+   for a melody whose first notes are a common figure, such as a scale: `definitions/spear.json` has `[8]`.
    Optional: `max_level`, the farthest level to look for. A melody of fewer than about 9 notes finds mostly
    coincidences at levels 3 and 4 (and the search is slow), so `definitions/erda.json` has `2`.
    A rest of the melody is a gap in the score: level 1 needs the same rest, the other levels also accept none.
    Also `source`, the key of the book or other place that the melody comes from in `sources.json` (`"companion"`:
-   Spencer and Millington, *Wagner's Ring of the Nibelung: A Companion*). The page shows it in the footer.
-2. Run `python3 -I tools/find_motif.py <id>`. Open the page with `?motif=<id>`.
+   Spencer and Millington, *Wagner's Ring of the Nibelung: A Companion*; `"holman"`: Holman, *Wagner's Ring: A
+   Listener's Companion & Concordance*). The page shows it in the footer.
+   Optional: `variant`, the letter of one form of a leitmotif that has several, such as (A) and (B) in Holman. Write one
+   definition for each form, with the same `name` and a different `variant` (`definitions/valhalla-a.json`). The page
+   names it "Valhalla (A)" and lists the forms under one heading "Valhalla" in the sidebar.
+   A melody with chords or a second voice gives the top note of each chord, or the main voice: the finder follows one line.
+2. For a leitmotif of Holman's book, add its id to `order.json`, at the place where it stands in the book.
+   Run `python3 -I tools/find_motif.py <id>`. Open the page with `?motif=<id>`.
 3. The finder lists each sung line that has no English. Add the English to `translations.json`, which all
    leitmotifs share, and run the finder again.
+
+## The full transcription as the original
+
+A definition keeps one melodic line, because the finder follows one line. For the leitmotifs of Holman's book, the user's whole
+transcription (chords, second voice, slurs, dynamics) is in `sheetmusic/leitmotifs.ly`, which is not in this repository.
+`python3 -I tools/engrave_originals.py` engraves each section of that file with LilyPond (it needs Docker) and writes
+`originals/<id>.svg`. Then `python3 -I tools/find_motif.py <id> --refresh` puts the engraving into the original of the motif, and the
+page shows it in place of the one-line engraving. The Play button still plays the melody line. `reproduce.sh` keeps the `originals/`
+files, so it does not need Docker.
 
 ## Look for more levels
 

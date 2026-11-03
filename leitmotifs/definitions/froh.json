@@ -1,0 +1,9 @@
+{
+ "id": "froh",
+ "name": "Froh",
+ "source": "holman",
+ "lilypond": "fis''8. e''16 d''4 \\tuplet 3/2 { ~d''8 a'8 d''8 } \\tuplet 3/2 { e''8 d'' e'' } fis''8. b''16 b''4 ~b''8",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 2 }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "treaty",
+ "name": "Treaty",
+ "source": "holman",
+ "lilypond": "es8. g16 bes4 es' d' c'4 bes8. bes16 aes4 r8 g f4 g8 aes c'2 ~c'4 bes r d es2",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -4 }
+}

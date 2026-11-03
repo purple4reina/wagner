@@ -1,0 +1,9 @@
+{
+ "id": "rhine-daughters-joy-in-the-gold",
+ "name": "Rhine Daughters' Joy in the Gold",
+ "source": "holman",
+ "lilypond": "g''8. e''16 f''8 g''4. e''4 r8 g''8. e''16 f''8 g''4. e''4 r8",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "9/8" }
+}

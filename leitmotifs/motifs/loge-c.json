@@ -1,0 +1,205 @@
+{
+ "format": 1,
+ "motif": {
+  "id": "loge-c",
+  "name": "Loge (C)",
+  "description": "Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note. Passages that overlap, or lie within 1 measure of each other, are joined into one; the level is that of the closest.",
+  "source": {
+   "author": "J. K. Holman",
+   "title": "Wagner's Ring: A Listener's Companion & Concordance",
+   "publication": "Portland, Oregon: Amadeus Press, 1996; paperback 2003, ISBN 978-1-57467-070-7"
+  }
+ },
+ "levels": [
+  {
+   "level": 0,
+   "label": "Original",
+   "name": "The melody as given",
+   "description": "The melody as you gave it. It is not a passage of the score."
+  },
+  {
+   "level": 1,
+   "name": "Closest to the original",
+   "description": "The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."
+  }
+ ],
+ "sections": [
+  {
+   "id": "original",
+   "opera": "",
+   "act": "ORIGINAL",
+   "label": "Original",
+   "short": "Orig",
+   "original": true,
+   "from": 0,
+   "to": 878
+  },
+  {
+   "id": "A-1",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 1",
+   "short": "Sc 1",
+   "from": 1.0,
+   "to": 769.0
+  },
+  {
+   "id": "A-2",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 2",
+   "short": "Sc 2",
+   "from": 769.0,
+   "to": 1894.0
+  },
+  {
+   "id": "A-3",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 3",
+   "short": "Sc 3",
+   "from": 1894.0,
+   "to": 2857.0
+  },
+  {
+   "id": "A-4",
+   "opera": "Das Rheingold",
+   "act": "WWV086A",
+   "label": "Scene 4",
+   "short": "Sc 4",
+   "from": 2857.0,
+   "to": 3898
+  },
+  {
+   "id": "B-1",
+   "opera": "Die Walküre",
+   "act": "WWV086B-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 1524
+  },
+  {
+   "id": "B-2",
+   "opera": "Die Walküre",
+   "act": "WWV086B-2",
+   "label": "Act 2",
+   "from": 0.888,
+   "to": 2066
+  },
+  {
+   "id": "B-3",
+   "opera": "Die Walküre",
+   "act": "WWV086B-3",
+   "label": "Act 3",
+   "from": 0.888,
+   "to": 1733
+  },
+  {
+   "id": "C-1",
+   "opera": "Siegfried",
+   "act": "WWV086C-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 2984
+  },
+  {
+   "id": "C-2",
+   "opera": "Siegfried",
+   "act": "WWV086C-2",
+   "label": "Act 2",
+   "from": 1.0,
+   "to": 1911
+  },
+  {
+   "id": "C-3",
+   "opera": "Siegfried",
+   "act": "WWV086C-3",
+   "label": "Act 3",
+   "from": 1.0,
+   "to": 1790
+  },
+  {
+   "id": "D-0",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-0",
+   "label": "Prologue",
+   "short": "Pro",
+   "from": 1.0,
+   "to": 893
+  },
+  {
+   "id": "D-1",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-1",
+   "label": "Act 1",
+   "from": 1.0,
+   "to": 1845
+  },
+  {
+   "id": "D-2",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-2",
+   "label": "Act 2",
+   "from": 1.0,
+   "to": 1705
+  },
+  {
+   "id": "D-3",
+   "opera": "Götterdämmerung",
+   "act": "WWV086D-3",
+   "label": "Act 3",
+   "from": 1.0,
+   "to": 1601
+  }
+ ],
+ "occurrences": [
+  {
+   "id": "original",
+   "act": "ORIGINAL",
+   "level": 0,
+   "scene": null,
+   "label": "The original",
+   "note": "The melody as you gave it, engraved from your notes. It has no pickup, the bars are in 2/4, and the score has a treble clef and three sharps in the key signature. It is not a passage of the score.",
+   "libretto": null,
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name/></score-part></part-list><part id=\"P1\"><measure number=\"1\"><attributes><divisions>4</divisions><key><fifths>3</fifths></key><time><beats>2</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>6</duration><voice>1</voice><type>quarter</type><dot/></note><note><pitch><step>D</step><octave>6</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note></measure><measure number=\"2\"><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>6</duration><voice>1</voice><type>quarter</type><dot/></note><note><pitch><step>D</step><alter>1</alter><octave>6</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type><accidental>sharp</accidental></note></measure><measure number=\"3\"><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type></note></measure></part></score-partwise>",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.2\" width=\"50.68mm\" height=\"17.21mm\" viewBox=\"0.0000 -0.0000 28.8399 9.7914\">\n<style type=\"text/css\">\n<![CDATA[\ntspan { white-space: pre; }\n]]>\n</style>\n<g transform=\"translate(0.0000, 8.2414)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"28.8399\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 7.2414)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"28.8399\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 6.2414)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"28.8399\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 5.2414)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"28.8399\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 4.2414)\">\n<line stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"0.1000\" stroke=\"currentColor\" x1=\"0.0500\" y1=\"0\" x2=\"28.8399\" y2=\"0\"/>\n</g>\n<g transform=\"translate(0.0000, 2.2414)\">\n<rect x=\"26.0597\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 3.2414)\">\n<rect x=\"26.0597\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.2414)\">\n<rect x=\"22.4165\" y=\"-0.1000\" width=\"1.8052\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 3.2414)\">\n<rect x=\"22.2655\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.2414)\">\n<rect x=\"17.8593\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 3.2414)\">\n<rect x=\"17.8593\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.2414)\">\n<rect x=\"14.0651\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 3.2414)\">\n<rect x=\"14.0651\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 2.2414)\">\n<rect x=\"9.6589\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(0.0000, 3.2414)\">\n<rect x=\"9.6589\" y=\"-0.1000\" width=\"1.9563\" height=\"0.2000\" ry=\"0.1000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(25.0957, 6.2414)\">\n<rect x=\"0.0000\" y=\"-2.0000\" width=\"0.1900\" height=\"4.0000\" ry=\"0.0000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(16.8954, 6.2414)\">\n<rect x=\"0.0000\" y=\"-2.0000\" width=\"0.1900\" height=\"4.0000\" ry=\"0.0000\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(22.7215, 7.7014)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(22.6565, 6.2414)\">\n<rect x=\"-0.0650\" y=\"-4.3138\" width=\"0.1300\" height=\"5.8138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:61:62\">\n<g transform=\"translate(22.5915, 1.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:55:56\">\n<g transform=\"translate(22.5915, 4.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(19.9396, 1.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0c0 31 25 56 56 56s56 -25 56 -56s-25 -56 -56 -56s-56 25 -56 56z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:70:71\">\n<g transform=\"translate(22.5915, 6.2414)\">\n<path stroke-width=\"0.0800\" stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke=\"currentColor\" fill=\"currentColor\" d=\"M0.6521 -5.5450C1.5893 -6.4202 3.5091 -6.4202 4.4463 -5.5450L4.4463 -5.5450C3.5091 -6.3002 1.5893 -6.3002 0.6521 -5.5450z\"/>\n</g>\n</a>\n<g transform=\"translate(26.5157, 7.7014)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:35:36\">\n<g transform=\"translate(14.3912, 6.2414)\">\n<path stroke-width=\"0.0800\" stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke=\"currentColor\" fill=\"currentColor\" d=\"M0.7089 -5.5450C1.7592 -6.2947 3.6829 -6.0412 4.5031 -5.0450L4.5031 -5.0450C3.6672 -5.9222 1.7435 -6.1757 0.7089 -5.5450z\"/>\n</g>\n</a>\n<g transform=\"translate(21.1415, 1.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 119c0 8 5 15 13 18l46 17v158c0 10 8 19 18 19s19 -9 19 -19v-145l83 31v158c0 10 9 19 19 19s18 -9 18 -19v-145l32 12c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -16 -13 -19l-46 -16v-160l32 11c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -15 -13 -18l-46 -17\nv-158c0 -10 -8 -19 -18 -19s-19 9 -19 19v145l-83 -31v-158c0 -10 -9 -19 -19 -19s-18 9 -18 19v145l-32 -12c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60c0 8 5 16 13 19l46 16v160l-32 -11c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60zM179 95l-83 -30v-160l83 30v160z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(26.4507, 6.2414)\">\n<rect x=\"-0.0650\" y=\"-3.8138\" width=\"0.1300\" height=\"5.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:86:87\">\n<g transform=\"translate(27.0378, 1.2964)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M-50 0c0 28 22 50 50 50s50 -22 50 -50s-22 -50 -50 -50s-50 22 -50 50z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:78:79\">\n<g transform=\"translate(26.3857, 2.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:72:73\">\n<g transform=\"translate(26.3857, 4.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(10.0500, 6.2414)\">\n<rect x=\"-0.0650\" y=\"-3.8138\" width=\"0.1300\" height=\"5.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(11.7392, 1.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0c0 31 25 56 56 56s56 -25 56 -56s-25 -56 -56 -56s-56 25 -56 56z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(19.9396, 3.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0c0 31 25 56 56 56s56 -25 56 -56s-25 -56 -56 -56s-56 25 -56 56z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(11.7392, 3.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0c0 31 25 56 56 56s56 -25 56 -56s-25 -56 -56 -56s-56 25 -56 56z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:24:6:7\">\n<g transform=\"translate(4.1850, 4.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 119c0 8 5 15 13 18l46 17v158c0 10 8 19 18 19s19 -9 19 -19v-145l83 31v158c0 10 9 19 19 19s18 -9 18 -19v-145l32 12c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -16 -13 -19l-46 -16v-160l32 11c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -15 -13 -18l-46 -17\nv-158c0 -10 -8 -19 -18 -19s-19 9 -19 19v145l-83 -31v-158c0 -10 -9 -19 -19 -19s-18 9 -18 19v145l-32 -12c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60c0 8 5 16 13 19l46 16v160l-32 -11c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60zM179 95l-83 -30v-160l83 30v160z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(5.2850, 5.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 119c0 8 5 15 13 18l46 17v158c0 10 8 19 18 19s19 -9 19 -19v-145l83 31v158c0 10 9 19 19 19s18 -9 18 -19v-145l32 12c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -16 -13 -19l-46 -16v-160l32 11c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -15 -13 -18l-46 -17\nv-158c0 -10 -8 -19 -18 -19s-19 9 -19 19v145l-83 -31v-158c0 -10 -9 -19 -19 -19s-18 9 -18 19v145l-32 -12c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60c0 8 5 16 13 19l46 16v160l-32 -11c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60zM179 95l-83 -30v-160l83 30v160z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(6.3850, 3.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 119c0 8 5 15 13 18l46 17v158c0 10 8 19 18 19s19 -9 19 -19v-145l83 31v158c0 10 9 19 19 19s18 -9 18 -19v-145l32 12c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -16 -13 -19l-46 -16v-160l32 11c2 1 5 1 7 1c11 0 20 -9 20 -20v-60c0 -8 -5 -15 -13 -18l-46 -17\nv-158c0 -10 -8 -19 -18 -19s-19 9 -19 19v145l-83 -31v-158c0 -10 -9 -19 -19 -19s-18 9 -18 19v145l-32 -12c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60c0 8 5 16 13 19l46 16v160l-32 -11c-2 -1 -5 -1 -7 -1c-11 0 -20 9 -20 20v60zM179 95l-83 -30v-160l83 30v160z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(0.8000, 7.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M266 -635h-6c-108 0 -195 88 -195 197c0 58 53 103 112 103c54 0 95 -47 95 -103c0 -52 -43 -95 -95 -95c-11 0 -21 2 -31 6c26 -39 68 -65 117 -65h4zM461 -203c68 24 113 95 113 164c0 90 -66 179 -173 190c24 -116 46 -231 60 -354zM74 28c0 -135 129 -247 264 -247\nc28 0 55 2 82 6c-14 127 -37 245 -63 364c-79 -8 -124 -61 -124 -119c0 -44 25 -91 81 -123c5 -5 7 -10 7 -15c0 -11 -10 -22 -22 -22c-3 0 -6 1 -9 2c-80 43 -117 115 -117 185c0 88 58 174 160 197c-14 58 -29 117 -46 175c-107 -121 -213 -243 -213 -403zM335 -262\nc-188 0 -333 172 -333 374c0 177 131 306 248 441c-19 62 -37 125 -45 190c-6 52 -7 104 -7 156c0 115 55 224 149 292c6 5 14 5 20 0c71 -84 133 -245 133 -358c0 -143 -86 -255 -180 -364c21 -68 39 -138 56 -207c4 0 9 1 13 1c155 0 256 -128 256 -261\nc0 -76 -33 -154 -107 -210c-22 -17 -47 -28 -73 -36c3 -35 5 -70 5 -105c0 -19 -1 -39 -2 -58c-7 -119 -88 -225 -202 -228l1 43c93 2 153 92 159 191c1 18 2 37 2 55c0 31 -1 61 -4 92c-29 -5 -58 -8 -89 -8zM428 916c0 55 -4 79 -20 129c-99 -48 -162 -149 -162 -259\nc0 -74 18 -133 36 -194c80 97 146 198 146 324z\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:13:14\">\n<g transform=\"translate(9.9850, 2.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:7:8\">\n<g transform=\"translate(9.9850, 4.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(13.3452, 3.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M-7 375c8 4 17 7 25 7s16 -3 24 -7l-2 -183l106 20h3c10 0 18 -7 18 -17l7 -570c-8 -4 -17 -7 -25 -7s-16 3 -24 7l2 183l-106 -20h-3c-10 0 -18 7 -18 17zM131 112l-92 -17l-3 -207l92 17z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(18.2504, 6.2414)\">\n<rect x=\"-0.0650\" y=\"-3.8138\" width=\"0.1300\" height=\"5.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:43:44\">\n<g transform=\"translate(18.1854, 2.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:37:38\">\n<g transform=\"translate(18.1854, 4.2414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<g transform=\"translate(14.5212, 7.2014)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M0 0h-16v375h16v-375zM0 0v250c97 59 224 148 224 259c0 57 -15 112 -40 163c-3 16 10 27 23 27c7 0 15 -3 20 -11c25 -56 40 -117 40 -179c0 -203 -267 -306 -267 -509z\" fill=\"currentColor\"/>\n</g>\n<g transform=\"translate(14.4562, 6.2414)\">\n<rect x=\"-0.0650\" y=\"-4.3138\" width=\"0.1300\" height=\"5.3138\" ry=\"0.0400\" fill=\"currentColor\"/>\n</g>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:28:29\">\n<g transform=\"translate(14.3912, 1.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n<a style=\"color:inherit;\" xlink:href=\"textedit:///app/original.ly:27:24:25\">\n<g transform=\"translate(14.3912, 3.7414)\">\n<path transform=\"scale(0.0040, -0.0040)\" d=\"M218 136c55 0 108 -28 108 -89c0 -71 -55 -121 -102 -149c-35 -21 -75 -34 -116 -34c-55 0 -108 28 -108 89c0 71 55 121 102 149c35 21 75 34 116 34z\" fill=\"currentColor\"/>\n</g>\n</a>\n</svg>\n"
+   },
+   "from": 439.0,
+   "to": 440.0
+  },
+  {
+   "id": "A-1192.000",
+   "act": "WWV086A",
+   "level": 1,
+   "scene": 2,
+   "label": "Exact match",
+   "note": null,
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Wotan",
+     "text": "Eiltest du so,",
+     "translation": "If you hurried so,"
+    },
+    {
+     "kind": "sung",
+     "person": "Wotan",
+     "text": "den du geschlossen,",
+     "translation": "that you made,"
+    },
+    {
+     "kind": "sung",
+     "person": "Wotan",
+     "text": "den schlimmen Handel, zu schlichten?",
+     "translation": "to settle the bad bargain?"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"1192\"><attributes><divisions>256</divisions><key><fifths>3</fifths></key><time><beats>2</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"91.2\" /></direction><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff></note><note><pitch><step>D</step><octave>6</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"1193\"><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>256</duration><type>quarter</type><dot /><staff>1</staff><notations /></note><note><pitch><step>D</step><alter>1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><staff>1</staff></note></measure><measure number=\"1194\"><note><pitch><step>C</step><alter>1</alter><octave>6</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note></measure></part></score-partwise>"
+   },
+   "from": 1192.0,
+   "to": 1194.25
+  }
+ ]
+}

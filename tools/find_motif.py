@@ -5,7 +5,10 @@ The melody comes from a definition file, leitmotifs/definitions/<id>.json, so th
 every leitmotif. The file holds: id, name, lilypond (the melody in absolute LilyPond notes), core_notes (the first
 and last note, counted from 1, that levels 2 and 3 look for) and original (octaves_up, time and partial: how the
 page draws the melody; partial, clef and key_signature are optional, see original_musicxml()). It may also set
-openings (see openings()), max_level (the farthest level to look for) and source (a key of leitmotifs/sources.json). The melody may have rests, tuplets and 32nd
+openings (see openings()), max_level (the farthest level to look for), source (a key of leitmotifs/sources.json) and variant (the
+letter of one form of a leitmotif that has several: the page lists the forms under one heading, see full_name()) and place
+({act, from, to, label, note}: for a leitmotif that is no melody, such as the held E-flat of the Beginning, there is no search; its one passage is
+the measures from `from` to `to` of `act`, see placed_run()). The melody may have rests, tuplets and 32nd
 notes (see ly_tokens()); a note that is not a pitch, a rest or a tuplet is an error.
 
 Each passage has a level that tells how close it is to the melody (see levels()). All notes of a
@@ -65,6 +68,9 @@ def levels():
         out.append(dict(level=level, name=f"Opening, other keys" if level == 5 else "Shorter opening, other keys",
                         description=f"Only the first notes, {a} to {b} of the phrase, have the same intervals, moved to another key. The rhythm may differ. {chance}",
                         **({"hidden_by_default": True} if level == 4 + len(openings()) else {})))  # the shortest opening is mostly chance
+    if "place" in DEF:
+        out = out[:1] + [dict(level=1, name="Placed by hand",
+                              description="This leitmotif is not a melody that a search can find. Its place in the score was set by hand.")]
     return [l for l in out if l["level"] <= DEF.get("max_level", 9)]
 
 
@@ -151,6 +157,12 @@ def load_definition(motif_id):
     return json.loads((DEFINITIONS / f"{motif_id}.json").read_text(encoding="utf-8"))
 
 
+def full_name(d):
+    """Return the name of a definition as the page shows it. A leitmotif with lettered forms, such as Valhalla (A) and
+    Valhalla (B), has one definition for each form: they share `name` and differ in `variant`."""
+    return f"{d['name']} ({d['variant']})" if "variant" in d else d["name"]
+
+
 def use(definition):
     """Make `definition` the melody that every search in this module looks for."""
     global DEF, IDEAL, MOTIF, N, CORE
@@ -163,6 +175,16 @@ def use(definition):
 def numbers(start, length):
     """Return the numbers (counted from 1) of the first and last note of the melody in MOTIF[start:start + length]."""
     return MOTIF[start][3] + 1, MOTIF[start + length - 1][4] + 1
+
+
+def placed_run(act, merged):
+    """Return the passage that the "place" of the definition names, in the form that make_run() gives: every note of the act that
+    starts in the measures `from` to `to` (the measure `to` is not in it). A leitmotif that is no melody, such as the held E-flat of
+    the opening of Das Rheingold, has no search: its one passage is placed by hand."""
+    place = DEF["place"]
+    number = lambda n: next(i for i, m in enumerate(act.measures) if m["number"] == n)
+    notes = sorted((g for g in merged if act.offsets[number(place["from"])] <= g.onset < act.offsets[number(place["to"])]), key=lambda g: g.onset)
+    return SimpleNamespace(length=N, start=0, groups=[[g] for g in notes], run=notes, before=[], after=[], shown=notes)
 
 
 def read_act(path):
@@ -852,7 +874,14 @@ def original_occurrence(at):
         note=(f"The melody as you gave it, {words.get(abs(up), abs(up))} octave{'' if abs(up) == 1 else 's'} {'higher' if up > 0 else 'lower'}, " if up else "The melody as you gave it, ")
              + f"engraved from your notes. {f'It starts with a pickup of {pickup}' if partial else 'It has no pickup'}, "
              f"the bars are in {DEF['original']['time']}, and the score has a {DEF['original'].get('clef', 'treble')} clef and {key}. It is not a passage of the score.",
-        libretto=None, notation=dict(musicxml=original_musicxml()), **{"from": at, "to": at + 1})
+        libretto=None, notation=dict(musicxml=original_musicxml(), **original_svg()), **{"from": at, "to": at + 1})
+
+
+def original_svg():
+    """Return {"svg": ...}, the full transcription of the melody as the user engraved it (tools/engrave_originals.py), if
+    leitmotifs/originals/<id>.svg exists. The page then shows it instead of the one-line engraving of original_musicxml()."""
+    path = ROOT / "leitmotifs" / "originals" / f"{DEF['id']}.svg"
+    return {"svg": path.read_text(encoding="utf-8")} if path.exists() else {}
 
 
 def read_csv(path):
@@ -880,7 +909,7 @@ def seconds_at(path):
 def motif_block():
     """Return the "motif" part of a motif file: the id, the name, a description, and the source of the melody. The
     definition names its source by a key of leitmotifs/sources.json, so that one citation serves every leitmotif."""
-    block = dict(id=DEF["id"], name=DEF["name"],
+    block = dict(id=DEF["id"], name=full_name(DEF),
                  description="Passages of the piano score that match one melody, in levels by how close they are to it. Level 1 is the closest. A run of repeated notes counts as one note."
                  f" Passages that overlap, or lie within {MERGE_GAP} measure{'' if MERGE_GAP == 1 else 's'} of each other, are joined into one; the level is that of the closest.")
     if "source" in DEF:
@@ -889,11 +918,15 @@ def motif_block():
 
 
 def write_index():
-    """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file."""
+    """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file.
+    The ids in leitmotifs/order.json come first, in that order (the order of the book). The others follow, in the order of the names."""
     folder = ROOT / "leitmotifs" / "motifs"
     found = [load_definition(p.stem) for p in DEFINITIONS.glob("*.json") if (folder / p.name).exists()]
     plain = lambda name: "".join(c for c in unicodedata.normalize("NFD", name) if not unicodedata.combining(c)).casefold()
-    listing = [dict(id=d["id"], name=d["name"]) for d in sorted(found, key=lambda d: plain(d["name"]))]
+    order_file = ROOT / "leitmotifs" / "order.json"
+    rank = {m: i for i, m in enumerate(json.loads(order_file.read_text(encoding="utf-8")) if order_file.exists() else [])}
+    listing = [dict(id=d["id"], name=full_name(d), **({"group": d["name"], "variant": d["variant"]} if "variant" in d else {}))
+               for d in sorted(found, key=lambda d: (rank.get(d["id"], len(rank)), plain(d["name"]), d.get("variant", "")))]
     (folder / "index.json").write_text(json.dumps(dict(motifs=listing), ensure_ascii=False, indent=1), encoding="utf-8")
 
 
@@ -952,6 +985,10 @@ def main():
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
             act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests, by=index(merged)[0],
                                   seconds=seconds_at(f"{ann}/ann_audio_measure/Wagner_{work}_{PERFORMANCE}.csv"))
+            if "place" in DEF:  # no search: the one passage is placed by hand
+                if work == DEF["place"]["act"]:
+                    runs.append((placed_run(act, merged), act))
+                continue
             top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
             if top >= 2:
@@ -999,7 +1036,9 @@ def main():
             tempo = round(60 * float(quarters) / (t1 - t0), 1) if t0 is not None and t1 is not None and t1 > t0 else None
             same_rhythm = all(total(g) == m[1] for g, m in zip(run.groups, MOTIF[run.start:])) and all(
                 nxt[0].onset - (g[-1].onset + g[-1].dur) == m[5] for g, nxt, m in zip(run.groups, run.groups[1:], MOTIF[run.start:]))  # the rests too
-            if level == 1:
+            if "place" in DEF:
+                label, note = DEF["place"]["label"], DEF["place"].get("note")
+            elif level == 1:
                 first, last = numbers(run.start, run.length)
                 label = "Exact match" if run.length == N else f"Closest match: {last - first + 1} of {len(IDEAL)} notes"
                 note = None if run.length == N else difference(run)

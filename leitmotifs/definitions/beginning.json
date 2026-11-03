@@ -1,0 +1,13 @@
+{
+ "id": "beginning",
+ "name": "Beginning",
+ "source": "holman",
+ "lilypond": "es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2. ~es,2.",
+ "core_notes": [1, 1],
+ "max_level": 1,
+ "place": {
+  "act": "WWV086A", "from": 1, "to": 13, "label": "The opening of Das Rheingold",
+  "note": "The held E♭ of the first twelve measures. The B♭ joins it in measure 5. It is no melody, so no search found it: its place was set by hand."
+ },
+ "original": { "octaves_up": 0, "time": "6/8", "clef": "bass", "key_signature": -3 }
+}

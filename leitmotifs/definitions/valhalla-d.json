@@ -1,0 +1,10 @@
+{
+ "id": "valhalla-d",
+ "name": "Valhalla",
+ "variant": "D",
+ "source": "holman",
+ "lilypond": "f'8. f''16 f''4 es''4. c''8 des''8",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "partial": "4", "key_signature": -5 }
+}

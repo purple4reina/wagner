@@ -1,0 +1,10 @@
+{
+ "id": "loge-b",
+ "name": "Loge",
+ "variant": "B",
+ "source": "holman",
+ "lilypond": "gis''32 a'' gis'' a'' gis'' a'' gis'' a'' bes'' a'' bes'' a'' bes'' a'' bes'' a'' gis'' a'' gis'' a'' gis'' a'' gis'' a'' bes'' a'' bes'' a'' bes'' a'' bes'' a''",
+ "core_notes": [1, 16],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "2/4", "key_signature": 3 }
+}

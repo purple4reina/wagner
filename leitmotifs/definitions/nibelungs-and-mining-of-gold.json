@@ -1,9 +1,0 @@
-{
- "id": "nibelungs-and-mining-of-gold",
- "name": "Nibelungs and Mining of Gold",
- "source": "companion",
- "lilypond": "f8. f16 f8 f8 des8 es8 f8. f16 f8",
- "core_notes": [1, 9],
- "max_level": 2,
- "original": { "octaves_up": 1, "time": "9/8", "key_signature": -5 }
-}

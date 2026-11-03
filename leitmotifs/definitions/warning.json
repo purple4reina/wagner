@@ -1,0 +1,9 @@
+{
+ "id": "warning",
+ "name": "Warning",
+ "source": "holman",
+ "lilypond": "r4 g'8 c''4 es''8 d''4. ~d''4 r8",
+ "core_notes": [1, 4],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "6/8", "key_signature": -3 }
+}
