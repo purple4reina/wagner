@@ -1,0 +1,9 @@
+{
+ "id": "servitude",
+ "name": "Servitude",
+ "source": "holman",
+ "lilypond": "ges2 f4 ges2 f4 ges2 f4 f2 e4",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -5 }
+}
