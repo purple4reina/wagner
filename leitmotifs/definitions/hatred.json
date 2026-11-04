@@ -1,0 +1,9 @@
+{
+ "id": "hatred",
+ "name": "Hatred",
+ "source": "holman",
+ "lilypond": "r4 r8 g,32 a, b, bis, cis2. r8 g,32 a, b, bis, cis2. r8",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "2", "clef": "bass", "key_signature": 2 }
+}

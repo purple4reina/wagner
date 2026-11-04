@@ -1,0 +1,9 @@
+{
+ "id": "withering-of-life",
+ "name": "Withering of Life",
+ "source": "holman",
+ "lilypond": "bes4. es8 d4. f8 bes4 bes8 es8 d4 d8 r8",
+ "core_notes": [1, 9],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": 2 }
+}

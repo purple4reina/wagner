@@ -113,6 +113,10 @@
    "name": "Holda's Golden Apples"
   },
   {
+   "id": "withering-of-life",
+   "name": "Withering of Life"
+  },
+  {
    "id": "froh",
    "name": "Froh"
   },
@@ -159,6 +163,38 @@
    "name": "Servitude"
   },
   {
+   "id": "power-of-the-ring",
+   "name": "Power of the Ring"
+  },
+  {
+   "id": "serpent",
+   "name": "Serpent"
+  },
+  {
+   "id": "hoard",
+   "name": "Hoard"
+  },
+  {
+   "id": "hatred",
+   "name": "Hatred"
+  },
+  {
+   "id": "curse",
+   "name": "Curse"
+  },
+  {
+   "id": "erda",
+   "name": "Erda"
+  },
+  {
+   "id": "downfall",
+   "name": "Downfall"
+  },
+  {
+   "id": "donners-call",
+   "name": "Donner's Call"
+  },
+  {
    "id": "blow-bellows",
    "name": "Blow Bellows"
   },
@@ -173,22 +209,6 @@
   {
    "id": "brunnhildes-love-for-wotan",
    "name": "Brünnhilde's Love for Wotan"
-  },
-  {
-   "id": "curse",
-   "name": "Curse"
-  },
-  {
-   "id": "donners-call",
-   "name": "Donner's Call"
-  },
-  {
-   "id": "dragon",
-   "name": "Dragon"
-  },
-  {
-   "id": "erda",
-   "name": "Erda"
   },
   {
    "id": "fafner-as-dragon",

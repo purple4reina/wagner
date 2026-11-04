@@ -1,0 +1,9 @@
+{
+ "id": "hoard",
+ "name": "Hoard",
+ "source": "holman",
+ "lilypond": "bes,2 c4 des2 bes,4 c2 des4 es2",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -5 }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "serpent",
+ "name": "Serpent",
+ "source": "holman",
+ "lilypond": "dis,,4 e,,4 dis,,4 fis,,8. r16 eis,,4 fis,,4 eis,,4 gis,,8. r16 fisis,,4 gis,,4 fisis,,4 b,,8. r16",
+ "core_notes": [1, 12],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": 3 }
+}
