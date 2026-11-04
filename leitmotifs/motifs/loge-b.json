@@ -25,7 +25,7 @@
   {
    "level": 2,
    "name": "Same core pitches",
-   "description": "Notes 1 to 16 of the phrase have the same pitches, in any octave, but the rhythm differs."
+   "description": "Notes 1 to 16 of the phrase have the same pitches, in any octave, but the rhythm differs. In a sung passage the score may have one short extra note between two of them: it is skipped."
   }
  ],
  "sections": [

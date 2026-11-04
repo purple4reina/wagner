@@ -25,7 +25,7 @@
   {
    "level": 2,
    "name": "Same core pitches",
-   "description": "Notes 1 to 13 of the phrase have the same pitches, in any octave, but the rhythm differs."
+   "description": "Notes 1 to 13 of the phrase have the same pitches, in any octave, but the rhythm differs. In a sung passage the score may have one short extra note between two of them: it is skipped."
   }
  ],
  "sections": [
@@ -207,6 +207,33 @@
    },
    "from": 820.0,
    "to": 822.917
+  },
+  {
+   "id": "A-2480.000",
+   "act": "WWV086A",
+   "level": 2,
+   "scene": 3,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 13 (of 13) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1 1 1 1 1 1 1 1 1 1 1; yours are 1 1 1 1 1 1 1 1 1 1 3/2 13/2. The passage is sung, and the score has C♯ of 1 eighth note between your notes 11 and 12 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Alberich",
+     "text": "in seligem Weben wiegt ihr euch;",
+     "translation": "in blessed stirring you rock yourselves;"
+    },
+    {
+     "kind": "sung",
+     "person": "Alberich",
+     "text": "den Schwarzalben",
+     "translation": "to the dark Albs"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"2480\"><attributes><divisions>256</divisions><key><fifths>-5</fifths></key><time><beats>3</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"62.2\" /></direction><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note></measure><measure number=\"2481\"><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>A</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff><notations /></note><note><pitch><step>B</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><accidental>flat</accidental><stem>up</stem><staff>1</staff></note></measure><measure number=\"2482\"><note><pitch><step>C</step><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff></note><note><pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 2480.0,
+   "to": 2482.667
   },
   {
    "id": "C-1-859.000",

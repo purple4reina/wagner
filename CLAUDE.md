@@ -84,7 +84,7 @@ Every file in `leitmotifs/motifs/` is generated (passages that overlap, or lie w
 
 The sound of the Play button has the tempo of one recording (`PERFORMANCE` in `tools/find_motif.py`, from its `ann_audio_measure` file), written into each excerpt as a `<sound tempo>`; the original melody plays at 120.
 
-Matching rules, in `tools/find_motif.py`: one staff and voice, tied notes merged, a run of repeated notes counts as one note, octave is ignored, two notes that follow each other cannot start in the same chord (a repeated chord, such as a tremolo, is not a melody), and passages may overlap in time (two are one statement only if they end on the same note of the same line, or start and end together).
+Matching rules, in `tools/find_motif.py`: one staff and voice, tied notes merged, a run of repeated notes counts as one note, octave is ignored, two notes that follow each other cannot start in the same chord (a repeated chord, such as a tremolo, is not a melody), and passages may overlap in time (two are one statement only if they end on the same note of the same line, or start and end together). The voice has no staff of its own (it is written inside a piano staff, and its rhythm is not in the data), so in the measures that `ann_score_singing` marks, the level 2 search may skip one note of an eighth or less between two notes of a match: the piano may play a triplet where the voice sings a dotted rhythm (Fafner's "siech und bleich", Rheingold m. 1119). The skipped note is shown, not marked.
 
 ## Leitmotif discovery task (`discovery/`)
 

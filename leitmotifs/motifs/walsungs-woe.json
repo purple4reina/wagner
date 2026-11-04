@@ -25,7 +25,7 @@
   {
    "level": 2,
    "name": "Same core pitches",
-   "description": "Notes 1 to 6 of the phrase have the same pitches, in any octave, but the rhythm differs."
+   "description": "Notes 1 to 6 of the phrase have the same pitches, in any octave, but the rhythm differs. In a sung passage the score may have one short extra note between two of them: it is skipped."
   }
  ],
  "sections": [
@@ -281,6 +281,53 @@
    "to": 842.312
   },
   {
+   "id": "C-1-2739.750",
+   "act": "WWV086C-1",
+   "level": 2,
+   "scene": 3,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1/2 1/4 1/2 1/2 1/2 1/4; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has A of 1/4 eighth notes between your notes 1 and 2 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Mime",
+     "text": "lachen muß mir der Lohn!"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"2739\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>-1</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"104.3\" /></direction><note><pitch><step>C</step><octave>5</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><beam number=\"1\">begin</beam><beam number=\"2\">begin</beam><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>32</duration><voice>1</voice><type>32nd</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam><beam number=\"3\">begin</beam><notations><slur color=\"#000000\" type=\"start\" orientation=\"over\" /></notations></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>32</duration><voice>1</voice><type>32nd</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam><beam number=\"3\">end</beam></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam><notations><slur color=\"#000000\" type=\"stop\" orientation=\"over\" /><articulations><staccato /></articulations></notations></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">end</beam><notations><articulations><staccato /></articulations></notations></note></measure><measure number=\"2740\"><note><pitch><step>F</step><octave>5</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>32</duration><voice>1</voice><type>32nd</type><stem>down</stem><staff>1</staff><notations><slur color=\"#000000\" type=\"start\" orientation=\"over\" /></notations></note><note><pitch><step>E</step><octave>5</octave></pitch><duration>32</duration><voice>1</voice><type>32nd</type><stem>down</stem><staff>1</staff></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><notations><slur color=\"#000000\" type=\"stop\" orientation=\"over\" /></notations></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 2739.75,
+   "to": 2740.25
+  },
+  {
+   "id": "C-3-622.888",
+   "act": "WWV086C-3",
+   "level": 2,
+   "scene": 2,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 2/3 3/2 1/2 2 2/3 2/3; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has A of 2/3 eighth notes between your notes 5 and 6 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Siegfried",
+     "text": "Doch hör, nun schwatz’ ich nicht länger:",
+     "translation": "But listen, I will chatter no longer:"
+    },
+    {
+     "kind": "sung",
+     "person": "Siegfried",
+     "text": "geschwind, zeig mir den Weg, –",
+     "translation": "quickly, show me the way, –"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"622\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>0</fifths></key><time><beats>3</beats><beat-type>4</beat-type></time><clef><sign>F</sign><line>4</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"86.7\" /></direction><note><pitch><step>C</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations /></note></measure><measure number=\"623\"><note><pitch><step>B</step><octave>3</octave></pitch><duration>128</duration><type>eighth</type><dot /><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><stem>down</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>down</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><attributes><clef><sign>G</sign><line>2</line></clef></attributes><note><pitch><step>F</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /></notations></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>85</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><stem>up</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /></notations></note></measure><measure number=\"624\"><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><accidental>sharp</accidental><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /></notations></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff></note><note><pitch><step>C</step><alter>1</alter><octave>4</octave></pitch><duration>86</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><stem>up</stem><staff>1</staff><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /><articulations><staccato /></articulations></notations></note></measure></part></score-partwise>"
+   },
+   "from": 622.888,
+   "to": 624.333
+  },
+  {
    "id": "C-3-1144.000",
    "act": "WWV086C-3",
    "level": 2,
@@ -308,6 +355,33 @@
    "to": 1146.667
   },
   {
+   "id": "C-3-1717.333",
+   "act": "WWV086C-3",
+   "level": 2,
+   "scene": 3,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 1 1/2 1/2 2 1/3 1/3; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has A of 1/3 eighth notes between your notes 4 and 5 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Brünnhilde",
+     "text": "lachend laß uns verderben,",
+     "translation": "laughing let us perish,"
+    },
+    {
+     "kind": "sung",
+     "person": "Brünnhilde",
+     "text": "lachend zu Grunde gehn!",
+     "translation": "laughing go to ruin!"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"1717\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>0</fifths></key><time><beats>3</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"85.7\" /></direction><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>up</stem><staff>1</staff><beam number=\"1\">begin</beam><notations><articulations><strong-accent /></articulations></notations></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">begin</beam><notations><articulations><staccatissimo /></articulations></notations></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">end</beam><notations><articulations><staccatissimo /></articulations></notations></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>256</duration><type>quarter</type><staff>1</staff></note></measure><measure number=\"1718\"><note><pitch><step>A</step><octave>5</octave></pitch><duration>42</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">begin</beam><beam number=\"2\">begin</beam><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"below\" /><slur color=\"#000000\" type=\"start\" orientation=\"over\" /></notations></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>43</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>43</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>42</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>43</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">continue</beam><beam number=\"2\">continue</beam></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>43</duration><voice>1</voice><type>16th</type><time-modification><actual-notes>6</actual-notes><normal-notes>4</normal-notes><normal-type>16th</normal-type></time-modification><stem>down</stem><staff>1</staff><beam number=\"1\">end</beam><beam number=\"2\">end</beam><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"below\" /><slur color=\"#000000\" type=\"stop\" orientation=\"over\" /></notations></note></measure></part></score-partwise>"
+   },
+   "from": 1717.333,
+   "to": 1718.333
+  },
+  {
    "id": "D-0-443.000",
    "act": "WWV086D-0",
    "level": 2,
@@ -327,6 +401,60 @@
    },
    "from": 443.0,
    "to": 445.125
+  },
+  {
+   "id": "D-0-447.375",
+   "act": "WWV086D-0",
+   "level": 2,
+   "scene": 0,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 3 1 1 2 1 2; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has F of 1 eighth note between your notes 3 and 4 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Brünnhilde",
+     "text": "gedenke deiner nur,",
+     "translation": "think only of yourself,"
+    },
+    {
+     "kind": "sung",
+     "person": "Brünnhilde",
+     "text": "gedenke deiner Taten:",
+     "translation": "think of your deeds:"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"447\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"123.2\" /></direction><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>256</duration><type>quarter</type><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"448\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>128</duration><voice>1</voice><type>eighth</type><stem>down</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>A</step><octave>5</octave></pitch><duration>256</duration><type>quarter</type><staff>1</staff></note><note><pitch><step>F</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>D</step><octave>5</octave></pitch><duration>256</duration><type>quarter</type><staff>1</staff></note><note><pitch><step>C</step><octave>5</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure><measure number=\"449\"><note><pitch><step>B</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 447.375,
+   "to": 449.125
+  },
+  {
+   "id": "D-1-18.000",
+   "act": "WWV086D-1",
+   "level": 2,
+   "scene": 1,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 3/2 1/2 2 3/2 3/2 1/2; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has C of 1/2 eighth notes between your notes 4 and 5 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Hagen",
+     "text": "die beid’ uns Brüder gebar,",
+     "translation": "who bore us both as brothers,"
+    },
+    {
+     "kind": "sung",
+     "person": "Hagen",
+     "text": "Frau Grimhild’ ließ mich’s begreifen.",
+     "translation": "Lady Grimhild made me understand it."
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"18\"><attributes><divisions>256</divisions><key><fifths>2</fifths></key><time><beats>3</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"78.5\" /></direction><note><pitch><step>C</step><octave>4</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><accidental>natural</accidental><stem>up</stem><staff>1</staff></note><note><pitch><step>B</step><octave>3</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><dot /><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note><note><pitch><step>A</step><octave>3</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><accidental>natural</accidental><stem>up</stem><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><notations><articulations><staccatissimo /></articulations></notations></note></measure><measure number=\"19\"><note><pitch><step>F</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><dot /><accidental>natural</accidental><staff>1</staff></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><notations><articulations><staccatissimo /></articulations></notations></note><note><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch><duration>128</duration><type>eighth</type><dot /><accidental>flat</accidental><staff>1</staff></note><note><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><notations><articulations><staccatissimo /></articulations></notations></note><note><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><stem>up</stem><staff>1</staff></note></measure></part></score-partwise>"
+   },
+   "from": 18.0,
+   "to": 19.917
   },
   {
    "id": "D-1-1260.250",
@@ -409,6 +537,39 @@
    },
    "from": 60.667,
    "to": 62.0
+  },
+  {
+   "id": "D-3-564.500",
+   "act": "WWV086D-3",
+   "level": 2,
+   "scene": 2,
+   "label": "Same pitches, sung, one note skipped",
+   "note": "Your notes 1 to 6 (of 6) have the same pitches here, but not the same rhythm. In eighth notes, the score plays them as 3/2 1/2 3/2 14/3 2/3 2/3; yours are 4 3/2 1/2 4 2 7. The passage is sung, and the score has D of 1/2 eighth notes between your notes 3 and 4 in the same line. The voice has no staff of its own, so this note is left out of the match.",
+   "libretto": [
+    {
+     "kind": "sung",
+     "person": "Siegfried",
+     "text": "von eurer Beute bitte ich für mich.",
+     "translation": "I ask for a share of your spoil for myself."
+    },
+    {
+     "kind": "sung",
+     "person": "Hagen",
+     "text": "Du beutelos?",
+     "translation": "You, empty-handed?"
+    },
+    {
+     "kind": "sung",
+     "person": "Siegfried",
+     "text": "Auf Waldjagd zog ich aus, –",
+     "translation": "I set out on a forest hunt, –"
+    }
+   ],
+   "notation": {
+    "musicxml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><score-partwise version=\"3.0\"><part-list><score-part id=\"P1\"><part-name /></score-part></part-list><part id=\"P1\"><measure number=\"564\" implicit=\"yes\"><attributes><divisions>256</divisions><key><fifths>3</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes><direction><direction-type><words /></direction-type><sound tempo=\"98.6\" /></direction><note><pitch><step>C</step><octave>4</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><accidental>natural</accidental><stem>up</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>B</step><octave>4</octave></pitch><duration>64</duration><type>16th</type><staff>1</staff></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>192</duration><voice>1</voice><type>eighth</type><dot /><stem>up</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>64</duration><voice>1</voice><type>16th</type><stem>up</stem><staff>1</staff><notations><articulations><staccato /></articulations></notations></note></measure><measure number=\"565\"><note><pitch><step>A</step><octave>4</octave></pitch><duration>512</duration><tie type=\"start\" /><type>half</type><staff>1</staff><notations><tied type=\"start\" /></notations></note><note><pitch><step>A</step><octave>4</octave></pitch><duration>128</duration><tie type=\"stop\" /><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"32\" placement=\"above\" /><tied type=\"stop\" /></notations></note><note><pitch><step>F</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>128</duration><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"32\" placement=\"above\" /></notations></note><note><pitch><step>C</step><octave>4</octave></pitch><duration>85</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><stem>up</stem><staff>1</staff><beam number=\"1\">begin</beam><notations><tuplet type=\"start\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /></notations></note><note><pitch><step>D</step><octave>4</octave></pitch><duration>85</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><stem>up</stem><staff>1</staff><beam number=\"1\">continue</beam></note><note><pitch><step>E</step><octave>4</octave></pitch><duration>86</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><stem>up</stem><staff>1</staff><beam number=\"1\">end</beam><notations><tuplet type=\"stop\" bracket=\"no\" number=\"1\" default-y=\"-20\" placement=\"above\" /></notations></note></measure></part></score-partwise>"
+   },
+   "from": 564.5,
+   "to": 566.0
   },
   {
    "id": "D-3-636.688",

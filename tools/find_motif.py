@@ -17,6 +17,8 @@ melody is a gap of that length: level 1 needs the same rest in the score, the ot
 Two notes that follow each other cannot start in the same chord: a chord that repeats is not a melody.
 Passages may overlap in time. Two passages count as one only if they are the same statement: they end on the same
 note of the same staff and voice, or they begin and end at the same moments.
+The voice of the score has no staff of its own: it is part of a piano staff. So in a sung passage (the singing annotations) a level 2
+passage may skip one short note of its line, which the piano plays and the voice does not sing (see find_core()).
 The notation excerpt of a passage is copied from the score (see excerpt()). It carries the tempo of one recording
 (see PERFORMANCE), so that the sound of the page plays at the speed of a performance. The whole piano score of the same
 measures goes to a second file, <id>.full.json (see full_excerpt()).
@@ -57,7 +59,8 @@ def levels():
         dict(level=1, name="Closest to the original",
              description="The best partial matches of the whole phrase. The pitches and the rhythm are the same, in any octave."),
         dict(level=2, name="Same core pitches",
-             description=f"Notes {first} to {last} of the phrase have the same pitches, in any octave, but the rhythm differs."),
+             description=f"Notes {first} to {last} of the phrase have the same pitches, in any octave, but the rhythm differs. "
+                         "In a sung passage the score may have one short extra note between two of them: it is skipped."),
         dict(level=3, name="One note different",
              description=f"Notes {first} to {last} of the phrase have the same pitches, in any octave, except one note. The rhythm may differ."),
         dict(level=4, name="Other keys",
@@ -83,6 +86,7 @@ OPERAS = [
 STEP_PC = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
 PC_NAME = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]
 TIE_GAP = Fraction(1, 32)  # Sibelius rounds the durations of tuplets, so tied notes may miss by a little
+SKIP_MAX = Fraction(1, 2)  # the longest note (in quarter notes) that find_core() skips in a sung passage: an ornament, not a syllable
 
 
 LY_ALTER = {"isis": 2, "is": 1, "s": -1, "es": -1, "ses": -2, "eses": -2}  # the ending of a note name, in semitones
@@ -184,7 +188,7 @@ def placed_run(act, merged):
     place = DEF["place"]
     number = lambda n: next(i for i, m in enumerate(act.measures) if m["number"] == n)
     notes = sorted((g for g in merged if act.offsets[number(place["from"])] <= g.onset < act.offsets[number(place["to"])]), key=lambda g: g.onset)
-    return SimpleNamespace(length=N, start=0, groups=[[g] for g in notes], run=notes, before=[], after=[], shown=notes)
+    return SimpleNamespace(length=N, start=0, groups=[[g] for g in notes], run=notes, before=[], after=[], shown=notes, skipped=[])
 
 
 def read_act(path):
@@ -299,8 +303,10 @@ def follows(by, prev, g):
     return prev is None or g.midi == prev.midi or chord(prev) != chord(g)
 
 
-def make_run(by, ends, groups, start):
-    """Return a passage: `groups` of notes that match MOTIF from MOTIF[start], with the groups of the line before and after."""
+def make_run(by, ends, groups, start, skipped=()):
+    """Return a passage: `groups` of notes that match MOTIF from MOTIF[start], with the groups of the line before and after.
+    `skipped` is [(note, k)] for the notes of the line that the match skips (see find_core()): the note comes before MOTIF[k]. They are in
+    `shown`, so that the notation keeps the line whole, but not in `run`, which the full score marks."""
     def nearest(candidates, g):
         return min(candidates, key=lambda c: abs(c.midi - g.midi))
 
@@ -320,8 +326,9 @@ def make_run(by, ends, groups, start):
         after.append([cur])
     notes = [n for g in groups for n in g]
     flat = lambda gs: [n for g in gs for n in g]
-    return SimpleNamespace(length=len(groups), start=start, groups=groups, run=notes, before=before, after=after,
-                           shown=flat(before) + notes + flat(after))
+    skipped = list(skipped)
+    return SimpleNamespace(length=len(groups), start=start, groups=groups, run=notes, before=before, after=after, skipped=skipped,
+                           shown=flat(before) + sorted(notes + [h for h, _ in skipped], key=lambda n: n.onset) + flat(after))
 
 
 def identity(run):
@@ -375,19 +382,51 @@ def find_runs(merged, min_len=6):
     return kept
 
 
-def find_core(merged, transposed=False, wrong=0, length=None):
+def sung_spans(singing, measures, offsets):
+    """Return the passages that the singing annotations mark, as (start, end) in quarter notes from the start of the act, in time order,
+    with the ones that overlap joined. `singing` is [(measure_start, measure_end, person, text)]."""
+    first = {}
+    for i, m in enumerate(measures):
+        first.setdefault(m["number"], i)
+    end_of_act = offsets[-1] + measures[-1]["len"]
+
+    def at(thousandths):
+        n, f = divmod(thousandths, 1000)
+        return offsets[first[n]] + Fraction(f, 1000) * measures[first[n]]["nominal"] if n in first else end_of_act
+
+    spans = []
+    for a, b in sorted((at(round(s * 1000)), at(round(e * 1000) + 1)) for s, e, _, _ in singing):  # an end such as 380.999 is just before 381
+        if spans and a <= spans[-1][1]:
+            spans[-1] = (spans[-1][0], max(spans[-1][1], b))
+        else:
+            spans.append((a, b))
+    return spans
+
+
+def find_core(merged, transposed=False, wrong=0, length=None, sung=()):
     """Return the passages in which the notes MOTIF[CORE] have the same pitch classes, with any rhythm.
 
     If `transposed` is true, the passages have the same intervals instead, so the key may differ.
     `wrong` notes may be anything. `length` keeps only the first `length` notes of the core.
     Notes that repeat one pitch in a row count as one note.
+    `sung` is the passages of the act that a singer sings (see sung_spans()). The voice has no staff of its own in the score: it is part
+    of a piano staff, and the piano may play other notes that the voice does not sing (a triplet, say) in the same line. So in a sung
+    passage a match may skip one note of the line, if it is short (SKIP_MAX) and between two notes of the match. The match has those
+    notes in `skipped` (see make_run()).
     """
     by, ends = index(merged)
     lo = CORE[0]
     hi = CORE[1] if length is None else lo + length
+    starts = [a for a, _ in sung]
 
-    def follow(line, t, i, prev, errors, allowed):
-        for g in by.get((line, t), ()):
+    def singing(t):
+        k = bisect_right(starts, t) - 1
+        return k >= 0 and t < sung[k][1]
+
+    def follow(line, t, i, prev, errors, allowed, skips):
+        """Yield (groups, skipped) for each way to match the notes from MOTIF[lo + i] that start at `t`."""
+        here = by.get((line, t), ())
+        for g in here:
             pc, before = MOTIF[lo + i][0], MOTIF[lo + i - 1][0]
             right = (g.midi % 12 == pc) if not transposed else (i == 0 or (g.midi - prev.midi) % 12 == (pc - before) % 12)
             if errors + (not right) > allowed or not follows(by, prev, g):
@@ -395,27 +434,36 @@ def find_core(merged, transposed=False, wrong=0, length=None):
             # Try every number of repeats, because a held chord note of the same pitch can run on after the melody.
             for group in repeats(by, g):
                 if lo + i + 1 == hi:
-                    yield [group]
+                    yield [group], []
                 else:
                     for gap in sorted({0, MOTIF[lo + i][5]}):  # a rest of the melody may be missing in the score
-                        for rest in follow(line, group[-1].onset + group[-1].dur + gap, i + 1, group[-1], errors + (not right), allowed):
-                            yield [group] + rest
+                        for rest, skipped in follow(line, group[-1].onset + group[-1].dur + gap, i + 1, group[-1], errors + (not right), allowed, skips):
+                            yield [group] + rest, skipped
+        if skips and i > 0 and singing(t):
+            for h in here:
+                if h.dur <= SKIP_MAX:
+                    for rest, skipped in follow(line, h.onset + h.dur, i, prev, errors, allowed, skips - 1):
+                        yield rest, [(h, lo + i)] + skipped
 
     # Passages may overlap. Starts at the repeats of the first note give the same statement, and so does
     # the same statement in two staves, so each statement is kept once, at its earliest start.
     best = {}
     for line, t in by:
-        for allowed in range(wrong + 1):  # a start that has an exact match needs no wrong note
-            # Each wrong note multiplies the ways to match, so look at a limited number of them only.
-            found = list(islice(follow(line, t, 0, None, 0, allowed), MAX_CHAINS))
+        found = []
+        for skips in range(2 if sung else 1):  # a start that matches without a skipped note needs none
+            for allowed in range(wrong + 1):  # a start that has an exact match needs no wrong note
+                # Each wrong note multiplies the ways to match, so look at a limited number of them only.
+                found = list(islice(follow(line, t, 0, None, 0, allowed, skips), MAX_CHAINS))
+                if found:
+                    break
             if found:
                 break
         if found:
-            c = min(found, key=lambda c: (shape_error(c, lo), -len(c[0])))
+            c, skipped = min(found, key=lambda f: (shape_error(f[0], lo), -len(f[0][0])))
             span = (c[0][0].onset, c[-1][-1].onset + c[-1][-1].dur)
             if (line, span[1]) not in best or span[0] < best[(line, span[1])][0][0]:
-                best[(line, span[1])] = (span, c)
-    return [make_run(by, ends, c, lo) for _, c in sorted({span: (span, c) for span, c in best.values()}.values(), key=lambda h: h[0])]
+                best[(line, span[1])] = (span, c, skipped)
+    return [make_run(by, ends, c, lo, skipped) for _, c, skipped in sorted({span: (span, c, skipped) for span, c, skipped in best.values()}.values(), key=lambda h: h[0])]
 
 
 def eighths(dur):
@@ -452,6 +500,13 @@ def rhythm_difference(run):
     """Return the text that tells how the rhythm of a same-pitch core match differs from the melody."""
     first, last = numbers(run.start, run.length)
     return f"Your notes {first} to {last} (of {len(IDEAL)}) have the same pitches here, but not the same rhythm. {rhythm_text(run)}"
+
+
+def skip_text(run):
+    """Return the text that tells which notes of a sung passage a core match skips."""
+    parts = [f"{describe(h.midi % 12, h.dur)} between your notes {numbers(k - 1, 1)[1]} and {numbers(k, 1)[0]}" for h, k in run.skipped]
+    return (f"The passage is sung, and the score has {' and '.join(parts)} in the same line. The voice has no staff of its own, so "
+            f"{'this note is' if len(parts) == 1 else 'these notes are'} left out of the match.")
 
 
 def wrong_note_difference(run, same_rhythm):
@@ -984,6 +1039,7 @@ def main():
             singing = [(float(r["measure_start"]), float(r["measure_end"]), r["person"], r["text"])
                        for r in read_csv(f"{ann}/ann_score_singing/Wagner_{work}.csv")]
             act = SimpleNamespace(work=work, scenes=scenes, singing=singing, measures=measures, offsets=offsets, rests=rests, by=index(merged)[0],
+                                  sung=sung_spans(singing, measures, offsets),
                                   seconds=seconds_at(f"{ann}/ann_audio_measure/Wagner_{work}_{PERFORMANCE}.csv"))
             if "place" in DEF:  # no search: the one passage is placed by hand
                 if work == DEF["place"]["act"]:
@@ -992,7 +1048,7 @@ def main():
             top = DEF.get("max_level", 9)  # a definition may drop the farther levels: for a very short melody they are all chance
             runs += [(run, act) for run in find_runs(merged)]
             if top >= 2:
-                cores += [(run, act) for run in find_core(merged)]
+                cores += [(run, act) for run in find_core(merged, sung=act.sung)]
             if top >= 3:
                 wrongs += [(run, act) for run in find_core(merged, wrong=1)]
             if top >= 4:
@@ -1045,6 +1101,9 @@ def main():
             elif level == 2:
                 label = "Same pitches and rhythm" if same_rhythm else "Same pitches, different rhythm"
                 note = None if same_rhythm else rhythm_difference(run)
+                if run.skipped:
+                    label = "Same pitches, sung, one note skipped"
+                    note = f"{rhythm_difference(run)} {skip_text(run)}"
             elif level == 3:
                 label = "Same pitches, one note different"
                 note = wrong_note_difference(run, same_rhythm)
