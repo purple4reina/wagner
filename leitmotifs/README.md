@@ -34,7 +34,7 @@ The script runs these steps in order. You can run each step alone.
 | 3. Link the leitmotifs | `python3 -I tools/link_motifs.py` | `motifs/also.json`: for each example, the other leitmotifs that have an example in its measures or the measure before or after (`REACH`). Run it again after any leitmotif changes. The page shows them under "Also present". |
 | 4. Write the test file | `python3 -I tools/make_sample.py` | `motifs/sample.json` |
 
-The hand-written inputs are `definitions/*.json`, `translations.json` and `order.json` (the ids that the sidebar lists, in the
+The hand-written inputs are `definitions/*.json`, `translations.json`, `operas.json` (the first leitmotif of each opera, for the headings of the sidebar) and `order.json` (the ids that the sidebar lists, in the
 order of Holman's book; a leitmotif that is not in it stays on disk and is not listed: the 33 leitmotifs of the Companion, from before Holman's book, are
 kept as hidden `companion-*` and older definitions). Nothing else is typed in.
 
@@ -57,9 +57,10 @@ kept as hidden `companion-*` and older definitions). Nothing else is typed in.
    Listener's Companion & Concordance*). The page shows it in the footer.
    Optional: `variant`, the letter of one form of a leitmotif that has several, such as (A) and (B) in Holman. Write one
    definition for each form, with the same `name` and a different `variant` (`definitions/valhalla-a.json`). The page
-   names it "Valhalla (A)" and lists the forms under one heading "Valhalla" in the sidebar.
+   names it "Valhalla (A)" and lists the forms in one list that can be closed, headed "Valhalla", in the sidebar.
    A melody with chords or a second voice gives the top note of each chord, or the main voice: the finder follows one line.
-2. To list the leitmotif on the page, add its id to `order.json`, at the place where it stands in the book. If the definition's name is not the
+2. To list the leitmotif on the page, add its id to `order.json`, at the place where it stands in the book. Its opera is that of the
+   leitmotif before it, unless it is the first of an opera: then add it to `operas.json` too. If the definition's name is not the
    label of its section in the .ly file (a misspelled label), give the label as `"section"`.
    Run `python3 -I tools/find_motif.py <id>`. Open the page with `?motif=<id>`.
 3. The finder lists each sung line that has no English. Add the English to `translations.json`, which all

@@ -15,7 +15,10 @@
   one entry for each definition that has a motif file. If `order.json` (a list of ids, in the order of the book) exists, the list is
   exactly its ids, in that order: a motif that is not in it stays on disk but the page does not list it. Without it, every motif is listed, in the order of the names.
   A leitmotif with lettered forms has one entry for each form, with `"group"` (the leitmotif) and `"variant"` (the letter) besides
-  the `name` ("Valhalla (A)"). The page shows the `group` once, as a heading, and the `variant` as the link.
+  the `name` ("Valhalla (A)"). The page shows the `group` as a list that can be closed, with the `variant`s as the links under it. A click on the closed `group` opens it and opens its first `variant`.
+  An entry may have `"opera"` ("Das Rheingold"): the page shows a list that can be closed for each run of entries with the same value, with the value as its heading. `tools/find_motif.py` writes it
+  from `operas.json`, which maps the id of the first leitmotif of each opera to its name; the leitmotifs after it, in the order, are in that opera.
+  Without `"opera"` the list has no headings.
 
 - `motifs/also.json` tells the page which other leitmotifs are near each example (see below). Without it the page has no "Also present".
   `tools/link_motifs.py` writes it from all the motif files, so run it after `tools/find_motif.py`.

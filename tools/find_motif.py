@@ -985,8 +985,13 @@ def write_index():
     plain = lambda name: "".join(c for c in unicodedata.normalize("NFD", name) if not unicodedata.combining(c)).casefold()
     order_file = ROOT / "leitmotifs" / "order.json"
     rank = {m: i for i, m in enumerate(json.loads(order_file.read_text(encoding="utf-8")) if order_file.exists() else [])}
-    listing = [dict(id=d["id"], name=full_name(d), **({"group": d["name"], "variant": d["variant"]} if "variant" in d else {}))
-               for d in sorted(found, key=lambda d: (rank.get(d["id"], len(rank)), plain(d["name"]), d.get("variant", "")))]
+    operas_file = ROOT / "leitmotifs" / "operas.json"  # the first leitmotif of each opera -> its name; the ones after it are in the same opera
+    operas = json.loads(operas_file.read_text(encoding="utf-8")) if operas_file.exists() else {}
+    listing, opera = [], None
+    for d in sorted(found, key=lambda d: (rank.get(d["id"], len(rank)), plain(d["name"]), d.get("variant", ""))):
+        opera = operas.get(d["id"], opera)
+        listing.append(dict(id=d["id"], name=full_name(d), **({"opera": opera} if opera else {}),
+                            **({"group": d["name"], "variant": d["variant"]} if "variant" in d else {})))
     (folder / "index.json").write_text(json.dumps(dict(motifs=listing), ensure_ascii=False, indent=1), encoding="utf-8")
 
 

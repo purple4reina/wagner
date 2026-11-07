@@ -2,643 +2,795 @@
  "motifs": [
   {
    "id": "beginning",
-   "name": "Beginning"
+   "name": "Beginning",
+   "opera": "Das Rheingold"
   },
   {
    "id": "nature",
-   "name": "Nature"
+   "name": "Nature",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rhine",
-   "name": "Rhine"
+   "name": "Rhine",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rhine-daughters",
-   "name": "Rhine Daughters"
+   "name": "Rhine Daughters",
+   "opera": "Das Rheingold"
   },
   {
    "id": "warning",
-   "name": "Warning"
+   "name": "Warning",
+   "opera": "Das Rheingold"
   },
   {
    "id": "alberich",
-   "name": "Alberich"
+   "name": "Alberich",
+   "opera": "Das Rheingold"
   },
   {
    "id": "woe",
-   "name": "Woe"
+   "name": "Woe",
+   "opera": "Das Rheingold"
   },
   {
    "id": "water-murmurs",
-   "name": "Water Murmurs"
+   "name": "Water Murmurs",
+   "opera": "Das Rheingold"
   },
   {
    "id": "gold",
-   "name": "Gold"
+   "name": "Gold",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rhine-daughters-joy-in-the-gold",
-   "name": "Rhine Daughters' Joy in the Gold"
+   "name": "Rhine Daughters' Joy in the Gold",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rhinegold",
-   "name": "Rhinegold"
+   "name": "Rhinegold",
+   "opera": "Das Rheingold"
   },
   {
    "id": "the-ring",
-   "name": "The Ring"
+   "name": "The Ring",
+   "opera": "Das Rheingold"
   },
   {
    "id": "renunciation-of-love",
-   "name": "Renunciation of Love"
+   "name": "Renunciation of Love",
+   "opera": "Das Rheingold"
   },
   {
    "id": "valhalla-a",
    "name": "Valhalla (A)",
+   "opera": "Das Rheingold",
    "group": "Valhalla",
    "variant": "A"
   },
   {
    "id": "valhalla-b",
    "name": "Valhalla (B)",
+   "opera": "Das Rheingold",
    "group": "Valhalla",
    "variant": "B"
   },
   {
    "id": "valhalla-c",
    "name": "Valhalla (C)",
+   "opera": "Das Rheingold",
    "group": "Valhalla",
    "variant": "C"
   },
   {
    "id": "valhalla-d",
    "name": "Valhalla (D)",
+   "opera": "Das Rheingold",
    "group": "Valhalla",
    "variant": "D"
   },
   {
    "id": "loves-enchantment",
-   "name": "Love's Enchantment"
+   "name": "Love's Enchantment",
+   "opera": "Das Rheingold"
   },
   {
    "id": "love-a",
    "name": "Love (A)",
+   "opera": "Das Rheingold",
    "group": "Love",
    "variant": "A"
   },
   {
    "id": "love-b",
    "name": "Love (B)",
+   "opera": "Das Rheingold",
    "group": "Love",
    "variant": "B"
   },
   {
    "id": "giants",
-   "name": "Giants"
+   "name": "Giants",
+   "opera": "Das Rheingold"
   },
   {
    "id": "power-of-the-gods",
-   "name": "Power of the Gods"
+   "name": "Power of the Gods",
+   "opera": "Das Rheingold"
   },
   {
    "id": "treaty",
-   "name": "Treaty"
+   "name": "Treaty",
+   "opera": "Das Rheingold"
   },
   {
    "id": "love-fasolt",
-   "name": "Love (Fasolt)"
+   "name": "Love (Fasolt)",
+   "opera": "Das Rheingold"
   },
   {
    "id": "holdas-golden-apples",
-   "name": "Holda's Golden Apples"
+   "name": "Holda's Golden Apples",
+   "opera": "Das Rheingold"
   },
   {
    "id": "withering-of-life",
-   "name": "Withering of Life"
+   "name": "Withering of Life",
+   "opera": "Das Rheingold"
   },
   {
    "id": "froh",
-   "name": "Froh"
+   "name": "Froh",
+   "opera": "Das Rheingold"
   },
   {
    "id": "spear",
-   "name": "Spear"
+   "name": "Spear",
+   "opera": "Das Rheingold"
   },
   {
    "id": "loge-a",
    "name": "Loge (A)",
+   "opera": "Das Rheingold",
    "group": "Loge",
    "variant": "A"
   },
   {
    "id": "loge-b",
    "name": "Loge (B)",
+   "opera": "Das Rheingold",
    "group": "Loge",
    "variant": "B"
   },
   {
    "id": "loge-c",
    "name": "Loge (C)",
+   "opera": "Das Rheingold",
    "group": "Loge",
    "variant": "C"
   },
   {
    "id": "loges-craft",
-   "name": "Loge's Craft"
+   "name": "Loge's Craft",
+   "opera": "Das Rheingold"
   },
   {
    "id": "womans-worth",
-   "name": "Woman's Worth"
+   "name": "Woman's Worth",
+   "opera": "Das Rheingold"
   },
   {
    "id": "nibelungs",
-   "name": "Nibelungs"
+   "name": "Nibelungs",
+   "opera": "Das Rheingold"
   },
   {
    "id": "tarnhelm",
-   "name": "Tarnhelm"
+   "name": "Tarnhelm",
+   "opera": "Das Rheingold"
   },
   {
    "id": "servitude",
-   "name": "Servitude"
+   "name": "Servitude",
+   "opera": "Das Rheingold"
   },
   {
    "id": "power-of-the-ring",
-   "name": "Power of the Ring"
+   "name": "Power of the Ring",
+   "opera": "Das Rheingold"
   },
   {
    "id": "serpent",
-   "name": "Serpent"
+   "name": "Serpent",
+   "opera": "Das Rheingold"
   },
   {
    "id": "hoard",
-   "name": "Hoard"
+   "name": "Hoard",
+   "opera": "Das Rheingold"
   },
   {
    "id": "hatred",
-   "name": "Hatred"
+   "name": "Hatred",
+   "opera": "Das Rheingold"
   },
   {
    "id": "curse",
-   "name": "Curse"
+   "name": "Curse",
+   "opera": "Das Rheingold"
   },
   {
    "id": "erda",
-   "name": "Erda"
+   "name": "Erda",
+   "opera": "Das Rheingold"
   },
   {
    "id": "downfall",
-   "name": "Downfall"
+   "name": "Downfall",
+   "opera": "Das Rheingold"
   },
   {
    "id": "donners-call",
-   "name": "Donner's Call"
+   "name": "Donner's Call",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rainbow-bridge",
-   "name": "Rainbow Bridge"
+   "name": "Rainbow Bridge",
+   "opera": "Das Rheingold"
   },
   {
    "id": "sword",
-   "name": "Sword"
+   "name": "Sword",
+   "opera": "Das Rheingold"
   },
   {
    "id": "rhine-daughters-lament",
-   "name": "Rhine Daughters' Lament"
+   "name": "Rhine Daughters' Lament",
+   "opera": "Das Rheingold"
   },
   {
    "id": "storm",
-   "name": "Storm"
+   "name": "Storm",
+   "opera": "Die Walküre"
   },
   {
    "id": "siegmund",
-   "name": "Siegmund"
+   "name": "Siegmund",
+   "opera": "Die Walküre"
   },
   {
    "id": "sieglinde",
-   "name": "Sieglinde"
+   "name": "Sieglinde",
+   "opera": "Die Walküre"
   },
   {
    "id": "dawning-love",
-   "name": "Dawning Love"
+   "name": "Dawning Love",
+   "opera": "Die Walküre"
   },
   {
    "id": "volsungs-woe",
-   "name": "Volsung's Woe"
+   "name": "Volsung's Woe",
+   "opera": "Die Walküre"
   },
   {
    "id": "hunding",
-   "name": "Hunding"
+   "name": "Hunding",
+   "opera": "Die Walküre"
   },
   {
    "id": "rights",
-   "name": "Rights"
+   "name": "Rights",
+   "opera": "Die Walküre"
   },
   {
    "id": "brides-lament",
-   "name": "Bride's Lament"
+   "name": "Bride's Lament",
+   "opera": "Die Walküre"
   },
   {
    "id": "volsung-race",
-   "name": "Volsung Race"
+   "name": "Volsung Race",
+   "opera": "Die Walküre"
   },
   {
    "id": "crisis",
-   "name": "Crisis"
+   "name": "Crisis",
+   "opera": "Die Walküre"
   },
   {
    "id": "purpose-of-the-sword",
-   "name": "Purpose of the Sword"
+   "name": "Purpose of the Sword",
+   "opera": "Die Walküre"
   },
   {
    "id": "volse",
-   "name": "Volse"
+   "name": "Volse",
+   "opera": "Die Walküre"
   },
   {
    "id": "the-swords-chosen",
-   "name": "The Sword's Chosen"
+   "name": "The Sword's Chosen",
+   "opera": "Die Walküre"
   },
   {
    "id": "spring-song",
-   "name": "Spring Song"
+   "name": "Spring Song",
+   "opera": "Die Walküre"
   },
   {
    "id": "love-sieglinde",
-   "name": "Love (Sieglinde)"
+   "name": "Love (Sieglinde)",
+   "opera": "Die Walküre"
   },
   {
    "id": "bliss-a",
    "name": "Bliss (A)",
+   "opera": "Die Walküre",
    "group": "Bliss",
    "variant": "A"
   },
   {
    "id": "bliss-b",
    "name": "Bliss (B)",
+   "opera": "Die Walküre",
    "group": "Bliss",
    "variant": "B"
   },
   {
    "id": "loves-deepest-distress",
-   "name": "Love's Deepest Distress"
+   "name": "Love's Deepest Distress",
+   "opera": "Die Walküre"
   },
   {
    "id": "notung",
-   "name": "Notung"
+   "name": "Notung",
+   "opera": "Die Walküre"
   },
   {
    "id": "valkyries",
-   "name": "Valkyries"
+   "name": "Valkyries",
+   "opera": "Die Walküre"
   },
   {
    "id": "hojotoho",
-   "name": "Hojotoho!"
+   "name": "Hojotoho!",
+   "opera": "Die Walküre"
   },
   {
    "id": "fricka",
-   "name": "Fricka"
+   "name": "Fricka",
+   "opera": "Die Walküre"
   },
   {
    "id": "withered-love",
-   "name": "Withered Love"
+   "name": "Withered Love",
+   "opera": "Die Walküre"
   },
   {
    "id": "frustration",
-   "name": "Frustration"
+   "name": "Frustration",
+   "opera": "Die Walküre"
   },
   {
    "id": "struggling-against-fate",
-   "name": "Struggling Against Fate"
+   "name": "Struggling Against Fate",
+   "opera": "Die Walküre"
   },
   {
    "id": "rage",
-   "name": "Rage"
+   "name": "Rage",
+   "opera": "Die Walküre"
   },
   {
    "id": "hundings-pursuit",
-   "name": "Hunding's Pursuit"
+   "name": "Hunding's Pursuit",
+   "opera": "Die Walküre"
   },
   {
    "id": "fate",
-   "name": "Fate"
+   "name": "Fate",
+   "opera": "Die Walküre"
   },
   {
    "id": "annunciation-of-death",
-   "name": "Annunciation of Death"
+   "name": "Annunciation of Death",
+   "opera": "Die Walküre"
   },
   {
    "id": "brunnhildes-defiance",
-   "name": "Brünnhilde's Defiance"
+   "name": "Brünnhilde's Defiance",
+   "opera": "Die Walküre"
   },
   {
    "id": "the-heroic-siegfried",
-   "name": "The Heroic Siegfried"
+   "name": "The Heroic Siegfried",
+   "opera": "Die Walküre"
   },
   {
    "id": "redemption",
-   "name": "Redemption"
+   "name": "Redemption",
+   "opera": "Die Walküre"
   },
   {
    "id": "brunnhildes-reproach",
-   "name": "Brünnhilde's Reproach"
+   "name": "Brünnhilde's Reproach",
+   "opera": "Die Walküre"
   },
   {
    "id": "brunnhildes-love-for-wotan",
-   "name": "Brünnhilde's Love for Wotan"
+   "name": "Brünnhilde's Love for Wotan",
+   "opera": "Die Walküre"
   },
   {
    "id": "sleep",
-   "name": "Sleep"
+   "name": "Sleep",
+   "opera": "Die Walküre"
   },
   {
    "id": "brunnhilde-in-sleep",
-   "name": "Brünnhilde in Sleep"
+   "name": "Brünnhilde in Sleep",
+   "opera": "Die Walküre"
   },
   {
    "id": "wotans-love-for-brunnhilde",
-   "name": "Wotan's Love for Brünnhilde"
+   "name": "Wotan's Love for Brünnhilde",
+   "opera": "Die Walküre"
   },
   {
    "id": "brooding",
-   "name": "Brooding"
+   "name": "Brooding",
+   "opera": "Siegfried"
   },
   {
    "id": "siegfrieds-horn-call",
-   "name": "Siegfried's Horn Call"
+   "name": "Siegfried's Horn Call",
+   "opera": "Siegfried"
   },
   {
    "id": "youthful-energy",
-   "name": "Youthful Energy"
+   "name": "Youthful Energy",
+   "opera": "Siegfried"
   },
   {
    "id": "mimes-mission",
-   "name": "Mime's Mission"
+   "name": "Mime's Mission",
+   "opera": "Siegfried"
   },
   {
    "id": "yearning-for-knowledge",
-   "name": "Yearning for Knowledge"
+   "name": "Yearning for Knowledge",
+   "opera": "Siegfried"
   },
   {
    "id": "yearning-for-love",
-   "name": "Yearning for Love"
+   "name": "Yearning for Love",
+   "opera": "Siegfried"
   },
   {
    "id": "joy-of-freedom",
-   "name": "Joy of Freedom"
+   "name": "Joy of Freedom",
+   "opera": "Siegfried"
   },
   {
    "id": "mission",
-   "name": "Mission"
+   "name": "Mission",
+   "opera": "Siegfried"
   },
   {
    "id": "mimes-frustration",
-   "name": "Mime's Frustration"
+   "name": "Mime's Frustration",
+   "opera": "Siegfried"
   },
   {
    "id": "wanderer",
-   "name": "Wanderer"
+   "name": "Wanderer",
+   "opera": "Siegfried"
   },
   {
    "id": "world-ash-tree",
-   "name": "World Ash Tree"
+   "name": "World Ash Tree",
+   "opera": "Siegfried"
   },
   {
    "id": "blow-bellows",
-   "name": "Blow, Bellows!"
+   "name": "Blow, Bellows!",
+   "opera": "Siegfried"
   },
   {
    "id": "hammering",
-   "name": "Hammering"
+   "name": "Hammering",
+   "opera": "Siegfried"
   },
   {
    "id": "fafner-as-dragon",
-   "name": "Fafner as Dragon"
+   "name": "Fafner as Dragon",
+   "opera": "Siegfried"
   },
   {
    "id": "mission-mutation",
-   "name": "Mission (Mutation)"
+   "name": "Mission (Mutation)",
+   "opera": "Siegfried"
   },
   {
    "id": "forest-murmurs",
-   "name": "Forest Murmurs"
+   "name": "Forest Murmurs",
+   "opera": "Siegfried"
   },
   {
    "id": "wood-bird-a",
    "name": "Wood Bird (A)",
+   "opera": "Siegfried",
    "group": "Wood Bird",
    "variant": "A"
   },
   {
    "id": "wood-bird-b",
    "name": "Wood Bird (B)",
+   "opera": "Siegfried",
    "group": "Wood Bird",
    "variant": "B"
   },
   {
    "id": "false-flattery",
-   "name": "False Flattery"
+   "name": "False Flattery",
+   "opera": "Siegfried"
   },
   {
    "id": "siegfrieds-horn-call-mutation",
-   "name": "Siegfried's Horn Call (Mutation)"
+   "name": "Siegfried's Horn Call (Mutation)",
+   "opera": "Siegfried"
   },
   {
    "id": "yearning-for-love-mission",
-   "name": "Yearning for Love/Mission"
+   "name": "Yearning for Love/Mission",
+   "opera": "Siegfried"
   },
   {
    "id": "wala-awake",
-   "name": "Wala! Awake!"
+   "name": "Wala! Awake!",
+   "opera": "Siegfried"
   },
   {
    "id": "worlds-inheritance",
-   "name": "World's Inheritance"
+   "name": "World's Inheritance",
+   "opera": "Siegfried"
   },
   {
    "id": "ravens",
-   "name": "Ravens"
+   "name": "Ravens",
+   "opera": "Siegfried"
   },
   {
    "id": "resistance",
-   "name": "Resistance"
+   "name": "Resistance",
+   "opera": "Siegfried"
   },
   {
    "id": "awakening",
-   "name": "Awakening"
+   "name": "Awakening",
+   "opera": "Siegfried"
   },
   {
    "id": "loves-greeting",
-   "name": "Love's Greeting"
+   "name": "Love's Greeting",
+   "opera": "Siegfried"
   },
   {
    "id": "loves-ecstasy",
-   "name": "Love's Ecstasy"
+   "name": "Love's Ecstasy",
+   "opera": "Siegfried"
   },
   {
    "id": "immortal-beloved",
-   "name": "Immortal Beloved"
+   "name": "Immortal Beloved",
+   "opera": "Siegfried"
   },
   {
    "id": "worlds-treasure",
-   "name": "World's Treasure"
+   "name": "World's Treasure",
+   "opera": "Siegfried"
   },
   {
    "id": "laughing-at-death",
-   "name": "Laughing at Death"
+   "name": "Laughing at Death",
+   "opera": "Siegfried"
   },
   {
    "id": "rope-of-fate",
-   "name": "Rope of Fate"
+   "name": "Rope of Fate",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "siegfried-definitive",
-   "name": "Siegfried (Definitive)"
+   "name": "Siegfried (Definitive)",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "the-woman-brunnhilde",
-   "name": "The Woman Brünnhilde"
+   "name": "The Woman Brünnhilde",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "giving-in-love",
-   "name": "Giving in Love"
+   "name": "Giving in Love",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "mission-definitive",
-   "name": "Mission (Definitive)"
+   "name": "Mission (Definitive)",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "radiant-star-victorious-light",
-   "name": "Radiant Star, Victorious Light"
+   "name": "Radiant Star, Victorious Light",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "treachery",
-   "name": "Treachery"
+   "name": "Treachery",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "hagen",
-   "name": "Hagen"
+   "name": "Hagen",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "gunther",
-   "name": "Gunther"
+   "name": "Gunther",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "gutrune",
-   "name": "Gutrune"
+   "name": "Gutrune",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "potion",
-   "name": "Potion"
+   "name": "Potion",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "plotting",
-   "name": "Plotting"
+   "name": "Plotting",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "rowing",
-   "name": "Rowing"
+   "name": "Rowing",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "friendship",
-   "name": "Friendship"
+   "name": "Friendship",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "gutrunes-deception",
-   "name": "Gutrune's Deception"
+   "name": "Gutrune's Deception",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "mission-as-blood-brotherhood",
-   "name": "Mission (as Blood-Brotherhood)"
+   "name": "Mission (as Blood-Brotherhood)",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "blood-brotherhood",
-   "name": "Blood-Brotherhood"
+   "name": "Blood-Brotherhood",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "vow-of-atonement",
-   "name": "Vow of Atonement"
+   "name": "Vow of Atonement",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "hagen-ascending",
-   "name": "Hagen Ascending"
+   "name": "Hagen Ascending",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "escape",
-   "name": "Escape"
+   "name": "Escape",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "betrayal",
-   "name": "Betrayal"
+   "name": "Betrayal",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "honor",
-   "name": "Honor"
+   "name": "Honor",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "murder",
-   "name": "Murder"
+   "name": "Murder",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "dawn",
-   "name": "Dawn"
+   "name": "Dawn",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "grim-hagen",
-   "name": "Grim Hagen"
+   "name": "Grim Hagen",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "gutrunes-greeting",
-   "name": "Gutrune's Greeting"
+   "name": "Gutrune's Greeting",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "hoiho",
-   "name": "Hoiho!"
+   "name": "Hoiho!",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "gibichungs-horn-call",
-   "name": "Gibichungs' Horn Call"
+   "name": "Gibichungs' Horn Call",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "vassals-song",
-   "name": "Vassals' Song"
+   "name": "Vassals' Song",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "vassals-greeting",
-   "name": "Vassals' Greeting"
+   "name": "Vassals' Greeting",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "oath",
-   "name": "Oath"
+   "name": "Oath",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "brunnhildes-betrayal",
-   "name": "Brünnhilde's Betrayal"
+   "name": "Brünnhilde's Betrayal",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "rhine-daughters-continued-a",
    "name": "Rhine Daughters (Continued) (A)",
+   "opera": "Götterdämmerung",
    "group": "Rhine Daughters (Continued)",
    "variant": "A"
   },
   {
    "id": "rhine-daughters-continued-b",
    "name": "Rhine Daughters (Continued) (B)",
+   "opera": "Götterdämmerung",
    "group": "Rhine Daughters (Continued)",
    "variant": "B"
   },
   {
    "id": "rhine-daughters-continued-c",
    "name": "Rhine Daughters (Continued) (C)",
+   "opera": "Götterdämmerung",
    "group": "Rhine Daughters (Continued)",
    "variant": "C"
   },
   {
    "id": "death",
-   "name": "Death"
+   "name": "Death",
+   "opera": "Götterdämmerung"
   },
   {
    "id": "rest",
-   "name": "Rest"
+   "name": "Rest",
+   "opera": "Götterdämmerung"
   }
  ]
 }

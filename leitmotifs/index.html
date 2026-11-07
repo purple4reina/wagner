@@ -32,22 +32,41 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 64px
 /* the leitmotifs that were analyzed, down the left side; a row above the page on a narrow screen */
 .layout { display: flex; align-items: flex-start; }
 .layout main { flex: 1; min-width: 0; }
-#motifs { position: sticky; top: 0; flex: 0 0 clamp(150px, 16vw, 210px); max-height: 100vh; overflow-y: auto; scrollbar-width: none; padding: clamp(28px, 6vw, 64px) 0 24px clamp(16px, 2vw, 32px); } /* a long list scrolls inside the sidebar, with no scroll bar */
+#motifs { position: sticky; top: 0; flex: 0 0 clamp(150px, 16vw, 210px); max-height: 100vh; overflow-y: auto; scroll-padding-top: 44px; scrollbar-width: none; padding: 0 0 24px clamp(16px, 2vw, 32px); } /* a long list scrolls inside the sidebar, with no scroll bar */
 #motifs::-webkit-scrollbar { display: none; }
-#motifs p { margin: 0 0 10px; color: var(--muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+#motifs p { margin: clamp(28px, 6vw, 64px) 0 10px; color: var(--muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
 #motifs ul { margin: 0; padding: 0; list-style: none; }
 #motifs a { display: block; margin-left: -12px; padding: 6px 12px; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; color: var(--ink); text-decoration: none; font: 500 1.1rem/1.3 var(--serif); }
 #motifs a:hover { color: var(--motif); }
 #motifs a[aria-current] { border-left-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); }
-#motifs .group { padding: 6px 0 0; font: 500 1.1rem/1.3 var(--serif); }
+/* each opera is a list that can be closed; the name is the heading, in the color of the opera on the timeline */
+#motifs .opera-name { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin: 12px 0 6px; padding: 8px 0 3px 3px; background: var(--paper); border-bottom: 2px solid var(--oc); color: var(--muted); font: italic 500 .95rem/1.2 var(--serif); list-style: none; cursor: pointer; }
+#motifs summary { list-style: none; cursor: pointer; }
+#motifs summary::-webkit-details-marker { display: none; }
+#motifs .opera-name::after { content: ''; width: 6px; height: 6px; margin-right: 4px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform .15s; }
+#motifs details[open] > .opera-name::after { transform: rotate(45deg); }
+#motifs details:first-of-type > .opera-name { margin-top: 0; }
+/* a leitmotif with lettered forms (Loge) is a list too. Closed, its name looks like the other leitmotifs. Open, it is a label over its letters, which are the links. */
+#motifs .group-name { display: flex; align-items: center; justify-content: space-between; margin-left: -12px; padding: 6px 12px; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; color: var(--ink); font: 500 1.1rem/1.3 var(--serif); }
+#motifs .group-name:hover { color: var(--motif); }
+#motifs .group-name::after { content: ''; flex: none; width: 5px; height: 5px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); transition: transform .15s; } /* its own arrow: smaller than that of an opera, and set in from the edge */
+#motifs details[open] > .group-name::after { transform: rotate(45deg); }
+#motifs details[open] > .group-name { margin-left: 0; padding: 6px 12px 0 3px; border-left: 0; background: none; color: var(--muted); font: 600 .75rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+#motifs details.group:not([open]):has(a[aria-current]) > .group-name { border-left-color: var(--motif); background: color-mix(in srgb, var(--motif) 12%, var(--paper)); color: var(--motif); } /* a closed list that has the open leitmotif */
 #motifs a.variant { padding-left: 28px; }
-#motifs a:focus { outline: none; } /* no box around a name that was clicked: the open one is marked by its color */
+#motifs a:focus, #motifs summary:focus { outline: none; } /* no box around a name or a heading that was clicked, then the arrow keys: the open leitmotif is marked by its color */
 @media (max-width: 900px) {
   .layout { display: block; }
   #motifs { position: static; max-height: none; overflow: visible; padding: 16px clamp(16px, 4vw, 48px) 0; }
+  #motifs p { margin: 0 0 10px; }
   #motifs ul { display: flex; flex-wrap: wrap; gap: 8px; }
   #motifs a, #motifs a.variant { margin: 0; padding: 3px 14px; border: 1px solid var(--rule); border-radius: 999px; }
-  #motifs .group { padding: 3px 0; }
+  #motifs .opera-name { position: static; margin: 12px 0 8px; padding: 0 0 3px 3px; }
+  #motifs details.group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  #motifs .group-name { gap: 8px; }
+  #motifs .group-name, #motifs details[open] > .group-name { margin: 0; padding: 3px 14px; border: 1px solid var(--rule); border-radius: 999px; }
+  #motifs details[open] > .group-name { padding: 0; border: 0; }
+  #motifs details.group:not([open]):has(a[aria-current]) > .group-name { border-color: var(--motif); }
   #motifs a[aria-current] { border-color: var(--motif); }
 }
 h1 { font: 500 clamp(2.2rem, 5.5vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.015em; margin: clamp(28px, 6vw, 64px) 0 12px; }
@@ -244,6 +263,7 @@ function clear() {
 const markCurrent = () => document.querySelectorAll('#motifs a').forEach(a => {
   if (a.dataset.id !== motifId) return a.removeAttribute('aria-current');
   a.setAttribute('aria-current', 'page');
+  for (let d = a.closest('details'); d; d = d.parentElement.closest('details')) d.open = true; // an arrow key that goes into a closed list opens it
   a.scrollIntoView({ block: 'nearest' }); // a long list scrolls inside the sidebar
 });
 
@@ -264,15 +284,32 @@ function jump(d) {
 fetch('motifs/index.json', { cache: 'no-cache' }) // the list of the motifs; without it the page has no sidebar
   .then(r => r.ok ? r.json() : Promise.reject())
   .then(({ motifs }) => {
-    let group = null;
-    for (const m of motifs) { // the forms of one leitmotif (Valhalla A, B) sit under one heading
-      if (m.group !== group && (group = m.group)) $('motifs').querySelector('ul').append(el('li', 'group', group));
+    const nav = $('motifs'), top = nav.querySelector('ul');
+    let list = top, forms, opera = null, group = null, hue = 0;
+    for (const m of motifs) {
+      if (m.opera !== opera && (opera = m.opera)) { // a list for each opera, open until the viewer closes it
+        const details = el('details'), name = el('summary', 'opera-name', opera);
+        details.open = true;
+        name.style.setProperty('--oc', `var(--o${hue++ % 4})`);
+        list = el('ul');
+        details.append(name, list);
+        nav.append(details);
+        group = null;
+      }
+      if (m.group && m.group !== group) { // the first form of a leitmotif with lettered forms (Valhalla A): they sit in a list of their own, which can be closed
+        const details = el('details', 'group'), item = el('li'); // closed until the viewer opens it, or until one of its forms is the open leitmotif
+        details.append(el('summary', 'group-name', m.group), forms = el('ul'));
+        item.append(details);
+        list.append(item);
+      }
+      group = m.group;
       const link = el('a', m.group ? 'variant' : '', m.group ? m.variant : m.name), item = el('li');
       link.href = `?motif=${encodeURIComponent(m.id)}`;
       link.dataset.id = m.id;
       item.append(link);
-      $('motifs').querySelector('ul').append(item);
+      (m.group ? forms : list).append(item);
     }
+    if (!top.children.length) top.remove(); // every motif is under an opera
     $('motifs').hidden = !motifs.length;
     markCurrent();
   })
@@ -289,6 +326,13 @@ for (const list of [$('motifs'), $('also')]) list.addEventListener('click', e =>
   if (!link || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   e.preventDefault();
   openMotif(link.dataset.id, link.dataset.occ);
+});
+$('motifs').addEventListener('click', e => { // a closed leitmotif with lettered forms (Loge) opens, and its first form (A) opens with it
+  const name = e.target.closest('.group-name');
+  if (!name || name.parentElement.open) return; // an open one closes as usual
+  e.preventDefault();
+  name.parentElement.open = true;
+  openMotif(name.parentElement.querySelector('a').dataset.id);
 });
 addEventListener('popstate', () => { if (idInUrl() !== motifId) load(idInUrl()); }); // the back and forward buttons
 
