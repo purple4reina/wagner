@@ -1,0 +1,9 @@
+{
+ "id": "yearning-for-knowledge",
+ "name": "Yearning for Knowledge",
+ "source": "holman",
+ "lilypond": "e''2 d''4 c''8 b'8 a'8 gis'8 e''4 d''4 c''8 b'8",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "2/4", "key_signature": -1 }
+}

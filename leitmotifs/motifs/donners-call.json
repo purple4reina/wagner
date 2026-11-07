@@ -903,7 +903,8 @@
     {
      "kind": "sung",
      "person": "Brünnhilde",
-     "text": "da den Fels es rings umbrann –"
+     "text": "da den Fels es rings umbrann –",
+     "translation": "when the flames blazed around the rock –"
     },
     {
      "kind": "sung",
@@ -1159,7 +1160,8 @@
     {
      "kind": "sung",
      "person": "Brünnhilde",
-     "text": "die, jammernd ob ihrer Schmach,"
+     "text": "die, jammernd ob ihrer Schmach,",
+     "translation": "who, lamenting their shame,"
     }
    ],
    "notation": {

@@ -1,0 +1,9 @@
+{
+ "id": "death",
+ "name": "Death",
+ "source": "holman",
+ "lilypond": "b16 b16 r8 r8. b16 b8 r8 \\tuplet 9/8 { d32 e32 f32 aes32 bes32 b32 d'32 c'32 b32 } b8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass" }
+}

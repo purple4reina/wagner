@@ -1,0 +1,9 @@
+{
+ "id": "brides-lament",
+ "name": "Bride's Lament",
+ "source": "holman",
+ "lilypond": "es''8 d''8 c''8 b'8 bes'8 r4. g'4 r8 r8 es''8 d''8 c''8 b'8 bes'8 aes'4. g'4 r8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "12/8", "key_signature": -3 }
+}

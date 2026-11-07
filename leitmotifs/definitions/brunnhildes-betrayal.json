@@ -1,0 +1,9 @@
+{
+ "id": "brunnhildes-betrayal",
+ "name": "Brünnhilde's Betrayal",
+ "source": "holman",
+ "lilypond": "e8. cis16 \\tuplet 3/2 { fis8 e8 dis8 } ~dis4 d4 r8. cis16 \\tuplet 3/2 { fis8 e8 dis8 } ~dis4 d4",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass" }
+}

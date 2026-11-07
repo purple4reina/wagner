@@ -1,0 +1,8 @@
+{
+ "id": "the-heroic-siegfried",
+ "name": "The Heroic Siegfried",
+ "source": "holman",
+ "lilypond": "g'4. c''4. ~c''4 c''8 es''4. d''4 c''8 aes''2. c''4. bes'4 aes'8 es''4. ~es''4 es''8 f''4. ~f''8 c''8 d''8 es''2.",
+ "core_notes": [2, 13],
+ "original": { "octaves_up": 0, "time": "6/8", "partial": "4.", "key_signature": 1 }
+}

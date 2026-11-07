@@ -370,7 +370,8 @@
     {
      "kind": "sung",
      "person": "Hagen",
-     "text": "zum Weib dich zu gewinnen!"
+     "text": "zum Weib dich zu gewinnen!",
+     "translation": "to win you as his wife!"
     }
    ],
    "notation": {
@@ -390,7 +391,8 @@
     {
      "kind": "sung",
      "person": "Waltraute",
-     "text": "An deiner Hand, der Ring, –"
+     "text": "An deiner Hand, der Ring, –",
+     "translation": "On your hand, the ring, –"
     },
     {
      "kind": "sung",
@@ -491,12 +493,14 @@
     {
      "kind": "sung",
      "person": "Wellgunde",
-     "text": "Zu deinem Unheil wahr’st du den Ring!"
+     "text": "Zu deinem Unheil wahr’st du den Ring!",
+     "translation": "You guard the ring to your own ruin!"
     },
     {
      "kind": "sung",
      "person": "Woglinde, Wellgunde und Floßhilde",
-     "text": "Aus des Rheines Gold ist der Ring geglüht:"
+     "text": "Aus des Rheines Gold ist der Ring geglüht:",
+     "translation": "The ring was forged from the Rhine's gold:"
     }
    ],
    "notation": {

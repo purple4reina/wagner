@@ -259,7 +259,8 @@
     {
      "kind": "sung",
      "person": "Alberich",
-     "text": "Habt acht!"
+     "text": "Habt acht!",
+     "translation": "Beware!"
     },
     {
      "kind": "sung",
@@ -461,17 +462,20 @@
     {
      "kind": "sung",
      "person": "Floßhilde",
-     "text": "zu ihr!"
+     "text": "zu ihr!",
+     "translation": "to her!"
     },
     {
      "kind": "sung",
      "person": "Wellgunde",
-     "text": "zu ihr!"
+     "text": "zu ihr!",
+     "translation": "to her!"
     },
     {
      "kind": "sung",
      "person": "Woglinde",
-     "text": "zu ihr!"
+     "text": "zu ihr!",
+     "translation": "to her!"
     }
    ],
    "notation": {

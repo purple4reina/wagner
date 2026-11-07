@@ -1,0 +1,9 @@
+{
+ "id": "hojotoho",
+ "name": "Hojotoho!",
+ "source": "holman",
+ "lilypond": "g''8 dis''8. g'16 b'4. ~b'4 r8 g''8 dis''8. g'16 b'4. ~b'8 r8 b'16 b'16 e''2. ~e''8 r8 e''16 e''16 g''2. ~g''8 r8 r8",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "9/8", "key_signature": 2 }
+}

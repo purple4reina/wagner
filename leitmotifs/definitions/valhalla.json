@@ -1,0 +1,9 @@
+{
+ "id": "valhalla",
+ "name": "Valhalla (A/B)",
+ "source": "companion",
+ "lilypond": "aes4 f4. des8 bes,8. des16 des8 es8 f8",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 1, "time": "3/4", "key_signature": -5 }
+}

@@ -1,0 +1,10 @@
+{
+ "id": "rhine-daughters-continued-b",
+ "name": "Rhine Daughters (Continued)",
+ "variant": "B",
+ "source": "holman",
+ "lilypond": "d''4. ~d''8 f'8 g'8 a'8 bes'8 c''8 d''4. ~d''4",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "9/8", "key_signature": -1 }
+}

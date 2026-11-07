@@ -1,0 +1,9 @@
+{
+ "id": "rights",
+ "name": "Rights",
+ "source": "holman",
+ "lilypond": "c'4. c'8 aes4 f4 d2. r4 g4. f8 es4 d8. d16 c2. r4",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -3 }
+}

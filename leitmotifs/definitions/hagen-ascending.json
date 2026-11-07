@@ -1,0 +1,9 @@
+{
+ "id": "hagen-ascending",
+ "name": "Hagen Ascending",
+ "source": "holman",
+ "lilypond": "\\tuplet 3/2 { ces4 des4 es4 } \\tuplet 3/2 { f4 ges4 aes4 }",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -2 }
+}

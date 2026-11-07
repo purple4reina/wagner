@@ -1,0 +1,9 @@
+{
+ "id": "loves-deepest-distress",
+ "name": "Love's Deepest Distress",
+ "source": "holman",
+ "lilypond": "g'2 g'4. g'8 es''2. d''4 c''2 g'2 aes'1",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 1 }
+}

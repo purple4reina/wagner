@@ -1,0 +1,9 @@
+{
+ "id": "loves-greeting",
+ "name": "Love's Greeting",
+ "source": "holman",
+ "lilypond": "r4 r4 d''4 g''8. b'16 fis''4. e''8 \\tuplet 3/2 { d''8 c''8 b'8 } a'2",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4" }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "murder",
+ "name": "Murder",
+ "source": "holman",
+ "lilypond": "\\tuplet 3/2 { fis'16 g'16 a'16 } bes'4 ~bes'8 a'8 d'8 ees'8 c'4 bes8. a32 b32 a8 r16",
+ "core_notes": [1, 12],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -2 }
+}

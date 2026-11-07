@@ -1,9 +1,9 @@
 {
  "id": "blow-bellows",
- "name": "Blow Bellows",
- "source": "companion",
- "lilypond": "a4. bes8 a8 g8 f4. a8 g8 f8 e4. g8 f8 e8 d4.",
+ "name": "Blow, Bellows!",
+ "source": "holman",
+ "lilypond": "a,8 r8 a4. bes8 a8 g8 f4. a8 g8 f8 e4. g8 f8 e8 d4.",
  "core_notes": [1, 13],
  "openings": [8],
- "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -1 }
+ "original": { "octaves_up": 0, "time": "6/8", "partial": "4", "clef": "bass", "key_signature": -1 }
 }

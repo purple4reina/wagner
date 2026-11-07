@@ -1,0 +1,9 @@
+{
+ "id": "gutrunes-greeting",
+ "name": "Gutrune's Greeting",
+ "source": "holman",
+ "lilypond": "g'4 e''4 d''8 c''8 b'8. a'16 g'4 r8 g'8 g'8. a'16 g'8 c''8 a'8 f''8 e''4 d''4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": 1 }
+}

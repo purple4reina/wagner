@@ -1,0 +1,9 @@
+{
+ "id": "annunciation-of-death",
+ "name": "Annunciation of Death",
+ "source": "holman",
+ "lilypond": "r2 fis'4. gis'8 a'2. gis'4 b'2. ais'4 cis''1",
+ "core_notes": [1, 7],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 3 }
+}

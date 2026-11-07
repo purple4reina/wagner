@@ -1,0 +1,9 @@
+{
+ "id": "escape",
+ "name": "Escape",
+ "source": "holman",
+ "lilypond": "fis'4 g'2 fis'4. e'8 a'2 r4 d'4 b'4 d'4 d'4 cis'8 bis8 gis'4 cis'4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "4", "key_signature": 3 }
+}

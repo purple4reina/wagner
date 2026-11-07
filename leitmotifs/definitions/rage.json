@@ -1,0 +1,9 @@
+{
+ "id": "rage",
+ "name": "Rage",
+ "source": "holman",
+ "lilypond": "dis'''4 b''8 r16 dis''16 dis''4 b'4 dis'''4 b''8 r16 dis''16 dis''4 b'4",
+ "core_notes": [1, 10],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "wanderer",
+ "name": "Wanderer",
+ "source": "holman",
+ "lilypond": "b'2 a'2 bes'2 gis'2 a'2 g'2 aes'2 fis'2",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "honor",
+ "name": "Honor",
+ "source": "holman",
+ "lilypond": "c'''4 c'2. fis'''4 fis'2. b''4 b2 ~b8 b'8 e''2 e'4.",
+ "core_notes": [1, 9],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 2 }
+}

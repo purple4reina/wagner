@@ -195,24 +195,328 @@
    "name": "Donner's Call"
   },
   {
-   "id": "blow-bellows",
-   "name": "Blow Bellows"
+   "id": "rainbow-bridge",
+   "name": "Rainbow Bridge"
   },
   {
-   "id": "brunnhilde-in-sleep",
-   "name": "Brünnhilde in Sleep"
+   "id": "sword",
+   "name": "Sword"
   },
   {
-   "id": "brunnhilde-the-woman",
-   "name": "Brünnhilde the Woman"
+   "id": "rhine-daughters-lament",
+   "name": "Rhine Daughters' Lament"
+  },
+  {
+   "id": "storm",
+   "name": "Storm"
+  },
+  {
+   "id": "siegmund",
+   "name": "Siegmund"
+  },
+  {
+   "id": "sieglinde",
+   "name": "Sieglinde"
+  },
+  {
+   "id": "dawning-love",
+   "name": "Dawning Love"
+  },
+  {
+   "id": "volsungs-woe",
+   "name": "Volsung's Woe"
+  },
+  {
+   "id": "hunding",
+   "name": "Hunding"
+  },
+  {
+   "id": "rights",
+   "name": "Rights"
+  },
+  {
+   "id": "brides-lament",
+   "name": "Bride's Lament"
+  },
+  {
+   "id": "volsung-race",
+   "name": "Volsung Race"
+  },
+  {
+   "id": "crisis",
+   "name": "Crisis"
+  },
+  {
+   "id": "purpose-of-the-sword",
+   "name": "Purpose of the Sword"
+  },
+  {
+   "id": "volse",
+   "name": "Volse"
+  },
+  {
+   "id": "the-swords-chosen",
+   "name": "The Sword's Chosen"
+  },
+  {
+   "id": "spring-song",
+   "name": "Spring Song"
+  },
+  {
+   "id": "love-sieglinde",
+   "name": "Love (Sieglinde)"
+  },
+  {
+   "id": "bliss-a",
+   "name": "Bliss (A)",
+   "group": "Bliss",
+   "variant": "A"
+  },
+  {
+   "id": "bliss-b",
+   "name": "Bliss (B)",
+   "group": "Bliss",
+   "variant": "B"
+  },
+  {
+   "id": "loves-deepest-distress",
+   "name": "Love's Deepest Distress"
+  },
+  {
+   "id": "notung",
+   "name": "Notung"
+  },
+  {
+   "id": "valkyries",
+   "name": "Valkyries"
+  },
+  {
+   "id": "hojotoho",
+   "name": "Hojotoho!"
+  },
+  {
+   "id": "fricka",
+   "name": "Fricka"
+  },
+  {
+   "id": "withered-love",
+   "name": "Withered Love"
+  },
+  {
+   "id": "frustration",
+   "name": "Frustration"
+  },
+  {
+   "id": "struggling-against-fate",
+   "name": "Struggling Against Fate"
+  },
+  {
+   "id": "rage",
+   "name": "Rage"
+  },
+  {
+   "id": "hundings-pursuit",
+   "name": "Hunding's Pursuit"
+  },
+  {
+   "id": "fate",
+   "name": "Fate"
+  },
+  {
+   "id": "annunciation-of-death",
+   "name": "Annunciation of Death"
+  },
+  {
+   "id": "brunnhildes-defiance",
+   "name": "Brünnhilde's Defiance"
+  },
+  {
+   "id": "the-heroic-siegfried",
+   "name": "The Heroic Siegfried"
+  },
+  {
+   "id": "redemption",
+   "name": "Redemption"
+  },
+  {
+   "id": "brunnhildes-reproach",
+   "name": "Brünnhilde's Reproach"
   },
   {
    "id": "brunnhildes-love-for-wotan",
    "name": "Brünnhilde's Love for Wotan"
   },
   {
+   "id": "sleep",
+   "name": "Sleep"
+  },
+  {
+   "id": "brunnhilde-in-sleep",
+   "name": "Brünnhilde in Sleep"
+  },
+  {
+   "id": "wotans-love-for-brunnhilde",
+   "name": "Wotan's Love for Brünnhilde"
+  },
+  {
+   "id": "brooding",
+   "name": "Brooding"
+  },
+  {
+   "id": "siegfrieds-horn-call",
+   "name": "Siegfried's Horn Call"
+  },
+  {
+   "id": "youthful-energy",
+   "name": "Youthful Energy"
+  },
+  {
+   "id": "mimes-mission",
+   "name": "Mime's Mission"
+  },
+  {
+   "id": "yearning-for-knowledge",
+   "name": "Yearning for Knowledge"
+  },
+  {
+   "id": "yearning-for-love",
+   "name": "Yearning for Love"
+  },
+  {
+   "id": "joy-of-freedom",
+   "name": "Joy of Freedom"
+  },
+  {
+   "id": "mission",
+   "name": "Mission"
+  },
+  {
+   "id": "mimes-frustration",
+   "name": "Mime's Frustration"
+  },
+  {
+   "id": "wanderer",
+   "name": "Wanderer"
+  },
+  {
+   "id": "world-ash-tree",
+   "name": "World Ash Tree"
+  },
+  {
+   "id": "blow-bellows",
+   "name": "Blow, Bellows!"
+  },
+  {
+   "id": "hammering",
+   "name": "Hammering"
+  },
+  {
    "id": "fafner-as-dragon",
    "name": "Fafner as Dragon"
+  },
+  {
+   "id": "mission-mutation",
+   "name": "Mission (Mutation)"
+  },
+  {
+   "id": "forest-murmurs",
+   "name": "Forest Murmurs"
+  },
+  {
+   "id": "wood-bird-a",
+   "name": "Wood Bird (A)",
+   "group": "Wood Bird",
+   "variant": "A"
+  },
+  {
+   "id": "wood-bird-b",
+   "name": "Wood Bird (B)",
+   "group": "Wood Bird",
+   "variant": "B"
+  },
+  {
+   "id": "false-flattery",
+   "name": "False Flattery"
+  },
+  {
+   "id": "siegfrieds-horn-call-mutation",
+   "name": "Siegfried's Horn Call (Mutation)"
+  },
+  {
+   "id": "yearning-for-love-mission",
+   "name": "Yearning for Love/Mission"
+  },
+  {
+   "id": "wala-awake",
+   "name": "Wala! Awake!"
+  },
+  {
+   "id": "worlds-inheritance",
+   "name": "World's Inheritance"
+  },
+  {
+   "id": "ravens",
+   "name": "Ravens"
+  },
+  {
+   "id": "resistance",
+   "name": "Resistance"
+  },
+  {
+   "id": "awakening",
+   "name": "Awakening"
+  },
+  {
+   "id": "loves-greeting",
+   "name": "Love's Greeting"
+  },
+  {
+   "id": "loves-ecstasy",
+   "name": "Love's Ecstasy"
+  },
+  {
+   "id": "immortal-beloved",
+   "name": "Immortal Beloved"
+  },
+  {
+   "id": "worlds-treasure",
+   "name": "World's Treasure"
+  },
+  {
+   "id": "laughing-at-death",
+   "name": "Laughing at Death"
+  },
+  {
+   "id": "rope-of-fate",
+   "name": "Rope of Fate"
+  },
+  {
+   "id": "siegfried-definitive",
+   "name": "Siegfried (Definitive)"
+  },
+  {
+   "id": "the-woman-brunnhilde",
+   "name": "The Woman Brünnhilde"
+  },
+  {
+   "id": "giving-in-love",
+   "name": "Giving in Love"
+  },
+  {
+   "id": "mission-definitive",
+   "name": "Mission (Definitive)"
+  },
+  {
+   "id": "radiant-star-victorious-light",
+   "name": "Radiant Star, Victorious Light"
+  },
+  {
+   "id": "treachery",
+   "name": "Treachery"
+  },
+  {
+   "id": "hagen",
+   "name": "Hagen"
   },
   {
    "id": "gunther",
@@ -223,64 +527,118 @@
    "name": "Gutrune"
   },
   {
-   "id": "hunding",
-   "name": "Hunding"
+   "id": "potion",
+   "name": "Potion"
   },
   {
-   "id": "loge",
-   "name": "Loge (B)"
+   "id": "plotting",
+   "name": "Plotting"
   },
   {
-   "id": "redemption",
-   "name": "Redemption"
+   "id": "rowing",
+   "name": "Rowing"
   },
   {
-   "id": "siegfried",
-   "name": "Siegfried"
+   "id": "friendship",
+   "name": "Friendship"
   },
   {
-   "id": "siegfrieds-horn-call",
-   "name": "Siegfried's Horn Call"
+   "id": "gutrunes-deception",
+   "name": "Gutrune's Deception"
   },
   {
-   "id": "sieglinde",
-   "name": "Sieglinde"
+   "id": "mission-as-blood-brotherhood",
+   "name": "Mission (as Blood-Brotherhood)"
   },
   {
-   "id": "siegmund",
-   "name": "Siegmund"
+   "id": "blood-brotherhood",
+   "name": "Blood-Brotherhood"
   },
   {
-   "id": "sword",
-   "name": "Sword"
+   "id": "vow-of-atonement",
+   "name": "Vow of Atonement"
   },
   {
-   "id": "valkyries",
-   "name": "Walküre"
+   "id": "hagen-ascending",
+   "name": "Hagen Ascending"
   },
   {
-   "id": "valkyries-warcry",
-   "name": "Walküre Warcry"
+   "id": "escape",
+   "name": "Escape"
   },
   {
-   "id": "walsungs-woe",
-   "name": "Wälsung's Woe"
+   "id": "betrayal",
+   "name": "Betrayal"
   },
   {
-   "id": "walsungs",
-   "name": "Wälsungs"
+   "id": "honor",
+   "name": "Honor"
   },
   {
-   "id": "woodbird-ab",
-   "name": "Woodbird (A/B)"
+   "id": "murder",
+   "name": "Murder"
   },
   {
-   "id": "woodbird-c",
-   "name": "Woodbird (C)"
+   "id": "dawn",
+   "name": "Dawn"
   },
   {
-   "id": "world-ash",
-   "name": "World Ash"
+   "id": "grim-hagen",
+   "name": "Grim Hagen"
+  },
+  {
+   "id": "gutrunes-greeting",
+   "name": "Gutrune's Greeting"
+  },
+  {
+   "id": "hoiho",
+   "name": "Hoiho!"
+  },
+  {
+   "id": "gibichungs-horn-call",
+   "name": "Gibichungs' Horn Call"
+  },
+  {
+   "id": "vassals-song",
+   "name": "Vassals' Song"
+  },
+  {
+   "id": "vassals-greeting",
+   "name": "Vassals' Greeting"
+  },
+  {
+   "id": "oath",
+   "name": "Oath"
+  },
+  {
+   "id": "brunnhildes-betrayal",
+   "name": "Brünnhilde's Betrayal"
+  },
+  {
+   "id": "rhine-daughters-continued-a",
+   "name": "Rhine Daughters (Continued) (A)",
+   "group": "Rhine Daughters (Continued)",
+   "variant": "A"
+  },
+  {
+   "id": "rhine-daughters-continued-b",
+   "name": "Rhine Daughters (Continued) (B)",
+   "group": "Rhine Daughters (Continued)",
+   "variant": "B"
+  },
+  {
+   "id": "rhine-daughters-continued-c",
+   "name": "Rhine Daughters (Continued) (C)",
+   "group": "Rhine Daughters (Continued)",
+   "variant": "C"
+  },
+  {
+   "id": "death",
+   "name": "Death"
+  },
+  {
+   "id": "rest",
+   "name": "Rest"
   }
  ]
 }

@@ -1,0 +1,9 @@
+{
+ "id": "the-woman-brunnhilde",
+ "name": "The Woman Brünnhilde",
+ "source": "holman",
+ "lilypond": "aes'4. g'32 aes'32 bes'32 aes'32 f''4. c''8 es''4 f'2",
+ "core_notes": [1, 9],
+ "openings": [],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -3 }
+}

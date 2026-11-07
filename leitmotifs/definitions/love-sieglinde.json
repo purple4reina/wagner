@@ -1,0 +1,9 @@
+{
+ "id": "love-sieglinde",
+ "name": "Love (Sieglinde)",
+ "source": "holman",
+ "lilypond": "es''4 d''4. aes'8 c''2",
+ "core_notes": [1, 4],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -2 }
+}

@@ -1,0 +1,10 @@
+{
+ "id": "wood-bird-b",
+ "name": "Wood Bird",
+ "variant": "B",
+ "source": "holman",
+ "lilypond": "b'8 e''16 gis''16 fis''8. e''16 fis''16 e''16 fis''16 e''16 fis''16 e''16 fis''16 e''16 fis''16 e''16 fis''16 e''16 fis''16 e''16 gis''8 e''4 e''4 e''8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "9/8", "partial": "4", "key_signature": 4 }
+}

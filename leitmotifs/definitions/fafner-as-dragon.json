@@ -1,9 +1,9 @@
 {
  "id": "fafner-as-dragon",
  "name": "Fafner as Dragon",
- "source": "companion",
- "lilypond": "ges32 aes32 bes32 b32 c'8 r16 c'16 c'8 r8 ges8 r8 c'8",
- "core_notes": [1, 9],
+ "source": "holman",
+ "lilypond": "d,2 es,4 d,2. r2 r8. ges,,64 aes,,64 bes,,64 c,64 ~c,8 r16 c,16 c,8 r8 ges,,8 r8 c,8 r8 r4",
+ "core_notes": [4, 11],
  "max_level": 2,
- "original": { "octaves_up": -2, "time": "3/4", "partial": "8", "clef": "bass", "key_signature": -4 }
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -4 }
 }

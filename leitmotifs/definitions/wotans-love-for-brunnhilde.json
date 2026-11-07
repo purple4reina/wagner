@@ -1,0 +1,9 @@
+{
+ "id": "wotans-love-for-brunnhilde",
+ "name": "Wotan's Love for Brünnhilde",
+ "source": "holman",
+ "lilypond": "fis8 b4. bis8 cis'2 cis'4. b16 ais16 b4. b16 b16 c'4. b8 b4 a8. r16 b4. fis8 gis2",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "8", "clef": "bass", "key_signature": 1 }
+}

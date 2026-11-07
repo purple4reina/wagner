@@ -197,7 +197,7 @@ const el = (tag, cls, text) => {
   return e;
 };
 
-const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'siegfried';
+const idInUrl = () => new URLSearchParams(location.search).get('motif') || 'beginning';
 let motifId = idInUrl(), loadSeq = 0;
 let sections, occs, marks, levelInfo, levelCount, cite, current = -1; // cite: where the melody comes from
 let also = {}; // the other leitmotifs near each example, by motif and occurrence id (motifs/also.json; empty until it arrives)

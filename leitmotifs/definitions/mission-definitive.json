@@ -1,0 +1,9 @@
+{
+ "id": "mission-definitive",
+ "name": "Mission (Definitive)",
+ "source": "holman",
+ "lilypond": "r4 g''4 f''8 es''8 d''4 f''4 es''8 d''8 c''2",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -2 }
+}

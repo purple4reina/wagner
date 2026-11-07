@@ -1,9 +1,9 @@
 {
  "id": "sword",
  "name": "Sword",
- "source": "companion",
- "lilypond": "g8 c'2 c4.. e16 g4. c'8 e'2",
+ "source": "holman",
+ "lilypond": "g'8 c''2 c'4.. e'16 g'4. c''8 e''2",
  "core_notes": [1, 7],
  "max_level": 2,
- "original": { "octaves_up": 1, "time": "4/4", "partial": "8" }
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "8", "key_signature": -5 }
 }

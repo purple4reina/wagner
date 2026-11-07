@@ -1,0 +1,9 @@
+{
+ "id": "wala-awake",
+ "name": "Wala! Awake!",
+ "source": "holman",
+ "lilypond": "f'4 es'2 r8 bes8 des'2 ~des'8 r8 r4",
+ "core_notes": [1, 4],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -3 }
+}

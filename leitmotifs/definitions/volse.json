@@ -1,0 +1,9 @@
+{
+ "id": "volse",
+ "name": "Volse",
+ "source": "holman",
+ "lilypond": "gis''2 gis'4 r4 g''2 g'4 r4",
+ "core_notes": [1, 4],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

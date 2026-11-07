@@ -3,7 +3,7 @@
 `index.html` shows one motif at a time. It reads one JSON file per motif.
 
 - File: `motifs/<id>.json`
-- URL: `index.html?motif=<id>`. The default `<id>` is `siegfried`.
+- URL: `index.html?motif=<id>`. The default `<id>` is `beginning`.
 - The browser blocks `fetch` on a page that it opens from disk. Serve this folder with `python3 -m http.server`.
 - `motifs/<id>.full.json` holds the whole piano score of each passage. The page loads it when the viewer presses "Full score" (see below).
   `tools/find_motif.py` writes it next to `motifs/<id>.json`. A motif without the file works, but its "Full score" button does nothing.
@@ -12,8 +12,8 @@
   closest `level` of the passages that it joins, and its `label` and `note` say that it joins others.
 - `motifs/index.json` is the list of motifs, `{ "motifs": [{ "id": "gold", "name": "Gold" }] }`. The page shows it as links down
   its left side, and marks the motif that is open. Without the file the page has no list. `tools/find_motif.py` writes it:
-  one entry for each definition that has a motif file. The ids in `order.json` (a list of ids, in the order of the book) come first, in
-  that order. The other motifs follow, in the order of the names.
+  one entry for each definition that has a motif file. If `order.json` (a list of ids, in the order of the book) exists, the list is
+  exactly its ids, in that order: a motif that is not in it stays on disk but the page does not list it. Without it, every motif is listed, in the order of the names.
   A leitmotif with lettered forms has one entry for each form, with `"group"` (the leitmotif) and `"variant"` (the letter) besides
   the `name` ("Valhalla (A)"). The page shows the `group` once, as a heading, and the `variant` as the link.
 

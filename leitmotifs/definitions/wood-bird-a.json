@@ -1,0 +1,10 @@
+{
+ "id": "wood-bird-a",
+ "name": "Wood Bird",
+ "variant": "A",
+ "source": "holman",
+ "lilypond": "r8 cis'''8 ~cis'''4. \\tuplet 3/2 { b''8 gis''8. e''16 } \\tuplet 3/2 { cis''8 a'8 cis''8 } \\tuplet 3/2 { gis''8 e''8 gis''8 } b''4",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 4 }
+}

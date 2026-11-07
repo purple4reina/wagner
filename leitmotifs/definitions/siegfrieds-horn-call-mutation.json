@@ -1,0 +1,9 @@
+{
+ "id": "siegfrieds-horn-call-mutation",
+ "name": "Siegfried's Horn Call (Mutation)",
+ "source": "holman",
+ "lilypond": "r4 \\tuplet 3/2 { cis8 a8. f16 } \\tuplet 3/2 { bes8 ges'8. d'16 } a8. cis'16 f'8 r8 r4",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass" }
+}

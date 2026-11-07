@@ -1,0 +1,9 @@
+{
+ "id": "hagen",
+ "name": "Hagen",
+ "source": "holman",
+ "lilypond": "b4 e4 r4",
+ "core_notes": [1, 2],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": 2 }
+}

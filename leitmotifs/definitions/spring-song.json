@@ -1,0 +1,9 @@
+{
+ "id": "spring-song",
+ "name": "Spring Song",
+ "source": "holman",
+ "lilypond": "bes'4 f'8 f'4 bes'8 d''8 c''8 d''8 es''4 d''8 c''4. ~c''8",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "9/8", "key_signature": -2 }
+}

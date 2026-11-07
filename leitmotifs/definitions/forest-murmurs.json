@@ -1,0 +1,9 @@
+{
+ "id": "forest-murmurs",
+ "name": "Forest Murmurs",
+ "source": "holman",
+ "lilypond": "d8 e8 d8 e8 d8 e8 d8 e8 f8 g8 f8 g8 f8 g8 f8 g8 a8 bes8 a8 bes8 a8 bes8 a8 bes8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -1 }
+}

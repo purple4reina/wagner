@@ -1,0 +1,9 @@
+{
+ "id": "notung",
+ "name": "Notung",
+ "source": "holman",
+ "lilypond": "e''1 e'2 r2 e''1 e'2",
+ "core_notes": [1, 4],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 1 }
+}

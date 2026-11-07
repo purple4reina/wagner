@@ -1,9 +1,9 @@
 {
  "id": "redemption",
  "name": "Redemption",
- "source": "companion",
- "lilypond": "d4. g4. ~g8 fis8 g8 a4. g4 fis8 g2. a,4 r8 r4 r8 g4. ~g8 fis8 g8 a4. g4 fis8 g2.",
+ "source": "holman",
+ "lilypond": "r4 r8 d''4. g''4. ~g''8 fis''8 g''8 a''4. g''4 fis''8 g''2. a'4",
  "core_notes": [1, 8],
  "max_level": 2,
- "original": { "octaves_up": 2, "time": "6/8", "partial": "4.", "key_signature": 1 }
+ "original": { "octaves_up": 0, "time": "6/8", "key_signature": 1 }
 }

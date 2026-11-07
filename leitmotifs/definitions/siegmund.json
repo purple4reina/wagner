@@ -1,9 +1,9 @@
 {
  "id": "siegmund",
  "name": "Siegmund",
- "source": "companion",
- "lilypond": "b1 ~b4 a4 gis4 f4 e4. d8 d4 e4 f1.",
+ "source": "holman",
+ "lilypond": "b,1 ~b,4 a,4 gis,4 f,4 e,4. d,8 d,4 e,4 f,1.",
  "core_notes": [1, 9],
  "max_level": 2,
- "original": { "octaves_up": -1, "time": "3/2", "clef": "bass", "key_signature": -1 }
+ "original": { "octaves_up": 0, "time": "6/4", "clef": "bass", "key_signature": -1 }
 }

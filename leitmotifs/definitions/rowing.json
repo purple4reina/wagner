@@ -1,0 +1,9 @@
+{
+ "id": "rowing",
+ "name": "Rowing",
+ "source": "holman",
+ "lilypond": "d'2. c'4. ~c'8 bes8 a8 bes4. a4 g8 d'2. c'4. ~c'8 bes8 a8 bes4. a4 g8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "9/8", "clef": "bass", "key_signature": -1 }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "rainbow-bridge",
+ "name": "Rainbow Bridge",
+ "source": "holman",
+ "lilypond": "ges,4 bes,4. des8 ges8. bes16 des'4 bes4 ges4 des4 bes,8 ces8 des4 bes,4 ges,8 aes,8 bes,4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -5 }
+}

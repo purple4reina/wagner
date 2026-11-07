@@ -1,0 +1,9 @@
+{
+ "id": "companion-gunther",
+ "name": "Gunther",
+ "source": "companion",
+ "lilypond": "b,8. cis16 d8. cis16 d8. e16 fis8. a16 d'8 cis'8 b8. ais16 b8",
+ "core_notes": [1, 9],
+ "openings": [],
+ "original": { "octaves_up": 1, "time": "3/4", "key_signature": 2 }
+}

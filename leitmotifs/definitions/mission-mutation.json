@@ -1,0 +1,9 @@
+{
+ "id": "mission-mutation",
+ "name": "Mission (Mutation)",
+ "source": "holman",
+ "lilypond": "r8 d8 bes4 a8 g8 f4 r8 f8 c'4 c4 c4 r4",
+ "core_notes": [1, 9],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "4", "clef": "bass", "key_signature": -1 }
+}

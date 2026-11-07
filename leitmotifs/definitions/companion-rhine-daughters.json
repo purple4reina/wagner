@@ -1,0 +1,9 @@
+{
+ "id": "companion-rhine-daughters",
+ "name": "Rhine Daughters",
+ "source": "companion",
+ "lilypond": "f4 es8 c4 bes,8 aes,8 es,8 aes,8 bes,4 aes,8 c8 aes,8 c es4 c8 f8 es8 c8 aes4 es8 c8. aes,16 es,8 es8. c16 aes,8 f2. es4. ~es4",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 2, "time": "6/8", "key_signature": -3 }
+}

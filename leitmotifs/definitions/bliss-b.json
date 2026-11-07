@@ -1,0 +1,10 @@
+{
+ "id": "bliss-b",
+ "name": "Bliss",
+ "variant": "B",
+ "source": "holman",
+ "lilypond": "r8. f'16 d''4. es''16 es''16 ges'4 f'8",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -5 }
+}

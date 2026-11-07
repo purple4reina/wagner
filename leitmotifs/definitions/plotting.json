@@ -1,0 +1,9 @@
+{
+ "id": "plotting",
+ "name": "Plotting",
+ "source": "holman",
+ "lilypond": "r8 es''8 fis'4. g'8",
+ "core_notes": [1, 3],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -3 }
+}

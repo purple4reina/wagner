@@ -1,0 +1,9 @@
+{
+ "id": "brooding",
+ "name": "Brooding",
+ "source": "holman",
+ "lilypond": "r2. r2. r2. bes2. c2. ~c4 r4 r4",
+ "core_notes": [1, 2],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -5 }
+}

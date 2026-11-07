@@ -75,7 +75,8 @@ def main():
         if d.get("source") != "holman" or (args.only and d["id"] not in args.only):
             continue
         simple = lambda t: re.sub(r"[^a-z0-9()]", "", t.lower())  # "Love's" and "Loves'" are the same section
-        label = next((k for k in sections if simple(k) == simple(full_name(d))), full_name(d))
+        wanted = d.get("section") or full_name(d)  # "section": the label in the .ly file, if it is not the name
+        label = next((k for k in sections if simple(k) == simple(wanted)), wanted)
         if label not in sections:
             print(f"{d['id']}: no section named {label!r} in {source.name}", file=sys.stderr)
             failed.append(d["id"])

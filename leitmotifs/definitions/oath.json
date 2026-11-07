@@ -1,0 +1,9 @@
+{
+ "id": "oath",
+ "name": "Oath",
+ "source": "holman",
+ "lilypond": "b'2.. b'8 fis''1 c''2 \\tuplet 3/2 { ~c''4 b'4 a'4 } e''2 a'4 r4 g''2 c''2 ~c''4 d''4 \\tuplet 3/2 { f''4 es''4 d''4 } c''1 g'4 r4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

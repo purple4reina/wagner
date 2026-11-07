@@ -1,0 +1,9 @@
+{
+ "id": "friendship",
+ "name": "Friendship",
+ "source": "holman",
+ "lilypond": "f'4 bes2 \\tuplet 3/2 { ~bes8 d'8 c'8 } g'4 c'2. f'4 bes2.",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -2 }
+}

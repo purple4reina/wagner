@@ -1,0 +1,9 @@
+{
+ "id": "sleep",
+ "name": "Sleep",
+ "source": "holman",
+ "lilypond": "c''2 b'2 bes'2. a'4 gis'2 g'2 ges'2. f'4 e'2.",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 2 }
+}

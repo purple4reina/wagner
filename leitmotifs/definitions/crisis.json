@@ -1,0 +1,9 @@
+{
+ "id": "crisis",
+ "name": "Crisis",
+ "source": "holman",
+ "lilypond": "a''8 bes''8 b''8. c'''16 c'''4 e''8 r8 r2",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "2", "key_signature": -3 }
+}

@@ -1,0 +1,9 @@
+{
+ "id": "mimes-mission",
+ "name": "Mime's Mission",
+ "source": "holman",
+ "lilypond": "c''4 bes'4 aes'4 g'2 r4 bes'4 aes'4 g'4 f'2 r4",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -4 }
+}

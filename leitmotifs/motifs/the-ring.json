@@ -238,12 +238,14 @@
     {
      "kind": "sung",
      "person": "Siegfried",
-     "text": "Kommt rasch!"
+     "text": "Kommt rasch!",
+     "translation": "Come quickly!"
     },
     {
      "kind": "sung",
      "person": "Siegfried",
-     "text": "Ich schenk’ euch den Ring!"
+     "text": "Ich schenk’ euch den Ring!",
+     "translation": "I give you the ring!"
     }
    ],
    "notation": {

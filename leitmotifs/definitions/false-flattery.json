@@ -1,0 +1,9 @@
+{
+ "id": "false-flattery",
+ "name": "False Flattery",
+ "source": "holman",
+ "lilypond": "r4 a4. g8 fis8. g16 a4. d'8 a8. b16 a4 b8 cis'8 r4 e'2",
+ "core_notes": [1, 12],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": 2 }
+}

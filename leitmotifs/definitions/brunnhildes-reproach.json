@@ -1,0 +1,9 @@
+{
+ "id": "brunnhildes-reproach",
+ "name": "Brünnhilde's Reproach",
+ "source": "holman",
+ "lilypond": "c'2 b8. a16 g'2 fis'4 e'2 d'8. c'16 a'4. g'8 fis'8. e'16 d''2 c''8. c''16 b'4. a'8 g'8. fis'16 fis''2.",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": 1 }
+}

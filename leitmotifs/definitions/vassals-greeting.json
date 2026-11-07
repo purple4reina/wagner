@@ -1,0 +1,9 @@
+{
+ "id": "vassals-greeting",
+ "name": "Vassals' Greeting",
+ "source": "holman",
+ "lilypond": "r8. bes'16 bes'4 ~bes'8 g'8 bes'4 ~bes'8 g'8 bes'8 c''8 d''8. es''16 f''4",
+ "core_notes": [1, 10],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -2 }
+}

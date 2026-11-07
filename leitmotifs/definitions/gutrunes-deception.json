@@ -1,0 +1,9 @@
+{
+ "id": "gutrunes-deception",
+ "name": "Gutrune's Deception",
+ "source": "holman",
+ "lilypond": "d'''4 g''4. a''8 b''4 e''4. fis''8",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": 1 }
+}

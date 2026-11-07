@@ -1,0 +1,9 @@
+{
+ "id": "withered-love",
+ "name": "Withered Love",
+ "source": "holman",
+ "lilypond": "dis''2 ~dis''8 cisis''8 cis''8 ais'8 cis''4 b'8 fisis'8 ais'4 gis'8 dis'8 e'2",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": 5 }
+}

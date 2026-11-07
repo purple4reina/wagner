@@ -1,0 +1,9 @@
+{
+ "id": "volsung-race",
+ "name": "Volsung Race",
+ "source": "holman",
+ "lilypond": "c'2 g8. g16 c'8. d'16 es'4. d'8 g'4 \\tuplet 3/2 { ~g'8 fis'8 g'8 } bes'8. c''16 bes'2 aes'4",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -3 }
+}

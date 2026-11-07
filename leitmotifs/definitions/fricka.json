@@ -1,0 +1,9 @@
+{
+ "id": "fricka",
+ "name": "Fricka",
+ "source": "holman",
+ "lilypond": "r8. es''16 es''4. aes'4 bes'8 c''2 f'4. g'8 a'2 f'4. d'8 g'2 r2",
+ "core_notes": [1, 11],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "key_signature": -3 }
+}

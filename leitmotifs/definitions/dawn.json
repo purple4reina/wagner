@@ -1,0 +1,9 @@
+{
+ "id": "dawn",
+ "name": "Dawn",
+ "source": "holman",
+ "lilypond": "f,4 d4 bes,4 g,8. bes,16 es4 g8. a16 bes4 f4 d'4 bes4. c'8 c'8. bes32 c'32 d'4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -2 }
+}

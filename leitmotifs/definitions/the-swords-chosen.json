@@ -1,0 +1,9 @@
+{
+ "id": "the-swords-chosen",
+ "name": "The Sword's Chosen",
+ "source": "holman",
+ "lilypond": "g'16 g'16 g'4. c''16 c''16 c''4. d''16 d''16 d''8 e''8 g''4. fis''8 e''8 d''8 cis''8",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4", "partial": "8", "key_signature": 1 }
+}

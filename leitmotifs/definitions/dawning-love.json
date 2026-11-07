@@ -1,0 +1,9 @@
+{
+ "id": "dawning-love",
+ "name": "Dawning Love",
+ "source": "holman",
+ "lilypond": "bes'2. ~bes'4 a'4. es'8 g'2. ~g'4 f'4. c'8 es'4. e'8 f'8. c'16 es'4 d'8 es'8 e'8. bes16",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -1 }
+}

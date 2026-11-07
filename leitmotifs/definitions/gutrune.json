@@ -1,9 +1,9 @@
 {
  "id": "gutrune",
  "name": "Gutrune",
- "source": "companion",
- "lilypond": "d'4 g4. a8 b4 e4. fis8 g4. gis8 a8 d'8 ~d'8 g4 a8 bes8 b8 ~b8 dis4 e8 fis8 g16 a16 g8",
- "core_notes": [1, 9],
- "openings": [],
- "original": { "octaves_up": 2, "time": "3/4", "key_signature": 1 }
+ "source": "holman",
+ "lilypond": "bes'8. ges'16 des'2 ~des'8 r8 es'8 f'8 ges'8 aes'8 bes'8. ces''16 des''4 des''4 des''4 ges''8 f''8 es''8 des''8 ces''2 bes'8. bes'16 es''4 r4",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4", "key_signature": -3 }
 }

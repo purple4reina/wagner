@@ -1,0 +1,9 @@
+{
+ "id": "hoiho",
+ "name": "Hoiho!",
+ "source": "holman",
+ "lilypond": "des'4 c'4 ~c'2. r4 des'4 c'4 ~c'8 c'8 c'2",
+ "core_notes": [1, 6],
+ "max_level": 1,
+ "original": { "octaves_up": 0, "time": "3/4", "partial": "2", "clef": "bass", "key_signature": 1 }
+}

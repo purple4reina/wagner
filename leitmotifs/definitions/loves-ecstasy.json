@@ -1,0 +1,9 @@
+{
+ "id": "loves-ecstasy",
+ "name": "Love's Ecstasy",
+ "source": "holman",
+ "lilypond": "e'''8. a'''32 g'''32 g''8. d'''32 e'''32 f''8 r16 b'16 e'''8. a'''32 g'''32 g''8. d'''32 e'''32 f''4 e'''8.",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "3/4" }
+}

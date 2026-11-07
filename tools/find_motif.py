@@ -842,13 +842,16 @@ def original_musicxml():
     original = DEF["original"]
     beats, unit = map(int, original["time"].split("/"))
     tokens = ly_tokens(DEF["lilypond"])
-    s = (2 if any(t.den == 32 for t in tokens) else 1) * (3 if any(t.tuplet for t in tokens) else 1)  # units in a sixteenth note: 32nd notes and triplets need finer ones
+    fine = 4 if any(t.den == 64 for t in tokens) else 2 if any(t.den == 32 for t in tokens) else 1
+    s = fine * (3 if any(t.tuplet for t in tokens) else 1)  # units in a sixteenth note: 32nd and 64th notes and triplets need finer ones
     bar = 16 * s * beats // unit  # units in a bar
     group = (6 if unit == 8 and beats % 3 == 0 else 16 // unit) * s  # units in a beat; a beam stops at the end of a beat
     kinds = {v * s: k for v, k in [(24, ("whole", 1)), (16, ("whole", 0)), (14, ("half", 2)), (12, ("half", 1)), (8, ("half", 0)), (7, ("quarter", 2)),
                                    (6, ("quarter", 1)), (4, ("quarter", 0)), (3, ("eighth", 1)), (2, ("eighth", 0)), (1, ("16th", 0))]}
-    if s % 2 == 0:
+    if fine >= 2:
         kinds[s // 2] = ("32nd", 0)
+    if fine == 4:
+        kinds[s // 4] = ("64th", 0)
     units = lambda den, dots: int(Fraction(16 * s, int(den)) * (2 - Fraction(1, 2 ** len(dots))))  # the written value of a note
     pickup = units(*re.fullmatch(r"(\d+)(\.*)", original["partial"]).groups()) if original.get("partial") else 0
     notes, pos = [], (bar - pickup) % bar  # pos counts units from the start of the first bar
@@ -973,10 +976,12 @@ def motif_block():
 
 
 def write_index():
-    """Write leitmotifs/motifs/index.json, the list that the page shows down its left side: every definition that has a motif file.
-    The ids in leitmotifs/order.json come first, in that order (the order of the book). The others follow, in the order of the names."""
+    """Write leitmotifs/motifs/index.json, the list that the page shows down its left side. If leitmotifs/order.json exists, the list is
+    exactly its ids, in that order (the order of the book), and a leitmotif that is not in it stays on disk but is not listed. Without
+    order.json, the list has every definition that has a motif file, in the order of the names."""
     folder = ROOT / "leitmotifs" / "motifs"
-    found = [load_definition(p.stem) for p in DEFINITIONS.glob("*.json") if (folder / p.name).exists()]
+    order_ids = json.loads((ROOT / "leitmotifs" / "order.json").read_text(encoding="utf-8")) if (ROOT / "leitmotifs" / "order.json").exists() else None
+    found = [load_definition(p.stem) for p in DEFINITIONS.glob("*.json") if (folder / p.name).exists() and (order_ids is None or p.stem in order_ids)]
     plain = lambda name: "".join(c for c in unicodedata.normalize("NFD", name) if not unicodedata.combining(c)).casefold()
     order_file = ROOT / "leitmotifs" / "order.json"
     rank = {m: i for i, m in enumerate(json.loads(order_file.read_text(encoding="utf-8")) if order_file.exists() else [])}

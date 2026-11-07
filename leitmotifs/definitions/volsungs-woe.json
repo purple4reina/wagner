@@ -1,0 +1,10 @@
+{
+ "id": "volsungs-woe",
+ "name": "Volsung's Woe",
+ "source": "holman",
+ "lilypond": "d2 cis8. d16 bes2 g4 e2. ~e8 r8 r4",
+ "core_notes": [1, 6],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "3/4", "clef": "bass", "key_signature": -1 },
+ "section": "Volsung' Woe"
+}

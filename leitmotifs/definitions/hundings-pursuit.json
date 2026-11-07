@@ -1,0 +1,9 @@
+{
+ "id": "hundings-pursuit",
+ "name": "Hunding's Pursuit",
+ "source": "holman",
+ "lilypond": "bes4. a8 aes4. g8 fis4. g8 es4. c8",
+ "core_notes": [1, 8],
+ "max_level": 2,
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -4 }
+}

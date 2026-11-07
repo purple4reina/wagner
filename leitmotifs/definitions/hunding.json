@@ -1,9 +1,9 @@
 {
  "id": "hunding",
  "name": "Hunding",
- "source": "companion",
- "lilypond": "c4 c4 r8. c32 c32 c8 aes,8 f8 d8. d16 d4 r2 r2 r8 es8 c8 es8 d8. d16 d4",
+ "source": "holman",
+ "lilypond": "c'4 c'4 r8. c'32 c'32 \\tuplet 3/2 { c'8 aes8 f'8 } d'8. d'16 d'4",
  "core_notes": [1, 10],
  "max_level": 2,
- "original": { "octaves_up": 1, "time": "4/4", "clef": "bass", "key_signature": -3 }
+ "original": { "octaves_up": 0, "time": "4/4", "clef": "bass", "key_signature": -3 }
 }

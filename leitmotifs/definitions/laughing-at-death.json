@@ -1,0 +1,9 @@
+{
+ "id": "laughing-at-death",
+ "name": "Laughing at Death",
+ "source": "holman",
+ "lilypond": "r4 a'4 e'4 g'4 d'4 f'4 c'4 e'4 a4 d'8 e'8 f'4 e'4 d'4 e'8 f'8 g'2",
+ "core_notes": [1, 13],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4" }
+}

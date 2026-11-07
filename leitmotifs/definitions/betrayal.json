@@ -1,0 +1,9 @@
+{
+ "id": "betrayal",
+ "name": "Betrayal",
+ "source": "holman",
+ "lilypond": "bes1 ~bes4 a4 gis4. e'8 g1 ~g4 fis4 f4. d'8 e4",
+ "core_notes": [1, 9],
+ "openings": [8],
+ "original": { "octaves_up": 0, "time": "4/4" }
+}
